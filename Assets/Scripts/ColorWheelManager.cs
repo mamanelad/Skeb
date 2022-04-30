@@ -8,14 +8,25 @@ using UnityEngine.UI;
 public class ColorWheelManager : MonoBehaviour
 {
     [SerializeField] private GameObject menuItem;
-    [SerializeField] private List<Color> colors;
+    [SerializeField] private List<ColorManager.ColorGame> colors;
     private List<GameObject> _menuItems = new List<GameObject>();
     private int _amountOfColors;
     private int _selection;
     private int _prevSelection = -1;
+    private ColorManager.ColorGame currentColor;
     private Vector2 _normalizedMousePosition;
 
-    void Start()
+    private static readonly Dictionary<ColorManager.ColorGame ,Color> _colorDict =
+        new Dictionary<ColorManager.ColorGame ,Color>()
+        {
+            {ColorManager.ColorGame.WHITE, Color.white},
+            {ColorManager.ColorGame.RED, Color.red},
+            {ColorManager.ColorGame.YELLOW, Color.yellow},
+            {ColorManager.ColorGame.GREEN, Color.green},
+            {ColorManager.ColorGame.BLUE, Color.blue}
+        };
+
+    private void Start()
     {
         _amountOfColors = colors.Count;
         for (var i = 0; i < _amountOfColors; i++)
@@ -39,12 +50,12 @@ public class ColorWheelManager : MonoBehaviour
         // fix color data (color / wheel part)
         var colorData = newColor.GetComponentInChildren<Image>();
         colorData.fillAmount = (float) 1 / _amountOfColors;
-        colorData.color = colors[index];
+        colorData.color = _colorDict[colors[index]];
     }
 
     private void Update()
     {
-        _normalizedMousePosition = new Vector2(Input.mousePosition.x - Screen.width / 2f,
+        _normalizedMousePosition = new Vector2(Input.mousePosition.x - Screen.width / 2f, 
             Input.mousePosition.y - Screen.height / 2f);
         var currentAngle = Mathf.Atan2(_normalizedMousePosition.y, _normalizedMousePosition.x) * Mathf.Rad2Deg;
         currentAngle = (currentAngle + 360) % 360;
@@ -59,7 +70,13 @@ public class ColorWheelManager : MonoBehaviour
         if (_prevSelection != -1)
             _menuItems[_prevSelection].GetComponent<ColorPickScript>().Deselect();
         _menuItems[_selection].GetComponent<ColorPickScript>().Select();
+        currentColor = colors[_selection];
+        //ColorManager.Instance.currColorHidden = colors[_selection];
         _prevSelection = _selection;
+    }
 
+    public ColorManager.ColorGame GetCurrentColor()
+    {
+        return currentColor;
     }
 }

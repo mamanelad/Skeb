@@ -11,14 +11,16 @@ public class ColorManager : MonoBehaviour
         RED,
         YELLOW,
         GREEN,
-        BLUE
+        BLUE,
+        WHITE
     }
 
+    [SerializeField] private LayerMask _InvisibleLayer;
 
     public static ColorManager Instance;
 
     [SerializeField] private ColorObject[] _colorObjects;
-    [SerializeField] private ColorGame currColorHidden = ColorGame.NONE;
+    [SerializeField] public ColorGame currColorHidden = ColorGame.NONE;
 
     public ColorGame lastColorHidden;
     // Start is called before the first frame update
@@ -54,13 +56,13 @@ public class ColorManager : MonoBehaviour
         {
             if (colorObject.GetMyColor() == lastColorHidden)
             {
-                colorObject.gameObject.layer = LayerMask.NameToLayer("Default");
+                colorObject.gameObject.layer = colorObject.GetMyLayerMask();//LayerMask.NameToLayer("Default");
                 colorObject.spriteRenderer.enabled = true;
             }
             
             if (colorObject.GetMyColor() == currColorHidden)
             {
-                colorObject.gameObject.layer = LayerMask.NameToLayer("No Physics");
+                colorObject.gameObject.layer = _InvisibleLayer; //LayerMask.NameToLayer("No Physics");
                 colorObject.spriteRenderer.enabled = false;
             }
             

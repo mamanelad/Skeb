@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ColorObject : MonoBehaviour
 {
+    private LayerMask _defaultLayer;
     [SerializeField] private ColorManager.ColorGame myColorGame;
 
     public SpriteRenderer spriteRenderer;
@@ -13,6 +14,7 @@ public class ColorObject : MonoBehaviour
 
     private void Awake()
     {
+        _defaultLayer = gameObject.layer;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -21,5 +23,10 @@ public class ColorObject : MonoBehaviour
     public ColorManager.ColorGame GetMyColor()
     {
         return myColorGame;
+    }
+    
+    public LayerMask GetMyLayerMask()
+    {
+        return _defaultLayer;
     }
 }
