@@ -23,7 +23,10 @@ public class ColorWheelManager : MonoBehaviour
             {ColorManager.ColorGame.RED, Color.red},
             {ColorManager.ColorGame.YELLOW, Color.yellow},
             {ColorManager.ColorGame.GREEN, Color.green},
-            {ColorManager.ColorGame.BLUE, Color.blue}
+            {ColorManager.ColorGame.BLUE, Color.blue},
+            {ColorManager.ColorGame.NONE, Color.clear}
+
+            
         };
 
     private void Start()
