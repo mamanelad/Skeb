@@ -9,6 +9,7 @@ public class ColorWheelManager : MonoBehaviour
 {
     [SerializeField] private GameObject menuItem;
     [SerializeField] private List<ColorManager.ColorGame> colors;
+    [SerializeField] private float spacing = 0.05f;
     private List<GameObject> _menuItems = new List<GameObject>();
     private int _amountOfColors;
     private int _selection;
@@ -36,7 +37,6 @@ public class ColorWheelManager : MonoBehaviour
         {
             AddColorToWheel(i);
         }
-        
     }
 
     
@@ -48,11 +48,11 @@ public class ColorWheelManager : MonoBehaviour
         _menuItems.Add(newColor);
         // fix color position on wheel
         var rot = newColor.GetComponent<RectTransform>().localEulerAngles;
-        rot.z = (360f / _amountOfColors) * index;
+        rot.z = (360f / _amountOfColors) * index - 20;
         newColor.GetComponent<RectTransform>().localEulerAngles = rot;
         // fix color data (color / wheel part)
         var colorData = newColor.GetComponentInChildren<Image>();
-        colorData.fillAmount = (float) 1 / _amountOfColors;
+        colorData.fillAmount = (float) 1 / _amountOfColors - spacing;
         colorData.color = _colorDict[colors[index]];
     }
 
