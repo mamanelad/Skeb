@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ColorManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class ColorManager : MonoBehaviour
 
     public static ColorManager Instance;
 
-    [SerializeField] private ColorObject[] _colorObjects;
+     private List<ColorObject> _colorObjects = new List<ColorObject>();
     [SerializeField] public ColorGame currColorHidden = ColorGame.NONE;
 
     public ColorGame lastColorHidden;
@@ -34,6 +35,11 @@ public class ColorManager : MonoBehaviour
     {
         Instance = this;
         lastColorHidden = currColorHidden;
+        
+        //Adding all the children that are color objects to the list
+        ColorObject[] obj = GameObject.FindObjectsOfType<ColorObject>();
+        foreach (var o in obj) 
+             _colorObjects.Add(o);
     }
 
     void Start()
@@ -56,16 +62,15 @@ public class ColorManager : MonoBehaviour
         {
             if (colorObject.GetMyColor() == lastColorHidden)
             {
-                colorObject.gameObject.layer = colorObject.GetMyLayerMask();//LayerMask.NameToLayer("Default");
-                colorObject.gameObject.GetComponent<Collider2D>().enabled = true; // disable collider
+                colorObject.gameObject.layer = colorObject.GetMyLayerMask();
                 colorObject.spriteRenderer.enabled = true;
             }
             
             if (colorObject.GetMyColor() == currColorHidden)
             {
-                colorObject.gameObject.layer = _InvisibleLayer; //LayerMask.NameToLayer("No Physics");
-                colorObject.gameObject.GetComponent<Collider2D>().enabled = false; // enable collider 
+                colorObject.gameObject.layer = (int) Mathf.Log(_InvisibleLayer, 2);
                 colorObject.spriteRenderer.enabled = false;
+                
             }
             
         }
