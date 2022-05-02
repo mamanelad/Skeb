@@ -57,14 +57,14 @@ public class ColorManager : MonoBehaviour
             if (colorObject.GetMyColor() == lastColorHidden)
             {
                 colorObject.gameObject.layer = colorObject.GetMyLayerMask();//LayerMask.NameToLayer("Default");
-                colorObject.gameObject.GetComponent<Collider2D>().enabled = true;
+                colorObject.gameObject.GetComponent<Collider2D>().enabled = true; // disable collider
                 colorObject.spriteRenderer.enabled = true;
             }
             
             if (colorObject.GetMyColor() == currColorHidden)
             {
                 colorObject.gameObject.layer = _InvisibleLayer; //LayerMask.NameToLayer("No Physics");
-                colorObject.gameObject.GetComponent<Collider2D>().enabled = false;
+                colorObject.gameObject.GetComponent<Collider2D>().enabled = false; // enable collider 
                 colorObject.spriteRenderer.enabled = false;
             }
             

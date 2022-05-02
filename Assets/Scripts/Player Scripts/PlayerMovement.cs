@@ -25,4 +25,17 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb.MovePosition(_rb.position + _movement * _movementSpeed * Time.fixedDeltaTime);
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Key"))
+        {
+            other.GetComponent<DoorScript>().OpenDoor();
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            print("Can see");
+        }
+    }
 }
