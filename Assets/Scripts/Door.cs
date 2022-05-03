@@ -7,7 +7,9 @@ public class Door : MonoBehaviour
 {
 
     [SerializeField] private Key.KeyType _keyType;
-    
+    [SerializeField] private Sprite openDoorSprite;
+    [SerializeField] private Collider2D colliderToDisable;
+
 
     public Key.KeyType GetKeyType()
     {
@@ -17,7 +19,8 @@ public class Door : MonoBehaviour
     
     public void OpenDoor()
     {
-     gameObject.SetActive(false); 
-
+        colliderToDisable.enabled = false;
+        GetComponent<SpriteRenderer>().sprite = openDoorSprite;
+        //gameObject.SetActive(false);
     }
 }
