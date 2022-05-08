@@ -1,0 +1,2796 @@
+fileFormatVersion: 2
+guid: 35ce325ac3df2e64e9dd016c492edab8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -77397989363271308
+    second: afifit sprite sheet_0
+  - first:
+      213: -5001845234732310812
+    second: afifit sprite sheet_1
+  - first:
+      213: 3499446019232996794
+    second: afifit sprite sheet_2
+  - first:
+      213: 8601954057902335884
+    second: afifit sprite sheet_3
+  - first:
+      213: 4353352913144989544
+    second: afifit sprite sheet_4
+  - first:
+      213: 7484316901846864637
+    second: afifit sprite sheet_5
+  - first:
+      213: 2847503993048103411
+    second: afifit sprite sheet_6
+  - first:
+      213: 6612228932423558287
+    second: afifit sprite sheet_7
+  - first:
+      213: 3855400076101548170
+    second: afifit sprite sheet_8
+  - first:
+      213: -4403761982496979130
+    second: afifit sprite sheet_9
+  - first:
+      213: -8219641538426781875
+    second: afifit sprite sheet_10
+  - first:
+      213: 2622194800430135347
+    second: afifit sprite sheet_11
+  - first:
+      213: -71749493878432284
+    second: afifit sprite sheet_12
+  - first:
+      213: 2961164427463143829
+    second: afifit sprite sheet_13
+  - first:
+      213: 223298984735469175
+    second: afifit sprite sheet_14
+  - first:
+      213: -8987085877729223816
+    second: afifit sprite sheet_15
+  - first:
+      213: -5815814327484921998
+    second: afifit sprite sheet_16
+  - first:
+      213: -8073588757077103149
+    second: afifit sprite sheet_17
+  - first:
+      213: -878463576985109686
+    second: afifit sprite sheet_18
+  - first:
+      213: 2906059701684274393
+    second: afifit sprite sheet_19
+  - first:
+      213: 4919051565718415105
+    second: afifit sprite sheet_20
+  - first:
+      213: -707009561339991654
+    second: afifit sprite sheet_21
+  - first:
+      213: -2954693484253398350
+    second: afifit sprite sheet_22
+  - first:
+      213: 705958870001040711
+    second: afifit sprite sheet_23
+  - first:
+      213: -3790083423870132719
+    second: afifit sprite sheet_24
+  - first:
+      213: 2296912039112948916
+    second: afifit sprite sheet_25
+  - first:
+      213: -7309769312217577399
+    second: afifit sprite sheet_26
+  - first:
+      213: 7400477628646374003
+    second: afifit sprite sheet_27
+  - first:
+      213: 3607627415236557830
+    second: afifit sprite sheet_28
+  - first:
+      213: 2549642519690509703
+    second: afifit sprite sheet_29
+  - first:
+      213: 5346797450885990401
+    second: afifit sprite sheet_30
+  - first:
+      213: 8487041462654438189
+    second: afifit sprite sheet_31
+  - first:
+      213: 4532885378407239306
+    second: afifit sprite sheet_32
+  - first:
+      213: -2501217545714208093
+    second: afifit sprite sheet_33
+  - first:
+      213: 8491178088568153471
+    second: afifit sprite sheet_34
+  - first:
+      213: 3936967823316316922
+    second: afifit sprite sheet_35
+  - first:
+      213: -5296478604137904816
+    second: afifit sprite sheet_36
+  - first:
+      213: 6606744332704841677
+    second: afifit sprite sheet_37
+  - first:
+      213: 5539405106031704629
+    second: afifit sprite sheet_38
+  - first:
+      213: -30331676586057449
+    second: afifit sprite sheet_39
+  - first:
+      213: 6880313178032301274
+    second: afifit sprite sheet_40
+  - first:
+      213: 3910185259597885230
+    second: afifit sprite sheet_41
+  - first:
+      213: 7677627397192830535
+    second: afifit sprite sheet_42
+  - first:
+      213: -8862607933078232452
+    second: afifit sprite sheet_43
+  - first:
+      213: -1108187274076305736
+    second: afifit sprite sheet_44
+  - first:
+      213: -6871208817469154838
+    second: afifit sprite sheet_45
+  - first:
+      213: -6177054591195055041
+    second: afifit sprite sheet_46
+  - first:
+      213: 3514274355416401757
+    second: afifit sprite sheet_47
+  - first:
+      213: -4794551386963785751
+    second: afifit sprite sheet_48
+  - first:
+      213: -5500669626391413796
+    second: afifit sprite sheet_49
+  - first:
+      213: 642548605195451410
+    second: afifit sprite sheet_50
+  - first:
+      213: -7592258854315516420
+    second: afifit sprite sheet_51
+  - first:
+      213: -5917825510571758758
+    second: afifit sprite sheet_52
+  - first:
+      213: 2251335145756095886
+    second: afifit sprite sheet_53
+  - first:
+      213: -6248877658018777883
+    second: afifit sprite sheet_54
+  - first:
+      213: -3508187099262062009
+    second: afifit sprite sheet_55
+  - first:
+      213: 1291431069935320343
+    second: afifit sprite sheet_56
+  - first:
+      213: 3252370896426527149
+    second: afifit sprite sheet_57
+  - first:
+      213: -7047652760404659072
+    second: afifit sprite sheet_58
+  - first:
+      213: 2631484556844826592
+    second: afifit sprite sheet_59
+  - first:
+      213: -2911006907770437470
+    second: afifit sprite sheet_60
+  - first:
+      213: -5567321677560437737
+    second: afifit sprite sheet_61
+  - first:
+      213: -8083721656488389087
+    second: afifit sprite sheet_62
+  - first:
+      213: -3262914807790575388
+    second: afifit sprite sheet_63
+  - first:
+      213: -4280726391585844978
+    second: afifit sprite sheet_64
+  - first:
+      213: 1948141081064480977
+    second: afifit sprite sheet_65
+  - first:
+      213: -8017385680972341729
+    second: afifit sprite sheet_66
+  - first:
+      213: -796368169844038435
+    second: afifit sprite sheet_67
+  - first:
+      213: 5302256979550528411
+    second: afifit sprite sheet_68
+  - first:
+      213: 4177372644365972185
+    second: afifit sprite sheet_69
+  - first:
+      213: -5424975618223434685
+    second: afifit sprite sheet_70
+  - first:
+      213: 2879112421685198967
+    second: afifit sprite sheet_71
+  - first:
+      213: 1864425695991423450
+    second: afifit sprite sheet_72
+  - first:
+      213: 7403303639610516642
+    second: afifit sprite sheet_73
+  - first:
+      213: 7449898735634971589
+    second: afifit sprite sheet_74
+  - first:
+      213: 5080471034241677550
+    second: afifit sprite sheet_75
+  - first:
+      213: 1850943986148318963
+    second: afifit sprite sheet_76
+  - first:
+      213: -1990468894685014274
+    second: afifit sprite sheet_77
+  - first:
+      213: 5629581956800503827
+    second: afifit sprite sheet_78
+  - first:
+      213: 926874753859218413
+    second: afifit sprite sheet_79
+  - first:
+      213: 4193560567369369904
+    second: afifit sprite sheet_80
+  - first:
+      213: -262958931952519170
+    second: afifit sprite sheet_81
+  - first:
+      213: 2437016106877464859
+    second: afifit sprite sheet_82
+  - first:
+      213: 5355345032571676464
+    second: afifit sprite sheet_83
+  - first:
+      213: 5447978418960000212
+    second: afifit sprite sheet_84
+  - first:
+      213: 7373707590208174378
+    second: afifit sprite sheet_85
+  - first:
+      213: -679049027491049786
+    second: afifit sprite sheet_86
+  - first:
+      213: 7012787721352175329
+    second: afifit sprite sheet_87
+  - first:
+      213: 8790194556063071259
+    second: afifit sprite sheet_88
+  - first:
+      213: -7403019503864847545
+    second: afifit sprite sheet_89
+  - first:
+      213: -2351458487432964849
+    second: afifit sprite sheet_90
+  - first:
+      213: -8401251400026242379
+    second: afifit sprite sheet_91
+  - first:
+      213: 2288138018161450063
+    second: afifit sprite sheet_92
+  - first:
+      213: 3262880147060712663
+    second: afifit sprite sheet_93
+  - first:
+      213: -3834841842530779408
+    second: afifit sprite sheet_94
+  - first:
+      213: 6145921409686299545
+    second: afifit sprite sheet_95
+  - first:
+      213: 6382793482997601969
+    second: afifit sprite sheet_96
+  - first:
+      213: -5962371881060172953
+    second: afifit sprite sheet_97
+  - first:
+      213: -1396055596384955030
+    second: afifit sprite sheet_98
+  - first:
+      213: -532840371889327622
+    second: afifit sprite sheet_99
+  - first:
+      213: 5247078384796213872
+    second: afifit sprite sheet_100
+  - first:
+      213: 6047280165496773332
+    second: afifit sprite sheet_101
+  - first:
+      213: -5622675966302480723
+    second: afifit sprite sheet_102
+  - first:
+      213: 3577230422694148643
+    second: afifit sprite sheet_103
+  - first:
+      213: 2977370782526057947
+    second: afifit sprite sheet_104
+  - first:
+      213: -6109582730293489590
+    second: afifit sprite sheet_105
+  - first:
+      213: 7043019359114821623
+    second: afifit sprite sheet_106
+  - first:
+      213: 4480649251159448168
+    second: afifit sprite sheet_107
+  - first:
+      213: -2951660877794310533
+    second: afifit sprite sheet_108
+  - first:
+      213: -6179127378434204248
+    second: afifit sprite sheet_109
+  - first:
+      213: -2530999442335116907
+    second: afifit sprite sheet_110
+  - first:
+      213: 260445922543870735
+    second: afifit sprite sheet_111
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: afifit sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4793ca150f60deef0800000000000000
+      internalID: -77397989363271308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eedc4a8240e59ab0800000000000000
+      internalID: -5001845234732310812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd99071d97809030800000000000000
+      internalID: 3499446019232996794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87af7bf3a7406770800000000000000
+      internalID: 8601954057902335884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8674be1d8673a6c30800000000000000
+      internalID: 4353352913144989544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2d8019192add760800000000000000
+      internalID: 7484316901846864637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f973228bcd548720800000000000000
+      internalID: 2847503993048103411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84aaa25e2b53cb50800000000000000
+      internalID: 6612228932423558287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88fb0341f1218530800000000000000
+      internalID: 3855400076101548170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647c5ed1fc1b2e2c0800000000000000
+      internalID: -4403761982496979130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fb6010297fded80800000000000000
+      internalID: -8219641538426781875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338b38b2748e36420800000000000000
+      internalID: 2622194800430135347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eddf882738110ff0800000000000000
+      internalID: -71749493878432284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591b67c9b5b281920800000000000000
+      internalID: 2961164427463143829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 493
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eecd75e31591300800000000000000
+      internalID: 223298984735469175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 493
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b15048205774380800000000000000
+      internalID: -8987085877729223816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 429
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27742a2cea31a4fa0800000000000000
+      internalID: -5815814327484921998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dde4d71dc9d4ff80800000000000000
+      internalID: -8073588757077103149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 429
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bfea1f7021fc3f0800000000000000
+      internalID: -878463576985109686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d408f6d6e5645820800000000000000
+      internalID: 2906059701684274393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 429
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107a976365bf34440800000000000000
+      internalID: 4919051565718415105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a996683cc823036f0800000000000000
+      internalID: -707009561339991654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 429
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba3ae24ee1def6d0800000000000000
+      internalID: -2954693484253398350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74db2781ad11cc900800000000000000
+      internalID: 705958870001040711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 429
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11edf1be43be66bc0800000000000000
+      internalID: -3790083423870132719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc35ab745540ef10800000000000000
+      internalID: 2296912039112948916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 429
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94848331a8b7e8a90800000000000000
+      internalID: -7309769312217577399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a31bf9137c3b660800000000000000
+      internalID: 7400477628646374003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 429
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cb227250ed01230800000000000000
+      internalID: 3607627415236557830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d7262fc56226320800000000000000
+      internalID: 2549642519690509703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 429
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108060af3f3a33a40800000000000000
+      internalID: 5346797450885990401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 429
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b87877e3708c570800000000000000
+      internalID: 8487041462654438189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e86834c3b08ee30800000000000000
+      internalID: 4532885378407239306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_33
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 365
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2fab9e4e3e94dd0800000000000000
+      internalID: -2501217545714208093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_34
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f756fadbb79b6d570800000000000000
+      internalID: 8491178088568153471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 365
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af279e8506be2a630800000000000000
+      internalID: 3936967823316316922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_36
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05547ef75c02f76b0800000000000000
+      internalID: -5296478604137904816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_37
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 365
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf72b077fedfab50800000000000000
+      internalID: 6606744332704841677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_38
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a310c489befdc40800000000000000
+      internalID: 5539405106031704629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_39
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 365
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71165a7308d349ff0800000000000000
+      internalID: -30331676586057449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_40
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4ed08c168cb7f50800000000000000
+      internalID: 6880313178032301274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_41
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 365
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fec4cc6c4c34630800000000000000
+      internalID: 3910185259597885230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_42
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e4c7f90796c8a60800000000000000
+      internalID: 7677627397192830535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_43
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 365
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72205d7a01b10580800000000000000
+      internalID: -8862607933078232452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_44
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6c210bb8dee90f0800000000000000
+      internalID: -1108187274076305736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_45
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 365
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae918395cff84a0a0800000000000000
+      internalID: -6871208817469154838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_46
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 365
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c7f95a391b64aa0800000000000000
+      internalID: -6177054591195055041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_47
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 365
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d570cd528e535c030800000000000000
+      internalID: 3514274355416401757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_48
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7caaa8ae4567db0800000000000000
+      internalID: -4794551386963785751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_49
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbb82c5e12b9a3b0800000000000000
+      internalID: -5500669626391413796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_50
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cf8935d8acae800800000000000000
+      internalID: 642548605195451410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_51
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd95b92cc0e2a690800000000000000
+      internalID: -7592258854315516420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_52
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b20a75d09afdda0800000000000000
+      internalID: -5917825510571758758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_53
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85f42113695e3f10800000000000000
+      internalID: 2251335145756095886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_54
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e47ae4c0e68749a0800000000000000
+      internalID: -6248877658018777883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_55
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74270ee9b6a605fc0800000000000000
+      internalID: -3508187099262062009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_56
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71db56f37b51ce110800000000000000
+      internalID: 1291431069935320343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_57
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da96257391eb22d20800000000000000
+      internalID: 3252370896426527149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_58
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08477cb8725b13e90800000000000000
+      internalID: -7047652760404659072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_59
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef79a22349e48420800000000000000
+      internalID: 2631484556844826592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_60
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a082abf3a60a97d0800000000000000
+      internalID: -2911006907770437470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_61
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714ada26e66ecb2b0800000000000000
+      internalID: -5567321677560437737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_62
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 301
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12690e99bf9d0df80800000000000000
+      internalID: -8083721656488389087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_63
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 301
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0e74d154cc7b2d0800000000000000
+      internalID: -3262914807790575388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_64
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01d2e0f60ec794c0800000000000000
+      internalID: -4280726391585844978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_65
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0a135ddff290b10800000000000000
+      internalID: 1948141081064480977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_66
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e175a73368cb090800000000000000
+      internalID: -8017385680972341729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_67
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4a40e6e5bb2f4f0800000000000000
+      internalID: -796368169844038435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_68
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93e1fd51a6659940800000000000000
+      internalID: 5302256979550528411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_69
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d23ed1994209f930800000000000000
+      internalID: 4177372644365972185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_70
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34413a00b6d96b4b0800000000000000
+      internalID: -5424975618223434685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_71
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77006fa4e79a4f720800000000000000
+      internalID: 2879112421685198967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_72
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1eda7da45cfd910800000000000000
+      internalID: 1864425695991423450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_73
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a467539f61ddb660800000000000000
+      internalID: 7403303639610516642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_74
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 221
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb7726cd6b536760800000000000000
+      internalID: 7449898735634971589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_75
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8f2a7fc75718640800000000000000
+      internalID: 5080471034241677550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_76
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 157
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe1489afbfdfa910800000000000000
+      internalID: 1850943986148318963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_77
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6d5d3161f6064e0800000000000000
+      internalID: -1990468894685014274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_78
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 157
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310ea0186fa402e40800000000000000
+      internalID: 5629581956800503827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_79
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb6e078dabecdc00800000000000000
+      internalID: 926874753859218413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_80
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 157
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039032a1e15823a30800000000000000
+      internalID: 4193560567369369904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_81
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7347e9e38c95cf0800000000000000
+      internalID: -262958931952519170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_82
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 157
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b113652cc3502d120800000000000000
+      internalID: 2437016106877464859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_83
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037661ceee1025a40800000000000000
+      internalID: 5355345032571676464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_84
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 157
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4ea16e18b1b9b40800000000000000
+      internalID: 5447978418960000212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_85
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29b5f75cfba45660800000000000000
+      internalID: 7373707590208174378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_86
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 157
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce425bd1888396f0800000000000000
+      internalID: -679049027491049786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_87
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 157
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeda68f64d625160800000000000000
+      internalID: 7012787721352175329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_88
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c36b4506b0df970800000000000000
+      internalID: 8790194556063071259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_89
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 93
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743e8deebf0334990800000000000000
+      internalID: -7403019503864847545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_90
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f051b78d6f0fd5fd0800000000000000
+      internalID: -2351458487432964849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_91
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 93
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2cea80d52c86b80800000000000000
+      internalID: -8401251400026242379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_92
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c5499876911cf10800000000000000
+      internalID: 2288138018161450063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_93
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 93
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d46a3ec434184d20800000000000000
+      internalID: 3262880147060712663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_94
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fef52e79a7e7cac0800000000000000
+      internalID: -3834841842530779408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_95
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 93
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993e1d9a5f2ba4550800000000000000
+      internalID: 6145921409686299545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_96
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b610c4fadc349850800000000000000
+      internalID: 6382793482997601969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_97
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 93
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b71aa3d56614da0800000000000000
+      internalID: -5962371881060172953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_98
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 93
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6557cae4d630ace0800000000000000
+      internalID: -1396055596384955030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_99
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 93
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1bc8f3188fa98f0800000000000000
+      internalID: -532840371889327622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_100
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072a862adfd51d840800000000000000
+      internalID: 5247078384796213872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_101
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da53b945414ce350800000000000000
+      internalID: 6047280165496773332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_102
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da61a65bffd38f1b0800000000000000
+      internalID: -5622675966302480723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_103
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ab760dd10e4a130800000000000000
+      internalID: 3577230422694148643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_104
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdda711b3feb15920800000000000000
+      internalID: 2977370782526057947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_105
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40def270e6663ba0800000000000000
+      internalID: -6109582730293489590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_106
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fffc36aac4ddb160800000000000000
+      internalID: 7043019359114821623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_107
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a9a7221c67e2e30800000000000000
+      internalID: 4480649251159448168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_108
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7607a9f1189907d0800000000000000
+      internalID: -2951660877794310533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_109
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8add98243645f3aa0800000000000000
+      internalID: -6179127378434204248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_110
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 29
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59157e0ca6510ecd0800000000000000
+      internalID: -2530999442335116907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: afifit sprite sheet_111
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 29
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f032d68cf2a4d9300800000000000000
+      internalID: 260445922543870735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
