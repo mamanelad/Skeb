@@ -39,6 +39,8 @@ public class ColorWheelManager : MonoBehaviour
         {
             AddColorToWheel(i);
         }
+
+        currentColor = ColorManager.ColorGame.NONE;
     }
 
     

@@ -20,8 +20,9 @@ public class ColorManager : MonoBehaviour
 
     public static ColorManager Instance;
 
-     private List<ColorObject> _colorObjects = new List<ColorObject>();
+    private List<ColorObject> _colorObjects = new List<ColorObject>();
     [SerializeField] public ColorGame currColorHidden = ColorGame.NONE;
+
 
     public ColorGame lastColorHidden;
     // Start is called before the first frame update
@@ -35,16 +36,10 @@ public class ColorManager : MonoBehaviour
     {
         Instance = this;
         lastColorHidden = currColorHidden;
-        
+
         //Adding all the children that are color objects to the list
-        ColorObject[] obj = GameObject.FindObjectsOfType<ColorObject>();
-        foreach (var o in obj) 
-             _colorObjects.Add(o);
     }
 
-    void Start()
-    {
-    }
 
 // Update is called once per frame
     void Update()
@@ -56,24 +51,39 @@ public class ColorManager : MonoBehaviour
     }
 
 
-    void ChangeColor()
+    private void ChangeColor()
     {
         foreach (var colorObject in _colorObjects)
         {
+            var bridgeComp = colorObject.gameObject.GetComponent<Bridge>();
             if (colorObject.GetMyColor() == lastColorHidden)
             {
                 colorObject.gameObject.layer = colorObject.GetMyLayerMask();
                 colorObject.spriteRenderer.enabled = true;
+
+                if (bridgeComp != null)
+                {
+                    bridgeComp.OnShow();
+                }
             }
-            
+
             if (colorObject.GetMyColor() == currColorHidden)
             {
                 colorObject.gameObject.layer = (int) Mathf.Log(_InvisibleLayer, 2);
                 colorObject.spriteRenderer.enabled = false;
+
+                if (bridgeComp != null)
+                {
+                    bridgeComp.OnHide();
+                }
             }
-            
         }
 
         lastColorHidden = currColorHidden;
+    }
+
+    public static void AddColorObject(ColorObject colorObject)
+    {
+        Instance._colorObjects.Add(colorObject);
     }
 }

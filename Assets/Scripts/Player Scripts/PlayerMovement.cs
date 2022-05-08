@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator playerAnimator;
     [SerializeField] private float movementSpeed;
     private Vector2 _movement;
     private Rigidbody2D _rb;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        playerAnimator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         _dashCount = statDashCount;
     }
@@ -39,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     {
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
+        
+        playerAnimator.SetFloat("Horizontal", _movement.x);
+        playerAnimator.SetFloat("Vertical", _movement.y);
+        playerAnimator.SetFloat("speed", _movement.sqrMagnitude);
+        
 
 
         dashCollDownTimer -= Time.deltaTime;
@@ -150,4 +157,6 @@ public class PlayerMovement : MonoBehaviour
             print("Can see");
         }
     }
+
+    
 }

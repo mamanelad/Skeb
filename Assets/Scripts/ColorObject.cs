@@ -8,7 +8,7 @@ public class ColorObject : MonoBehaviour
     private LayerMask _defaultLayer;
     [SerializeField] private ColorManager.ColorGame myColorGame;
 
-    public SpriteRenderer spriteRenderer;
+    [NonSerialized] public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
 
@@ -18,13 +18,16 @@ public class ColorObject : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    
+    private void Start()
+    {
+        ColorManager.AddColorObject(this);
+    }
 
     public ColorManager.ColorGame GetMyColor()
     {
         return myColorGame;
     }
-    
+
     public LayerMask GetMyLayerMask()
     {
         return _defaultLayer;
