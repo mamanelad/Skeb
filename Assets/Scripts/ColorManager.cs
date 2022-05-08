@@ -70,7 +70,6 @@ public class ColorManager : MonoBehaviour
             {
                 colorObject.gameObject.layer = (int) Mathf.Log(_InvisibleLayer, 2);
                 colorObject.spriteRenderer.enabled = false;
-                
             }
             
         }
