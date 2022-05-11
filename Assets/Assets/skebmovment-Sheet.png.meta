@@ -1,0 +1,5268 @@
+fileFormatVersion: 2
+guid: 0f47922d80b61d340a5ba802b6abea03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1707590572755506538
+    second: skebmovment-Sheet_0
+  - first:
+      213: 1137969254228130593
+    second: skebmovment-Sheet_1
+  - first:
+      213: 5688484229491093808
+    second: skebmovment-Sheet_2
+  - first:
+      213: 3961375538807054954
+    second: skebmovment-Sheet_3
+  - first:
+      213: -4110147479876461114
+    second: skebmovment-Sheet_4
+  - first:
+      213: -2741377063005364279
+    second: skebmovment-Sheet_5
+  - first:
+      213: -4377373800691498315
+    second: skebmovment-Sheet_6
+  - first:
+      213: -7078772304064455732
+    second: skebmovment-Sheet_7
+  - first:
+      213: 161927307070953098
+    second: skebmovment-Sheet_8
+  - first:
+      213: -8705771870642623988
+    second: skebmovment-Sheet_9
+  - first:
+      213: -3275753709029188093
+    second: skebmovment-Sheet_10
+  - first:
+      213: -7140353603884908013
+    second: skebmovment-Sheet_11
+  - first:
+      213: 6605270346705755894
+    second: skebmovment-Sheet_12
+  - first:
+      213: 5044764232145813897
+    second: skebmovment-Sheet_13
+  - first:
+      213: 7264914085111203584
+    second: skebmovment-Sheet_14
+  - first:
+      213: 5895065233036029770
+    second: skebmovment-Sheet_15
+  - first:
+      213: -2330111104396543864
+    second: skebmovment-Sheet_16
+  - first:
+      213: 3276099710059050890
+    second: skebmovment-Sheet_17
+  - first:
+      213: -1490697843960358186
+    second: skebmovment-Sheet_18
+  - first:
+      213: -5347879003752866232
+    second: skebmovment-Sheet_19
+  - first:
+      213: -4897251348104036389
+    second: skebmovment-Sheet_20
+  - first:
+      213: -7426871466607459670
+    second: skebmovment-Sheet_21
+  - first:
+      213: -5355194978714060680
+    second: skebmovment-Sheet_22
+  - first:
+      213: 9071111069062648301
+    second: skebmovment-Sheet_23
+  - first:
+      213: -723611437573973648
+    second: skebmovment-Sheet_24
+  - first:
+      213: -8153203984487662569
+    second: skebmovment-Sheet_25
+  - first:
+      213: -8060467074724563292
+    second: skebmovment-Sheet_26
+  - first:
+      213: 3789239135637504355
+    second: skebmovment-Sheet_27
+  - first:
+      213: -656114025423393340
+    second: skebmovment-Sheet_28
+  - first:
+      213: -1548988005388793406
+    second: skebmovment-Sheet_29
+  - first:
+      213: -6358680333838876104
+    second: skebmovment-Sheet_30
+  - first:
+      213: -5130035931519746232
+    second: skebmovment-Sheet_31
+  - first:
+      213: -1045503914578831510
+    second: skebmovment-Sheet_32
+  - first:
+      213: 7097136162845683560
+    second: skebmovment-Sheet_33
+  - first:
+      213: -4911979260751444904
+    second: skebmovment-Sheet_34
+  - first:
+      213: -53853029879288832
+    second: skebmovment-Sheet_35
+  - first:
+      213: 260921708154887128
+    second: skebmovment-Sheet_36
+  - first:
+      213: -6098302301517988640
+    second: skebmovment-Sheet_37
+  - first:
+      213: 5490143985167277605
+    second: skebmovment-Sheet_38
+  - first:
+      213: 3543278927513534021
+    second: skebmovment-Sheet_39
+  - first:
+      213: -8132247899959153604
+    second: skebmovment-Sheet_40
+  - first:
+      213: 202126690305999035
+    second: skebmovment-Sheet_41
+  - first:
+      213: -6243243204936538746
+    second: skebmovment-Sheet_42
+  - first:
+      213: 2072104470977795973
+    second: skebmovment-Sheet_43
+  - first:
+      213: 3372609450611321768
+    second: skebmovment-Sheet_44
+  - first:
+      213: 8467766522485524198
+    second: skebmovment-Sheet_45
+  - first:
+      213: -5528925209863574263
+    second: skebmovment-Sheet_46
+  - first:
+      213: -5276797027661063533
+    second: skebmovment-Sheet_47
+  - first:
+      213: -2769686255988374209
+    second: skebmovment-Sheet_48
+  - first:
+      213: 3578017806823489421
+    second: skebmovment-Sheet_49
+  - first:
+      213: 4435011352172587163
+    second: skebmovment-Sheet_50
+  - first:
+      213: -6834353566147807891
+    second: skebmovment-Sheet_51
+  - first:
+      213: -5461442558505623607
+    second: skebmovment-Sheet_52
+  - first:
+      213: 7842647942343076411
+    second: skebmovment-Sheet_53
+  - first:
+      213: 2530974339700189209
+    second: skebmovment-Sheet_54
+  - first:
+      213: 4913946379798139833
+    second: skebmovment-Sheet_55
+  - first:
+      213: -6896605192952274237
+    second: skebmovment-Sheet_56
+  - first:
+      213: -1727161670674598445
+    second: skebmovment-Sheet_57
+  - first:
+      213: -5533526532763469141
+    second: skebmovment-Sheet_58
+  - first:
+      213: 7616878127671133483
+    second: skebmovment-Sheet_59
+  - first:
+      213: -1128956010194518069
+    second: skebmovment-Sheet_60
+  - first:
+      213: 3061524309633773986
+    second: skebmovment-Sheet_61
+  - first:
+      213: 8617311227899047097
+    second: skebmovment-Sheet_62
+  - first:
+      213: 251563677176854560
+    second: skebmovment-Sheet_63
+  - first:
+      213: 15707931512353711
+    second: skebmovment-Sheet_64
+  - first:
+      213: -2250994515294220490
+    second: skebmovment-Sheet_65
+  - first:
+      213: -4623997856920629754
+    second: skebmovment-Sheet_66
+  - first:
+      213: -4121843950448398691
+    second: skebmovment-Sheet_67
+  - first:
+      213: -6930960883416423473
+    second: skebmovment-Sheet_68
+  - first:
+      213: 5872338859969424478
+    second: skebmovment-Sheet_69
+  - first:
+      213: 1647734810993945289
+    second: skebmovment-Sheet_70
+  - first:
+      213: 8763614366138815227
+    second: skebmovment-Sheet_71
+  - first:
+      213: 1257875007370077775
+    second: skebmovment-Sheet_72
+  - first:
+      213: -9056132009889652815
+    second: skebmovment-Sheet_73
+  - first:
+      213: -4255907800951695217
+    second: skebmovment-Sheet_74
+  - first:
+      213: -857478034067572809
+    second: skebmovment-Sheet_75
+  - first:
+      213: -2004747015792616831
+    second: skebmovment-Sheet_76
+  - first:
+      213: 5618664752503484458
+    second: skebmovment-Sheet_77
+  - first:
+      213: 7640030280338706078
+    second: skebmovment-Sheet_78
+  - first:
+      213: 5354924204752772176
+    second: skebmovment-Sheet_79
+  - first:
+      213: 7294555864616898683
+    second: skebmovment-Sheet_80
+  - first:
+      213: -6060101930045642282
+    second: skebmovment-Sheet_81
+  - first:
+      213: -176421735658281784
+    second: skebmovment-Sheet_82
+  - first:
+      213: -8978035029201178494
+    second: skebmovment-Sheet_83
+  - first:
+      213: 7608999216009971206
+    second: skebmovment-Sheet_84
+  - first:
+      213: -1778127147563091212
+    second: skebmovment-Sheet_85
+  - first:
+      213: -4824549975886918592
+    second: skebmovment-Sheet_86
+  - first:
+      213: -4061552177959116274
+    second: skebmovment-Sheet_87
+  - first:
+      213: 1075244418208920595
+    second: skebmovment-Sheet_88
+  - first:
+      213: -7054747830632564414
+    second: skebmovment-Sheet_89
+  - first:
+      213: -2508735125978882913
+    second: skebmovment-Sheet_90
+  - first:
+      213: 768193518658090797
+    second: skebmovment-Sheet_91
+  - first:
+      213: -6039287064896965111
+    second: skebmovment-Sheet_92
+  - first:
+      213: 5186324540884554072
+    second: skebmovment-Sheet_93
+  - first:
+      213: 2286188033826819876
+    second: skebmovment-Sheet_94
+  - first:
+      213: 4857541429121285749
+    second: skebmovment-Sheet_95
+  - first:
+      213: 5412866183176827409
+    second: skebmovment-Sheet_96
+  - first:
+      213: -9021399859288535995
+    second: skebmovment-Sheet_97
+  - first:
+      213: -8396927064177643796
+    second: skebmovment-Sheet_98
+  - first:
+      213: -4289549185811056698
+    second: skebmovment-Sheet_99
+  - first:
+      213: 2481325018525944859
+    second: skebmovment-Sheet_100
+  - first:
+      213: -6360721292438976118
+    second: skebmovment-Sheet_101
+  - first:
+      213: -7897803560272259723
+    second: skebmovment-Sheet_102
+  - first:
+      213: 5243037638428884981
+    second: skebmovment-Sheet_103
+  - first:
+      213: -9152653878474868575
+    second: skebmovment-Sheet_104
+  - first:
+      213: 6465650710622766147
+    second: skebmovment-Sheet_105
+  - first:
+      213: 2884938310252043033
+    second: skebmovment-Sheet_106
+  - first:
+      213: 6739500849738486427
+    second: skebmovment-Sheet_107
+  - first:
+      213: -2295671568980140879
+    second: skebmovment-Sheet_108
+  - first:
+      213: -6373851101244979780
+    second: skebmovment-Sheet_109
+  - first:
+      213: -1990186651977409595
+    second: skebmovment-Sheet_110
+  - first:
+      213: -2879470479088353214
+    second: skebmovment-Sheet_111
+  - first:
+      213: -905955513318632324
+    second: skebmovment-Sheet_112
+  - first:
+      213: -6449239573923000175
+    second: skebmovment-Sheet_113
+  - first:
+      213: -8181405685116298914
+    second: skebmovment-Sheet_114
+  - first:
+      213: 8901585084116079167
+    second: skebmovment-Sheet_115
+  - first:
+      213: -6355974072514043026
+    second: skebmovment-Sheet_116
+  - first:
+      213: -7459006190349512955
+    second: skebmovment-Sheet_117
+  - first:
+      213: 2712866483362986658
+    second: skebmovment-Sheet_118
+  - first:
+      213: 8300105029601122101
+    second: skebmovment-Sheet_119
+  - first:
+      213: 5847842515628653606
+    second: skebmovment-Sheet_120
+  - first:
+      213: -200825618345846457
+    second: skebmovment-Sheet_121
+  - first:
+      213: 4415114740831207855
+    second: skebmovment-Sheet_122
+  - first:
+      213: 2703588491554219745
+    second: skebmovment-Sheet_123
+  - first:
+      213: 9183791693032747402
+    second: skebmovment-Sheet_124
+  - first:
+      213: 7824420094488616090
+    second: skebmovment-Sheet_125
+  - first:
+      213: 800751989748304067
+    second: skebmovment-Sheet_126
+  - first:
+      213: 1451361982856626352
+    second: skebmovment-Sheet_127
+  - first:
+      213: -3267152057763232224
+    second: skebmovment-Sheet_128
+  - first:
+      213: -7141180508510071801
+    second: skebmovment-Sheet_129
+  - first:
+      213: 2661152306892642742
+    second: skebmovment-Sheet_130
+  - first:
+      213: -8597817073620050570
+    second: skebmovment-Sheet_131
+  - first:
+      213: 1432913318721470049
+    second: skebmovment-Sheet_132
+  - first:
+      213: -7009258592138099264
+    second: skebmovment-Sheet_133
+  - first:
+      213: -3322583241208298097
+    second: skebmovment-Sheet_134
+  - first:
+      213: -8050864387589265909
+    second: skebmovment-Sheet_135
+  - first:
+      213: -861975584253582285
+    second: skebmovment-Sheet_136
+  - first:
+      213: -822485800321453881
+    second: skebmovment-Sheet_137
+  - first:
+      213: 9059597761903256116
+    second: skebmovment-Sheet_138
+  - first:
+      213: 3364079589666515689
+    second: skebmovment-Sheet_139
+  - first:
+      213: -7567440217517127706
+    second: skebmovment-Sheet_140
+  - first:
+      213: 6208176389507792105
+    second: skebmovment-Sheet_141
+  - first:
+      213: -6345567090788572275
+    second: skebmovment-Sheet_142
+  - first:
+      213: -7694695997120980321
+    second: skebmovment-Sheet_143
+  - first:
+      213: -109100652602082786
+    second: skebmovment-Sheet_144
+  - first:
+      213: -7625283429803583061
+    second: skebmovment-Sheet_145
+  - first:
+      213: 6007463101771328349
+    second: skebmovment-Sheet_146
+  - first:
+      213: -582630749897222663
+    second: skebmovment-Sheet_147
+  - first:
+      213: -4815579490978489147
+    second: skebmovment-Sheet_148
+  - first:
+      213: -1421332098372792460
+    second: skebmovment-Sheet_149
+  - first:
+      213: -2190539612979244759
+    second: skebmovment-Sheet_150
+  - first:
+      213: -6365777390784131691
+    second: skebmovment-Sheet_151
+  - first:
+      213: 4120498882530695791
+    second: skebmovment-Sheet_152
+  - first:
+      213: 501578718522352427
+    second: skebmovment-Sheet_153
+  - first:
+      213: -172510027363112843
+    second: skebmovment-Sheet_154
+  - first:
+      213: 6663675164349183506
+    second: skebmovment-Sheet_155
+  - first:
+      213: -1661382501169890499
+    second: skebmovment-Sheet_156
+  - first:
+      213: -8779297579136525998
+    second: skebmovment-Sheet_157
+  - first:
+      213: -7059178845159495809
+    second: skebmovment-Sheet_158
+  - first:
+      213: 8042496148286770761
+    second: skebmovment-Sheet_159
+  - first:
+      213: -86058453272558084
+    second: skebmovment-Sheet_160
+  - first:
+      213: -4765142011198228980
+    second: skebmovment-Sheet_161
+  - first:
+      213: 2067545220746426206
+    second: skebmovment-Sheet_162
+  - first:
+      213: 625725078074790920
+    second: skebmovment-Sheet_163
+  - first:
+      213: 1175674013156013209
+    second: skebmovment-Sheet_164
+  - first:
+      213: -943951490151680771
+    second: skebmovment-Sheet_165
+  - first:
+      213: -1107050650479689159
+    second: skebmovment-Sheet_166
+  - first:
+      213: 4279229689500095405
+    second: skebmovment-Sheet_167
+  - first:
+      213: -2077371308341329968
+    second: skebmovment-Sheet_168
+  - first:
+      213: 8849310482718000951
+    second: skebmovment-Sheet_169
+  - first:
+      213: 4353929540890981721
+    second: skebmovment-Sheet_170
+  - first:
+      213: 48418415545349724
+    second: skebmovment-Sheet_171
+  - first:
+      213: 6862356791242144426
+    second: skebmovment-Sheet_172
+  - first:
+      213: -1655296790774919784
+    second: skebmovment-Sheet_173
+  - first:
+      213: -2914728510117599951
+    second: skebmovment-Sheet_174
+  - first:
+      213: -2981837713971278214
+    second: skebmovment-Sheet_175
+  - first:
+      213: -6180134538097111256
+    second: skebmovment-Sheet_176
+  - first:
+      213: -5666930917748577662
+    second: skebmovment-Sheet_177
+  - first:
+      213: 4426662449226327815
+    second: skebmovment-Sheet_178
+  - first:
+      213: 6799762236713416747
+    second: skebmovment-Sheet_179
+  - first:
+      213: 7417972771249843746
+    second: skebmovment-Sheet_180
+  - first:
+      213: -3840937011948673231
+    second: skebmovment-Sheet_181
+  - first:
+      213: -1257360222259355767
+    second: skebmovment-Sheet_182
+  - first:
+      213: -2824600020307044031
+    second: skebmovment-Sheet_183
+  - first:
+      213: -2978342296487664342
+    second: skebmovment-Sheet_184
+  - first:
+      213: 8213704026395638418
+    second: skebmovment-Sheet_185
+  - first:
+      213: 6824748264269019605
+    second: skebmovment-Sheet_186
+  - first:
+      213: -3562444660394425388
+    second: skebmovment-Sheet_187
+  - first:
+      213: 8228468082199655186
+    second: skebmovment-Sheet_188
+  - first:
+      213: 6390610640377560749
+    second: skebmovment-Sheet_189
+  - first:
+      213: -4198869246651647628
+    second: skebmovment-Sheet_190
+  - first:
+      213: -6332974295556685210
+    second: skebmovment-Sheet_191
+  - first:
+      213: 7072875354675922777
+    second: skebmovment-Sheet_192
+  - first:
+      213: 7425910725447705290
+    second: skebmovment-Sheet_193
+  - first:
+      213: 5635301312072576110
+    second: skebmovment-Sheet_194
+  - first:
+      213: 1005453949834990988
+    second: skebmovment-Sheet_195
+  - first:
+      213: 4374475635346477051
+    second: skebmovment-Sheet_196
+  - first:
+      213: 4752161147364204181
+    second: skebmovment-Sheet_197
+  - first:
+      213: -3393958337597188947
+    second: skebmovment-Sheet_198
+  - first:
+      213: 8396947793489887238
+    second: skebmovment-Sheet_199
+  - first:
+      213: 7674402240168597847
+    second: skebmovment-Sheet_200
+  - first:
+      213: 8679230927806480930
+    second: skebmovment-Sheet_201
+  - first:
+      213: -5803886260728039311
+    second: skebmovment-Sheet_202
+  - first:
+      213: 4667380267855764724
+    second: skebmovment-Sheet_203
+  - first:
+      213: -3141861329467697326
+    second: skebmovment-Sheet_204
+  - first:
+      213: -3013985636311995974
+    second: skebmovment-Sheet_205
+  - first:
+      213: 1661472168541542920
+    second: skebmovment-Sheet_206
+  - first:
+      213: 1283048566513810300
+    second: skebmovment-Sheet_207
+  - first:
+      213: -2343110542635155199
+    second: skebmovment-Sheet_208
+  - first:
+      213: 1013303620948655495
+    second: skebmovment-Sheet_209
+  - first:
+      213: -5068615037761006808
+    second: skebmovment-Sheet_210
+  - first:
+      213: -5899879809455831525
+    second: skebmovment-Sheet_211
+  - first:
+      213: -3384527779270388071
+    second: skebmovment-Sheet_212
+  - first:
+      213: -2444663786967699448
+    second: skebmovment-Sheet_213
+  - first:
+      213: 8280462835155169287
+    second: skebmovment-Sheet_214
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skebmovment-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 169
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a2a19db6b6d48e0800000000000000
+      internalID: -1707590572755506538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 165
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b759be101eacf00800000000000000
+      internalID: 1137969254228130593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 169
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0317a31944e81fe40800000000000000
+      internalID: 5688484229491093808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 168
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6224847012a9f630800000000000000
+      internalID: 3961375538807054954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 165
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd1f7fb4a2d5f6c0800000000000000
+      internalID: -4110147479876461114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 165
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf592ce51ca4f9d0800000000000000
+      internalID: -2741377063005364279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 165
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b28ea878b17043c0800000000000000
+      internalID: -4377373800691498315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 168
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb5d5a281623cd90800000000000000
+      internalID: -7078772304064455732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 169
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86566127084f3200800000000000000
+      internalID: 161927307070953098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 165
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a22cadb92ee2780800000000000000
+      internalID: -8705771870642623988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 169
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e95a97b5f2a82d0800000000000000
+      internalID: -3275753709029188093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 165
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31282cd7a3e58ec90800000000000000
+      internalID: -7140353603884908013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 167
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe51d45262aaab50800000000000000
+      internalID: 6605270346705755894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 165
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981c5a0475a920640800000000000000
+      internalID: 5044764232145813897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 165
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00709c68ed822d460800000000000000
+      internalID: 7264914085111203584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 165
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f2ed6989a7fc150800000000000000
+      internalID: 5895065233036029770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 167
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8883047cb48c9afd0800000000000000
+      internalID: -2330111104396543864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 165
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8774da245b077d20800000000000000
+      internalID: 3276099710059050890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 168
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da5d4f753aff4be0800000000000000
+      internalID: -1490697843960358186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 165
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e5a8f516488c5b0800000000000000
+      internalID: -5347879003752866232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 168
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfb47c78d7790cb0800000000000000
+      internalID: -4897251348104036389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 167
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2c06810c37ee890800000000000000
+      internalID: -7426871466607459670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 165
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878fac63a868ea5b0800000000000000
+      internalID: -5355194978714060680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 165
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1d79dd47f03ed70800000000000000
+      internalID: 9071111069062648301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 165
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0795efb3b3735f5f0800000000000000
+      internalID: -723611437573973648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 167
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c30537c200ade80800000000000000
+      internalID: -8153203984487662569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 168
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a67f47d6e7732090800000000000000
+      internalID: -8060467074724563292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 165
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3618ea8eae4169430800000000000000
+      internalID: 3789239135637504355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 168
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cdac7625c305e6f0800000000000000
+      internalID: -656114025423393340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 165
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9c571bd93e08ae0800000000000000
+      internalID: -1548988005388793406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 167
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83285451ded61c7a0800000000000000
+      internalID: -6358680333838876104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 165
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f76c810837ec8b0800000000000000
+      internalID: -5130035931519746232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 165
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a679f30aabf9d71f0800000000000000
+      internalID: -1045503914578831510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 165
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86feef4ecb71e7260800000000000000
+      internalID: 7097136162845683560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 167
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85403da13e425dbb0800000000000000
+      internalID: -4911979260751444904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 165
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c67f364fca04ff0800000000000000
+      internalID: -53853029879288832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db92c049eafe9300800000000000000
+      internalID: 260921708154887128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ecb211fd5a7e5ba0800000000000000
+      internalID: -6098302301517988640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e94a1ddd8e03c40800000000000000
+      internalID: 5490143985167277605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e329659614c2130800000000000000
+      internalID: 3543278927513534021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ca4891f93742f80800000000000000
+      internalID: -8132247899959153604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0805767291ec200800000000000000
+      internalID: 202126690305999035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685e26b126b8b59a0800000000000000
+      internalID: -6243243204936538746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5875122b90891cc10800000000000000
+      internalID: 2072104470977795973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab20dd2d6aedce20800000000000000
+      internalID: 3372609450611321768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6c1bdb9cc838570800000000000000
+      internalID: 8467766522485524198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d216ca0df4543b0800000000000000
+      internalID: -5528925209863574263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39adc6e9f0d05c6b0800000000000000
+      internalID: -5276797027661063533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35088c46091099d0800000000000000
+      internalID: -2769686255988374209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f7cb7fc3ca7a130800000000000000
+      internalID: 3578017806823489421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98621db3535c8d30800000000000000
+      internalID: 4435011352172587163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65f55c34af7721a0800000000000000
+      internalID: -6834353566147807891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf5213ddee0534b0800000000000000
+      internalID: -5461442558505623607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3aaecd50cea6dc60800000000000000
+      internalID: 7842647942343076411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918657590c3df1320800000000000000
+      internalID: 2530974339700189209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b35f2d7238d13440800000000000000
+      internalID: 4913946379798139833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c227f5ed165a40a0800000000000000
+      internalID: -6896605192952274237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d535c58c93e708e0800000000000000
+      internalID: -1727161670674598445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa3f63bfe6f433b0800000000000000
+      internalID: -5533526532763469141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25c7491d4694b960800000000000000
+      internalID: 7616878127671133483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf305d7d742550f0800000000000000
+      internalID: -1128956010194518069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1b1f29328bc7a20800000000000000
+      internalID: 3061524309633773986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc68e1c7e6d69770800000000000000
+      internalID: 8617311227899047097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0287480e4dbbd7300800000000000000
+      internalID: 251563677176854560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa333fdc74ec73000800000000000000
+      internalID: 15707931512353711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f09842a6cd2c0e0800000000000000
+      internalID: -2250994515294220490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e0418b27244dfb0800000000000000
+      internalID: -4623997856920629754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e2ee9f3c44cc6c0800000000000000
+      internalID: -4121843950448398691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc326df5cc740df90800000000000000
+      internalID: -6930960883416423473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c2335841dbe7150800000000000000
+      internalID: 5872338859969424478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cae65d941eedd610800000000000000
+      internalID: 1647734810993945289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2d63a95dc9e9970800000000000000
+      internalID: 8763614366138815227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46a22a97aed47110800000000000000
+      internalID: 1257875007370077775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf9b7f1be7225280800000000000000
+      internalID: -9056132009889652815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88d57f576affe4c0800000000000000
+      internalID: -4255907800951695217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7b3b86540a914f0800000000000000
+      internalID: -857478034067572809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 129
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a1823f535bd24e0800000000000000
+      internalID: -2004747015792616831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a207afcc2d189fd40800000000000000
+      internalID: 5618664752503484458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 126
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e01d4bf07d60a60800000000000000
+      internalID: 7640030280338706078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 130
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c1e6f4133805a40800000000000000
+      internalID: 5354924204752772176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b709bb029e77b3560800000000000000
+      internalID: 7294555864616898683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 128
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d968f4076136eba0800000000000000
+      internalID: -6060101930045642282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c42e6bbd593d8df0800000000000000
+      internalID: -176421735658281784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280337765bc976380800000000000000
+      internalID: -8978035029201178494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60600860978989960800000000000000
+      internalID: 7608999216009971206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 128
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4faf50cb7c2d257e0800000000000000
+      internalID: -1778127147563091212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c0426cb51cb0db0800000000000000
+      internalID: -4824549975886918592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02680c20d772a7c0800000000000000
+      internalID: -4061552177959116274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314701af9190cee00800000000000000
+      internalID: 1075244418208920595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2493037c930881e90800000000000000
+      internalID: -7054747830632564414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cdb7cd1be2f2dd0800000000000000
+      internalID: -2508735125978882913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d277f566feb29aa00800000000000000
+      internalID: 768193518658090797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90674387964203ca0800000000000000
+      internalID: -6039287064896965111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851905d01b689f740800000000000000
+      internalID: 5186324540884554072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f0ffd67eb2abf10800000000000000
+      internalID: 2286188033826819876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e74848134796340800000000000000
+      internalID: 4857541429121285749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112baf07d1d5e1b40800000000000000
+      internalID: 5412866183176827409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c095a10ac8dc280800000000000000
+      internalID: -9021399859288535995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceee3dee25f187b80800000000000000
+      internalID: -8396927064177643796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c77a251eb57874c0800000000000000
+      internalID: -4289549185811056698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c478d25ff6f6220800000000000000
+      internalID: 2481325018525944859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8949e06fad2ab7a0800000000000000
+      internalID: -6360721292438976118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575182c918d556290800000000000000
+      internalID: -7897803560272259723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff7e8e04f203c840800000000000000
+      internalID: 5243037638428884981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a877655acd3bf080800000000000000
+      internalID: -9152653878474868575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 126
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3440c68901b9ab950800000000000000
+      internalID: 6465650710622766147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 128
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b1d7dab1c590820800000000000000
+      internalID: 2884938310252043033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b921b10c054878d50800000000000000
+      internalID: 6739500849738486427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc99f9fed22420e0800000000000000
+      internalID: -2295671568980140879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 128
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb58f0b81388b87a0800000000000000
+      internalID: -6373851101244979780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb9924d8cf6164e0800000000000000
+      internalID: -1990186651977409595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 126
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24007b8fad01a08d0800000000000000
+      internalID: -2879470479088353214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 126
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c741656b2466d63f0800000000000000
+      internalID: -905955513318632324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 128
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1909dece6c2bf76a0800000000000000
+      internalID: -6449239573923000175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 126
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59184750eec57e80800000000000000
+      internalID: -8181405685116298914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 87
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3297aca878c88b70800000000000000
+      internalID: 8901585084116079167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 87
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e632536a14b0bc7a0800000000000000
+      internalID: -6355974072514043026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 90
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f07cea3694c7890800000000000000
+      internalID: -7459006190349512955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 91
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaf9e771b906a520800000000000000
+      internalID: 2712866483362986658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 87
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537decf6c85ef2370800000000000000
+      internalID: 8300105029601122101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 96
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cf876e8c5b72150800000000000000
+      internalID: 5847842515628653606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 87
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74992b40a26863df0800000000000000
+      internalID: -200825618345846457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 103
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1c5d9e673a54d30800000000000000
+      internalID: 4415114740831207855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 96
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e66ce9a863158520800000000000000
+      internalID: 2703588491554219745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 93
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81766213e1637f70800000000000000
+      internalID: 9183791693032747402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 80
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c1c61de9ce59c60800000000000000
+      internalID: 7824420094488616090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 91
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8822e21b7dc1b00800000000000000
+      internalID: 800751989748304067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 80
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b00da4a806442410800000000000000
+      internalID: 1451361982856626352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 85
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02606d9738eb8a2d0800000000000000
+      internalID: -3267152057763232224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 82
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7045051c92e65ec90800000000000000
+      internalID: -7141180508510071801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 80
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b91c897cef4ee420800000000000000
+      internalID: 2661152306892642742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 92
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d961bbcea6ea880800000000000000
+      internalID: -8597817073620050570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 90
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16eb15c421bb2e310800000000000000
+      internalID: 1432913318721470049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 78
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c501c4727c1abe90800000000000000
+      internalID: -7009258592138099264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 79
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f850d1b5520d3e1d0800000000000000
+      internalID: -3322583241208298097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 81
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0626eaae75954090800000000000000
+      internalID: -8050864387589265909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 87
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3346187e5c5a904f0800000000000000
+      internalID: -861975584253582285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 87
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c07907b581f594f0800000000000000
+      internalID: -822485800321453881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 79
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432ea262a282abd70800000000000000
+      internalID: 9059597761903256116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 84
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eae63a209c9fae20800000000000000
+      internalID: 3364079589666515689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 83
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e703e7573d0bf690800000000000000
+      internalID: -7567440217517127706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 86
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec349fa88fd72650800000000000000
+      internalID: 6208176389507792105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 82
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d836327e95400f7a0800000000000000
+      internalID: -6345567090788572275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 93
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9adbf442c2f63590800000000000000
+      internalID: -7694695997120980321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 91
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ab3e4d8856c7ef0800000000000000
+      internalID: -109100652602082786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 78
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba992eefe1d8d2690800000000000000
+      internalID: -7625283429803583061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ba856bcdbce5350800000000000000
+      internalID: 6007463101771328349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 54
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5182d7b641ae7f0800000000000000
+      internalID: -582630749897222663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 46
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc129c87ff9b2db0800000000000000
+      internalID: -4815579490978489147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 56
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f01a0bcf9664ce0800000000000000
+      internalID: -1421332098372792460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 46
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92153f5f3d3a991e0800000000000000
+      internalID: -2190539612979244759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 48
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d491fb03738a7a0800000000000000
+      internalID: -6365777390784131691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ad2aef6e3fe2930800000000000000
+      internalID: 4120498882530695791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 41
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23ab60ef27f5f600800000000000000
+      internalID: 501578718522352427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 53
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57824da4b0f1b9df0800000000000000
+      internalID: -172510027363112843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 45
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21630ad91412a7c50800000000000000
+      internalID: 6663675164349183506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 48
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bf7b5ea6591f8e0800000000000000
+      internalID: -1661382501169890499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 53
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259de12dd5ba92680800000000000000
+      internalID: -8779297579136525998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 48
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77e050dd32c80e90800000000000000
+      internalID: -7059178845159495809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 52
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e841ac2afac9f60800000000000000
+      internalID: 8042496148286770761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 48
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf505ceea424ecef0800000000000000
+      internalID: -86058453272558084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 48
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c063d3e6690deddb0800000000000000
+      internalID: -4765142011198228980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 54
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57b5a78c6561bc10800000000000000
+      internalID: 2067545220746426206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 45
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80493bda4a50fa800800000000000000
+      internalID: 625725078074790920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 57
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99472d53945d05010800000000000000
+      internalID: 1175674013156013209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 47
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4fe48fe1966e2f0800000000000000
+      internalID: -943951490151680771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 48
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9320bcd7c47f2a0f0800000000000000
+      internalID: -1107050650479689159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 51
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da355f2fab0e26b30800000000000000
+      internalID: 4279229689500095405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 52
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dff9bb2dc1bb23e0800000000000000
+      internalID: -2077371308341329968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 48
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7370c859ff01fca70800000000000000
+      internalID: 8849310482718000951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_170
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 58
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955f2ed69d34c6c30800000000000000
+      internalID: 4353929540890981721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_171
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 57
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56fa2bda440ca000800000000000000
+      internalID: 48418415545349724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_172
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 52
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa3affa42dfb3f50800000000000000
+      internalID: 6862356791242144426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_173
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 48
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d4404c6543709e0800000000000000
+      internalID: -1655296790774919784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_174
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 40
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135acb9ecddcc87d0800000000000000
+      internalID: -2914728510117599951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_175
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 45
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e01e8c5626e96d0800000000000000
+      internalID: -2981837713971278214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_176
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 9
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f4990a160cb3aa0800000000000000
+      internalID: -6180134538097111256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_177
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 20
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28aeae0ea540b51b0800000000000000
+      internalID: -5666930917748577662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_178
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 9
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70722ba4b0aae6d30800000000000000
+      internalID: 4426662449226327815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_179
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 18
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b283b644abb9d5e50800000000000000
+      internalID: 6799762236713416747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_180
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 9
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22eeddfeeeee1f660800000000000000
+      internalID: 7417972771249843746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_181
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 19
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1372626432042bac0800000000000000
+      internalID: -3840937011948673231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_182
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 9
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f56852a85fc8ee0800000000000000
+      internalID: -1257360222259355767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_183
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 21
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14999053f310dc8d0800000000000000
+      internalID: -2824600020307044031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_184
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25e456167dcaa6d0800000000000000
+      internalID: -2978342296487664342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_185
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 21
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29af18f3b40fcf170800000000000000
+      internalID: 8213704026395638418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_186
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 9
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9f735236066be50800000000000000
+      internalID: 6824748264269019605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_187
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 21
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3043db477af8ec0800000000000000
+      internalID: -3562444660394425388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_188
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 16
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213762ddf14613270800000000000000
+      internalID: 8228468082199655186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_189
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 9
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae398db48200b850800000000000000
+      internalID: 6390610640377560749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_190
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 19
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479340faaae9ab5c0800000000000000
+      internalID: -4198869246651647628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_191
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 9
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6620aa58e61cc18a0800000000000000
+      internalID: -6332974295556685210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_192
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 20
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957c21059a6e72260800000000000000
+      internalID: 7072875354675922777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_193
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 9
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2e21ce5722e0760800000000000000
+      internalID: 7425910725447705290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_194
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 17
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ce06cafac943e40800000000000000
+      internalID: 5635301312072576110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_195
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 22
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c859ded4a0714fd00800000000000000
+      internalID: 1005453949834990988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_196
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 9
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff8d63d96245bc30800000000000000
+      internalID: 4374475635346477051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_197
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 21
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e5e00b26113f140800000000000000
+      internalID: 4752161147364204181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_198
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 4
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da45b09bfdc36e0d0800000000000000
+      internalID: -3393958337597188947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_199
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 5
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600077c7783f78470800000000000000
+      internalID: 8396947793489887238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_200
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 9
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75916bc3d24f08a60800000000000000
+      internalID: 7674402240168597847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_201
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 9
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2224d775b82d27870800000000000000
+      internalID: 8679230927806480930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_202
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 8
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178f8883234747fa0800000000000000
+      internalID: -5803886260728039311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_203
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 4
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcd531ff9dd5c040800000000000000
+      internalID: 4667380267855764724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_204
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 4
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2579a8364cdd564d0800000000000000
+      internalID: -3141861329467697326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_205
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 8
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab96e75580c2c26d0800000000000000
+      internalID: -3013985636311995974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_206
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 8
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80add1a622cbe0710800000000000000
+      internalID: 1661472168541542920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_207
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 7
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b31a49fdd4ec110800000000000000
+      internalID: 1283048566513810300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_208
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 4
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10142c430699b7fd0800000000000000
+      internalID: -2343110542635155199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_209
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 5
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78df248464aff0e00800000000000000
+      internalID: 1013303620948655495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_210
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 9
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8235d035a79a8a9b0800000000000000
+      internalID: -5068615037761006808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_211
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 9
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16c2eb729a6f1ea0800000000000000
+      internalID: -5899879809455831525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_212
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 7
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9969520baedb701d0800000000000000
+      internalID: -3384527779270388071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_213
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 15
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8007786fc3fc21ed0800000000000000
+      internalID: -2444663786967699448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skebmovment-Sheet_214
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7007f39a31d1ae270800000000000000
+      internalID: 8280462835155169287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
