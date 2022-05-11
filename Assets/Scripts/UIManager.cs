@@ -42,10 +42,19 @@ public class UIManager : MonoBehaviour
                                                    + ":" + (seconds < 10 ? "0" : "") + seconds.ToString();
     }
 
-    public void setBarRransparency(float a)
+    public void SetBarTransparency(float a)
     {
         var opacity = progressBar.GetComponent<SpriteRenderer>().color;
         opacity.a = a;
         progressBar.GetComponent<SpriteRenderer>().color = opacity;
+        
+        opacity = progressBar.GetComponent<Image>().color;
+        opacity.a = a;
+        progressBar.GetComponent<Image>().color = opacity;
+    }
+
+    public void SetProgressBar(float progressPercentage)
+    {
+        progressBar.GetComponent<Image>().fillAmount = progressPercentage / 100f;
     }
 }
