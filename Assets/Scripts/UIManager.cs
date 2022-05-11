@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject progressBar;
+    [SerializeField] private GameObject stageStateBar;
+    private float stageStateBarAmount = 0;
+
+    // temp variable should be a part of the game manager
+    private bool stageState = true;
     
 
     private void Awake()
@@ -31,6 +36,21 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         SetTimer();
+        if (stageState)
+        {
+            stageStateBarAmount += Time.deltaTime;
+            SetStageStateBar(stageStateBarAmount);
+        }
+        else
+        {
+            stageStateBarAmount -= Time.deltaTime;  
+            SetStageStateBar(stageStateBarAmount);
+        }
+
+        // temp key press
+        if (Input.GetKeyDown(KeyCode.Space))
+            stageState = !stageState;
+
     }
 
     private void SetTimer()
@@ -56,5 +76,10 @@ public class UIManager : MonoBehaviour
     public void SetProgressBar(float progressPercentage)
     {
         progressBar.GetComponent<Image>().fillAmount = progressPercentage / 100f;
+    }
+    
+    public void SetStageStateBar(float progressPercentage)
+    {
+        stageStateBar.GetComponent<Image>().fillAmount = progressPercentage / 10;
     }
 }
