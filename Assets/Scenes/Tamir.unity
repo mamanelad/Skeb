@@ -1967,7 +1967,7 @@ SpriteRenderer:
   m_SortingLayerID: -1162428035
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1137969254228130593, guid: 0f47922d80b61d340a5ba802b6abea03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a7573331e808a4428917a6748de664a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2005,7 +2005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a35276a763a624cabdc432e5d59c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 1
+  canDash: 0
   dashDistance: 2
   dashLayerMask:
     serializedVersion: 2
@@ -2020,7 +2021,7 @@ Animator:
   m_GameObject: {fileID: 1450418348}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e29687feb9ed98549a2531eae1023b5d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 795d9a68ef672d94b91b03a748c4bdb8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
