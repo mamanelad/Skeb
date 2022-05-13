@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private bool canDash;
     [SerializeField] private float dashDistance = 50;
+    [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private LayerMask dashLayerMask;
     
     private Rigidbody2D _rb;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _idleDirection = Vector2.down;
     private bool _dashStatus;
     [NonSerialized] public bool IsAttacking;
+    private bool _attackDash;
     private static readonly int State = Animator.StringToHash("State");
     private static readonly int WalkHorizontal = Animator.StringToHash("WalkHorizontal");
     private static readonly int WalkVertical = Animator.StringToHash("WalkVertical");
@@ -67,8 +69,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !IsAttacking)
         {
-            IsAttacking = true;
-            _playerState = PlayerState.Combat;
+            IsAttacking = true; // affects the animations
+            _playerState = PlayerState.Combat; // changes player state
+            _attackDash = true; // boolean used for attack dash
         }
         
     }
@@ -80,6 +83,9 @@ public class PlayerController : MonoBehaviour
 
         if (_moveDirection != Vector2.zero)
             _idleDirection = _moveDirection;
+
+        _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
+        _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
 
     private void PlayAnimation()
@@ -95,8 +101,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //_rb.velocity = _moveDirection * movementSpeed * Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        if (_playerState != PlayerState.Combat)
+            _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+
+        if (_attackDash)
+        {
+            var dashPosition = _rb.position + _idleDirection * attackDashDistance;
+            var hit = Physics2D.Raycast(transform.position, _idleDirection,
+                attackDashDistance, dashLayerMask);
+            if (hit.collider != null)
+                dashPosition = hit.point;
+
+            _rb.MovePosition(dashPosition);
+            _attackDash = false;
+        }
 
         if (_dashStatus)
         {
