@@ -14,7 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private bool canMoveWhileAttacking;
 
-    
+    [Header("Slippery Floor")]
+    [SerializeField] private bool slipperyFloor = true;
+    [SerializeField] private float friction = 1.5f;
+    [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
+
+
     [Header("Dash Settings")]
     [SerializeField] private bool canDash;
     [SerializeField] private LayerMask dashLayerMask;
@@ -107,12 +112,34 @@ public class PlayerController : MonoBehaviour
 
     private void SetMovementAndIdleDirection()
     {
-        _moveDirection.x = Input.GetAxis("Horizontal");
-        _moveDirection.y = Input.GetAxis("Vertical");
+        if  (Input.anyKey)  // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        {
+            _moveDirection.x = Input.GetAxis("Horizontal");
+            _moveDirection.y = Input.GetAxis("Vertical");
+
+            if (slipperyFloor)
+                _moveDirection *= speedScalerForSlipperyFloor;
+
+        }
+
+        else if (slipperyFloor) // slippery floor movement fade additions
+        {
+            var fade = Time.deltaTime / friction;
+            _moveDirection.x = _moveDirection.x == 0 ? 0 : _moveDirection.x > 0 ? _moveDirection.x - fade : _moveDirection.x + fade;
+            _moveDirection.y = _moveDirection.y == 0 ? 0 : _moveDirection.y > 0 ? _moveDirection.y - fade : _moveDirection.y + fade;
+            if (_moveDirection.magnitude < 0.1f)
+                _moveDirection = Vector2.zero;
+        }
+        else // non-slippery floor movement fade additions
+        {
+            _moveDirection.x = Input.GetAxis("Horizontal");
+            _moveDirection.y = Input.GetAxis("Vertical");
+        }
+
 
         if (_moveDirection != Vector2.zero)
             _idleDirection = _moveDirection;
-
+        
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
@@ -130,13 +157,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_playerState != PlayerState.Combat)
+        if (slipperyFloor || _playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
             
 
-        if (_attackDash)
+        // dash from attack occurs only on non-slippery floors
+        if (!slipperyFloor && _attackDash)
         {
             var dashPosition = _rb.position + _idleDirection * attackDashDistance;
             var hit = Physics2D.Raycast(transform.position, _idleDirection,
