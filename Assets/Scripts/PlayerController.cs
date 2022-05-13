@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,21 +7,39 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController _PlayerController;
     public enum PlayerState { Idle, Move, Combat }
-    
+
+    #region Inspector Control
+
+    [Header("Movement Control")]
     [SerializeField] private float movementSpeed = 5;
+    [SerializeField] private bool canMoveWhileAttacking;
+
+    
+    [Header("Dash Settings")]
     [SerializeField] private bool canDash;
+    [SerializeField] private LayerMask dashLayerMask;
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
-    [SerializeField] private LayerMask dashLayerMask;
+    [SerializeField] private float dashEffectDurationTime;
+    
+    #endregion
+    
+    #region Private Fields
     
     private Rigidbody2D _rb;
+    private TrailRenderer _dashEffect;
+    [NonSerialized] public bool IsAttacking;
     [NonSerialized] public Animator Animator;
     private PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
     private bool _dashStatus;
-    [NonSerialized] public bool IsAttacking;
     private bool _attackDash;
+
+    #endregion
+    
+    #region Animator Labels
+    
     private static readonly int State = Animator.StringToHash("State");
     private static readonly int WalkHorizontal = Animator.StringToHash("WalkHorizontal");
     private static readonly int WalkVertical = Animator.StringToHash("WalkVertical");
@@ -31,16 +48,19 @@ public class PlayerController : MonoBehaviour
     private static readonly int AttackHorizontal = Animator.StringToHash("AttackHorizontal");
     private static readonly int AttackVertical = Animator.StringToHash("AttackVertical");
 
+    #endregion
+    
     private void Awake()
     {
         if (_PlayerController == null)
             _PlayerController = this;
     }
 
-    void Start()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        _dashEffect = GetComponent<TrailRenderer>();
     }
     
     private void Update()
@@ -49,10 +69,13 @@ public class PlayerController : MonoBehaviour
         SetMovementAndIdleDirection();
         Attack();
         PlayAnimation();
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+
+        if (Input.GetButtonDown("Dash") && canDash)
+        {
             _dashStatus = true;
-        
+            StartCoroutine(ActivateDashTrail());
+        }
+
     }
 
     private void SetPlayerState()
@@ -67,13 +90,19 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !IsAttacking)
-        {
-            IsAttacking = true; // affects the animations
-            _playerState = PlayerState.Combat; // changes player state
-            _attackDash = true; // boolean used for attack dash
-        }
+        if (!Input.GetButtonDown("Attack") || IsAttacking) return;
         
+        IsAttacking = true; // affects the animations
+        _playerState = PlayerState.Combat; // changes player state
+        _attackDash = true; // boolean used for attack dash
+        //TODO: play attack sound here and damage enemies here
+    }
+
+    private IEnumerator ActivateDashTrail()
+    {
+        _dashEffect.emitting = true;
+        yield return new WaitForSeconds(dashEffectDurationTime);
+        _dashEffect.emitting = false;
     }
 
     private void SetMovementAndIdleDirection()
@@ -103,6 +132,9 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        else if (canMoveWhileAttacking)
+            _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+            
 
         if (_attackDash)
         {
