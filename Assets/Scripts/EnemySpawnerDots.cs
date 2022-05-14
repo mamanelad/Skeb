@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemySpawnerDots : MonoBehaviour
 {
-    [SerializeField] private GameObject[] monsters;
+    [SerializeField] private GameObject[] fireMonsters;
+    [SerializeField] private GameObject[] iceMonsters;
     private int monsterIndex = 0;
 
     [SerializeField] private Transform[] spawnerDots;
@@ -15,7 +16,6 @@ public class EnemySpawnerDots : MonoBehaviour
     private float _timer;
 
     [SerializeField] private int maxMonsterAmount = 8;
-    [SerializeField] private GameObject target;
 
     
 
@@ -41,8 +41,8 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         if (_monsterCounter >= maxMonsterAmount) return;
 
-        Instantiate(monsters[monsterIndex], spawnerDots[dotIndex].position, Quaternion.identity);
-        monsterIndex = (dotIndex + 1) % monsters.Length;
+        Instantiate(fireMonsters[monsterIndex], spawnerDots[dotIndex].position, Quaternion.identity);
+        monsterIndex = (dotIndex + 1) % fireMonsters.Length;
         dotIndex = (dotIndex + 1) % spawnerDots.Length;
         _monsterCounter += 1;
         _timer = maxTimeToSpawn;
@@ -51,5 +51,10 @@ public class EnemySpawnerDots : MonoBehaviour
     public void DecreaseMonster()
     {
         _monsterCounter -= 1;
+    }
+
+    public void CreatMonster(Transform pos)
+    {
+        
     }
 }
