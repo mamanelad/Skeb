@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     private static UIManager _shared;
     private float _time = 0;
     
-    
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private GameObject stageStateBar;
