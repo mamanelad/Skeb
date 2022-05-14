@@ -49,6 +49,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Arena
+    uniqueID: 2425533777
+    locked: 0
   - name: Game Objects
     uniqueID: 217262775
     locked: 0
