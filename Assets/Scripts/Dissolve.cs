@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
+    private Enemy enemyFather;
+
     private Material material;
 
     private bool isDissolving = false;
@@ -14,14 +16,12 @@ public class Dissolve : MonoBehaviour
     {
         // Get a reference to the material
         material = GetComponent<SpriteRenderer>().material;
+        enemyFather = GetComponentInParent<Enemy>();
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isDissolving = true;
-        }
 
         if (isDissolving)
         {
@@ -31,6 +31,7 @@ public class Dissolve : MonoBehaviour
             {
                 fade = 0f;
                 isDissolving = false;
+                Destroy(enemyFather.gameObject);
             }
 
             // Set the property
@@ -38,8 +39,12 @@ public class Dissolve : MonoBehaviour
         }
         
         material.SetFloat("Fade", fade);
-
-
+        
+    }
+    
+     public void StartDissolve()
+    {
+        isDissolving = true;
     }
     
 }

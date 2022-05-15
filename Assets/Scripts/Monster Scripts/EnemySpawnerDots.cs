@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class EnemySpawnerDots : MonoBehaviour
 {
-    [SerializeField] private GameObject[] fireMonsters;
-    [SerializeField] private GameObject[] iceMonsters;
+    [SerializeField] private GameObject _lightningStrike;
+    [SerializeField] private GameObject[] monsters;
     private int monsterIndex = 0;
 
+
     [SerializeField] private Transform[] spawnerDots;
-    private int dotIndex = 0;
+
+    private int dotIndexBolt = 0;
+    private int dotIndexMonster = 0;
+
 
     [SerializeField] private float maxTimeToSpawn = 4;
 
@@ -17,7 +21,6 @@ public class EnemySpawnerDots : MonoBehaviour
 
     [SerializeField] private int maxMonsterAmount = 8;
 
-    
 
     private int _monsterCounter = 0;
 
@@ -32,19 +35,17 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         _timer -= Time.deltaTime;
         if (_timer <= 0)
-            SpawnMonsters();
-        
+            SpawnLightNingBolt();
     }
 
 
-    private void SpawnMonsters()
+    private void SpawnLightNingBolt()
     {
         if (_monsterCounter >= maxMonsterAmount) return;
-
-        Instantiate(fireMonsters[monsterIndex], spawnerDots[dotIndex].position, Quaternion.identity);
-        monsterIndex = (dotIndex + 1) % fireMonsters.Length;
-        dotIndex = (dotIndex + 1) % spawnerDots.Length;
         _monsterCounter += 1;
+        var lightningStrike = Instantiate(_lightningStrike, spawnerDots[dotIndexBolt].position, Quaternion.identity);
+        dotIndexBolt = (dotIndexBolt + 1) % spawnerDots.Length;
+        lightningStrike.transform.SetParent(gameObject.transform);
         _timer = maxTimeToSpawn;
     }
 
@@ -53,8 +54,12 @@ public class EnemySpawnerDots : MonoBehaviour
         _monsterCounter -= 1;
     }
 
-    public void CreatMonster(Transform pos)
+    public void CreatMonster()
     {
-        
+        var monster = Instantiate(monsters[monsterIndex], spawnerDots[dotIndexMonster].position, Quaternion.identity);
+        monster.transform.SetParent(gameObject.transform);
+
+        monsterIndex = (monsterIndex + 1) % monsters.Length;
+        dotIndexMonster = (dotIndexMonster + 1) % spawnerDots.Length;
     }
 }
