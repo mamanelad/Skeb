@@ -6,9 +6,9 @@ public class Dissolve : MonoBehaviour
 {
     private Material material;
 
-    private bool isDissolving = false;
+    private bool isDissolving;
     [Range(0,1)]
-    [SerializeField] float fade = 1f;
+    public float fade = 1f;
 
     void Start()
     {

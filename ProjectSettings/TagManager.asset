@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Bullet
   - Wall
+  - Fire Object
+  - Ice Object
+  - Reflection
   layers:
   - Default
   - TransparentFX

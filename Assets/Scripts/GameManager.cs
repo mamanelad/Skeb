@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum WorldState {Ice, Fire};
+    public enum WorldState {None, Ice, Fire};
 
-    [NonSerialized]public WorldState GameState;
+    public WorldState CurrentState;
     
-    private static GameManager _shared;
+    public static GameManager Shared;
     private void Awake()
     {
-        if (_shared == null)
-            _shared = this;
+        if (Shared == null)
+            Shared = this;
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+            CurrentState = WorldState.Ice;
+        
+        if (Input.GetKeyDown(KeyCode.O))
+            CurrentState = WorldState.Fire;
+    }
 }

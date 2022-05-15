@@ -4,37 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public static PlayerController _PlayerController;
-    public enum PlayerState { Idle, Move, Combat }
+
+    public enum PlayerState
+    {
+        Idle,
+        Move,
+        Combat
+    }
 
     #region Inspector Control
 
-    [Header("Movement Control")]
-    [SerializeField] private float movementSpeed = 5;
+    [Header("Movement Control")] [SerializeField]
+    private float movementSpeed = 5;
+
     [SerializeField] private bool canMoveWhileAttacking;
 
-    [Header("Slippery Floor")]
-    [SerializeField] private bool slipperyFloor = true;
+    [Header("Slippery Floor")] [SerializeField]
+    private bool slipperyFloor = true;
+
     [SerializeField] private float friction = 1.5f;
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")]
-    [SerializeField] private bool canDash;
+    [Header("Dash Settings")] [SerializeField]
+    private bool canDash;
+
     [SerializeField] private LayerMask dashLayerMask;
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private float dashEffectDurationTime;
-    
+
     #endregion
-    
+
     #region Private Fields
-    
+
     private Rigidbody2D _rb;
     private TrailRenderer _dashEffect;
     [NonSerialized] public bool IsAttacking;
     [NonSerialized] public Animator Animator;
+    private GameManager.WorldState _currentWorldState;
     private PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
@@ -42,9 +51,9 @@ public class PlayerController : MonoBehaviour
     private bool _attackDash;
 
     #endregion
-    
+
     #region Animator Labels
-    
+
     private static readonly int State = Animator.StringToHash("State");
     private static readonly int WalkHorizontal = Animator.StringToHash("WalkHorizontal");
     private static readonly int WalkVertical = Animator.StringToHash("WalkVertical");
@@ -54,7 +63,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int AttackVertical = Animator.StringToHash("AttackVertical");
 
     #endregion
-    
+
     private void Awake()
     {
         if (_PlayerController == null)
@@ -67,9 +76,10 @@ public class PlayerController : MonoBehaviour
         Animator = GetComponent<Animator>();
         _dashEffect = GetComponent<TrailRenderer>();
     }
-    
+
     private void Update()
     {
+        SetWorldState();
         SetPlayerState();
         SetMovementAndIdleDirection();
         Attack();
@@ -80,7 +90,31 @@ public class PlayerController : MonoBehaviour
             _dashStatus = true;
             StartCoroutine(ActivateDashTrail());
         }
+    }
 
+    private void SetWorldState()
+    {
+        _currentWorldState = GameManager.Shared.CurrentState;
+
+        switch (_currentWorldState)
+        {
+            case GameManager.WorldState.None:
+                break;
+
+            case GameManager.WorldState.Fire:
+                slipperyFloor = false;
+                canMoveWhileAttacking = false;
+                break;
+
+            case GameManager.WorldState.Ice:
+                slipperyFloor = true;
+                canMoveWhileAttacking = true;
+                break;
+
+            default:
+                Debug.Log("ArenaScript - Couldn't switch world");
+                break;
+        }
     }
 
     private void SetPlayerState()
@@ -96,7 +130,7 @@ public class PlayerController : MonoBehaviour
     private void Attack()
     {
         if (!Input.GetButtonDown("Attack") || IsAttacking) return;
-        
+
         IsAttacking = true; // affects the animations
         _playerState = PlayerState.Combat; // changes player state
         _attackDash = true; // boolean used for attack dash
@@ -112,21 +146,23 @@ public class PlayerController : MonoBehaviour
 
     private void SetMovementAndIdleDirection()
     {
-        if  (Input.anyKey)  // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (
+            Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             _moveDirection.x = Input.GetAxis("Horizontal");
             _moveDirection.y = Input.GetAxis("Vertical");
 
             if (slipperyFloor)
                 _moveDirection *= speedScalerForSlipperyFloor;
-
         }
 
         else if (slipperyFloor) // slippery floor movement fade additions
         {
             var fade = Time.deltaTime / friction;
-            _moveDirection.x = _moveDirection.x == 0 ? 0 : _moveDirection.x > 0 ? _moveDirection.x - fade : _moveDirection.x + fade;
-            _moveDirection.y = _moveDirection.y == 0 ? 0 : _moveDirection.y > 0 ? _moveDirection.y - fade : _moveDirection.y + fade;
+            _moveDirection.x = _moveDirection.x == 0 ? 0 :
+                _moveDirection.x > 0 ? _moveDirection.x - fade : _moveDirection.x + fade;
+            _moveDirection.y = _moveDirection.y == 0 ? 0 :
+                _moveDirection.y > 0 ? _moveDirection.y - fade : _moveDirection.y + fade;
             if (_moveDirection.magnitude < 0.1f)
                 _moveDirection = Vector2.zero;
         }
@@ -139,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
         if (_moveDirection != Vector2.zero)
             _idleDirection = _moveDirection;
-        
+
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
@@ -161,7 +197,7 @@ public class PlayerController : MonoBehaviour
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-            
+
 
         // dash from attack occurs only on non-slippery floors
         if (!slipperyFloor && _attackDash)
