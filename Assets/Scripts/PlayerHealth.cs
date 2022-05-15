@@ -13,11 +13,6 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UpdateHealth(float mod)
     {
@@ -36,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void KillPlayer()
     {
+        Debug.Log("Player died");
         
     }
 }

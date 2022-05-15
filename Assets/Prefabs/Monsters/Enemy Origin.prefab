@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1783966675860034950}
   - component: {fileID: 6224905252476739303}
   m_Layer: 10
-  m_Name: EnemyOrigin
+  m_Name: Enemy Origin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 0.23, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1783966675860034953
@@ -206,9 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaCollider2D: {fileID: 1783966675860034949}
+  _currHealth: 0
   startHealth: 100
-  _enemySpawnerDots: {fileID: 0}
+  fireMonster: {fileID: 0}
+  iceMonster: {fileID: 0}
 --- !u!114 &6224905252476739303
 MonoBehaviour:
   m_ObjectHideFlags: 0

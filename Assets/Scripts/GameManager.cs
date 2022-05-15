@@ -18,5 +18,16 @@ public class GameManager : MonoBehaviour
         CurrentState = WorldState.Fire;
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            CurrentState = CurrentState switch
+            {
+                WorldState.Fire => WorldState.Ice,
+                WorldState.Ice => WorldState.Fire,
+                _ => CurrentState
+            };
+        }
+    }
 }
