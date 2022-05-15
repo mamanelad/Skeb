@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum WorldState {None, Ice, Fire};
+    public enum WorldState {None ,Ice, Fire};
 
     public WorldState CurrentState;
     
@@ -14,14 +14,9 @@ public class GameManager : MonoBehaviour
     {
         if (Shared == null)
             Shared = this;
+
+        CurrentState = WorldState.Fire;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-            CurrentState = WorldState.Ice;
-        
-        if (Input.GetKeyDown(KeyCode.O))
-            CurrentState = WorldState.Fire;
-    }
+    
 }

@@ -18,10 +18,12 @@ public class LightningStrike : MonoBehaviour
     private Color _color;
 
     [SerializeField] private float speed = 0.1f;
-    [SerializeField] private EnemySpawnerDots _enemySpawner;
+    private EnemySpawnerDots _enemySpawner;
     
     [Range(0, 1)] [SerializeField] float fade = 1f;
     [Range(0, 1)] [SerializeField] float show = 0f;
+
+    [SerializeField] private GameObject father;
 
 
     public bool Lock = true;
@@ -37,7 +39,11 @@ public class LightningStrike : MonoBehaviour
 
     }
 
-    
+    private void Start()
+    {
+        _enemySpawner = GetComponentInParent<EnemySpawnerDots>();
+    }
+
 
     void FixedUpdate()
     {
@@ -63,7 +69,11 @@ public class LightningStrike : MonoBehaviour
                 material.SetFloat("Fade", fade);
                 fade -= speed;
                 if (fade <= 0)
-                    Destroy(gameObject);
+                {
+                    _enemySpawner.CreatMonster();
+                    Destroy(father);
+                }
+                    
                 break;
         }
         

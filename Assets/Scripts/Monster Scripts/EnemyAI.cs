@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour {
 	
 	//The AI's speed per second
 	[SerializeField] float maxSpeed = 800f;
-	[SerializeField] float minSpeed = 100f;
+	[SerializeField] float minSpeed = 250f;
 	private float _speed;
 	
 	[SerializeField] ForceMode2D fMode;
@@ -120,6 +120,7 @@ public class EnemyAI : MonoBehaviour {
 	
 	void FixedUpdate () {
 		
+		
 		if (target == null) {
 			if (!_searchingPlayer)
 			{
@@ -149,6 +150,8 @@ public class EnemyAI : MonoBehaviour {
 		dir *= curSpeed * Time.fixedDeltaTime;
 		
 		//Move the AI
+
+
 		rb.AddForce (dir, fMode);
 		
 		float dist = Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]);

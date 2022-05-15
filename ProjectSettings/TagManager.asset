@@ -61,9 +61,6 @@ TagManager:
   - name: Player
     uniqueID: 3132539261
     locked: 0
-  - name: GUI
-    uniqueID: 2084969665
-    locked: 0
   - name: Enemy
     uniqueID: 292374641
     locked: 0
@@ -72,4 +69,7 @@ TagManager:
     locked: 0
   - name: Bolt
     uniqueID: 663187529
+    locked: 0
+  - name: GUI
+    uniqueID: 2084969665
     locked: 0
