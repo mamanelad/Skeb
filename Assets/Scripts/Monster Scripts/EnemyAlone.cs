@@ -9,9 +9,11 @@ public class EnemyAlone : MonoBehaviour
 
     private Enemy enemyFather;
     private Animator _animator;
-    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private float attackRangeCheck = 0.5f;
+    [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
-
+    [SerializeField] private GameObject energyBall;
+    
     private GameObject _player;
     private bool isAttacking = false;
     private bool isDead = false;
@@ -39,8 +41,9 @@ public class EnemyAlone : MonoBehaviour
     
     private void DetectPlayer()
     {
-        var dist = Vector3.Distance(_player.transform.position, transform.position);
-        if (dist <= attackRange && !isAttacking)
+        if (isAttacking) return;
+            var dist = Vector3.Distance(_player.transform.position, transform.position);
+        if (dist <= attackRangeCheck)
         {
             AttackPlayer();
             isAttacking = true;
@@ -56,7 +59,19 @@ public class EnemyAlone : MonoBehaviour
     
     public void DamagePlayer()
     {
-        _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+        
+        var dist = Vector3.Distance(_player.transform.position, transform.position);
+        if (dist <= attackRangeHit)
+        {
+            _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+        }
+        
+       isAttacking = false;
+    }
+
+    public void DamagePlayerEnergyBall()
+    {
+        Instantiate(energyBall, transform.position, Quaternion.identity);
         isAttacking = false;
     }
 }

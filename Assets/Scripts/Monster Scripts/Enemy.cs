@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
     {
         return _currHealth;
     }
+    
     public void DamageEnemy(int damage)
     {
         
@@ -96,9 +97,7 @@ public class Enemy : MonoBehaviour
 
     
 
-    private void AnotherEnemyInteraction(Collider2D other)
-    {
-    }
+
 
     private void ChangeState()
     {

@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaCollider2D: {fileID: 0}
+  _currHealth: 100
   startHealth: 100
   fireMonster: {fileID: 5202143678251705748}
   iceMonster: {fileID: 9081545722209158012}
@@ -220,6 +220,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 341876229000772426}
     m_Modifications:
+    - target: {fileID: 2344180383526235078, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4006027641648737929, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -272,6 +276,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6469212699375943030, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a991ca810a0a4b044bbd5ce197588470, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
 --- !u!1 &5202143678251705748 stripped
