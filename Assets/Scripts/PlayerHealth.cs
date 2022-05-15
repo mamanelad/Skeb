@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private float health = 0f;
+    private float _health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
     void Start()
     {
-        health = maxHealth;
+        _health = maxHealth;
     }
 
 
     public void UpdateHealth(float mod)
     {
-        health += mod;
-
-        if (health > maxHealth)
+        _health += mod;
+        
+        if (_health > maxHealth)
         {
-            health = maxHealth;
+            _health = maxHealth;
         }
-        else if (health <= 0)
+        else if (_health <= 0)
         {
-            health = 0;
+            _health = 0;
             KillPlayer();
         }
+
+        var lifeBarFillPercentage = _health / maxHealth * 100;
+        UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
     }
 
     private void KillPlayer()
     {
-        Debug.Log("Player died");
-        
     }
 }

@@ -9,46 +9,54 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    private static UIManager _shared;
+    public static UIManager Shared;
     private float _time = 0;
     
+    [Header("Timer & Score")]
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameObject progressBar;
+    
+    [Header("Life Bar")]
+    [SerializeField] private GameObject lifeBar;
+    [SerializeField] private GameObject lifeBarDelay;
+    
+    [Header("Stage State")]
     [SerializeField] private GameObject stageStateBar;
-    private float stageStateBarAmount = 0;
+    private float _stageStateBarAmount = 0;
 
     // temp variable should be a part of the game manager
-    private bool stageState = true;
+    private bool _stageState = true;
     
 
     private void Awake()
     {
-        if (_shared == null)
-            _shared = this;
+        if (Shared == null)
+            Shared = this;
     }
 
     private void Start()
     {
-        
+        lifeBar.GetComponent<Image>().fillAmount = 1f;
+        lifeBarDelay.GetComponent<Image>().fillAmount = 1f;
     }
-    
+
     private void Update()
     {
         SetTimer();
-        if (stageState)
+        SetLifeBarDelay();
+        if (_stageState)
         {
-            stageStateBarAmount += Time.deltaTime;
-            SetStageStateBar(stageStateBarAmount);
+            _stageStateBarAmount += Time.deltaTime;
+            SetStageStateBar(_stageStateBarAmount);
         }
         else
         {
-            stageStateBarAmount -= Time.deltaTime;  
-            SetStageStateBar(stageStateBarAmount);
+            _stageStateBarAmount -= Time.deltaTime;  
+            SetStageStateBar(_stageStateBarAmount);
         }
 
         // temp key press
         if (Input.GetKeyDown(KeyCode.Space))
-            stageState = !stageState;
+            _stageState = !_stageState;
 
     }
 
@@ -63,18 +71,37 @@ public class UIManager : MonoBehaviour
 
     public void SetBarTransparency(float a)
     {
-        var opacity = progressBar.GetComponent<SpriteRenderer>().color;
+        var opacity = lifeBar.GetComponent<SpriteRenderer>().color;
         opacity.a = a;
-        progressBar.GetComponent<SpriteRenderer>().color = opacity;
+        lifeBar.GetComponent<SpriteRenderer>().color = opacity;
         
-        opacity = progressBar.GetComponent<Image>().color;
+        opacity = lifeBar.GetComponent<Image>().color;
         opacity.a = a;
-        progressBar.GetComponent<Image>().color = opacity;
+        lifeBar.GetComponent<Image>().color = opacity;
+        
+        opacity = lifeBarDelay.GetComponent<SpriteRenderer>().color;
+        opacity.a = a;
+        lifeBarDelay.GetComponent<SpriteRenderer>().color = opacity;
+        
+        opacity = lifeBarDelay.GetComponent<Image>().color;
+        opacity.a = a;
+        lifeBarDelay.GetComponent<Image>().color = opacity;
     }
 
-    public void SetProgressBar(float progressPercentage)
+    public void SetLifeBar(float progressPercentage)
     {
-        progressBar.GetComponent<Image>().fillAmount = progressPercentage / 100f;
+        lifeBar.GetComponent<Image>().fillAmount = progressPercentage / 100f;
+    }
+
+    private void SetLifeBarDelay()
+    {
+        var lifeBarFill = lifeBar.GetComponent<Image>().fillAmount;
+        var lifeBarDelayFill = lifeBarDelay.GetComponent<Image>().fillAmount;
+        var barEmptyScaler = Time.deltaTime * 0.1f;
+        
+        if (!(lifeBarDelayFill > lifeBarFill)) return;
+        lifeBarDelayFill = Mathf.Max(lifeBarDelayFill - barEmptyScaler, lifeBarFill);
+        lifeBarDelay.GetComponent<Image>().fillAmount = lifeBarDelayFill;
     }
     
     public void SetStageStateBar(float progressPercentage)

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6461371021131824831}
   m_Layer: 0
   m_Name: Warrior
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaCollider2D: {fileID: 0}
+  _currHealth: 0
   startHealth: 100
   fireMonster: {fileID: 5202143678251705748}
   iceMonster: {fileID: 9081545722209158012}

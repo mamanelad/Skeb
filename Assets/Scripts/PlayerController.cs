@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,12 +14,20 @@ public class PlayerController : MonoBehaviour
         Combat
     }
 
+    private enum AttackStatus
+    {
+        First,
+        Second,
+        Special
+    }
+
     #region Inspector Control
 
-    [Header("Movement Control")] [SerializeField]
-    private float movementSpeed = 5;
-
+    [Header("Movement Control")] 
+    [SerializeField] private float movementSpeed = 5;
+    [SerializeField] private GameObject hitBox;
     [SerializeField] private bool canMoveWhileAttacking;
+    // [SerializeField] private float knockBackDistance;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -44,11 +53,14 @@ public class PlayerController : MonoBehaviour
     [NonSerialized] public bool IsAttacking;
     [NonSerialized] public Animator Animator;
     private GameManager.WorldState _currentWorldState;
+    private AttackStatus _attackStatus = AttackStatus.First;
     private PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
+    // private bool _knockBackStatus;
     private bool _dashStatus;
     private bool _attackDash;
+    private List<GameObject> _monstersInRange;
 
     #endregion
 
@@ -61,6 +73,11 @@ public class PlayerController : MonoBehaviour
     private static readonly int IdleVertical = Animator.StringToHash("IdleVertical");
     private static readonly int AttackHorizontal = Animator.StringToHash("AttackHorizontal");
     private static readonly int AttackVertical = Animator.StringToHash("AttackVertical");
+
+    public PlayerController(List<GameObject> monstersInRange)
+    {
+        _monstersInRange = monstersInRange;
+    }
 
     #endregion
 
@@ -82,6 +99,7 @@ public class PlayerController : MonoBehaviour
         SetWorldState();
         SetPlayerState();
         SetMovementAndIdleDirection();
+        SetHitBoxRotation();
         Attack();
         PlayAnimation();
 
@@ -121,6 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState == PlayerState.Combat)
             return;
+        _attackStatus = AttackStatus.First;
         if (_moveDirection.sqrMagnitude > 0.01f)
             _playerState = PlayerState.Move;
         else
@@ -134,7 +153,28 @@ public class PlayerController : MonoBehaviour
         IsAttacking = true; // affects the animations
         _playerState = PlayerState.Combat; // changes player state
         _attackDash = true; // boolean used for attack dash
-        //TODO: play attack sound here and damage enemies here
+        //TODO: play attack sound here
+        if (_monstersInRange != null)
+            foreach (var monster in _monstersInRange)
+            {
+                //TODO: choose player damage
+                var monsterController = monster.GetComponent<Enemy>();
+                if (monsterController != null)
+                    monsterController.DamageEnemy(CalculateDamage());
+            }
+
+        _attackStatus++;
+    }
+
+    private int CalculateDamage()
+    {
+        return _attackStatus switch
+        {
+            AttackStatus.First => 20,
+            AttackStatus.Second => 30,
+            AttackStatus.Special => 40,
+            _ => 0
+        };
     }
 
     private IEnumerator ActivateDashTrail()
@@ -180,6 +220,14 @@ public class PlayerController : MonoBehaviour
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
 
+    private void SetHitBoxRotation()
+    {
+        var hitBoxAngle = Vector2.SignedAngle(Vector2.down, _idleDirection);
+        var hitBoxEulerAngles = hitBox.transform.eulerAngles;
+        hitBoxEulerAngles.z = hitBoxAngle;
+        hitBox.transform.eulerAngles = hitBoxEulerAngles;
+    }
+
     private void PlayAnimation()
     {
         Animator.SetInteger(State, (int) _playerState);
@@ -211,6 +259,19 @@ public class PlayerController : MonoBehaviour
             _rb.MovePosition(dashPosition);
             _attackDash = false;
         }
+        
+        /*// knock back from attack
+        if (_knockBackStatus)
+        {
+            var dashPosition = _rb.position + _idleDirection * knockBackDistance * -1;
+            var hit = Physics2D.Raycast(transform.position, _idleDirection,
+                attackDashDistance, dashLayerMask);
+            if (hit.collider != null)
+                dashPosition = hit.point;
+
+            _rb.MovePosition(dashPosition);
+            _knockBackStatus = false;
+        }*/
 
         if (_dashStatus)
         {
@@ -228,5 +289,29 @@ public class PlayerController : MonoBehaviour
     public void SetPlayerState(PlayerState status)
     {
         _playerState = status;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var monList = _monstersInRange ?? new List<GameObject>(); 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            var enemy = other.gameObject;
+            if(!monList.Contains(enemy))
+                monList.Add(enemy);
+        }
+        _monstersInRange = monList;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        var monList = _monstersInRange ?? new List<GameObject>(); 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            var enemy = other.gameObject;
+            if(monList.Contains(enemy))
+                monList.Remove(enemy);
+        }
+        _monstersInRange = monList;
     }
 }

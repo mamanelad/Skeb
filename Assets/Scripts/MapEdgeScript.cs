@@ -18,11 +18,13 @@ public class MapEdgeScript : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        makeProgressBarTransparent.Invoke();
+        if (other.gameObject.CompareTag("Player"))
+            makeProgressBarTransparent.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        makeProgressBarNotTransparent.Invoke();
+        if (other.gameObject.CompareTag("Player"))
+            makeProgressBarNotTransparent.Invoke();
     }
 }

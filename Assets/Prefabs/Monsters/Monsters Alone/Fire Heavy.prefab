@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 3
-  attackDamage: 50
+  attackDamage: 10
 --- !u!1 &9041526998120008391
 GameObject:
   m_ObjectHideFlags: 0
