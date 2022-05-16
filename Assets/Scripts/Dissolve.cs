@@ -1,50 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Dissolve : MonoBehaviour
 {
-    private Enemy enemyFather;
-
-    private Material material;
-
-    private bool isDissolving;
-    [Range(0,1)]
-    public float fade = 1f;
-
-    void Start()
+    private Enemy _enemyFather;
+    private Material _material;
+    [Range(0, 1)] public float fade = 1f;
+    private bool _isDissolving;
+    private static readonly int Fade = Shader.PropertyToID("Fade");
+    
+    private void Start()
     {
         // Get a reference to the material
-        material = GetComponent<SpriteRenderer>().material;
-        enemyFather = GetComponentInParent<Enemy>();
-
+        _material = GetComponent<SpriteRenderer>().material;
+        _enemyFather = GetComponentInParent<Enemy>();
     }
 
-    void Update()
+    private void Update()
     {
-
-        if (isDissolving)
+        if (_isDissolving)
         {
             fade -= Time.deltaTime;
 
             if (fade <= 0f)
             {
                 fade = 0f;
-                isDissolving = false;
-                Destroy(enemyFather.gameObject);
+                _isDissolving = false;
+                Destroy(_enemyFather.gameObject);
             }
 
             // Set the property
-            material.SetFloat("Fade", fade);
+            _material.SetFloat(Fade, fade);
         }
-        
-        material.SetFloat("Fade", fade);
-        
+
+        _material.SetFloat(Fade, fade);
     }
-    
-     public void StartDissolve()
+
+    public void StartDissolve()
     {
-        isDissolving = true;
+        _isDissolving = true;
     }
-    
 }

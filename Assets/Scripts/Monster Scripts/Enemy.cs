@@ -1,34 +1,26 @@
-using System;
 using UnityEngine;
-using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    
-    [SerializeField] private float _currHealth;
-    [SerializeField] private float startHealth = 100;
-
+    private GameObject _player;
     private EnemySpawnerDots _enemySpawnerDots;
+    private Animator _fireMonsterAnimator;
+    private Animator _iceMonsterAnimator;
+    private GameManager.WorldState _state;
 
     [SerializeField] private GameObject fireMonster;
     [SerializeField] private GameObject iceMonster;
-    private Animator fireMonsterAnimator;
-    private Animator IceMonsterAnimator;
+    [SerializeField] private float currHealth;
+    [SerializeField] private float startHealth = 100;
 
-    private GameObject _player;
-    private GameManager.WorldState _state;
+    private static readonly int Damage = Animator.StringToHash("Demage");
 
-
-    
-    
-
-    
 
     private void Start()
     {
-        fireMonsterAnimator = fireMonster.GetComponent<Animator>();
-        IceMonsterAnimator = iceMonster.GetComponent<Animator>();
-        _currHealth = startHealth;
+        _fireMonsterAnimator = fireMonster.GetComponent<Animator>();
+        _iceMonsterAnimator = iceMonster.GetComponent<Animator>();
+        currHealth = startHealth;
         _player = GameObject.FindGameObjectWithTag("Player");
         _enemySpawnerDots = FindObjectOfType<EnemySpawnerDots>();
         ChangeState();
@@ -38,68 +30,68 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (_state != GameManager.Shared.CurrentState)
-        {
             ChangeState();
-        }
 
-        if (_player.transform.position.x < transform.position.x )
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        
-        else if (_player.transform.position.x > transform.position.x)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        
-        
+        SideHandler();
     }
 
 
+    /**
+     * Make the enemy direction towards the player.
+     */
+    private void SideHandler()
+    {
+        if (_player.transform.position.x < transform.position.x)
+            transform.localScale = new Vector3(1, 1, 1);
+
+        else if (_player.transform.position.x > transform.position.x)
+            transform.localScale = new Vector3(-1, 1, 1);
+    }
 
 
+    /**
+     * A getter function for the health amount.
+     */
     public float GetHealth()
     {
-        return _currHealth;
+        return currHealth;
     }
+
+    /**
+     * Decreasing the enemy health and trigger the right damage animation.
+     */
     public void DamageEnemy(int damage)
     {
-        
-        _currHealth -= damage;
+        currHealth -= damage;
         switch (_state)
         {
             case GameManager.WorldState.Fire:
-                fireMonsterAnimator.SetTrigger("Demage");
+                _fireMonsterAnimator.SetTrigger(Damage);
                 break;
 
             case GameManager.WorldState.Ice:
-                IceMonsterAnimator.SetTrigger("Demage");
+                _iceMonsterAnimator.SetTrigger(Damage);
                 break;
         }
-        
-        if (_currHealth <= 0)
-        {
+
+        if (currHealth <= 0)
             KillEnemy();
-        }
-        
-        
-        
-        
     }
 
 
+    /**
+     * Decreasing the amount of enemies in the enemies counter spawner and lock the enemy movement.
+     */
     private void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
         _enemySpawnerDots.DecreaseMonster();
     }
 
-    
-
-    private void AnotherEnemyInteraction(Collider2D other)
-    {
-    }
-
+    /**
+     * This function on charge of changing the enemy state,
+     * that means switch between which monster is shown.
+     */
     private void ChangeState()
     {
         _state = GameManager.Shared.CurrentState;
@@ -116,6 +108,4 @@ public class Enemy : MonoBehaviour
                 break;
         }
     }
-
-    
 }

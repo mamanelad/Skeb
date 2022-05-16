@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7380415967414330440}
   - component: {fileID: 7380415967414330441}
   - component: {fileID: 2940326492745854756}
+  - component: {fileID: 7328550441495400171}
+  - component: {fileID: 6286709005262964227}
   m_Layer: 10
-  m_Name: Skull Ice One
+  m_Name: Skull Ice
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1162428035
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e39742556f30e4545b046e9ad01369b3, type: 3}
+  m_Sprite: {fileID: -5036585350102904855, guid: 064ded6170d65a5409268b81c81642c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,6 +99,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: 1
+--- !u!95 &7328550441495400171
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380415967414330445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5810fdfd47893b649b606871ef7de5dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6286709005262964227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380415967414330445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c986d1cf259306479278d373f1423db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRangeCheck: 2
+  attackRangeHit: 1
+  attackDamage: 50
+  energyBall: {fileID: 0}
 --- !u!1001 &3099417843671795567
 PrefabInstance:
   m_ObjectHideFlags: 0
