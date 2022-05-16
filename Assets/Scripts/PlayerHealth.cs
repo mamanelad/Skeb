@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,8 @@ public class PlayerHealth : MonoBehaviour
 {
     #region Private Fields
 
-    private float _health;
+    [SerializeField] private MenuManager _menuManager;
+    [SerializeField] private float _health;
     private bool _isDead;
     #endregion
 
@@ -22,8 +24,17 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (_health <= 0 )
+        {
+            KillPlayer();
+        }
+    }
+
     public void UpdateHealth(float mod)
     {
+        
         if (!_isDead)
         {
             _health += mod;
@@ -34,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             }
             else if (_health <= 0)
             {
+                
                 _health = 0;
                 KillPlayer();
             } 
@@ -44,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
     private void KillPlayer()
     {
         Debug.Log("Player died");
-        FindObjectOfType<MenuManager>().EndGame();
+        _menuManager.EndGame();
         _isDead = true;
 
     }
