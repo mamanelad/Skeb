@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class TargetBolt : MonoBehaviour
 {
-    [SerializeField] private Sprite fireSprite;
-    [SerializeField] private Sprite IceSprite;
-    private SpriteRenderer _spriteRenderer;
+    #region Private Fields
 
-    private GameManager.WorldState currState;
-    // Start is called before the first frame update
     private LightningStrike _lightningStrike;
-    void Start()
+    private SpriteRenderer _spriteRenderer;
+    private GameManager.WorldState _currState;
+    
+    #endregion
+
+    #region Inspector Control
+
+    [SerializeField] private Sprite fireSprite;
+    [SerializeField] private Sprite iceSprite;
+    
+    #endregion
+    
+    private void Start()
     {
         _lightningStrike = GetComponentInParent<LightningStrike>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,13 +30,13 @@ public class TargetBolt : MonoBehaviour
 
     public void StartLightNing()
     {
-        _lightningStrike.Lock = false;
+        _lightningStrike.lockMovement = false;
 
     }
 
     private void Update()
     {
-        if (currState != GameManager.Shared.CurrentState)
+        if (_currState != GameManager.Shared.CurrentState)
         {
            SwitchState(); 
         }
@@ -36,16 +44,16 @@ public class TargetBolt : MonoBehaviour
 
     private void SwitchState()
     {
-        currState = GameManager.Shared.CurrentState;
+        _currState = GameManager.Shared.CurrentState;
 
-        switch (currState)
+        switch (_currState)
         {
             case GameManager.WorldState.Fire:
                 _spriteRenderer.sprite = fireSprite;
                 break;
             
             case GameManager.WorldState.Ice:
-                _spriteRenderer.sprite = IceSprite;
+                _spriteRenderer.sprite = iceSprite;
                 break;
         }
     }

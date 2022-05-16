@@ -5,38 +5,52 @@ using UnityEngine;
 
 public class LightningStrike : MonoBehaviour
 {
-    enum Mode
+    private enum Mode
     {
-        SHOW,
-        FADE,
+        Show,
+        Fade,
     }
 
-    // Start is called before the first frame update
-    private Material material;
-    private Mode _mode = Mode.SHOW;
-    private SpriteRenderer _spriteRenderer;
-    private Color _color;
+    #region Private Fields
 
-    [SerializeField] private float speed = 0.1f;
+    private Material _material;
+    private Mode _mode = Mode.Show;
+    private Color _color;
     private EnemySpawnerDots _enemySpawner;
     
-    [Range(0, 1)] [SerializeField] float fade = 1f;
-    [Range(0, 1)] [SerializeField] float show = 0f;
+    #endregion
+
+    #region Public Fields
+    
+    public bool lockMovement = true;
+
+    #endregion
+    
+    #region Inspector Control
 
     [SerializeField] private GameObject father;
+    [SerializeField] private float speed = 0.1f;
+    [Range(0, 1)] [SerializeField] private float fade = 1f;
+    [Range(0, 1)] [SerializeField] private float show;
 
+    #endregion
+    
+    #region Animator Labels
 
-    public bool Lock = true;
+    private static readonly int Show = Shader.PropertyToID("Show");
+    private static readonly int Mode1 = Shader.PropertyToID("Mode");
+    private static readonly int Fade = Shader.PropertyToID("Fade");
+
+    #endregion
 
     private void Awake()
     {
-        material = GetComponent<SpriteRenderer>().material;
-        material.SetInt("Mode", 1);
-        
+        _material = GetComponent<SpriteRenderer>().material;
+        _material.SetInt(Mode1, 1);
+
         _color = GetComponent<SpriteRenderer>().color;
         _color.a = 0;
         GetComponent<SpriteRenderer>().color = _color;
-
     }
 
     private void Start()
@@ -47,35 +61,33 @@ public class LightningStrike : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Lock) return;
+        if (lockMovement) return;
 
         _color.a = 1;
         GetComponent<SpriteRenderer>().color = _color;
         switch (_mode)
         {
-            case Mode.SHOW:
-                material.SetFloat("Show", show);
+            case Mode.Show:
+                _material.SetFloat(Show, show);
                 show += speed;
                 if (show >= 1)
                 {
-                    _mode = Mode.FADE;
-                    material.SetInt("Mode", 0);
-
+                    _mode = Mode.Fade;
+                    _material.SetInt(Mode1, 0);
                 }
 
                 break;
-            
-            case Mode.FADE:
-                material.SetFloat("Fade", fade);
+
+            case Mode.Fade:
+                _material.SetFloat(Fade, fade);
                 fade -= speed;
                 if (fade <= 0)
                 {
                     _enemySpawner.CreatMonster();
                     Destroy(father);
                 }
-                    
+
                 break;
         }
-        
     }
 }

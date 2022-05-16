@@ -2,41 +2,53 @@ using UnityEngine;
 
 public class EnemyAlone : MonoBehaviour
 {
+    #region Private Fields
+
     private EnemyAI _enemyAI;
-    private Enemy _enemyFather;
+    private Enemy _enemyTogetherFather;
     private GameObject _player;
     private Animator _animator;
     private bool _isAttacking;
     private bool _isDead;
     
+    #endregion
+
+    #region Animator Labels
+
+    private static readonly int Dead = Animator.StringToHash("Dead");
+    private static readonly int Attack = Animator.StringToHash("Attack");
+
+    #endregion
+    
+    #region Inspector Control
+    
+    [Header("Attack Settings")] 
     [SerializeField] private GameObject energyBall;
     [SerializeField] private float attackRangeCheck = 0.5f;
     [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
     
+    #endregion
     
-    private static readonly int Dead = Animator.StringToHash("Dead");
-    private static readonly int Attack = Animator.StringToHash("Attack");
-
-    void Start()
+    private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _enemyFather = GetComponentInParent<Enemy>();
         _enemyAI = GetComponentInParent<EnemyAI>();
+         _enemyTogetherFather = GetComponentInParent<Enemy>();
+         _player = GameObject.FindGameObjectWithTag("Player");
+        _animator = GetComponent<Animator>();
     }
     
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         //See if the player close enough for attack.
         DetectPlayer();
 
         //Checks the enemy health from the enemy script.
-        if (_enemyFather.GetHealth() <= 0 && !_isDead)
+        if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
         {
             _isDead = true;
             _animator.SetTrigger(Dead);
-            MovementLockAndUnlock(true);
+            MovementLock();
         }
     }
     
@@ -88,10 +100,21 @@ public class EnemyAlone : MonoBehaviour
 
     /**
      * Call this function to lock and unlock the enemy movement.
+     * The function is called from the start of the enemy damage animation.
      * In contact with the enemyAI script.
      */
-    public void MovementLockAndUnlock(bool mode)
+    public void MovementUnlock()
     {
-        _enemyAI.LockMovement = mode;
+        _enemyAI.lockMovement = false;
+    }
+
+    /**
+     * Call this function to lock and lock the enemy movement.
+     * The function is called from the end of the enemy damage animation.
+     * In contact with the enemyAI script.
+     */
+    public void MovementLock()
+    {
+        _enemyAI.lockMovement = true;
     }
 }

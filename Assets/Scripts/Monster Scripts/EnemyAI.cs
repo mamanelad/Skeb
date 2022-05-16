@@ -8,43 +8,55 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Seeker))]
 public class EnemyAI : MonoBehaviour
 {
-    // What to chase?
-    private Transform _target;
-    
-    // Caching
+    #region Private Fields
+
+    private Transform _target; // What to chase?
     private Seeker _seeker;
     private Rigidbody2D _rb;
+    private Path _path; //The calculated path
+    private int _currentWaypoint; // The waypoint we are currently moving towards
 
-    //The calculated path
-    private Path _path;
-    [SerializeField] private ForceMode2D fMode;
+    private float
+        _nextWaypointDistance; // The max distance from the AI to a waypoint for it to continue to the next waypoint
+
+    private float _updateRate; // How many times each second we will update our path
+    private float _speed; //The AI's speed per second
+    private bool _searchingPlayer;
+
+    #endregion
+
+    #region Public Fields
+
     [HideInInspector] public bool pathIsEnded;
+    [HideInInspector] public bool lockMovement;
+    
+    #endregion
+    
+    #region Inspector Control
 
-    // The max distance from the AI to a waypoint for it to continue to the next waypoint
-    // The waypoint we are currently moving towards
-    private int _currentWaypoint;
-    [SerializeField] private float maxNextWaypointDistance = 20f;
+    [Header("Movement Force Settings")] [SerializeField]
+    private ForceMode2D fMode;
+
+    [Header("Way point Settings")] [SerializeField]
+    private float maxNextWaypointDistance = 20f;
+
     [SerializeField] private float minNextWaypointDistance = 1f;
-    private float _nextWaypointDistance;
 
-    // How many times each second we will update our path
-    private float _updateRate;
     [SerializeField] private float maxUpdateRate = 20f;
     [SerializeField] private float minUpdateRate = 2f;
-    
-    //The AI's speed per second
-    private float _speed;
-    [SerializeField] float maxSpeed = 800f;
+
+    [Header("Speed movement Settings")] [SerializeField]
+    float maxSpeed = 800f;
+
     [SerializeField] float minSpeed = 250f;
-    
+
     [SerializeField] private float minMass = 1;
     [SerializeField] private float maxMass = 5;
 
     [SerializeField] private float minLinearDrag = 1f;
     [SerializeField] private float maxLinearDrag = 6f;
-    
-    [NonSerialized] public bool LockMovement = false;
-    private bool _searchingPlayer;
+
+    #endregion
     
     void Start()
     {
@@ -124,7 +136,7 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (LockMovement) return;
+        if (lockMovement) return;
 
         if (_target == null)
         {
