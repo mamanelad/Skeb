@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,16 @@ public class PlayerHealth : MonoBehaviour
     private float _health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
-    void Start()
+    private void Start()
     {
         _health = maxHealth;
+    }
+
+    private void Update()
+    {
+        if (GameManager.Shared.StageDamage)
+            UpdateHealth(maxHealth / -500);
+        
     }
 
 

@@ -21,10 +21,6 @@ public class UIManager : MonoBehaviour
     
     [Header("Stage State")]
     [SerializeField] private GameObject stageStateBar;
-    private float _stageStateBarAmount = 0;
-
-    // temp variable should be a part of the game manager
-    private bool _stageState = true;
     
 
     private void Awake()
@@ -43,21 +39,6 @@ public class UIManager : MonoBehaviour
     {
         SetTimer();
         SetLifeBarDelay();
-        if (_stageState)
-        {
-            _stageStateBarAmount += Time.deltaTime;
-            SetStageStateBar(_stageStateBarAmount);
-        }
-        else
-        {
-            _stageStateBarAmount -= Time.deltaTime;  
-            SetStageStateBar(_stageStateBarAmount);
-        }
-
-        // temp key press
-        if (Input.GetKeyDown(KeyCode.Space))
-            _stageState = !_stageState;
-
     }
 
     private void SetTimer()
@@ -106,6 +87,6 @@ public class UIManager : MonoBehaviour
     
     public void SetStageStateBar(float progressPercentage)
     {
-        stageStateBar.GetComponent<Image>().fillAmount = progressPercentage / 10;
+        stageStateBar.GetComponent<Image>().fillAmount = progressPercentage;
     }
 }

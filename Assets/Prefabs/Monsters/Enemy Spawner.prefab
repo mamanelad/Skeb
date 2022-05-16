@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2d2096be43a9547b2588110d57e2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lightningStrike: {fileID: 552002586523414496, guid: e741fb9e6edcf104d8e8d36ee80c771e, type: 3}
+  lightningStrike: {fileID: 552002586523414496, guid: e741fb9e6edcf104d8e8d36ee80c771e, type: 3}
   monsters:
   - {fileID: 7800156549562755522, guid: ee77ad4488a34b847af07b4bb80f2b22, type: 3}
   - {fileID: 7573361283294296257, guid: 91ee2e45a83060b4f86ee37ee0aa3dce, type: 3}
