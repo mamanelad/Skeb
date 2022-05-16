@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  attackRangeCheck: 3
+  attackRangeCheck: 2.5
   attackRangeHit: 1
-  attackDamage: 10
+  attackDamage: 50
 --- !u!1001 &2987789614930667654
 PrefabInstance:
   m_ObjectHideFlags: 0
