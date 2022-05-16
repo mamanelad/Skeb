@@ -132,4 +132,4 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 2
   attackRangeHit: 1
-  attackDamage: 50
+  attackDamage: 5

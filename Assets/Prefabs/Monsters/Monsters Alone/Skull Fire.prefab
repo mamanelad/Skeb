@@ -113,7 +113,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 1
   attackRangeHit: 1
-  attackDamage: 50
+  attackDamage: 3
 --- !u!95 &3219978213308542946
 Animator:
   serializedVersion: 3

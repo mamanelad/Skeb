@@ -133,7 +133,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 2.5
   attackRangeHit: 1
-  attackDamage: 50
+  attackDamage: 10
 --- !u!1 &9041526998120008391
 GameObject:
   m_ObjectHideFlags: 0

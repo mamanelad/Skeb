@@ -133,7 +133,7 @@ MonoBehaviour:
   energyBall: {fileID: 7392572333538659150, guid: 9238ab3c5f531a84fb0b1dfc8d0b5b5f, type: 3}
   attackRangeCheck: 2
   attackRangeHit: 1
-  attackDamage: 50
+  attackDamage: 5
 --- !u!1001 &6586702253079639722
 PrefabInstance:
   m_ObjectHideFlags: 0
