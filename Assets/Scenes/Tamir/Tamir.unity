@@ -296,6 +296,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skull
       objectReference: {fileID: 0}
+    - target: {fileID: 7573361283294296257, guid: 91ee2e45a83060b4f86ee37ee0aa3dce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738717100734304038, guid: 91ee2e45a83060b4f86ee37ee0aa3dce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ee2e45a83060b4f86ee37ee0aa3dce, type: 3}
 --- !u!1 &142126975
