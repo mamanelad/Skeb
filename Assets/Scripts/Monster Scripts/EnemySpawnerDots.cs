@@ -2,21 +2,25 @@ using UnityEngine;
 
 public class EnemySpawnerDots : MonoBehaviour
 {
+    #region Private Fields
+
+    private int _dotIndexBolt; //Position for the bolt
+    private int _dotIndexMonster; //Position for the monster
+    private int _monsterIndex; //Which monster to initialize
+    private float _timer; 
+    private int _monsterCounter; //Count how many monsters are alive.
     
+    #endregion
+
+    #region Inspector Control
+
     [SerializeField] private GameObject lightningStrike;
-    
     [SerializeField] private GameObject[] monsters;
-    private int _dotIndexBolt;
-    private int _dotIndexMonster;
-    
     [SerializeField] private Transform[] spawnerDots; //Positions for the monster initialization.
-    private int _monsterIndex;
-    
-    private float _timer;
     [SerializeField] private float maxTimeToSpawn = 4; //Amount of time between enemies initialization.
     [SerializeField] private int maxMonsterAmount = 8; //Max amount of monster that can be alive.
-
-    private int _monsterCounter; //Count how many monsters are alive.
+    
+    #endregion
 
     void Start()
     {

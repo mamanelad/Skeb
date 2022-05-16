@@ -1,19 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnergyBall : MonoBehaviour
 {
+    #region Private Fields
+
     private Animator _animator;
     private GameObject _player;
     private bool _startLife;
     private bool _hit;
     
+    #endregion
+
+    #region Inspector Control
+
     [SerializeField] private float lifeBallTimer = 2f;
     [SerializeField] private float timeToDieAfterHit = 0.2f;
     [SerializeField] private float step = 1f;
+    
+    #endregion
+
+    #region Animator Labels
+
     private static readonly int Die = Animator.StringToHash("Die");
+
+    #endregion
 
     private void Start()
     {
@@ -53,11 +63,19 @@ public class EnergyBall : MonoBehaviour
        
     }
 
+    /**
+     * This function declare that the ball can start his movement.
+     * Called from the end of the ball creat animation.
+     */
     public void StartLife()
     {
         _startLife = true;
     }
 
+    /**
+     * Destroy the game object.
+     * Called if the amount of time for the ball has ended or the ball hit the player.
+     */
     public void DestroyBall()
     {
         Destroy(gameObject);

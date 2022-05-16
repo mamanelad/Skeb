@@ -2,19 +2,33 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    #region Private Fields
+
     private GameObject _player;
     private EnemySpawnerDots _enemySpawnerDots;
     private Animator _fireMonsterAnimator;
     private Animator _iceMonsterAnimator;
     private GameManager.WorldState _state;
 
+    #endregion
+
+    #region Inspector Control
+
+    [Header("Monsters alone Settings")]
     [SerializeField] private GameObject fireMonster;
     [SerializeField] private GameObject iceMonster;
+    
+    [Header("Health Settings")]
     [SerializeField] private float currHealth;
     [SerializeField] private float startHealth = 100;
 
+    #endregion
+
+    #region Animator Labels
+
     private static readonly int Damage = Animator.StringToHash("Demage");
 
+    #endregion
 
     private void Start()
     {

@@ -27,9 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")] [SerializeField]
-    private bool canDash;
-
+    [Header("Dash Settings")] 
+    [SerializeField] private bool canDash;
     [SerializeField] private LayerMask dashLayerMask;
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
