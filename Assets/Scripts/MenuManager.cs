@@ -1,20 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    private bool _gameHasEnded;
-    [SerializeField] private float restartDelay = 0.5f;
+    
+
     public void EndGame()
     {
-        _gameHasEnded = true;
-        Debug.Log("GAME OVER"); 
-        // Invoke(RestartGame(), restartDelay);
+        gameObject.SetActive(true);
     }
 
-    private void RestartGame()
+    public void PlayBottom()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

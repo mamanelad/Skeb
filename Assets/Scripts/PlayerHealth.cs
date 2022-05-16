@@ -5,41 +5,59 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float _health = 0f;
+    #region Private Fields
+
+    [SerializeField] private MenuManager _menuManager;
+    [SerializeField] private float _health;
+    private bool _isDead;
+    #endregion
+
+    #region Inspector Control
+
     [SerializeField] private float maxHealth = 100f;
 
-    private void Start()
+    #endregion
+
+    void Start()
     {
         _health = maxHealth;
     }
 
+
     private void Update()
     {
-        if (GameManager.Shared.StageDamage)
-            UpdateHealth(maxHealth / -500);
-        
+        if (_health <= 0 )
+        {
+            KillPlayer();
+        }
     }
-
 
     public void UpdateHealth(float mod)
     {
-        _health += mod;
         
-        if (_health > maxHealth)
+        if (!_isDead)
         {
-            _health = maxHealth;
-        }
-        else if (_health <= 0)
-        {
-            _health = 0;
-            KillPlayer();
-        }
+            _health += mod;
 
-        var lifeBarFillPercentage = _health / maxHealth * 100;
-        UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
+            if (_health > maxHealth)
+            {
+                _health = maxHealth;
+            }
+            else if (_health <= 0)
+            {
+                
+                _health = 0;
+                KillPlayer();
+            } 
+        }
+        
     }
 
     private void KillPlayer()
     {
+        Debug.Log("Player died");
+        _menuManager.EndGame();
+        _isDead = true;
+
     }
 }
