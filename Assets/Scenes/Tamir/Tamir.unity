@@ -1287,8 +1287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   hitBox: {fileID: 1554951407}
-  canMoveWhileAttacking: 0
-  slipperyFloor: 0
+  canMoveWhileAttacking: 1
+  slipperyFloor: 1
   friction: 1.5
   speedScalerForSlipperyFloor: 1.5
   canDash: 1
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.376
+  m_FillAmount: 0.534
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1818,7 +1818,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.25
+          m_FloatArgument: 0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2194,7 +2194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 0}
+  m_AnchoredPosition: {x: -17.199997, y: 0}
   m_SizeDelta: {x: 2, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1324394936
@@ -2393,7 +2393,7 @@ GameObject:
   - component: {fileID: 1345232437}
   - component: {fileID: 1345232439}
   - component: {fileID: 1345232438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reflection
   m_TagString: Reflection
   m_Icon: {fileID: 0}
@@ -2554,7 +2554,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554951408}
   - component: {fileID: 1554951409}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2600,14 +2600,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.019852318, y: -0.37973738}
+    - - {x: -0.017716482, y: 0.14622557}
       - {x: -0.2760769, y: -0.18729144}
-      - {x: -0.5081213, y: -0.2996639}
-      - {x: -0.74514496, y: -0.4031445}
-      - {x: -0.9200787, y: -0.9045697}
-      - {x: 0.020386875, y: -1.1322224}
-      - {x: 1.0024296, y: -0.9764823}
-      - {x: 0.6756494, y: -0.33146253}
+      - {x: -0.5156351, y: -0.17193007}
+      - {x: -0.80525506, y: -0.26038316}
+      - {x: -1.2882524, y: -1.0848998}
+      - {x: -0.01718193, y: -1.4853691}
+      - {x: 1.3104935, y: -1.1342713}
+      - {x: 1.1256825, y: -0.4818246}
+      - {x: 0.5779706, y: -0.1661599}
       - {x: 0.3058554, y: -0.17736524}
 --- !u!1 &1597140221
 GameObject:
@@ -2839,7 +2840,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5867245367987126072, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126072, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2888,6 +2889,10 @@ PrefabInstance:
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: maxTimeToSpawn
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
@@ -3007,6 +3012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d179daf71aedb4e953b4b124df388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateSwitchAutomatically: 1
+  timeInStage: 30
   CurrentState: 0
 --- !u!4 &1695207843
 Transform:
@@ -3627,7 +3634,7 @@ RectTransform:
   - {fileID: 396536740}
   - {fileID: 1846387064}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

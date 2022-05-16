@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  attackRangeCheck: 2
+  attackRangeCheck: 3
   attackRangeHit: 1
   attackDamage: 10
 --- !u!1 &9041526998120008391

@@ -98,14 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54a4249653f8344ab6207361530e8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathIsEnded: 0
+  lockMovement: 0
+  fMode: 0
+  maxNextWaypointDistance: 20
+  minNextWaypointDistance: 1
   maxUpdateRate: 20
   minUpdateRate: 2
   maxSpeed: 800
   minSpeed: 100
-  fMode: 0
-  pathIsEnded: 0
-  maxNextWaypointDistance: 20
-  minNextWaypointDistance: 1
   minMass: 1
   maxMass: 3
   minLinearDrag: 1
@@ -123,9 +124,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27639395, y: -0.34918958}
+  m_Offset: {x: 0, y: -0.039357796}
   serializedVersion: 2
-  m_Radius: 0.4738124
+  m_Radius: 0.5
 --- !u!114 &5474678290149270022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,10 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currHealth: 0
-  startHealth: 100
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
+  currHealth: 0
+  startHealth: 100
 --- !u!1001 &3474282120653530457
 PrefabInstance:
   m_ObjectHideFlags: 0
