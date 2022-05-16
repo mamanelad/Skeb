@@ -98,14 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54a4249653f8344ab6207361530e8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathIsEnded: 0
+  lockMovement: 0
+  fMode: 0
+  maxNextWaypointDistance: 20
+  minNextWaypointDistance: 1
   maxUpdateRate: 20
   minUpdateRate: 2
   maxSpeed: 800
   minSpeed: 100
-  fMode: 0
-  pathIsEnded: 0
-  maxNextWaypointDistance: 20
-  minNextWaypointDistance: 1
   minMass: 1
   maxMass: 3
   minLinearDrag: 1
@@ -122,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currHealth: 0
-  startHealth: 100
   fireMonster: {fileID: 7738717100734304038}
   iceMonster: {fileID: 7907728213498860975}
+  currHealth: 0
+  startHealth: 100
 --- !u!58 &3940784132453434540
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +150,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3022574100382336380}
     m_Modifications:
+    - target: {fileID: 6286709005262964227, guid: 4fc783639518e0c49b5356875d1c33d7, type: 3}
+      propertyPath: attackDamage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7380415967414330440, guid: 4fc783639518e0c49b5356875d1c33d7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -263,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 6440388407877319708, guid: 94b7d4931973ac7419fad4270c6031f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782258937803268336, guid: 94b7d4931973ac7419fad4270c6031f7, type: 3}
+      propertyPath: attackDamage
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b7d4931973ac7419fad4270c6031f7, type: 3}
