@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     #region Private Fields
 
     private float _health;
-    
+    private bool _isDead;
     #endregion
 
     #region Inspector Control
@@ -24,22 +24,28 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth(float mod)
     {
-        _health += mod;
+        if (!_isDead)
+        {
+            _health += mod;
 
-        if (_health > maxHealth)
-        {
-            _health = maxHealth;
+            if (_health > maxHealth)
+            {
+                _health = maxHealth;
+            }
+            else if (_health <= 0)
+            {
+                _health = 0;
+                KillPlayer();
+            } 
         }
-        else if (_health <= 0)
-        {
-            _health = 0;
-            KillPlayer();
-        }
+        
     }
 
     private void KillPlayer()
     {
         Debug.Log("Player died");
-        
+        FindObjectOfType<MenuManager>().EndGame();
+        _isDead = true;
+
     }
 }

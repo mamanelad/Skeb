@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c986d1cf259306479278d373f1423db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2
+  energyBall: {fileID: 0}
+  attackRangeCheck: 2.5
+  attackRangeHit: 1
   attackDamage: 50
 --- !u!1001 &2987789614930667654
 PrefabInstance:
