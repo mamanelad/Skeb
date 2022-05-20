@@ -82,7 +82,7 @@ public class EnemyAlone : MonoBehaviour
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeHit)
         {
-            _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage);
+            _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
 
         _isAttacking = false;

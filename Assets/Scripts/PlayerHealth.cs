@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -9,16 +6,18 @@ public class PlayerHealth : MonoBehaviour
     private bool _isDead;
     [SerializeField] private float _health = 0f;
     [SerializeField] private float maxHealth = 100f;
+    private PlayerController _playerController;
 
     private void Start()
     {
+        _playerController = GetComponent<PlayerController>();
         _health = maxHealth;
     }
 
     private void Update()
     {
         if (GameManager.Shared.StageDamage)
-            UpdateHealth(maxHealth / -500);
+            UpdateHealth(maxHealth / -500f, Vector3.zero);
         
         if (_health <= 0)
             KillPlayer();
@@ -26,9 +25,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void UpdateHealth(float mod)
+    public void UpdateHealth(float mod, Vector3 pos)
     {
-        if (_isDead)
+        if (_isDead || _playerController.isStunned)
             return;
         
         _health += mod;
@@ -45,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
         var lifeBarFillPercentage = _health / maxHealth * 100;
         UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
+        _playerController.PlayerGotHit(pos);
     }
 
     private void KillPlayer()

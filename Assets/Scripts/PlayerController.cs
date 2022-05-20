@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     {
         Idle,
         Move,
-        Combat
+        Combat,
+        Falling
     }
 
     private enum AttackStatus
@@ -27,7 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private GameObject hitBox;
     [SerializeField] private bool canMoveWhileAttacking;
-    // [SerializeField] private float knockBackDistance;
+    [SerializeField] public float stunDuration;
+    [SerializeField] private float knockBackDistance;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -56,10 +58,14 @@ public class PlayerController : MonoBehaviour
     private PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
+    private Vector2 _knockBackDirection = Vector2.zero;
     // private bool _knockBackStatus;
     private bool _dashStatus;
     private bool _attackDash;
+    [NonSerialized] public bool KnockBackStatus;
     private List<GameObject> _monstersInRange;
+    private bool _isInTopHalf;
+    public bool isStunned;
 
     #endregion
 
@@ -136,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerState()
     {
-        if (_playerState == PlayerState.Combat)
+        if (_playerState == PlayerState.Combat || _playerState == PlayerState.Falling)
             return;
         _attackStatus = AttackStatus.First;
         if (_moveDirection.sqrMagnitude > 0.01f)
@@ -259,18 +265,18 @@ public class PlayerController : MonoBehaviour
             _attackDash = false;
         }
         
-        /*// knock back from attack
-        if (_knockBackStatus)
+        // knock back from attack
+        if (KnockBackStatus)
         {
-            var dashPosition = _rb.position + _idleDirection * knockBackDistance * -1;
-            var hit = Physics2D.Raycast(transform.position, _idleDirection,
+            var dashPosition = _rb.position + _knockBackDirection * knockBackDistance * -1;
+            var hit = Physics2D.Raycast(transform.position, _knockBackDirection,
                 attackDashDistance, dashLayerMask);
             if (hit.collider != null)
                 dashPosition = hit.point;
 
             _rb.MovePosition(dashPosition);
-            _knockBackStatus = false;
-        }*/
+            KnockBackStatus = false;
+        }
 
         if (_dashStatus)
         {
@@ -289,9 +295,21 @@ public class PlayerController : MonoBehaviour
     {
         _playerState = status;
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Arena Collider"))
+            SetPlayerFall();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Top"))
+            _isInTopHalf = true;
+        
+        if (other.gameObject.CompareTag("Bottom"))
+            _isInTopHalf = false;
+        
         var monList = _monstersInRange ?? new List<GameObject>(); 
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -312,5 +330,22 @@ public class PlayerController : MonoBehaviour
                 monList.Remove(enemy);
         }
         _monstersInRange = monList;
+    }
+
+    private void SetPlayerFall()
+    {
+        _playerState = PlayerState.Falling;
+        _rb.gravityScale = 50;
+        GetComponent<Collider2D>().enabled = false;
+        Animator.SetInteger(State, (int) _playerState);
+        if (_isInTopHalf)
+            GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+    }
+
+    public void PlayerGotHit(Vector3 pos)
+    {
+        var direction = (pos - transform.position).normalized;
+        _knockBackDirection = new Vector2(direction.x, direction.z);
+        GetComponent<HitBreak>().HitBreakAction();
     }
 }

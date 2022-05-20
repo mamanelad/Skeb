@@ -12,7 +12,6 @@ public class ReflectionScript : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _objectSpriteRenderer = reflection.GetComponent<SpriteRenderer>();
-
     }
     
     void Update()

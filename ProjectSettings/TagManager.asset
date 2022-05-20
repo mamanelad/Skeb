@@ -12,6 +12,9 @@ TagManager:
   - Fire Object
   - Ice Object
   - Reflection
+  - Arena Collider
+  - Top
+  - Bottom
   layers:
   - Default
   - TransparentFX
