@@ -10,48 +10,63 @@ public class EnemyAlone : MonoBehaviour
     private Animator _animator;
     private bool _isAttacking;
     private bool _isDead;
-    
+    private float _timerBetweenAttacks;
+    private bool _canAttack = true;
+
     #endregion
 
     #region Animator Labels
 
     private static readonly int Dead = Animator.StringToHash("Dead");
     private static readonly int Attack = Animator.StringToHash("Attack");
+    private static readonly int Die = Animator.StringToHash("Die");
 
     #endregion
-    
+
     #region Inspector Control
-    
-    [Header("Attack Settings")] 
-    [SerializeField] private GameObject energyBall;
+
+    [Header("Attack Settings")] [SerializeField]
+    private GameObject energyBall;
+
     [SerializeField] private float attackRangeCheck = 0.5f;
     [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
-    
+    [SerializeField] private float timeBetweenAttacks = 0.5f;
+
     #endregion
-    
+
     private void Start()
     {
         _enemyAI = GetComponentInParent<EnemyAI>();
-         _enemyTogetherFather = GetComponentInParent<Enemy>();
-         _player = GameObject.FindGameObjectWithTag("Player");
+        _enemyTogetherFather = GetComponentInParent<Enemy>();
+        _player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
     }
-    
+
     private void FixedUpdate()
     {
         //See if the player close enough for attack.
-        DetectPlayer();
+        if (_canAttack)
+            DetectPlayer();
+        
+        else
+        {
+            _timerBetweenAttacks -= Time.deltaTime;
+            if (_timerBetweenAttacks <= 0)
+                _canAttack = true;
+        }
 
         //Checks the enemy health from the enemy script.
         if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
         {
             _isDead = true;
             _animator.SetTrigger(Dead);
+            _animator.SetBool(Die, true);
+
             MovementLock();
         }
     }
-    
+
     /**
      * See if the player is near enough for attack.
      */
@@ -63,6 +78,8 @@ public class EnemyAlone : MonoBehaviour
         {
             AttackPlayer();
             _isAttacking = true;
+            _canAttack = false;
+            _timerBetweenAttacks = timeBetweenAttacks;
         }
     }
 

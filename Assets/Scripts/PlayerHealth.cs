@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void KillPlayer()
     {
-        _menuManager.EndGame();
-        _isDead = true;
+        // _menuManager.EndGame();
+        // _isDead = true;
     }
 }

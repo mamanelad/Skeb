@@ -170,7 +170,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 dir = (_path.vectorPath[_currentWaypoint] - position).normalized;
         var curSpeed = _speed;
         dir *= curSpeed * Time.fixedDeltaTime;
-
+        
         //Move the AI
         _rb.AddForce(dir, fMode);
 

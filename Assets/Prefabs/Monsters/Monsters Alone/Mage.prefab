@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2085935282029529368}
   - component: {fileID: 3899677295194730035}
   - component: {fileID: 1112363746833088939}
+  - component: {fileID: 7216303036605437689}
   m_Layer: 10
   m_Name: Mage
   m_TagString: Enemy
@@ -134,6 +135,52 @@ MonoBehaviour:
   attackRangeCheck: 2
   attackRangeHit: 1
   attackDamage: 5
+  timeBetweenAttacks: 1
+--- !u!60 &7216303036605437689
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455980773423155326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.50230044, y: 0.35047156}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.23, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.052287042, y: 0.16252911}
+      - {x: -0.040868416, y: 0.161783}
+      - {x: -0.056461006, y: 0.1471542}
+      - {x: -0.10228988, y: 0.11333675}
+      - {x: -0.11764525, y: 0.09773341}
+      - {x: -0.11526507, y: 0.059270564}
+      - {x: -0.090736136, y: 0.034510236}
+      - {x: -0.055975813, y: 0.034510233}
+      - {x: -0.025265086, y: 0.051055685}
+      - {x: -0.029156487, y: 0.022309523}
+      - {x: -0.044075, y: -0.0027459385}
+      - {x: -0.045265086, y: -0.025010407}
+      - {x: -0.043711346, y: -0.055489756}
+      - {x: 0.051048975, y: -0.05727488}
+      - {x: 0.052255645, y: 0.04614649}
+      - {x: 0.11605726, y: 0.04320447}
+      - {x: 0.123368405, y: 0.065965526}
+      - {x: 0.12080035, y: 0.113855384}
+      - {x: 0.120222546, y: 0.13155161}
+      - {x: 0.052966386, y: 0.13262603}
 --- !u!1001 &6586702253079639722
 PrefabInstance:
   m_ObjectHideFlags: 0
