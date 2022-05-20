@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1712064156762470256}
   - component: {fileID: 7782258937803268336}
   - component: {fileID: 3219978213308542946}
+  - component: {fileID: 8151558725334743745}
   m_Layer: 10
   m_Name: Skull Fire
   m_TagString: Enemy
@@ -114,6 +115,7 @@ MonoBehaviour:
   attackRangeCheck: 1
   attackRangeHit: 1
   attackDamage: 3
+  timeBetweenAttacks: 1
 --- !u!95 &3219978213308542946
 Animator:
   serializedVersion: 3
@@ -133,3 +135,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &8151558725334743745
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440388407877319705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.15, y: 0.12}
+    newSize: {x: 0.23, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.022725433, y: 0.060586784}
+      - {x: -0.006051883, y: 0.05112452}
+      - {x: -0.046023656, y: 0.03126204}
+      - {x: -0.07623002, y: 0.001383422}
+      - {x: -0.07646694, y: -0.041222647}
+      - {x: -0.054723673, y: -0.05143251}
+      - {x: -0.004558455, y: -0.06081829}
+      - {x: 0.054462258, y: -0.051198117}
+      - {x: 0.0749936, y: -0.0411807}
+      - {x: 0.07529339, y: 0.0021519028}
+      - {x: 0.035549454, y: 0.048952453}
+      - {x: 0.035073597, y: 0.06146697}

@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
     #region Private Fields
 
     private GameObject _player;
+    private Rigidbody2D _rb;
+    private EnemyAI enemyAI;
     private EnemySpawnerDots _enemySpawnerDots;
     private Animator _fireMonsterAnimator;
     private Animator _iceMonsterAnimator;
@@ -14,12 +16,19 @@ public class Enemy : MonoBehaviour
 
     #region Inspector Control
 
-    [Header("Monsters alone Settings")]
-    [SerializeField] private GameObject fireMonster;
+    [Header("Push back Settings")] [SerializeField]
+    private float pushBackStrengthFire = 5f;
+
+    [SerializeField] private float pushBackStrengthIce = 7.5f;
+
+    [Header("Monsters alone Settings")] [SerializeField]
+    private GameObject fireMonster;
+
     [SerializeField] private GameObject iceMonster;
-    
-    [Header("Health Settings")]
-    [SerializeField] private float currHealth;
+
+    [Header("Health Settings")] [SerializeField]
+    private float currHealth;
+
     [SerializeField] private float startHealth = 100;
 
     #endregion
@@ -32,6 +41,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _rb = GetComponent<Rigidbody2D>();
+        enemyAI = GetComponent<EnemyAI>();
         _fireMonsterAnimator = fireMonster.GetComponent<Animator>();
         _iceMonsterAnimator = iceMonster.GetComponent<Animator>();
         currHealth = startHealth;
@@ -77,6 +88,7 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         currHealth -= damage;
+        GoBack();
         switch (_state)
         {
             case GameManager.WorldState.Fire:
@@ -90,6 +102,39 @@ public class Enemy : MonoBehaviour
 
         if (currHealth <= 0)
             KillEnemy();
+    }
+
+    private void GoBack()
+    {
+        var forceAmount = pushBackStrengthFire;
+        if (_state == GameManager.WorldState.Ice)
+            forceAmount = pushBackStrengthIce;
+        
+        
+        float forceX = 0;
+        float forceY = 0;
+
+        var dir = transform.position - _player.transform.position; 
+        
+        // if (_player.transform.position.x < transform.position.x)
+        //     forceX = forceAmount;
+        // if (_player.transform.position.x > transform.position.x)
+        //     forceX = -forceAmount;
+        //
+        // if (_player.transform.position.y < transform.position.y)
+        //     forceY = forceAmount;
+        // if (_player.transform.position.y > transform.position.y)
+        //     forceY = -forceAmount;
+
+
+        // _rb.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+
+        _rb.AddForce(new Vector2(dir.x * forceAmount, dir.y * forceAmount), ForceMode2D.Impulse);
+
+
+        // print("kaka");
+        // var curVelocity = _rb.velocity;
+        // _rb.AddForce(-200f * curVelocity);
     }
 
 

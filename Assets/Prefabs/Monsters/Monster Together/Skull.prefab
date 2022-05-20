@@ -100,17 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIsEnded: 0
   lockMovement: 0
+  backMovement: 0
   fMode: 0
   maxNextWaypointDistance: 20
-  minNextWaypointDistance: 1
+  minNextWaypointDistance: 15
   maxUpdateRate: 20
-  minUpdateRate: 2
+  minUpdateRate: 15
   maxSpeed: 800
-  minSpeed: 100
+  minSpeed: 600
   minMass: 1
-  maxMass: 3
+  maxMass: 1
   minLinearDrag: 1
-  maxLinearDrag: 2
+  maxLinearDrag: 1
 --- !u!114 &762319170085582014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushBackStrengthFire: 6
+  pushBackStrengthIce: 9
   fireMonster: {fileID: 7738717100734304038}
   iceMonster: {fileID: 7907728213498860975}
-  currHealth: 0
-  startHealth: 100
+  currHealth: 20
+  startHealth: 20
 --- !u!58 &3940784132453434540
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class EnergyBall : MonoBehaviour
     #region Inspector Control
 
     [SerializeField] private float lifeBallTimer = 2f;
-    [SerializeField] private float timeToDieAfterHit = 0.2f;
+    [SerializeField] private float timeToDieAfterHit = 0.05f;
     [SerializeField] private float step = 1f;
     
     #endregion

@@ -100,16 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIsEnded: 0
   lockMovement: 0
+  backMovement: 0
   fMode: 0
-  maxNextWaypointDistance: 20
-  minNextWaypointDistance: 1
-  maxUpdateRate: 20
+  maxNextWaypointDistance: 5
+  minNextWaypointDistance: 2
+  maxUpdateRate: 5
   minUpdateRate: 2
-  maxSpeed: 800
-  minSpeed: 100
-  minMass: 1
+  maxSpeed: 400
+  minSpeed: 200
+  minMass: 3
   maxMass: 3
-  minLinearDrag: 1
+  minLinearDrag: 2
   maxLinearDrag: 2
 --- !u!58 &1270383768069225835
 CircleCollider2D:
@@ -139,10 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushBackStrengthFire: 2
+  pushBackStrengthIce: 5
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
-  currHealth: 0
-  startHealth: 100
+  currHealth: 60
+  startHealth: 60
 --- !u!1001 &3474282120653530457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6943407475787003812}
     m_Modifications:
+    - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
+      propertyPath: attackRangeCheck
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4418849257063470217, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: m_Name
       value: FireHeavy
@@ -157,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 4418849257063470220, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418849257063470220, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4418849257063470220, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -217,6 +228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6943407475787003812}
     m_Modifications:
+    - target: {fileID: 3214493059504434052, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
+      propertyPath: attackRangeCheck
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8718442503001255672, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
       propertyPath: m_RootOrder
       value: 1
