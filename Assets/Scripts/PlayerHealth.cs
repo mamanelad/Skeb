@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float _health = 0f;
+    [SerializeField] private MenuManager _menuManager;
+    private bool _isDead;
+    [SerializeField] private float _health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
     private void Start()
@@ -18,11 +20,17 @@ public class PlayerHealth : MonoBehaviour
         if (GameManager.Shared.StageDamage)
             UpdateHealth(maxHealth / -500);
         
+        if (_health <= 0)
+            KillPlayer();
+        
     }
 
 
     public void UpdateHealth(float mod)
     {
+        if (_isDead)
+            return;
+        
         _health += mod;
         
         if (_health > maxHealth)
@@ -41,5 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void KillPlayer()
     {
+        _menuManager.EndGame();
+        _isDead = true;
     }
 }
