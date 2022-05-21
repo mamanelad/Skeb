@@ -12,6 +12,7 @@ public class Dissolve : MonoBehaviour
 
     #region Public Fields
 
+    [SerializeField] private Material dissolveMaterial;
     [Range(0, 1)] public float fade = 1f;
 
     #endregion
@@ -28,12 +29,17 @@ public class Dissolve : MonoBehaviour
         // Get a reference to the material
         _material = GetComponent<SpriteRenderer>().material;
         _enemyTogetherFather = GetComponentInParent<Enemy>();
+
+        if (dissolveMaterial == null)
+            dissolveMaterial = _material;
     }
 
     private void Update()
     {
         if (_isDissolving)
         {
+            print("aaaa");
+            SetDissolveShader();
             fade -= Time.deltaTime;
 
             if (fade <= 0f)
@@ -53,5 +59,11 @@ public class Dissolve : MonoBehaviour
     public void StartDissolve()
     {
         _isDissolving = true;
+    }
+
+    private void SetDissolveShader()
+    {
+        if (_material.shader != dissolveMaterial.shader)
+            _material.shader = dissolveMaterial.shader;
     }
 }

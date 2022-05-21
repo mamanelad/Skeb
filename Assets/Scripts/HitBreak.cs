@@ -57,7 +57,15 @@ public class HitBreak : MonoBehaviour
         var material = _renderer.material;
         while (Time.timeScale != 1.0f)
             yield return null;
-        yield return new WaitForSecondsRealtime(_playerController.stunDuration);
+        var switchTurns = (int) _playerController.stunDuration / 0.2f;
+        for (var i = 0; i < switchTurns; i++)
+        {
+            yield return new WaitForSecondsRealtime(0.1f);
+            material.shader = _curShader;
+            yield return new WaitForSecondsRealtime(0.1f);
+            material.shader = hitShader;
+            
+        }
         material.shader = _curShader;
         _playerController.isStunned = false;
     }

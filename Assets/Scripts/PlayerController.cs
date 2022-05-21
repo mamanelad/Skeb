@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canMoveWhileAttacking;
     [SerializeField] public float stunDuration;
     [SerializeField] private float knockBackDistance;
+    [SerializeField] private Animator slashAnimator;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
     [NonSerialized] public Animator Animator;
     private GameManager.WorldState _currentWorldState;
     private AttackStatus _attackStatus = AttackStatus.First;
-    private PlayerState _playerState = PlayerState.Idle;
+    public PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
     private Vector2 _knockBackDirection = Vector2.zero;
@@ -167,7 +168,8 @@ public class PlayerController : MonoBehaviour
                 if (monsterController != null)
                     monsterController.DamageEnemy(CalculateDamage());
             }
-
+        slashAnimator.SetInteger("AttackStage", (int) _attackStatus);
+        slashAnimator.SetTrigger("Attack");
         _attackStatus++;
     }
 
@@ -347,5 +349,10 @@ public class PlayerController : MonoBehaviour
         var direction = (pos - transform.position).normalized;
         _knockBackDirection = new Vector2(direction.x, direction.z);
         GetComponent<HitBreak>().HitBreakAction();
+    }
+
+    public PlayerState GetPlayerState()
+    {
+        return _playerState;
     }
 }
