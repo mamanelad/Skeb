@@ -30,9 +30,11 @@ public class ReflectionScript : MonoBehaviour
             if (PlayerController._PlayerController.GetPlayerState() == PlayerController.PlayerState.Falling)
                 gameObject.SetActive(false);
         }
-        else // this code will affect anything but the player
+        else 
         {
-            
+            if (GetComponentInParent<Rigidbody2D>().gravityScale != 0)
+                gameObject.SetActive(false);
+
         }
 
     }

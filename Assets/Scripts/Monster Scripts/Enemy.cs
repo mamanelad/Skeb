@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -6,11 +8,12 @@ public class Enemy : MonoBehaviour
 
     private GameObject _player;
     private Rigidbody2D _rb;
-    private EnemyAI enemyAI;
+    private EnemyAI _enemyAI;
     private EnemySpawnerDots _enemySpawnerDots;
     private Animator _fireMonsterAnimator;
     private Animator _iceMonsterAnimator;
     private GameManager.WorldState _state;
+    private bool _isInTopHalf;
 
     #endregion
 
@@ -42,7 +45,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        enemyAI = GetComponent<EnemyAI>();
+        _enemyAI = GetComponent<EnemyAI>();
         _fireMonsterAnimator = fireMonster.GetComponent<Animator>();
         _iceMonsterAnimator = iceMonster.GetComponent<Animator>();
         currHealth = startHealth;
@@ -57,6 +60,9 @@ public class Enemy : MonoBehaviour
         if (_state != GameManager.Shared.CurrentState)
             ChangeState();
 
+        if (transform.position.y < -50) // enemy fell off arena
+            KillEnemy();
+        
         SideHandler();
     }
 
@@ -166,5 +172,43 @@ public class Enemy : MonoBehaviour
                 fireMonster.SetActive(false);
                 break;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Top"))
+            _isInTopHalf = true;
+        
+        if (other.gameObject.CompareTag("Bottom"))
+            _isInTopHalf = false;
+    }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Arena Collider"))
+            SetMonsterFall(_rb.velocity);
+    }
+    
+    private void SetMonsterFall(Vector2 velocity)
+    {
+        foreach (var collider in GetComponentsInChildren<Collider2D>())
+        {
+            collider.isTrigger = true;
+        }
+        _rb.velocity = velocity;
+        if (_isInTopHalf)
+            StartCoroutine(FallDelay());
+        else
+            _rb.gravityScale = 10;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponentInChildren<Animator>().SetTrigger("Fall");
+        _enemyAI.enabled = false;
+    }
+
+    private IEnumerator FallDelay()
+    {
+        yield return new WaitForSecondsRealtime(0.4f);
+        _rb.gravityScale = 10;
+        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Default";
     }
 }
