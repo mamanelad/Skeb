@@ -151,10 +151,10 @@ TextureImporter:
       name: ice heavy-Sheet_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 11
-        width: 47
-        height: 38
+        x: 0
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: ice heavy-Sheet_1
       rect:
         serializedVersion: 2
-        x: 184
-        y: 11
-        width: 47
-        height: 29
+        x: 136
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +193,10 @@ TextureImporter:
       name: ice heavy-Sheet_2
       rect:
         serializedVersion: 2
-        x: 325
-        y: 13
-        width: 35
-        height: 42
+        x: 272
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: ice heavy-Sheet_3
       rect:
         serializedVersion: 2
-        x: 456
-        y: 11
-        width: 47
-        height: 29
+        x: 408
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: ice heavy-Sheet_4
       rect:
         serializedVersion: 2
-        x: 592
-        y: 11
-        width: 47
-        height: 38
+        x: 544
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: ice heavy-Sheet_5
       rect:
         serializedVersion: 2
-        x: 728
-        y: 11
-        width: 47
-        height: 45
+        x: 680
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: ice heavy-Sheet_6
       rect:
         serializedVersion: 2
-        x: 863
-        y: 11
-        width: 46
-        height: 50
+        x: 816
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: ice heavy-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1099
+        x: 952
         y: 0
-        width: 126
-        height: 38
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: ice heavy-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1234
-        y: 2
-        width: 27
-        height: 36
+        x: 1088
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: ice heavy-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1270
-        y: 29
-        width: 11
-        height: 9
+        x: 1224
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +361,10 @@ TextureImporter:
       name: ice heavy-Sheet_10
       rect:
         serializedVersion: 2
-        x: 1353
-        y: 34
-        width: 5
-        height: 4
+        x: 1360
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +382,10 @@ TextureImporter:
       name: ice heavy-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1543
-        y: 11
-        width: 46
-        height: 50
+        x: 1496
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: ice heavy-Sheet_12
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 11
-        width: 47
-        height: 38
+        x: 1632
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +424,10 @@ TextureImporter:
       name: ice heavy-Sheet_13
       rect:
         serializedVersion: 2
-        x: 1821
-        y: 11
-        width: 47
-        height: 32
+        x: 1768
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +445,10 @@ TextureImporter:
       name: ice heavy-Sheet_14
       rect:
         serializedVersion: 2
-        x: 1957
-        y: 11
-        width: 47
-        height: 32
+        x: 1904
+        y: 0
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: ice heavy-Sheet_15
       rect:
         serializedVersion: 2
-        x: 2105
+        x: 2040
         y: 0
-        width: 32
-        height: 56
+        width: 136
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,69 +479,6 @@ TextureImporter:
       bones: []
       spriteID: 35899f9e36bc5de50800000000000000
       internalID: 6833591639592245331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ice heavy-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 977
-        y: 2
-        width: 95
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dd99a66d6cf486d0800000000000000
-      internalID: -2988986705863139881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ice heavy-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 1271
-        y: 0
-        width: 90
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 176b5c56a662a5110800000000000000
-      internalID: 1250354084964578929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ice heavy-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 1407
-        y: 11
-        width: 46
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 406eea1672db95d60800000000000000
-      internalID: 7879536999901619716
       vertices: []
       indices: 
       edges: []
