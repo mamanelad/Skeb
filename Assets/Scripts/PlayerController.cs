@@ -106,10 +106,11 @@ public class PlayerController : MonoBehaviour
         SetPlayerState();
         SetMovementAndIdleDirection();
         SetHitBoxRotation();
-        Attack();
+        if (_currentWorldState == GameManager.WorldState.Fire)
+            Attack();
         PlayAnimation();
 
-        if (Input.GetButtonDown("Dash") && canDash)
+        if (Input.GetButtonDown("Dash") && canDash && _currentWorldState == GameManager.WorldState.Ice)
         {
             _dashStatus = true;
             StartCoroutine(ActivateDashTrail());

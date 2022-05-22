@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5157478296063697138}
   - component: {fileID: 3948307424612424191}
   - component: {fileID: 510517201166517354}
-  - component: {fileID: 1270383768069225835}
   - component: {fileID: 5474678290149270022}
+  - component: {fileID: 3877761711729978159}
   m_Layer: 0
   m_Name: HeavyEnemy
   m_TagString: Enemy
@@ -111,22 +111,6 @@ MonoBehaviour:
   maxMass: 3
   minLinearDrag: 2
   maxLinearDrag: 2
---- !u!58 &1270383768069225835
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7800156549562755522}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.039357796}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &5474678290149270022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +129,36 @@ MonoBehaviour:
   iceMonster: {fileID: 868980015463703817}
   currHealth: 60
   startHealth: 60
+--- !u!60 &3877761711729978159
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7800156549562755522}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.05979939, y: 0.3606066}
+      - {x: -0.5370608, y: 0.18481824}
+      - {x: -0.27038842, y: -0.4870203}
+      - {x: 0.619985, y: -0.51461995}
+      - {x: 0.6198599, y: 0.120419025}
 --- !u!1001 &3474282120653530457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,6 +221,14 @@ PrefabInstance:
     - target: {fileID: 4418849257063470220, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257051698043671661, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.07641239
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257051698043671661, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: -0.0715313
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
