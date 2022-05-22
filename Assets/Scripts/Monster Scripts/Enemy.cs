@@ -186,29 +186,28 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider"))
-            SetMonsterFall(_rb.velocity);
+            SetMonsterFall();
     }
     
-    private void SetMonsterFall(Vector2 velocity)
+    private void SetMonsterFall()
     {
+        _rb.velocity = Vector2.zero;
         foreach (var collider in GetComponentsInChildren<Collider2D>())
-        {
-            collider.isTrigger = true;
-        }
-        _rb.velocity = velocity;
-        if (_isInTopHalf)
-            StartCoroutine(FallDelay());
-        else
-            _rb.gravityScale = 10;
-        GetComponent<Collider2D>().enabled = false;
+            collider.enabled = false;
         GetComponentInChildren<Animator>().SetTrigger("Fall");
         _enemyAI.enabled = false;
+        StartCoroutine(FallDelay());
     }
 
     private IEnumerator FallDelay()
     {
-        yield return new WaitForSecondsRealtime(0.4f);
+        _rb.gravityScale = _isInTopHalf ? -5f : 0;
+        yield return new WaitForSeconds(_isInTopHalf ? 0.3f : 0.15f);
+        if (_isInTopHalf)
+            foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
+                sr.sortingLayerName = "Default";
         _rb.gravityScale = 10;
-        GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Default";
+
     }
+    
 }

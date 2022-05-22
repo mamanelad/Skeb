@@ -1352,6 +1352,7 @@ MonoBehaviour:
   stunDuration: 2
   knockBackDistance: 0.3
   slashAnimator: {fileID: 1362103398}
+  playerCantFall: 1
   slipperyFloor: 1
   friction: 1.5
   speedScalerForSlipperyFloor: 1.5
@@ -3328,6 +3329,22 @@ PrefabInstance:
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: maxTimeToSpawn
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245368094987142, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245368452596672, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245368832844241, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245369592245924, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 345e7d4eb735b644684927fab20821c3, type: 3}

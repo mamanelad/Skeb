@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float stunDuration;
     [SerializeField] private float knockBackDistance;
     [SerializeField] private Animator slashAnimator;
+    [SerializeField] private bool playerCantFall;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
             Attack();
         PlayAnimation();
 
-        if (Input.GetButtonDown("Dash") && canDash && _currentWorldState == GameManager.WorldState.Ice)
+        if (Input.GetButtonDown("Attack") && canDash && _currentWorldState == GameManager.WorldState.Ice)
         {
             _dashStatus = true;
             StartCoroutine(ActivateDashTrail());
@@ -301,7 +302,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Arena Collider"))
+        if (other.gameObject.CompareTag("Arena Collider") && !playerCantFall)
             SetPlayerFall();
     }
 
