@@ -7,6 +7,10 @@ public class CoinPickUp : MonoBehaviour
 {
     [SerializeField] private int coinValue = 1;
 
+    [SerializeField] private float minDistance = 1f;
+    [SerializeField] private float step = 0.1f;
+    [SerializeField] private GameObject player;
+
     private enum CoinKind
     {
         Fire,
@@ -24,9 +28,10 @@ public class CoinPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerHealth>().gameObject;
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        SwichState();
+        SwitchState();
     }
 
     // Update is called once per frame
@@ -34,12 +39,24 @@ public class CoinPickUp : MonoBehaviour
     {
         if (_state != GameManager.Shared.CurrentState)
         {
-            SwichState();
+            SwitchState();
         }
+
     }
 
 
-    private void SwichState()
+    private void FixedUpdate()
+    {
+        var dist = Vector3.Distance(player.transform.position, transform.position);
+        if (dist <= minDistance)
+        {
+            AddCoins();
+        }
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+
+    }
+
+    private void SwitchState()
     {
         _state = GameManager.Shared.CurrentState;
 
@@ -65,18 +82,23 @@ public class CoinPickUp : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            switch (_coinKind)
-            {
-                case CoinKind.Fire:
-                    GameManager.Shared.fireCoins += coinValue;
-                    break;
-
-                case CoinKind.Ice:
-                    GameManager.Shared.iceCoins += coinValue;
-                    break;
-            }
-
-            Destroy(gameObject);
+           AddCoins();
         }
+    }
+
+    private void AddCoins()
+    {
+        switch (_coinKind)
+        {
+            case CoinKind.Fire:
+                GameManager.Shared.fireCoins += coinValue;
+                break;
+
+            case CoinKind.Ice:
+                GameManager.Shared.iceCoins += coinValue;
+                break;
+        }
+
+        Destroy(gameObject);
     }
 }

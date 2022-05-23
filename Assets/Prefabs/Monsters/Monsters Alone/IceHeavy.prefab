@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6017643647964401137}
   - component: {fileID: 2442152342811341675}
   - component: {fileID: 3214493059504434052}
-  - component: {fileID: 6873312877469209785}
+  - component: {fileID: -669121559460897940}
   m_Layer: 10
   m_Name: IceHeavy
   m_TagString: Enemy
@@ -138,8 +138,8 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 10
   timeBetweenAttacks: 1
---- !u!60 &6873312877469209785
-PolygonCollider2D:
+--- !u!58 &-669121559460897940
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,33 +151,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46, y: 0.37}
-    newSize: {x: 0.46, y: 0.37}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.0070978403, y: -0.05680792}
-      - {x: -0.07290811, y: -0.049171865}
-      - {x: -0.07127565, y: -0.049599066}
-      - {x: -0.07491526, y: -0.054994054}
-      - {x: -0.073885426, y: -0.052448727}
-      - {x: -0.0721885, y: -0.060090702}
-      - {x: -0.08273268, y: -0.08039497}
-      - {x: -0.091457024, y: -0.09518138}
-      - {x: -0.06122445, y: -0.11619765}
-      - {x: -0.09794032, y: -0.1833031}
-      - {x: 0.08672911, y: -0.18415156}
-      - {x: 0.106184945, y: -0.15124343}
-      - {x: 0.106489226, y: -0.14966348}
-      - {x: 0.103581116, y: -0.13408713}
-      - {x: 0.1035811, y: -0.116626516}
+  m_Offset: {x: -0.027501356, y: 0.07378177}
+  serializedVersion: 2
+  m_Radius: 0.11174051
 --- !u!1001 &2987789614930667654
 PrefabInstance:
   m_ObjectHideFlags: 0

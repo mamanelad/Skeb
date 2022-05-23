@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4006027641648737922}
   - component: {fileID: 6469212699375943030}
   - component: {fileID: 2344180383526235078}
-  - component: {fileID: -7288853043152524446}
+  - component: {fileID: 2439174244693138357}
   m_Layer: 10
   m_Name: Warrior
   m_TagString: Enemy
@@ -137,8 +137,8 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 5
   timeBetweenAttacks: 1
---- !u!60 &-7288853043152524446
-PolygonCollider2D:
+--- !u!58 &2439174244693138357
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -150,25 +150,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.25}
-    newSize: {x: 0.23, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.03981586, y: -0.027807876}
-      - {x: -0.03812426, y: -0.04214612}
-      - {x: -0.04075804, y: -0.081915736}
-      - {x: -0.04857307, y: -0.08511506}
-      - {x: -0.06225547, y: -0.10864786}
-      - {x: -0.039081793, y: -0.126211}
-      - {x: 0.000019647181, y: -0.12394057}
-      - {x: 0.03729572, y: -0.12612772}
-      - {x: 0.030230135, y: -0.055978127}
-      - {x: 0.009367056, y: -0.028371751}
+  m_Offset: {x: 0.0036331317, y: 0.024375573}
+  serializedVersion: 2
+  m_Radius: 0.07377614
