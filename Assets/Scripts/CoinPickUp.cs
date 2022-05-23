@@ -17,7 +17,7 @@ public class CoinPickUp : MonoBehaviour
     [SerializeField] private Sprite fireSprite;
     [SerializeField] private Sprite iceSprite;
     private SpriteRenderer _spriteRenderer;
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
 
     private GameManager.WorldState _state;
 
