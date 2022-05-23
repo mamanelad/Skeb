@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool stateSwitchAutomatically;
     [SerializeField] private float timeInStage = 4;
     [NonSerialized] public bool StageDamage;
-    
+
     private float _stageTimer;
+
+    [HideInInspector] public int fireCoins;
+    [HideInInspector] public int iceCoins;
     
     public WorldState CurrentState;
     private void Awake()

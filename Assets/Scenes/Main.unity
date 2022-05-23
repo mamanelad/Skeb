@@ -968,8 +968,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  hitBox: {fileID: 0}
+  hitBox: {fileID: 581978873}
   canMoveWhileAttacking: 0
+  stunDuration: 0
+  knockBackDistance: 0
+  slashAnimator: {fileID: 0}
+  playerCantFall: 0
   slipperyFloor: 0
   friction: 1.5
   speedScalerForSlipperyFloor: 1.5
@@ -980,6 +984,8 @@ MonoBehaviour:
   dashDistance: 1.2
   attackDashDistance: 0.2
   dashEffectDurationTime: 0.3
+  _playerState: 0
+  isStunned: 0
 --- !u!58 &581978877
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2305,8 +2311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2136408620}
-  lifeBar: {fileID: 0}
-  lifeBarDelay: {fileID: 0}
+  lifeBar: {fileID: 297652807}
+  lifeBarDelay: {fileID: 297652807}
   stageStateBar: {fileID: 2097684156}
 --- !u!114 &1507172652
 MonoBehaviour:

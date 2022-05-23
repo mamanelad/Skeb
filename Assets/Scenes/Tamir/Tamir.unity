@@ -3466,6 +3466,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateSwitchAutomatically: 1
   timeInStage: 30
+  fireCoins: 0
+  iceCoins: 0
   CurrentState: 0
 --- !u!4 &1695207843
 Transform:

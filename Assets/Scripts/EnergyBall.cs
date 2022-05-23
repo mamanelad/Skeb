@@ -13,9 +13,10 @@ public class EnergyBall : MonoBehaviour
 
     #region Inspector Control
 
-    [SerializeField] private float lifeBallTimer = 2f;
+    [SerializeField] private float lifeBallTimer = 3f;
     [SerializeField] private float timeToDieAfterHit = 0.05f;
     [SerializeField] private float step = 1f;
+    [HideInInspector] public float _attackDamage = 20f;
     
     #endregion
 
@@ -59,6 +60,8 @@ public class EnergyBall : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _hit = true;
+            _player.GetComponent<PlayerHealth>().UpdateHealth(-_attackDamage, transform.position);
+            DestroyBall();
         }
        
     }

@@ -5,6 +5,7 @@ public class EnemyAlone : MonoBehaviour
     #region Private Fields
 
     private EnemyAI _enemyAI;
+    private GameObject _energyBallFather;
     private Enemy _enemyTogetherFather;
     private GameObject _player;
     private Animator _animator;
@@ -21,6 +22,7 @@ public class EnemyAlone : MonoBehaviour
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Die = Animator.StringToHash("Die");
 
+    
     #endregion
 
     #region Inspector Control
@@ -33,10 +35,13 @@ public class EnemyAlone : MonoBehaviour
     [SerializeField] private float attackDamage = 50f;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
 
+    
+
     #endregion
 
     private void Start()
     {
+        _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
         _enemyAI = GetComponentInParent<EnemyAI>();
         _enemyTogetherFather = GetComponentInParent<Enemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -111,7 +116,9 @@ public class EnemyAlone : MonoBehaviour
      */
     public void DamagePlayerEnergyBall()
     {
-        Instantiate(energyBall, transform.position, Quaternion.identity);
+        var ball = Instantiate(energyBall, transform.position, Quaternion.identity);
+        ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
+        ball.transform.SetParent(_energyBallFather.transform);
         _isAttacking = false;
     }
 
@@ -134,4 +141,6 @@ public class EnemyAlone : MonoBehaviour
     {
         _enemyAI.lockMovement = true;
     }
+    
+    
 }

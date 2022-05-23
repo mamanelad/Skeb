@@ -10,11 +10,14 @@ public class Dissolve : MonoBehaviour
 
     #endregion
 
-    #region Public Fields
+    #region Fields
 
     [SerializeField] private Material dissolveMaterial;
     [Range(0, 1)] public float fade = 1f;
 
+    [Header("Coin Settings")] [SerializeField]
+    private CoinPickUp coinPick;
+    
     #endregion
 
     #region Animator Labels
@@ -38,7 +41,6 @@ public class Dissolve : MonoBehaviour
     {
         if (_isDissolving)
         {
-            print("aaaa");
             SetDissolveShader();
             fade -= Time.deltaTime;
 
@@ -46,6 +48,7 @@ public class Dissolve : MonoBehaviour
             {
                 fade = 0f;
                 _isDissolving = false;
+                InstantiateCoin();
                 Destroy(_enemyTogetherFather.gameObject);
             }
 
@@ -65,5 +68,10 @@ public class Dissolve : MonoBehaviour
     {
         if (_material.shader != dissolveMaterial.shader)
             _material.shader = dissolveMaterial.shader;
+    }
+
+    private void InstantiateCoin()
+    {
+        Instantiate(coinPick, transform.position, Quaternion.identity);
     }
 }
