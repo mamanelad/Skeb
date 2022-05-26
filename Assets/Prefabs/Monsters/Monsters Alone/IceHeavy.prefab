@@ -136,7 +136,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 2.5
   attackRangeHit: 1
-  attackDamage: 10
+  attackDamage: 50
   timeBetweenAttacks: 1
 --- !u!60 &6873312877469209785
 PolygonCollider2D:

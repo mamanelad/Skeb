@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 716ddaef917213e4ca6f3fd28f77cccf
+  - enabled: 1
     path: Assets/Scenes/Tamir/Tamir.unity
     guid: d580409345b1d9f4e812643444bcd76a
   - enabled: 0

@@ -1352,15 +1352,15 @@ MonoBehaviour:
   stunDuration: 2
   knockBackDistance: 0.3
   slashAnimator: {fileID: 1362103398}
-  playerCantFall: 1
+  playerCantFall: 0
   slipperyFloor: 1
-  friction: 1.5
-  speedScalerForSlipperyFloor: 1.5
+  friction: 1.2
+  speedScalerForSlipperyFloor: 1.2
   canDash: 1
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 126
-  dashDistance: 1.2
+  dashDistance: 1.1
   attackDashDistance: 0.2
   dashEffectDurationTime: 0.3
   _playerState: 0
@@ -3328,7 +3328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: maxTimeToSpawn
-      value: 2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: maxMonsterAmount
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5867245368094987142, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3465,7 +3469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateSwitchAutomatically: 1
-  timeInStage: 30
+  timeInStage: 10
   fireCoins: 0
   iceCoins: 0
   CurrentState: 0

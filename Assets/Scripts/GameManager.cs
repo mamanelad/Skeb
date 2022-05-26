@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftControl))
             SwitchState();
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
         
         UpdateStageTimer();
         
