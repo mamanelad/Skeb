@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7328550441495400171}
   - component: {fileID: 6286709005262964227}
   - component: {fileID: 2455406489392153300}
+  - component: {fileID: -8930431520498959424}
   m_Layer: 10
   m_Name: Skull Ice
   m_TagString: Enemy
@@ -171,6 +172,18 @@ PolygonCollider2D:
       - {x: 0.056849465, y: -0.031004826}
       - {x: 0.0756662, y: -0.021360587}
       - {x: 0.0759993, y: 0.0200282}
+--- !u!114 &-8930431520498959424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380415967414330445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3099417843671795567
 PrefabInstance:
   m_ObjectHideFlags: 0

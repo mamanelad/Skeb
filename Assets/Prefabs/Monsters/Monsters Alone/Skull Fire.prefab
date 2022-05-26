@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7782258937803268336}
   - component: {fileID: 3219978213308542946}
   - component: {fileID: 8151558725334743745}
+  - component: {fileID: -2833781113304286823}
   m_Layer: 10
   m_Name: Skull Fire
   m_TagString: Enemy
@@ -174,3 +175,15 @@ PolygonCollider2D:
       - {x: 0.07529339, y: 0.0021519028}
       - {x: 0.035549454, y: 0.048952453}
       - {x: 0.035073597, y: 0.06146697}
+--- !u!114 &-2833781113304286823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440388407877319705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

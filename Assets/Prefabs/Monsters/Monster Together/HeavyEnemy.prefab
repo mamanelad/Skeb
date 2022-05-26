@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIsEnded: 0
   lockMovement: 0
+  distanceMagePlayer: 2
   fMode: 0
   maxNextWaypointDistance: 5
   minNextWaypointDistance: 2
@@ -127,6 +128,7 @@ MonoBehaviour:
   pushBackStrengthIce: 5
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
+  _enemyKind: 0
   currHealth: 60
   startHealth: 60
 --- !u!60 &3877761711729978159
@@ -139,7 +141,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -154,11 +156,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.05979939, y: 0.3606066}
-      - {x: -0.5370608, y: 0.18481824}
-      - {x: -0.27038842, y: -0.4870203}
-      - {x: 0.619985, y: -0.51461995}
-      - {x: 0.6198599, y: 0.120419025}
+    - - {x: 0.1576148, y: 0.66388726}
+      - {x: 0, y: 1}
+      - {x: -0.35862723, y: 0.6777507}
+      - {x: -0.7395204, y: 0.56756115}
+      - {x: -0.329241, y: -0.027508497}
+      - {x: 0.64066947, y: -0.039260387}
+      - {x: 0.39871216, y: 0.7732215}
 --- !u!1001 &3474282120653530457
 PrefabInstance:
   m_ObjectHideFlags: 0
