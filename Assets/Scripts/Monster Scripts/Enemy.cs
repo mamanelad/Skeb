@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     /**
      * Decreasing the amount of enemies in the enemies counter spawner and lock the enemy movement.
      */
-    private void KillEnemy()
+    public void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
         _enemySpawnerDots.DecreaseMonster();

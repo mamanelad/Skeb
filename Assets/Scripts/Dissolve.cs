@@ -49,7 +49,9 @@ public class Dissolve : MonoBehaviour
                 fade = 0f;
                 _isDissolving = false;
                 InstantiateCoin();
+                _enemyTogetherFather.GetComponent<Enemy>().KillEnemy();
                 Destroy(_enemyTogetherFather.gameObject);
+                Destroy(gameObject);
             }
 
             // Set the property

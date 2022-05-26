@@ -29,6 +29,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     void Update()
     {
+        print(_monsterCounter);
         _timer -= Time.deltaTime;
         if (_timer <= 0)
             SpawnLightNingBolt();
