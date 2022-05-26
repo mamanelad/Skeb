@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIsEnded: 0
   lockMovement: 0
+  distanceMagePlayer: 3
   fMode: 0
   maxNextWaypointDistance: 10
   minNextWaypointDistance: 7
@@ -127,6 +128,7 @@ MonoBehaviour:
   pushBackStrengthIce: 7
   fireMonster: {fileID: 5202143678251705748}
   iceMonster: {fileID: 9081545722209158012}
+  _enemyKind: 1
   currHealth: 40
   startHealth: 40
 --- !u!60 &1996941007845912033
@@ -169,6 +171,10 @@ PrefabInstance:
     - target: {fileID: 1112363746833088939, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
       propertyPath: attackDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112363746833088939, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
+      propertyPath: attackRangeCheck
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4455980773423155323, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
       propertyPath: m_RootOrder

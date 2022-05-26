@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public enum EnemyKind
+    {
+        Big,
+        Middle,
+        Small
+    }
+
     #region Private Fields
 
     private GameObject _player;
@@ -28,6 +35,7 @@ public class Enemy : MonoBehaviour
     private GameObject fireMonster;
 
     [SerializeField] private GameObject iceMonster;
+    [SerializeField] public EnemyKind _enemyKind;
 
     [Header("Health Settings")] [SerializeField]
     private float currHealth;
@@ -62,7 +70,7 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.y < -50) // enemy fell off arena
             KillEnemy();
-        
+
         SideHandler();
     }
 
@@ -85,6 +93,8 @@ public class Enemy : MonoBehaviour
      */
     public float GetHealth()
     {
+        if (_enemyKind == EnemyKind.Big)
+            return 1;
         return currHealth;
     }
 
@@ -106,6 +116,8 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
+        if (_enemyKind == EnemyKind.Big) return;
+
         if (currHealth <= 0)
             KillEnemy();
     }
@@ -116,31 +128,9 @@ public class Enemy : MonoBehaviour
         if (_state == GameManager.WorldState.Ice)
             forceAmount = pushBackStrengthIce;
         
-        
-        float forceX = 0;
-        float forceY = 0;
-
-        var dir = transform.position - _player.transform.position; 
-        
-        // if (_player.transform.position.x < transform.position.x)
-        //     forceX = forceAmount;
-        // if (_player.transform.position.x > transform.position.x)
-        //     forceX = -forceAmount;
-        //
-        // if (_player.transform.position.y < transform.position.y)
-        //     forceY = forceAmount;
-        // if (_player.transform.position.y > transform.position.y)
-        //     forceY = -forceAmount;
-
-
-        // _rb.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
-
+        var dir = transform.position - _player.transform.position;
         _rb.AddForce(new Vector2(dir.x * forceAmount, dir.y * forceAmount), ForceMode2D.Impulse);
-
-
-        // print("kaka");
-        // var curVelocity = _rb.velocity;
-        // _rb.AddForce(-200f * curVelocity);
+        
     }
 
 
@@ -178,17 +168,17 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Top"))
             _isInTopHalf = true;
-        
+
         if (other.gameObject.CompareTag("Bottom"))
             _isInTopHalf = false;
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider"))
             SetMonsterFall();
     }
-    
+
     private void SetMonsterFall()
     {
         _rb.velocity = Vector2.zero;
@@ -207,7 +197,5 @@ public class Enemy : MonoBehaviour
             foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
                 sr.sortingLayerName = "Default";
         _rb.gravityScale = 10;
-
     }
-    
 }

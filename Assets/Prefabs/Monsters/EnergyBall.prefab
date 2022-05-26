@@ -117,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c3323d10161ae44b52c6eeb9e849b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBallTimer: 0.3
+  lifeBallTimer: 0.5
   timeToDieAfterHit: 0
   step: 0.1
+  _attackDamage: 20
 --- !u!58 &5941270720099977041
 CircleCollider2D:
   m_ObjectHideFlags: 0

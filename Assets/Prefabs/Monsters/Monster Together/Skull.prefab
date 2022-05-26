@@ -127,6 +127,7 @@ MonoBehaviour:
   pushBackStrengthIce: 9
   fireMonster: {fileID: 7738717100734304038}
   iceMonster: {fileID: 7907728213498860975}
+  _enemyKind: 2
   currHealth: 20
   startHealth: 20
 --- !u!58 &3940784132453434540

@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
 {
     #region Private Fields
 
+    private Enemy.EnemyKind _enemyKind;
     private Transform _target; // What to chase?
     private Seeker _seeker;
     private Rigidbody2D _rb;
@@ -29,10 +30,14 @@ public class EnemyAI : MonoBehaviour
 
     [HideInInspector] public bool pathIsEnded;
     [HideInInspector] public bool lockMovement;
-    
+
     #endregion
-    
+
     #region Inspector Control
+
+    [Header("Speciel Movement Settings")] [SerializeField]
+    private float distanceMagePlayer = 2f;
+
 
     [Header("Movement Force Settings")] [SerializeField]
     private ForceMode2D fMode;
@@ -57,9 +62,10 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float maxLinearDrag = 6f;
 
     #endregion
-    
+
     void Start()
     {
+        _enemyKind = GetComponent<Enemy>()._enemyKind;
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
 
@@ -170,9 +176,22 @@ public class EnemyAI : MonoBehaviour
         Vector3 dir = (_path.vectorPath[_currentWaypoint] - position).normalized;
         var curSpeed = _speed;
         dir *= curSpeed * Time.fixedDeltaTime;
-        
+
         //Move the AI
-        _rb.AddForce(dir, fMode);
+
+        //Mage Special movement
+        var distance = Vector3.Distance(transform.position, _target.position);
+        if (_enemyKind == Enemy.EnemyKind.Middle && GameManager.Shared.CurrentState == GameManager.WorldState.Ice &&
+            distance <= distanceMagePlayer)
+        {
+            _rb.AddForce(-dir, fMode);
+        }
+
+        else
+        {
+            _rb.AddForce(dir, fMode);
+        }
+
 
         var dist = Vector3.Distance(position, _path.vectorPath[_currentWaypoint]);
         var nextWaypointDistance = _nextWaypointDistance;

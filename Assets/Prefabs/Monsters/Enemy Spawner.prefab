@@ -56,8 +56,16 @@ MonoBehaviour:
   - {fileID: 5867245369592245924}
   - {fileID: 5867245368452596672}
   - {fileID: 5867245368832844241}
+  monstersBig: {fileID: 5474678290149270022, guid: ee77ad4488a34b847af07b4bb80f2b22, type: 3}
+  monstersMiddle: {fileID: 4561196455315184200, guid: f15ae766e648722418e075e32cf541e8, type: 3}
+  monstersSmall: {fileID: 762319170085582014, guid: 91ee2e45a83060b4f86ee37ee0aa3dce, type: 3}
+  bigPercentage: 0.33
+  middlePercentage: 0.33
+  smallPercentage: 0.33
+  multMaxMonsterAmount: 2
+  maxTotalMonsterAmount: 4
+  monsterKindsAmount: 3
   maxTimeToSpawn: 1
-  maxMonsterAmount: 8
 --- !u!95 &8716683595192365123
 Animator:
   serializedVersion: 3
