@@ -1199,6 +1199,7 @@ GameObject:
   - component: {fileID: 487535067}
   - component: {fileID: 487535062}
   - component: {fileID: 487535068}
+  - component: {fileID: 487535069}
   - component: {fileID: 487535061}
   - component: {fileID: 487535060}
   m_Layer: 7
@@ -1346,17 +1347,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a35276a763a624cabdc432e5d59c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 3.5
   hitBox: {fileID: 1554951407}
+  reflection: {fileID: 1345232436}
   canMoveWhileAttacking: 1
   stunDuration: 2
   knockBackDistance: 0.3
   slashAnimator: {fileID: 1362103398}
   playerCantFall: 0
   slipperyFloor: 1
-  friction: 1.2
-  speedScalerForSlipperyFloor: 1.2
-  canDash: 1
+  friction: 1.15
+  speedScalerForSlipperyFloor: 1.15
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 126
@@ -1461,7 +1462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487535059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.574, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 1345232437}
@@ -1483,6 +1484,9 @@ MonoBehaviour:
   _menuManager: {fileID: 2142886888}
   _health: 0
   maxHealth: 100
+  monsterDeathAddition: 5
+  regenAddition: 2
+  regenPerSecond: 1
 --- !u!114 &487535068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1501,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitShader: {fileID: -6465566751694194690, guid: a35f8de56a9a6d74387db1296e0f0cd8, type: 3}
   duration: 1
+--- !u!114 &487535069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487535059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9137474c3ea054bb1e657c63a5cc66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthScaler: 1
+  monsterKillRegeneration: 0
+  staticRegeneration: 0
+  iceDash: 0
+  secondWind: 0
+  cantFall: 0
+  burnDamage: 0
+  attackRange: 1
+  swordRangedAttack: 0
 --- !u!1 &644526770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2307,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.5
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2345,7 +2370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164975157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.574, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1944656172}

@@ -151,6 +151,11 @@ public class Enemy : MonoBehaviour
     {
         GetComponent<EnemyAI>().enabled = false;
         _enemySpawnerDots.DecreaseMonster();
+        
+        // increase player health if MonsterRegenerationBuff is on
+        var playerHealth = _player.GetComponent<PlayerHealth>();
+        if (playerHealth)
+            playerHealth.MonsterKillRegeneration();
     }
 
     /**

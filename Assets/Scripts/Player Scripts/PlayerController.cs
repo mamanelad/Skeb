@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Control")] 
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private GameObject hitBox;
+    [SerializeField] private GameObject reflection;
     [SerializeField] private bool canMoveWhileAttacking;
     [SerializeField] public float stunDuration;
     [SerializeField] private float knockBackDistance;
@@ -40,8 +41,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")] 
-    [SerializeField] private bool canDash;
+    [Header("Dash Settings")]
     [SerializeField] private LayerMask dashLayerMask;
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _rb;
     private TrailRenderer _dashEffect;
+    private PlayerStats _playerStats;
     [NonSerialized] public bool IsAttacking;
     [NonSerialized] public Animator Animator;
     private GameManager.WorldState _currentWorldState;
@@ -61,7 +62,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
     private Vector2 _knockBackDirection = Vector2.zero;
-    // private bool _knockBackStatus;
     private bool _dashStatus;
     private bool _attackDash;
     [NonSerialized] public bool KnockBackStatus;
@@ -99,11 +99,18 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         _dashEffect = GetComponent<TrailRenderer>();
+        _playerStats = GetComponent<PlayerStats>();
     }
 
     private void Update()
     {
+        if (transform.position.y < -20)
+        {
+            ResetPlayerFall();
+            return;
+        }
         SetWorldState();
+        ApplyPowerUps();
         SetPlayerState();
         SetMovementAndIdleDirection();
         SetHitBoxRotation();
@@ -111,11 +118,14 @@ public class PlayerController : MonoBehaviour
             Attack();
         PlayAnimation();
 
-        if (Input.GetButtonDown("Attack") && canDash && _currentWorldState == GameManager.WorldState.Ice)
+        if (Input.GetButtonDown("Attack") && _playerState != PlayerState.Falling
+                                          && _currentWorldState == GameManager.WorldState.Ice)
         {
             _dashStatus = true;
             StartCoroutine(ActivateDashTrail());
         }
+        
+        
     }
 
     private void SetWorldState()
@@ -346,6 +356,18 @@ public class PlayerController : MonoBehaviour
             GetComponent<SpriteRenderer>().sortingLayerName = "Default";
     }
 
+    private void ResetPlayerFall()
+    {
+        _playerState = PlayerState.Idle;
+        _rb.gravityScale = 0;
+        GetComponent<Collider2D>().enabled = true;
+        transform.position = Vector3.zero;
+        GetComponent<SpriteRenderer>().sortingLayerName = "Player";
+        reflection.SetActive(true);
+        GetComponent<PlayerHealth>().UpdateHealth(-20, Vector3.zero);
+        PlayerGotHit(Vector3.zero);
+    }
+
     public void PlayerGotHit(Vector3 pos)
     {
         var direction = (pos - transform.position).normalized;
@@ -357,4 +379,11 @@ public class PlayerController : MonoBehaviour
     {
         return _playerState;
     }
+
+    private void ApplyPowerUps()
+    {
+        playerCantFall = _playerStats.cantFall;
+        hitBox.transform.localScale = new Vector3(1, -1, 1) * _playerStats.attackRange;
+    }
+    
 }

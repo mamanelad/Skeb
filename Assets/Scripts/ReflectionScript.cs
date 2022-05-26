@@ -34,6 +34,8 @@ public class ReflectionScript : MonoBehaviour
         {
             if (GetComponentInParent<Rigidbody2D>().gravityScale != 0)
                 gameObject.SetActive(false);
+            else
+                gameObject.SetActive(true);
 
         }
 
