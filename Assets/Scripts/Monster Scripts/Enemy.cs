@@ -113,9 +113,10 @@ public class Enemy : MonoBehaviour
             if (fireAffect != null &&!fireAffect.damageEnemy )
             {
                 fireAffect.CloseAndOpenBurningAffect(true);
+                 GoBack();
             }
             
-            GoBack();
+           
         }
 
 
@@ -155,9 +156,23 @@ public class Enemy : MonoBehaviour
     public void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
+        
+       
+        
         if (!_isDead)
         {
-            _enemySpawnerDots.DecreaseMonster();
+            var stMenu = FindObjectOfType<StartMenu>();
+            
+            if (stMenu != null )
+            {
+                stMenu.DecreaseMonster();
+            }
+
+            if (_enemySpawnerDots != null)
+            {
+                _enemySpawnerDots.DecreaseMonster();
+
+            }
             _isDead = true;
         }
 

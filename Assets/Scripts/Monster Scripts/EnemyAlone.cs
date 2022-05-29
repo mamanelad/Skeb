@@ -44,7 +44,11 @@ public class EnemyAlone : MonoBehaviour
 
     private void Start()
     {
-        _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
+        if (FindObjectOfType<EnemySpawnerDots>())
+        {
+            _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
+        }
+        
         _enemyAI = GetComponentInParent<EnemyAI>();
         _enemyTogetherFather = GetComponentInParent<Enemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -65,14 +69,18 @@ public class EnemyAlone : MonoBehaviour
         }
 
         //Checks the enemy health from the enemy script.
-        if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
+        if (_enemyTogetherFather)
         {
-            _isDead = true;
-            _animator.SetTrigger(Dead);
-            _animator.SetBool(Die, true);
+            if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
+            {
+                _isDead = true;
+                _animator.SetTrigger(Dead);
+                _animator.SetBool(Die, true);
 
-            MovementLock();
+                MovementLock();
+            } 
         }
+        
     }
 
     /**
@@ -80,7 +88,8 @@ public class EnemyAlone : MonoBehaviour
      */
     private void DetectPlayer()
     {
-        if (_isAttacking) return;
+        if (_isAttacking || !_player) return;
+        
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeCheck)
         {
@@ -107,7 +116,11 @@ public class EnemyAlone : MonoBehaviour
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeHit)
         {
-            CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
+            if (FindObjectOfType<CinemaMachineShake>())
+            {
+                CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
+
+            }
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
 
@@ -122,7 +135,11 @@ public class EnemyAlone : MonoBehaviour
     {
         var ball = Instantiate(energyBall, transform.position, Quaternion.identity);
         ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
-        ball.transform.SetParent(_energyBallFather.transform);
+        if (_energyBallFather)
+        {
+            ball.transform.SetParent(_energyBallFather.transform);  
+        }
+        
         _isAttacking = false;
     }
 

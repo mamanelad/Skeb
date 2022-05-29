@@ -80,13 +80,14 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         if (!spawnIsOn) return;
         
+
         if (currentWaveMonsterCounter < maxTotalMonsterAmount)
         {
             _timer -= Time.deltaTime;
             if (_timer <= 0)
                 SpawnLightNingBolt();
         }
-        else if (_monsterCounter >= 0 && currentWaveMonsterCounter >= maxTotalMonsterAmount)
+        else if (_monsterCounter <= 0 && currentWaveMonsterCounter >= maxTotalMonsterAmount)
         {
             spawnIsOn = false;
             SetNewWave();
