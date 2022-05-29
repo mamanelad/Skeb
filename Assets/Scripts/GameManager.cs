@@ -4,7 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public enum WorldState {None ,Ice, Fire};
+    public enum WorldState
+    {
+        None,
+        Ice,
+        Fire
+    };
+
     public static GameManager Shared;
 
     [SerializeField] private bool stateSwitchAutomatically;
@@ -15,8 +21,9 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public int fireCoins;
     [HideInInspector] public int iceCoins;
-    
+
     public WorldState CurrentState;
+
     private void Awake()
     {
         if (Shared == null)
@@ -30,12 +37,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftControl))
             SwitchState();
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
-        
+
         UpdateStageTimer();
-        
     }
 
     private void UpdateStageTimer()
@@ -63,10 +69,15 @@ public class GameManager : MonoBehaviour
 
         UIManager.Shared.SetStageStateBar(1 - _stageTimer / timeInStage);
     }
-    
-    
+
+
     private void SwitchState()
     {
+        var fireAffects = FindObjectsOfType<FireParticleEffect>();
+        foreach (var fireAffect in fireAffects)
+            fireAffect.CloseAndOpenBurningAffect(false);
+
+
         CurrentState = CurrentState switch
         {
             WorldState.Fire => WorldState.Ice,
@@ -74,5 +85,4 @@ public class GameManager : MonoBehaviour
             _ => CurrentState
         };
     }
-    
 }

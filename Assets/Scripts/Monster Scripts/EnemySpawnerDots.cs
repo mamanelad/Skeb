@@ -6,11 +6,14 @@ public class EnemySpawnerDots : MonoBehaviour
 {
     #region Private Fields
 
+    private bool spawnIsOn;
+
     private int _dotIndexBolt; //Position for the bolt
     private int _dotIndexMonster; //Position for the monster
     private int _monsterIndex; //Which monster to initialize
     private float _timer;
     private int _monsterCounter; //Count how many monsters are alive.
+    private int currentWaveMonsterCounter;
 
 
     private Enemy mostWantedEnemy;
@@ -20,6 +23,13 @@ public class EnemySpawnerDots : MonoBehaviour
     private int _bigMonsterCounter;
     private int _midMonsterCounter;
     private int _smallMonsterCounter;
+
+
+    private int maxTotalMonsterAmount = 9; //Max amount of monster that can be alive.
+    private float bigPercentage = .33f;
+    private float middlePercentage = .33f;
+    private float smallPercentage = .33f;
+    private int waveIndex = -1;
 
     #endregion
 
@@ -38,13 +48,9 @@ public class EnemySpawnerDots : MonoBehaviour
     [SerializeField] private Enemy monstersMiddle;
     [SerializeField] private Enemy monstersSmall;
 
-    [Header("Monster Amount Setting")] [Range(0, 1)] [SerializeField]
-    private float bigPercentage = .33f;
+    [Header("Monster Amount Setting")] [SerializeField]
+    private Wave[] _waves;
 
-    [Range(0, 1)] [SerializeField] private float middlePercentage = .33f;
-    [Range(0, 1)] [SerializeField] private float smallPercentage = .33f;
-    [SerializeField] private int multMaxMonsterAmount = 3;
-    [SerializeField] private int maxTotalMonsterAmount = 3; //Max amount of monster that can be alive.
     [SerializeField] private int monsterKindsAmount = 3;
 
     [Header("Timing Setting")] [SerializeField]
@@ -56,33 +62,40 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         _timer = maxTimeToSpawn;
         SetNewWave();
-        CalculateMostWanted();
     }
 
     private void CalculateMostWanted()
     {
         if (bigPercentage >= middlePercentage && bigPercentage >= smallPercentage)
             mostWantedEnemy = monstersBig;
-        
+
         else if (middlePercentage >= bigPercentage && middlePercentage >= smallPercentage)
             mostWantedEnemy = monstersMiddle;
-        
+
         else if (smallPercentage >= bigPercentage && smallPercentage >= middlePercentage)
             mostWantedEnemy = monstersSmall;
     }
 
     void Update()
     {
-        _timer -= Time.deltaTime;
-        if (_timer <= 0)
-            SpawnLightNingBolt();
+        if (!spawnIsOn) return;
+        
+        if (currentWaveMonsterCounter < maxTotalMonsterAmount)
+        {
+            _timer -= Time.deltaTime;
+            if (_timer <= 0)
+                SpawnLightNingBolt();
+        }
+        else if (_monsterCounter >= 0 && currentWaveMonsterCounter >= maxTotalMonsterAmount)
+        {
+            spawnIsOn = false;
+            SetNewWave();
+        }
     }
 
 
     private void SpawnLightNingBolt()
     {
-        if (_monsterCounter >= maxTotalMonsterAmount) return;
-        _monsterCounter += 1;
         var lightning = Instantiate(this.lightningStrike,
             spawnerDots[_dotIndexBolt].position, Quaternion.identity);
         _dotIndexBolt = (_dotIndexBolt + 1) % spawnerDots.Length;
@@ -92,7 +105,9 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void DecreaseMonster()
     {
-        _monsterCounter -= 1;
+        if (_monsterCounter > 0)
+            _monsterCounter -= 1;
+        
     }
 
 
@@ -148,13 +163,36 @@ public class EnemySpawnerDots : MonoBehaviour
 
         _monsterIndex = (_monsterIndex + 1) % monsterKindsAmount;
         _dotIndexMonster = (_dotIndexMonster + 1) % spawnerDots.Length;
+       
+        currentWaveMonsterCounter += 1;
+        _monsterCounter += 1;
     }
 
     public void SetNewWave()
     {
-        maxTotalMonsterAmount *= multMaxMonsterAmount;
+        currentWaveMonsterCounter = 0;
+        waveIndex += 1;
+        print("initiating wave number: " + waveIndex);
+        if (waveIndex >= _waves.Length)
+        {
+            print("game won");
+            return;
+        }
+
+        var curWave = _waves[waveIndex];
+
+
+        maxTotalMonsterAmount = curWave.monsterAmount;
+        bigPercentage = curWave.bigPercentage;
+        middlePercentage = curWave.middlePercentage;
+        smallPercentage = curWave.smallPercentage;
+        maxTimeToSpawn = curWave.timeToSpawnStep;
+
         _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
         _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
+        CalculateMostWanted();
+        spawnIsOn = true;
+        
     }
 }

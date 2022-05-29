@@ -1,5 +1,90 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3164340920502353170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5328666741709079697}
+  - component: {fileID: 2413033017445145531}
+  - component: {fileID: 8343911740483179706}
+  m_Layer: 11
+  m_Name: FireAffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5328666741709079697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164340920502353170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_Children: []
+  m_Father: {fileID: 6440388407877319708}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2413033017445145531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164340920502353170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
+  Rate: 100
+  isOn: 0
+--- !u!60 &8343911740483179706
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164340920502353170}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16794401, y: 0.09231648}
+      - {x: 0.13870329, y: 0.15176475}
+      - {x: 0.10186082, y: 0.18803787}
+      - {x: -0.0163275, y: 0.18725005}
+      - {x: -0.06974721, y: 0.12679923}
+      - {x: -0.13678747, y: 0.124677956}
+      - {x: -0.23103833, y: 0.03143692}
+      - {x: -0.23686099, y: -0.12681375}
+      - {x: -0.14572519, y: -0.18945318}
+      - {x: 0.21059775, y: -0.18677455}
+      - {x: 0.21157712, y: -0.14418224}
+      - {x: 0.22738975, y: -0.12136997}
+      - {x: 0.2297638, y: 0.033270657}
 --- !u!1 &6440388407877319705
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +98,6 @@ GameObject:
   - component: {fileID: 1712064156762470256}
   - component: {fileID: 7782258937803268336}
   - component: {fileID: 3219978213308542946}
-  - component: {fileID: 8151558725334743745}
   - component: {fileID: -2833781113304286823}
   m_Layer: 10
   m_Name: Skull Fire
@@ -32,7 +116,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0007826, y: 0.33070424, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children: []
+  m_Children:
+  - {fileID: 5328666741709079697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 8947469219569920032, guid: 064ded6170d65a5409268b81c81642c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,6 +204,8 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 3
   timeBetweenAttacks: 1
+  screenShakeIntensity: 5
+  screenShakeTime: 0.1
 --- !u!95 &3219978213308542946
 Animator:
   serializedVersion: 3
@@ -138,43 +225,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &8151558725334743745
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6440388407877319705}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.15, y: 0.12}
-    newSize: {x: 0.23, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.022725433, y: 0.060586784}
-      - {x: -0.006051883, y: 0.05112452}
-      - {x: -0.046023656, y: 0.03126204}
-      - {x: -0.07623002, y: 0.001383422}
-      - {x: -0.07646694, y: -0.041222647}
-      - {x: -0.054723673, y: -0.05143251}
-      - {x: -0.004558455, y: -0.06081829}
-      - {x: 0.054462258, y: -0.051198117}
-      - {x: 0.0749936, y: -0.0411807}
-      - {x: 0.07529339, y: 0.0021519028}
-      - {x: 0.035549454, y: 0.048952453}
-      - {x: 0.035073597, y: 0.06146697}
 --- !u!114 &-2833781113304286823
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -139,6 +139,8 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 5
   timeBetweenAttacks: 1
+  screenShakeIntensity: 7.5
+  screenShakeTime: 0.2
 --- !u!58 &6795246838714842441
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +154,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0014910202, y: 0.037040852}
+  m_Offset: {x: 0, y: 0.05}
   serializedVersion: 2
   m_Radius: 0.07923225
 --- !u!114 &-7152045498364229408

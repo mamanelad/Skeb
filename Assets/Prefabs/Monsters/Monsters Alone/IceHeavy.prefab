@@ -136,9 +136,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
   attackRangeCheck: 2.5
-  attackRangeHit: 1
+  attackRangeHit: 1.2
   attackDamage: 50
   timeBetweenAttacks: 1
+  screenShakeIntensity: 10
+  screenShakeTime: 0.3
 --- !u!58 &-669121559460897940
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,9 +154,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027501356, y: 0.07378177}
+  m_Offset: {x: -0.027501356, y: 0.08804544}
   serializedVersion: 2
-  m_Radius: 0.11174051
+  m_Radius: 0.12600417
 --- !u!114 &1793227217131551920
 MonoBehaviour:
   m_ObjectHideFlags: 0

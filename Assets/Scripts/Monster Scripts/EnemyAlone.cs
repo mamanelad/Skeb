@@ -35,7 +35,10 @@ public class EnemyAlone : MonoBehaviour
     [SerializeField] private float attackDamage = 50f;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
 
+    [Header("Screen Shake Settings")]
     
+    [SerializeField]private float screenShakeIntensity = 5f;
+    [SerializeField] private float screenShakeTime = .1f;
 
     #endregion
 
@@ -104,6 +107,7 @@ public class EnemyAlone : MonoBehaviour
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeHit)
         {
+            CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
 

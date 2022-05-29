@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     #region Private Fields
 
+    private PlayerStats _playerStats;
     private GameObject _player;
     private Rigidbody2D _rb;
     private EnemyAI _enemyAI;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     private Animator _iceMonsterAnimator;
     private GameManager.WorldState _state;
     private bool _isInTopHalf;
+    private bool _isDead;
 
     #endregion
 
@@ -52,6 +54,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _playerStats = FindObjectOfType<PlayerStats>();
         _rb = GetComponent<Rigidbody2D>();
         _enemyAI = GetComponent<EnemyAI>();
         _fireMonsterAnimator = fireMonster.GetComponent<Animator>();
@@ -103,8 +106,21 @@ public class Enemy : MonoBehaviour
      */
     public void DamageEnemy(int damage)
     {
+        //Demege enemy setting for the option that the function is not called from the burning effect.
+        if (_playerStats && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        {
+            var fireAffect = GetComponentInChildren<FireParticleEffect>();
+            if (fireAffect != null &&!fireAffect.damageEnemy )
+            {
+                fireAffect.CloseAndOpenBurningAffect(true);
+            }
+            
+            GoBack();
+        }
+
+
         currHealth -= damage;
-        GoBack();
+        
         switch (_state)
         {
             case GameManager.WorldState.Fire:
@@ -127,10 +143,9 @@ public class Enemy : MonoBehaviour
         var forceAmount = pushBackStrengthFire;
         if (_state == GameManager.WorldState.Ice)
             forceAmount = pushBackStrengthIce;
-        
+
         var dir = transform.position - _player.transform.position;
         _rb.AddForce(new Vector2(dir.x * forceAmount, dir.y * forceAmount), ForceMode2D.Impulse);
-        
     }
 
 
@@ -140,8 +155,12 @@ public class Enemy : MonoBehaviour
     public void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
-        _enemySpawnerDots.DecreaseMonster();
-        
+        if (!_isDead)
+        {
+            _enemySpawnerDots.DecreaseMonster();
+            _isDead = true;
+        }
+
         // increase player health if MonsterRegenerationBuff is on
         var playerHealth = _player.GetComponent<PlayerHealth>();
         if (playerHealth)

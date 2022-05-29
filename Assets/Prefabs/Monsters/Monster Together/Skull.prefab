@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathIsEnded: 0
   lockMovement: 0
+  distanceMagePlayer: 2
   fMode: 0
   maxNextWaypointDistance: 20
   minNextWaypointDistance: 15
@@ -143,9 +144,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.035883933, y: 0}
+  m_Offset: {x: 0.013616115, y: -0.01603283}
   serializedVersion: 2
-  m_Radius: 0.26459107
+  m_Radius: 0.22629042
 --- !u!1001 &851573756793270754
 PrefabInstance:
   m_ObjectHideFlags: 0

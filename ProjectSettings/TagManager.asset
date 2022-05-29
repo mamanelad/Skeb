@@ -27,7 +27,7 @@ TagManager:
   - Obstacles
   - Player
   - Enemy
-  - 
+  - fireEffect
   - 
   - 
   - 
@@ -60,6 +60,9 @@ TagManager:
     locked: 0
   - name: Game Objects
     uniqueID: 217262775
+    locked: 0
+  - name: fire
+    uniqueID: 4046726823
     locked: 0
   - name: Player
     uniqueID: 3132539261
