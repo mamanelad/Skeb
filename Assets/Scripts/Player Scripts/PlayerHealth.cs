@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private MenuManager _menuManager;
-    [NonSerialized] public bool playerIsDead;
-    [SerializeField] private float _health = 0f;
+    [SerializeField] private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
-    private float _healthScaer = 1f;
+    [SerializeField] private float fallDamage = 20;
+    private float _healthScaler = 1f;
     private PlayerController _playerController;
     private PlayerStats _playerStats;
+    private bool _usedSecondWindThisRound;
+    
 
     [Header("Monster Regeneration")] 
     [SerializeField] private float monsterDeathAddition;
@@ -20,24 +21,27 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float regenPerSecond;
     private float regenTimer;
 
+    [Header("Second Wind")] 
+    [SerializeField] private float secondWindHealthBuff;
+
     private void Start()
     {
         _playerController = GetComponent<PlayerController>();
         _playerStats = GetComponent<PlayerStats>();
-        _health = maxHealth;
+        health = maxHealth;
         regenTimer = regenPerSecond;
     }
 
     private void Update()
     {
-        if (playerIsDead)
+        if (_playerController.IsPlayerDead)
             return;
         
         // activate increase max health buff
-        if (_healthScaer != _playerStats.maxHealthScaler)
+        if (_healthScaler != _playerStats.maxHealthScaler)
         {
-            _healthScaer = _playerStats.maxHealthScaler;
-            AddHealthBuff(_healthScaer);
+            _healthScaler = _playerStats.maxHealthScaler;
+            AddHealthBuff(_healthScaler);
         }
         
         // activate static regeneration 
@@ -47,47 +51,33 @@ public class PlayerHealth : MonoBehaviour
         if (GameManager.Shared.StageDamage)
             UpdateHealth(maxHealth / -500f, Vector3.zero);
         
-        if (_health <= 0)
-            KillPlayer();
+        if (health <= 0)
+            _playerController.KillPlayer();
         
     }
 
     public void UpdateHealth(float mod, Vector3 pos)
     {
-        if (_playerController.isStunned)
+        if (_playerController.isStunned && mod <= 0)
             return;
         
-        _health += mod;
-        
-        if (_health > maxHealth)
-        {
-            _health = maxHealth;
-        }
-        else if (_health <= 0)
-        {
-            _health = 0;
-            KillPlayer();
-        }
-        
+        health = Mathf.Min(health + mod, maxHealth);
+        health = Mathf.Max(health, 0);
+
         UpdateHealthBar();
         _playerController.PlayerGotHit(pos);
     }
 
     private void UpdateHealthBar()
     {
-        var lifeBarFillPercentage = _health / maxHealth * 100;
+        var lifeBarFillPercentage = health / maxHealth * 100;
         UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
     }
-
-    private void KillPlayer()
-    {
-        playerIsDead = true;
-    }
-
+    
     public void AddHealthBuff(float scaler)
     {
         maxHealth = 100 * scaler;
-        _health *= scaler;
+        health *= scaler;
         UpdateHealthBar();
     }
 
@@ -100,18 +90,40 @@ public class PlayerHealth : MonoBehaviour
         }
 
         regenTimer = regenPerSecond;
-        _health = Mathf.Min(maxHealth, _health + regenAddition);
+        health = Mathf.Min(maxHealth, health + regenAddition);
         UpdateHealthBar();
     }
 
     public void MonsterKillRegeneration()
     {
-        if (!_playerStats.monsterKillRegeneration || playerIsDead)
+        if (!_playerStats.monsterKillRegeneration || _playerController.IsPlayerDead)
             return;
         
-        _health = Mathf.Min(maxHealth, _health + monsterDeathAddition);
+        health = Mathf.Min(maxHealth, health + monsterDeathAddition);
         UpdateHealthBar();
     }
+
+    public void ApplyFallDamage()
+    {
+        UpdateHealth(-fallDamage, Vector3.zero);
+        
+        if (health <= 0 && _playerStats.secondWind && !_usedSecondWindThisRound)
+        {
+            _usedSecondWindThisRound = true;
+            UpdateHealth(secondWindHealthBuff, Vector3.zero);
+            SecondWindEffect();
+        }
+        
+        if (health <= 0)
+            _playerController.KillPlayer();
+    }
+
+    private void SecondWindEffect()
+    {
+        // play second wind sound
+        // play second wind graphics
+    }
+    
     
 
 }

@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 142653926}
   - component: {fileID: 142653925}
   - component: {fileID: 142653924}
+  - component: {fileID: 142653927}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -417,6 +418,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &142653927
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142653922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &144052447
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +761,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -4010987969971682880, guid: db197fe085597f84ebe38fb2388d504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -926,7 +944,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 2076634434367237564, guid: db197fe085597f84ebe38fb2388d504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1248,7 +1266,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -2
   m_Time: 0.15
   m_Parameters:
@@ -1441,7 +1459,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a7573331e808a4428917a6748de664a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1481,12 +1499,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edd35940058d747bf2f453f39aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuManager: {fileID: 2142886888}
-  _health: 0
+  health: 0
   maxHealth: 100
+  fallDamage: 40
   monsterDeathAddition: 5
   regenAddition: 2
   regenPerSecond: 1
+  secondWindHealthBuff: 50
 --- !u!114 &487535068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,9 +1536,9 @@ MonoBehaviour:
   monsterKillRegeneration: 0
   staticRegeneration: 0
   iceDash: 0
-  secondWind: 0
+  secondWind: 1
   cantFall: 0
-  burnDamage: 0
+  burnDamage: 1
   attackRange: 1
   swordRangedAttack: 0
 --- !u!1 &644526770
@@ -1617,7 +1636,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 2076634434367237564, guid: db197fe085597f84ebe38fb2388d504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1723,7 +1742,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 24d1223d318a2bf499cf917a0039950d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2589,7 +2608,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7f941de99115ab44294e4f456eb05693, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2844,6 +2863,7 @@ GameObject:
   - component: {fileID: 1362103397}
   - component: {fileID: 1362103399}
   - component: {fileID: 1362103398}
+  - component: {fileID: 1362103400}
   m_Layer: 0
   m_Name: Slash
   m_TagString: Untagged
@@ -2922,19 +2942,32 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.732, y: 2.064}
+  m_Size: {x: 1.704, y: 2.064}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1362103400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362103396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c96e5965f5ad47808fbdd158be2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangedSwordAttack: {fileID: 5792016792977383149, guid: 584286ec24cfc1349862af68dfb6a236, type: 3}
 --- !u!1 &1526712959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3404,30 @@ PrefabInstance:
       propertyPath: middlePercentage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.data[0].bigPercentage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.data[0].monsterAmount
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.data[0].smallPercentage
+      value: 0.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.data[0].timeToSpawnStep
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: _waves.Array.data[0].middlePercentage
+      value: 0.899
+      objectReference: {fileID: 0}
     - target: {fileID: 5867245368094987142, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.99
@@ -3463,7 +3520,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 2
   m_Sprite: {fileID: -6712920073108767268, guid: db197fe085597f84ebe38fb2388d504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3815,7 +3872,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2084969665
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 2076634434367237564, guid: db197fe085597f84ebe38fb2388d504b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3941,6 +3998,7 @@ GameObject:
   - component: {fileID: 1944656175}
   - component: {fileID: 1944656174}
   - component: {fileID: 1944656173}
+  - component: {fileID: 1944656176}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -4027,6 +4085,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 142653923}
+--- !u!114 &1944656176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944656171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1279a6361ff1b4390d56c844fa5961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963108594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4389,17 +4459,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2142886888 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3436592358466836508, guid: 3be8095fcca3a144a9e88de3400f4651, type: 3}
-  m_PrefabInstance: {fileID: 835495481}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d57b8e4e584f243a1d66f7af9fa675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2142886891 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3436592358466836509, guid: 3be8095fcca3a144a9e88de3400f4651, type: 3}

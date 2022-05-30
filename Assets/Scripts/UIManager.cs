@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
     {
         var lifeBarFill = lifeBar.GetComponent<Image>().fillAmount;
         var lifeBarDelayFill = lifeBarDelay.GetComponent<Image>().fillAmount;
-        var barEmptyScaler = Time.deltaTime * 0.1f;
+        var barEmptyScaler = Time.fixedDeltaTime * 0.1f;
         
         if (!(lifeBarDelayFill > lifeBarFill)) return;
         lifeBarDelayFill = Mathf.Max(lifeBarDelayFill - barEmptyScaler, lifeBarFill);
