@@ -107,6 +107,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position.y < -50)
+        {
+            _rb.gravityScale = 0f;
+            _rb.velocity = Vector2.zero;
+        }
+
         if (IsPlayerDead)
             return;
 
@@ -415,7 +421,8 @@ public class PlayerController : MonoBehaviour
     {
         IsPlayerDead = true;
         _moveDirection = Vector2.zero;
-        _playerState = PlayerState.Dead;
+        if (_playerState != PlayerState.Falling)
+            _playerState = PlayerState.Dead;
         Animator.SetInteger(State, (int) _playerState);
     }
     

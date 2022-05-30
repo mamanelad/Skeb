@@ -66,7 +66,6 @@ public class PlayerHealth : MonoBehaviour
 
         UpdateHealthBar();
         _playerController.PlayerGotHit(pos);
-        print(health);
     }
 
     private void UpdateHealthBar()

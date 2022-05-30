@@ -7,11 +7,12 @@ public class CameraManager : MonoBehaviour
     private PlayerController _playerController;
     [SerializeField] private GameObject targetGroupCamera;
 
-    [SerializeField] private float timeInZoom = 5f;
+    [SerializeField] private float timeInZoom;
     
     void Start()
     {
         _playerController = FindObjectOfType<PlayerController>();
+        timeInZoom /= 5f;
 
     }
 
@@ -22,6 +23,7 @@ public class CameraManager : MonoBehaviour
             Time.timeScale = 0.2f;
             targetGroupCamera.SetActive(true);
             timeInZoom -= Time.deltaTime;
+            print(timeInZoom);
 
             if (timeInZoom <= 0)
             {
