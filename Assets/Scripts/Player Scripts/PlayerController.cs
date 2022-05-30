@@ -294,8 +294,8 @@ public class PlayerController : MonoBehaviour
 
         if (_dashStatus)
         {
-            var dashPosition = _rb.position + _moveDirection * dashDistance;
-            var hit = Physics2D.Raycast(transform.position, _moveDirection,
+            var dashPosition = _rb.position + _idleDirection * dashDistance;
+            var hit = Physics2D.Raycast(transform.position, _idleDirection,
                 dashDistance, dashLayerMask);
             if (hit.collider != null)
                 dashPosition = hit.point;
