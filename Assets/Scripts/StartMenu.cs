@@ -9,29 +9,35 @@ using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     private int amountOfMonstersInPlay;
+
+    [SerializeField] private float startDelayTimer = 2f;
+
+    private bool startGame;
     // Start is called before the first frame update
 
     private void Start()
     {
         var monsters = FindObjectsOfType<Enemy>();
         amountOfMonstersInPlay = monsters.Length - 1;
-        print(amountOfMonstersInPlay);
+    }
+
+    private void Update()
+    {
+        if (startGame)
+            startDelayTimer -= Time.deltaTime;
+        if (startDelayTimer <= 0)
+            StartGame();
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Tamir");
+        SceneManager.LoadScene("Elad");
     }
 
     public void DecreaseMonster()
     {
-        print(amountOfMonstersInPlay);
         amountOfMonstersInPlay -= 1;
         if (amountOfMonstersInPlay == 0)
-        {
-            StartGame();
-        }
+            startGame = true;
     }
-
-    
 }

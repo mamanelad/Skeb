@@ -6,6 +6,9 @@ public class EnemySpawnerDots : MonoBehaviour
 {
     #region Private Fields
 
+
+    private bool gameStarted;
+    
     private bool spawnIsOn;
 
     private int _dotIndexBolt; //Position for the bolt
@@ -34,6 +37,8 @@ public class EnemySpawnerDots : MonoBehaviour
     #endregion
 
     #region Inspector Control
+
+    [SerializeField] private UpgradeShop upgradeShop;
 
     [SerializeField] private GameObject lightningStrike;
     // [SerializeField] private GameObject[] monsters;
@@ -193,7 +198,20 @@ public class EnemySpawnerDots : MonoBehaviour
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
         _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
         CalculateMostWanted();
-        spawnIsOn = true;
+        if (!gameStarted)
+        {
+            StartBlockSpawn(true);
+            gameStarted = true; 
+        }
+        else
+        {
+            upgradeShop.OpenShop();
+        }
         
+    }
+
+    public void StartBlockSpawn(bool mood)
+    {
+        spawnIsOn = mood;
     }
 }

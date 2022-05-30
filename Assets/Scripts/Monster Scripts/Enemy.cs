@@ -106,18 +106,29 @@ public class Enemy : MonoBehaviour
      */
     public void DamageEnemy(int damage)
     {
-        //Demege enemy setting for the option that the function is not called from the burning effect.
-        if (_playerStats != null && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        _enemyAI.lockMovement = true;
+        
+        //Demage enemy setting for the option that the function is not called from the burning effect.
+        if (_playerStats != null)
         {
-            var fireAffect = GetComponentInChildren<FireParticleEffect>();
-            if (fireAffect != null && !fireAffect.damageEnemy )
+            if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
             {
-                fireAffect.CloseAndOpenBurningAffect(true);
-                 GoBack();
+                var fireAffect = GetComponentInChildren<FireParticleEffect>();
+                if (fireAffect != null && !fireAffect.damageEnemy)
+                {
+                    fireAffect.CloseAndOpenBurningAffect(true);
+                    GoBack();
+                }
+                
             }
-            
-           
+
+            else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            {
+                GoBack();
+            }
         }
+        
+        
 
 
         currHealth -= damage;
@@ -137,6 +148,8 @@ public class Enemy : MonoBehaviour
 
         if (currHealth <= 0)
             KillEnemy();
+        
+        _enemyAI.lockMovement = false;
     }
 
     private void GoBack()
