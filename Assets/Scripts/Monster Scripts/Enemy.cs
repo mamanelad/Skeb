@@ -107,10 +107,10 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         //Demege enemy setting for the option that the function is not called from the burning effect.
-        if (_playerStats && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        if (_playerStats != null && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
             var fireAffect = GetComponentInChildren<FireParticleEffect>();
-            if (fireAffect != null &&!fireAffect.damageEnemy )
+            if (fireAffect != null && !fireAffect.damageEnemy )
             {
                 fireAffect.CloseAndOpenBurningAffect(true);
                  GoBack();
