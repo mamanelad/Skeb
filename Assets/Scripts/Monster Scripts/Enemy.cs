@@ -96,8 +96,6 @@ public class Enemy : MonoBehaviour
      */
     public float GetHealth()
     {
-        if (_enemyKind == EnemyKind.Big)
-            return 1;
         return currHealth;
     }
 
@@ -106,20 +104,27 @@ public class Enemy : MonoBehaviour
      */
     public void DamageEnemy(int damage)
     {
-        //Demege enemy setting for the option that the function is not called from the burning effect.
-        if (_playerStats != null && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
-        {
-            var fireAffect = GetComponentInChildren<FireParticleEffect>();
-            if (fireAffect != null && !fireAffect.damageEnemy )
+        // _enemyAI.lockMovement = true;
+        
+        //Demage enemy setting for the option that the function is not called from the burning effect.
+       
+            if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
             {
-                fireAffect.CloseAndOpenBurningAffect(true);
-                 GoBack();
+                var fireAffect = GetComponentInChildren<FireParticleEffect>();
+                if (fireAffect != null && !fireAffect.damageEnemy)
+                {
+                    fireAffect.CloseAndOpenBurningAffect(true);
+                    GoBack();
+                }
+                
             }
-            
-           
-        }
 
-
+            else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            {
+                GoBack();
+            }
+        
+        
         currHealth -= damage;
         
         switch (_state)
@@ -133,10 +138,17 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        if (_enemyKind == EnemyKind.Big) return;
+        // if (_enemyKind == EnemyKind.Big)
+        // {
+        //     _enemyAI.lockMovement = false;
+        //     return;
+        // }
 
         if (currHealth <= 0)
             KillEnemy();
+        
+        // _enemyAI.lockMovement = false;
+
     }
 
     private void GoBack()
@@ -156,22 +168,19 @@ public class Enemy : MonoBehaviour
     public void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
-        
-       
-        
+
         if (!_isDead)
         {
-            var stMenu = FindObjectOfType<StartMenu>();
-            
-            if (stMenu != null )
-            {
-                stMenu.DecreaseMonster();
-            }
+            // var stMenu = FindObjectOfType<StartMenu>();
+            //
+            // if (stMenu != null )
+            // {
+            //     stMenu.DecreaseMonster();
+            // }
 
             if (_enemySpawnerDots != null)
             {
                 _enemySpawnerDots.DecreaseMonster();
-
             }
             _isDead = true;
         }

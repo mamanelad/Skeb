@@ -6,6 +6,8 @@ public class EnemySpawnerDots : MonoBehaviour
 {
     #region Private Fields
 
+    private bool gameStarted;
+
     private bool spawnIsOn;
 
     private int _dotIndexBolt; //Position for the bolt
@@ -30,10 +32,14 @@ public class EnemySpawnerDots : MonoBehaviour
     private float middlePercentage = .33f;
     private float smallPercentage = .33f;
     private int waveIndex = -1;
-
+    private float openShopTimer;
+    private bool openShop;
+    
     #endregion
 
     #region Inspector Control
+
+    [SerializeField] private UpgradeShop upgradeShop;
 
     [SerializeField] private GameObject lightningStrike;
     // [SerializeField] private GameObject[] monsters;
@@ -56,6 +62,8 @@ public class EnemySpawnerDots : MonoBehaviour
     [Header("Timing Setting")] [SerializeField]
     private float maxTimeToSpawn = 4; //Amount of time between enemies initialization.
 
+    [SerializeField] private float timeToOpenTheShopDeley = 3f;
+    
     #endregion
 
     private void Start()
@@ -78,6 +86,15 @@ public class EnemySpawnerDots : MonoBehaviour
 
     void Update()
     {
+        if (openShop)
+        {
+            openShopTimer -= Time.deltaTime;
+            if (openShopTimer <= 0)
+            {
+                upgradeShop.OpenShop();
+                openShop = false;
+            }
+        }
         if (!spawnIsOn) return;
         
 
@@ -108,7 +125,6 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         if (_monsterCounter > 0)
             _monsterCounter -= 1;
-        
     }
 
 
@@ -164,7 +180,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
         _monsterIndex = (_monsterIndex + 1) % monsterKindsAmount;
         _dotIndexMonster = (_dotIndexMonster + 1) % spawnerDots.Length;
-       
+
         currentWaveMonsterCounter += 1;
         _monsterCounter += 1;
     }
@@ -193,7 +209,20 @@ public class EnemySpawnerDots : MonoBehaviour
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
         _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
         CalculateMostWanted();
-        spawnIsOn = true;
-        
+        if (!gameStarted)
+        {
+            StartBlockSpawn(true);
+            gameStarted = true;
+        }
+        else
+        {
+            openShop = true;
+            openShopTimer = timeToOpenTheShopDeley;
+        }
+    }
+
+    public void StartBlockSpawn(bool mood)
+    {
+        spawnIsOn = mood;
     }
 }

@@ -106,8 +106,8 @@ MonoBehaviour:
   minNextWaypointDistance: 7
   maxUpdateRate: 10
   minUpdateRate: 7
-  maxSpeed: 600
-  minSpeed: 400
+  maxSpeed: 700
+  minSpeed: 500
   minMass: 2
   maxMass: 2
   minLinearDrag: 1
