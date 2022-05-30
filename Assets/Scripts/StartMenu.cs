@@ -11,7 +11,6 @@ public class StartMenu : MonoBehaviour
     private int amountOfMonstersInPlay;
 
     [SerializeField] private float startDelayTimer = 2f;
-
     private bool startGame;
     // Start is called before the first frame update
 

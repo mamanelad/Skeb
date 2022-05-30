@@ -22,7 +22,6 @@ public class EnemyAlone : MonoBehaviour
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Die = Animator.StringToHash("Die");
 
-    
     #endregion
 
     #region Inspector Control
@@ -35,9 +34,9 @@ public class EnemyAlone : MonoBehaviour
     [SerializeField] private float attackDamage = 50f;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
 
-    [Header("Screen Shake Settings")]
-    
-    [SerializeField]private float screenShakeIntensity = 5f;
+    [Header("Screen Shake Settings")] [SerializeField]
+    private float screenShakeIntensity = 5f;
+
     [SerializeField] private float screenShakeTime = .1f;
 
     #endregion
@@ -48,7 +47,7 @@ public class EnemyAlone : MonoBehaviour
         {
             _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
         }
-        
+
         _enemyAI = GetComponentInParent<EnemyAI>();
         _enemyTogetherFather = GetComponentInParent<Enemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -60,7 +59,7 @@ public class EnemyAlone : MonoBehaviour
         //See if the player close enough for attack.
         if (_canAttack)
             DetectPlayer();
-        
+
         else
         {
             _timerBetweenAttacks -= Time.deltaTime;
@@ -69,18 +68,15 @@ public class EnemyAlone : MonoBehaviour
         }
 
         //Checks the enemy health from the enemy script.
-        if (_enemyTogetherFather)
-        {
-            if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
-            {
-                _isDead = true;
-                _animator.SetTrigger(Dead);
-                _animator.SetBool(Die, true);
-
-                MovementLock();
-            } 
-        }
         
+        if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
+        {
+            _isDead = true;
+            _animator.SetTrigger(Dead);
+            _animator.SetBool(Die, true);
+
+            // MovementLock();
+        }
     }
 
     /**
@@ -89,7 +85,7 @@ public class EnemyAlone : MonoBehaviour
     private void DetectPlayer()
     {
         if (_isAttacking || !_player) return;
-        
+
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeCheck)
         {
@@ -119,8 +115,8 @@ public class EnemyAlone : MonoBehaviour
             if (FindObjectOfType<CinemaMachineShake>())
             {
                 CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
-
             }
+
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
 
@@ -137,9 +133,9 @@ public class EnemyAlone : MonoBehaviour
         ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
         if (_energyBallFather)
         {
-            ball.transform.SetParent(_energyBallFather.transform);  
+            ball.transform.SetParent(_energyBallFather.transform);
         }
-        
+
         _isAttacking = false;
     }
 
@@ -162,6 +158,4 @@ public class EnemyAlone : MonoBehaviour
     {
         _enemyAI.lockMovement = true;
     }
-    
-    
 }

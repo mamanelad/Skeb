@@ -10,6 +10,8 @@ namespace FireParticle
         [SerializeField] Vector2 MaxVelocity = new Vector2(0.05f, 0.2f);
         [SerializeField] float LifeSpan = 2f;
 
+        [SerializeField] private Sprite[] fireSprites;
+        
         public bool DestroysSelf = true;
 
         public AlphaFalloff AlphaFalloff;
@@ -26,6 +28,8 @@ namespace FireParticle
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            // var index = Random.Range(0, fireSprites.Length-1);
+            // spriteRenderer.sprite = fireSprites[index] ;
             originalColor = spriteRenderer.color;
 
         }

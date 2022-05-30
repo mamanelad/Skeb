@@ -106,8 +106,8 @@ MonoBehaviour:
   minNextWaypointDistance: 2
   maxUpdateRate: 5
   minUpdateRate: 2
-  maxSpeed: 400
-  minSpeed: 200
+  maxSpeed: 500
+  minSpeed: 400
   minMass: 3
   maxMass: 3
   minLinearDrag: 2
@@ -129,8 +129,8 @@ MonoBehaviour:
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
   _enemyKind: 0
-  currHealth: 60
-  startHealth: 60
+  currHealth: 100
+  startHealth: 100
 --- !u!58 &7831456615168194438
 CircleCollider2D:
   m_ObjectHideFlags: 0
