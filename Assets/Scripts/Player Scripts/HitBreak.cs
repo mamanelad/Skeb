@@ -31,7 +31,7 @@ public class HitBreak : MonoBehaviour
 
     public void HitBreakAction()
     {
-        if (_hitBreakOn) return;
+        if (_hitBreakOn || _playerController.IsPlayerDead) return;
         
         var material = _renderer.material;
         material.shader = hitShader;

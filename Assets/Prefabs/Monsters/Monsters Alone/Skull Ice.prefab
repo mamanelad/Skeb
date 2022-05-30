@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5036585350102904855, guid: 064ded6170d65a5409268b81c81642c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,7 +137,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 1
   attackRangeHit: 1
-  attackDamage: 3
+  attackDamage: 10
   timeBetweenAttacks: 1
   screenShakeIntensity: 5
   screenShakeTime: 0.1

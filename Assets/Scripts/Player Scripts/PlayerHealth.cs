@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [NonSerialized] public bool PlayerIsDead;
     [SerializeField] private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float fallDamage = 20;
@@ -35,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerIsDead)
+        if (_playerController.IsPlayerDead)
             return;
         
         // activate increase max health buff
@@ -53,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
             UpdateHealth(maxHealth / -500f, Vector3.zero);
         
         if (health <= 0)
-            KillPlayer();
+            _playerController.KillPlayer();
         
     }
 
@@ -75,12 +74,7 @@ public class PlayerHealth : MonoBehaviour
         var lifeBarFillPercentage = health / maxHealth * 100;
         UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
     }
-
-    private void KillPlayer()
-    {
-        PlayerIsDead = true;
-    }
-
+    
     public void AddHealthBuff(float scaler)
     {
         maxHealth = 100 * scaler;
@@ -103,7 +97,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void MonsterKillRegeneration()
     {
-        if (!_playerStats.monsterKillRegeneration || PlayerIsDead)
+        if (!_playerStats.monsterKillRegeneration || _playerController.IsPlayerDead)
             return;
         
         health = Mathf.Min(maxHealth, health + monsterDeathAddition);
@@ -120,6 +114,9 @@ public class PlayerHealth : MonoBehaviour
             UpdateHealth(secondWindHealthBuff, Vector3.zero);
             SecondWindEffect();
         }
+        
+        if (health <= 0)
+            _playerController.KillPlayer();
     }
 
     private void SecondWindEffect()

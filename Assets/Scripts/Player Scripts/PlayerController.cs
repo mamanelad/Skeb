@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
         Idle,
         Move,
         Combat,
-        Falling
+        Falling,
+        Dead
     }
 
     private enum AttackStatus
@@ -34,7 +35,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float knockBackDistance;
     [SerializeField] private Animator slashAnimator;
     [SerializeField] private bool playerCantFall;
-    [SerializeField] private GameObject RangedSwordAttack;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     private List<GameObject> _monstersInRange;
     private bool _isInTopHalf;
     public bool isStunned;
+    [NonSerialized] public bool IsPlayerDead;
 
     #endregion
 
@@ -106,6 +107,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (IsPlayerDead)
+            return;
+
         if (transform.position.y < -20)
         {
             ResetPlayerFall();
@@ -157,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerState()
     {
-        if (_playerState == PlayerState.Combat || _playerState == PlayerState.Falling)
+        if (_playerState == PlayerState.Combat || _playerState == PlayerState.Falling || _playerState == PlayerState.Dead)
             return;
         _attackStatus = AttackStatus.First;
         if (_moveDirection.sqrMagnitude > 0.01f)
@@ -269,6 +273,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(IsPlayerDead)
+            return;
+        
         if (slipperyFloor || _playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
@@ -367,13 +374,17 @@ public class PlayerController : MonoBehaviour
 
     private void ResetPlayerFall()
     {
+        GetComponent<PlayerHealth>().ApplyFallDamage();
+
+        if (IsPlayerDead)
+            return;
+        
         _playerState = PlayerState.Idle;
         _rb.gravityScale = 0;
         GetComponent<Collider2D>().enabled = true;
         transform.position = Vector3.zero;
         GetComponent<SpriteRenderer>().sortingLayerName = "Player";
         reflection.SetActive(true);
-        GetComponent<PlayerHealth>().ApplyFallDamage();
         PlayerGotHit(Vector3.zero);
     }
 
@@ -398,6 +409,14 @@ public class PlayerController : MonoBehaviour
     {
         playerCantFall = _playerStats.cantFall;
         hitBox.transform.localScale = new Vector3(1, -1, 1) * _playerStats.attackRange;
+    }
+
+    public void KillPlayer()
+    {
+        IsPlayerDead = true;
+        _moveDirection = Vector2.zero;
+        _playerState = PlayerState.Dead;
+        Animator.SetInteger(State, (int) _playerState);
     }
     
 }

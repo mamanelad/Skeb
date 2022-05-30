@@ -1373,7 +1373,6 @@ MonoBehaviour:
   knockBackDistance: 0.3
   slashAnimator: {fileID: 1362103398}
   playerCantFall: 0
-  RangedSwordAttack: {fileID: 5792016792977383149, guid: 584286ec24cfc1349862af68dfb6a236, type: 3}
   slipperyFloor: 1
   friction: 1.15
   speedScalerForSlipperyFloor: 1.15
