@@ -12,11 +12,11 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Dash Buffs")] 
     public bool iceDash;
-    public bool secondWind;
+    public bool secondWind; // Done
     public bool cantFall; // Done
 
     [Header("Attack Buffs")] 
-    public bool burnDamage;
+    public bool burnDamage; // Done
     [Range(1f,3f)]public float attackRange = 1; // Done
-    public bool swordRangedAttack;
+    public bool swordRangedAttack; // Done
 }

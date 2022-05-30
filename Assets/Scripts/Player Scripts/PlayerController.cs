@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float knockBackDistance;
     [SerializeField] private Animator slashAnimator;
     [SerializeField] private bool playerCantFall;
+    [SerializeField] private GameObject RangedSwordAttack;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -179,6 +181,13 @@ public class PlayerController : MonoBehaviour
                 var monsterController = monster.GetComponent<Enemy>();
                 if (monsterController != null)
                     monsterController.DamageEnemy(CalculateDamage());
+                if (_playerStats.burnDamage)
+                {
+                    var fireParticle = monster.GetComponent<FireParticleEffect>();
+                    if (fireParticle)
+                        fireParticle.CloseAndOpenBurningAffect(true);
+                }
+                    
             }
         slashAnimator.SetInteger("AttackStage", (int) _attackStatus);
         slashAnimator.SetTrigger("Attack");
@@ -364,7 +373,7 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.zero;
         GetComponent<SpriteRenderer>().sortingLayerName = "Player";
         reflection.SetActive(true);
-        GetComponent<PlayerHealth>().UpdateHealth(-20, Vector3.zero);
+        GetComponent<PlayerHealth>().ApplyFallDamage();
         PlayerGotHit(Vector3.zero);
     }
 
@@ -378,6 +387,11 @@ public class PlayerController : MonoBehaviour
     public PlayerState GetPlayerState()
     {
         return _playerState;
+    }
+
+    public Vector2 GetPlayerIdleDirection()
+    {
+        return _idleDirection;
     }
 
     private void ApplyPowerUps()
