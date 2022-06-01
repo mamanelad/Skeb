@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveMaterial: {fileID: 2100000, guid: b607390fced43334cb007ce5026f60b8, type: 2}
   fade: 1
-  coinPick: {fileID: 2128398988093459002, guid: df9389174370f0c438a0e80e6be37095, type: 3}
+  coinPick: {fileID: 834392562380868328, guid: a96b2c358fa563b4f937cadc69f1285f, type: 3}
 --- !u!95 &6469212699375943030
 Animator:
   serializedVersion: 3
