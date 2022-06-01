@@ -9,19 +9,20 @@ public class CoinPickUp : MonoBehaviour
 
     [SerializeField] private float minDistance = 1f;
     [SerializeField] private float step = 0.1f;
-    [SerializeField] private GameObject player;
+     private GameObject player;
 
     private enum CoinKind
     {
         Fire,
-        Ice
+        Ice,
+        Heart
     }
 
-    [SerializeField] private CoinKind _coinKind;
+    [SerializeField] private CoinKind coinKind;
     [SerializeField] private Sprite fireSprite;
     [SerializeField] private Sprite iceSprite;
     private SpriteRenderer _spriteRenderer;
-    [SerializeField] private Animator _animator;
+    private Animator _animator;
 
     private GameManager.WorldState _state;
 
@@ -88,7 +89,7 @@ public class CoinPickUp : MonoBehaviour
 
     private void AddCoins()
     {
-        switch (_coinKind)
+        switch (coinKind)
         {
             case CoinKind.Fire:
                 GameManager.Shared.fireCoins += coinValue;
@@ -96,6 +97,11 @@ public class CoinPickUp : MonoBehaviour
 
             case CoinKind.Ice:
                 GameManager.Shared.iceCoins += coinValue;
+                break;
+            
+            case CoinKind.Heart:
+                
+                //TODO:: add life to player
                 break;
         }
 
