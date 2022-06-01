@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 2
+  maxHealth: 100
   fallDamage: 40
   monsterDeathAddition: 5
   regenAddition: 2
@@ -1588,9 +1588,9 @@ MonoBehaviour:
   iceDash: 0
   secondWind: 1
   cantFall: 0
-  burnDamage: 1
+  burnDamage: 0
   attackRange: 1
-  swordRangedAttack: 0
+  swordRangedAttack: 1
 --- !u!1 &644526770
 GameObject:
   m_ObjectHideFlags: 0
