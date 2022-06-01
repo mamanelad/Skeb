@@ -15,6 +15,7 @@ TagManager:
   - Arena Collider
   - Top
   - Bottom
+  - fireAnimation
   layers:
   - Default
   - TransparentFX

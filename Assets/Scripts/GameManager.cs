@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Shared;
 
+    [SerializeField] private bool stuckStage;
     [SerializeField] private bool stateSwitchAutomatically;
     [SerializeField] private float timeInStage = 4;
     [NonSerialized] public bool StageDamage;
@@ -73,7 +74,8 @@ public class GameManager : MonoBehaviour
 
     private void SwitchState()
     {
-        var fireAffects = FindObjectsOfType<FireParticleEffect>();
+        if (stuckStage) return;
+            var fireAffects = FindObjectsOfType<FireParticleEffect>();
         foreach (var fireAffect in fireAffects)
             fireAffect.CloseAndOpenBurningAffect(false);
 

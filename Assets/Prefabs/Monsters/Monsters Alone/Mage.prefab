@@ -1,5 +1,117 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3951202207743374965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172806108778153466}
+  - component: {fileID: 1557927857871317049}
+  - component: {fileID: 5162223864881866970}
+  m_Layer: 11
+  m_Name: fireParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &172806108778153466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951202207743374965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.015175052, y: 0.11088477, z: -0.9699213}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4455980773423155323}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1557927857871317049
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951202207743374965}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24309161, y: 0.0637674}
+      - {x: 0.22232229, y: 0.06512481}
+      - {x: 0.2197265, y: 0.10052419}
+      - {x: 0.19064224, y: 0.103235364}
+      - {x: 0.19387433, y: 0.13500872}
+      - {x: 0.21848446, y: 0.14533839}
+      - {x: 0.2218386, y: 0.19074851}
+      - {x: 0.1946831, y: 0.19289285}
+      - {x: 0.19612417, y: 0.2456584}
+      - {x: 0.16786443, y: 0.24257064}
+      - {x: 0.1601856, y: 0.27813208}
+      - {x: 0.033281058, y: 0.29000401}
+      - {x: -0.07742858, y: 0.28682962}
+      - {x: -0.3200436, y: 0.060173035}
+      - {x: -0.3156813, y: -0.040471017}
+      - {x: -0.28817827, y: -0.041707426}
+      - {x: -0.2372652, y: -0.08370279}
+      - {x: -0.19132966, y: -0.118818775}
+      - {x: -0.11283905, y: -0.13320506}
+      - {x: -0.1047379, y: -0.07376474}
+      - {x: -0.042917207, y: -0.035588995}
+      - {x: -0.06565427, y: -0.3811536}
+      - {x: 0.18602224, y: -0.3826725}
+      - {x: 0.1932792, y: -0.2259719}
+      - {x: 0.12031406, y: -0.0031912625}
+      - {x: 0.1318486, y: 0.025250375}
+      - {x: 0.19144669, y: 0.027861208}
+      - {x: 0.18996474, y: -0.009885311}
+      - {x: 0.22955322, y: -0.0065727234}
+      - {x: 0.2319, y: -0.06916559}
+      - {x: 0.28006265, y: -0.05864589}
+      - {x: 0.29415816, y: -0.10329339}
+      - {x: 0.3686423, y: -0.09507725}
+      - {x: 0.368189, y: -0.06783679}
+      - {x: 0.39428708, y: -0.07061547}
+      - {x: 0.40781277, y: 0.0024724305}
+--- !u!114 &5162223864881866970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951202207743374965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToBurn: 1.5
+  ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
+  Rate: 500
+  isOn: 0
+  fireDamage: 5
+  damageEnemyStep: 0.2
+  damageEnemy: 0
 --- !u!1 &4455980773423155326
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +146,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 8258956866592842021}
+  - {fileID: 172806108778153466}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,7 +188,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1162428035
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 55f2629c4193d484f9a39cb91d457c44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
