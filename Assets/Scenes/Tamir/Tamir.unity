@@ -383,9 +383,9 @@ GameObject:
   m_Component:
   - component: {fileID: 142653923}
   - component: {fileID: 142653926}
-  - component: {fileID: 142653925}
   - component: {fileID: 142653924}
   - component: {fileID: 142653927}
+  - component: {fileID: 142653925}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -451,8 +451,8 @@ MonoBehaviour:
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneWidth: 0.2
+  m_SoftZoneHeight: 0.32
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -483,8 +483,8 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
-  m_FrequencyGain: 5
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  m_FrequencyGain: 2
+  mNoiseOffsets: {x: -19.655823, y: 831.95715, z: 786.6301}
 --- !u!1 &144052447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,8 +1433,9 @@ MonoBehaviour:
   attackDashDistance: 0.2
   dashEffectDurationTime: 0.3
   _playerState: 0
-  _dashStatus: 0
   isStunned: 0
+  screenShakeIntensity: 1
+  screenShakeTime: 0.1
 --- !u!58 &487535063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1551,7 +1552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTutorial: 0
-  health: 0
+  health: 1000
   maxHealth: 100
   fallDamage: 40
   monsterDeathAddition: 5
@@ -2528,7 +2529,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164975157}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -1e-45, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3565,11 +3566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].bigPercentage
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].monsterAmount
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[1].bigPercentage
@@ -3581,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].smallPercentage
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].timeToSpawnStep
@@ -3597,7 +3598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].middlePercentage
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[1].middlePercentage
@@ -4257,7 +4258,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944656171}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -3e-45, y: 1e-45, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4312,7 +4313,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 487535066}
   m_Follow: {fileID: 487535066}
   m_Lens:
     FieldOfView: 60
@@ -4323,7 +4324,7 @@ MonoBehaviour:
     LensShift: {x: 0, y: 0}
   m_Transitions:
     m_BlendHint: 0
-    m_InheritPosition: 0
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []

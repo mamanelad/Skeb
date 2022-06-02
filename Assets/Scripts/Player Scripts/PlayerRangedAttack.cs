@@ -45,12 +45,12 @@ public class PlayerRangedAttack : MonoBehaviour
             if (monsterController)
                 monsterController.DamageEnemy(damage);
         }
-
-        if (other.gameObject.CompareTag("HourGlass") )
-        {
-            var hourGlass = FindObjectOfType<HourGlass>();
-            hourGlass.HitHourGlass();
-        }
+        //
+        // if (other.gameObject.CompareTag("HourGlass") )
+        // {
+        //     var hourGlass = FindObjectOfType<HourGlass>();
+        //     hourGlass.HitHourGlass();
+        // }
     }
 
     

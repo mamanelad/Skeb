@@ -250,7 +250,7 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 5
   timeBetweenAttacks: 1
-  screenShakeIntensity: 7.5
+  screenShakeIntensity: 3
   screenShakeTime: 0.2
 --- !u!58 &2439174244693138357
 CircleCollider2D:

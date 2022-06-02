@@ -26,8 +26,9 @@ public class PlayerController : MonoBehaviour
 
     #region Inspector Control
 
-    [Header("Movement Control")] 
-    [SerializeField] private float movementSpeed = 5;
+    [Header("Movement Control")] [SerializeField]
+    private float movementSpeed = 5;
+
     [SerializeField] private GameObject hitBox;
     [SerializeField] private GameObject reflection;
     [SerializeField] private bool canMoveWhileAttacking;
@@ -43,8 +44,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")]
-    [SerializeField] private LayerMask dashLayerMask;
+    [Header("Dash Settings")] [SerializeField]
+    private LayerMask dashLayerMask;
+
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private float dashEffectDurationTime;
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
     private Vector2 _knockBackDirection = Vector2.zero;
-    [HideInInspector] public bool _dashStatus;
+    [NonSerialized] public bool _dashStatus;
     private bool _attackDash;
     [NonSerialized] public bool KnockBackStatus;
     private List<GameObject> _monstersInRange;
@@ -91,6 +93,11 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    
+    [Header("Screen Shake Settings")] [SerializeField]
+    private float screenShakeIntensity = 1f;
+
+    [SerializeField] private float screenShakeTime = .1f;
     private void Awake()
     {
         if (_PlayerController == null)
@@ -121,6 +128,7 @@ public class PlayerController : MonoBehaviour
             ResetPlayerFall();
             return;
         }
+
         SetWorldState();
         ApplyPowerUps();
         SetPlayerState();
@@ -130,14 +138,18 @@ public class PlayerController : MonoBehaviour
             Attack();
         PlayAnimation();
 
-        if (Input.GetButtonDown("Attack") && _playerState != PlayerState.Falling
-                                          && _currentWorldState == GameManager.WorldState.Ice)
+        if (Input.GetButtonDown("Attack") )
         {
-            _dashStatus = true;
-            StartCoroutine(ActivateDashTrail());
+            if (FindObjectOfType<CinemaMachineShake>())
+                CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
+
+            if (_playerState != PlayerState.Falling
+                && _currentWorldState == GameManager.WorldState.Ice)
+            {
+                _dashStatus = true;
+                StartCoroutine(ActivateDashTrail());
+            }
         }
-        
-        
     }
 
     private void SetWorldState()
@@ -167,7 +179,8 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerState()
     {
-        if (_playerState == PlayerState.Combat || _playerState == PlayerState.Falling || _playerState == PlayerState.Dead)
+        if (_playerState == PlayerState.Combat || _playerState == PlayerState.Falling ||
+            _playerState == PlayerState.Dead)
             return;
         _attackStatus = AttackStatus.First;
         if (_moveDirection.sqrMagnitude > 0.01f)
@@ -197,8 +210,8 @@ public class PlayerController : MonoBehaviour
                     if (fireParticle)
                         fireParticle.CloseAndOpenBurningAffect(true);
                 }
-                    
             }
+
         slashAnimator.SetInteger("AttackStage", (int) _attackStatus);
         slashAnimator.SetTrigger("Attack");
         _attackStatus++;
@@ -279,9 +292,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(IsPlayerDead)
+        if (IsPlayerDead)
             return;
-        
+
         if (slipperyFloor || _playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
@@ -300,7 +313,7 @@ public class PlayerController : MonoBehaviour
             _rb.MovePosition(dashPosition);
             _attackDash = false;
         }
-        
+
         // knock back from attack
         if (KnockBackStatus)
         {
@@ -342,39 +355,31 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Top"))
             _isInTopHalf = true;
-        
+
         if (other.gameObject.CompareTag("Bottom"))
             _isInTopHalf = false;
-        
-        var monList = _monstersInRange ?? new List<GameObject>(); 
+
+        var monList = _monstersInRange ?? new List<GameObject>();
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.gameObject;
-            if(!monList.Contains(enemy))
+            if (!monList.Contains(enemy))
                 monList.Add(enemy);
         }
-        
-       
+
         _monstersInRange = monList;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("HourGlass") && IsAttacking )
-        {
-            var hourGlass = FindObjectOfType<HourGlass>();
-            hourGlass.HitHourGlass();
-        }    }
-
     private void OnTriggerExit2D(Collider2D other)
     {
-        var monList = _monstersInRange ?? new List<GameObject>(); 
+        var monList = _monstersInRange ?? new List<GameObject>();
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.gameObject;
-            if(monList.Contains(enemy))
+            if (monList.Contains(enemy))
                 monList.Remove(enemy);
         }
+
         _monstersInRange = monList;
     }
 
@@ -394,7 +399,7 @@ public class PlayerController : MonoBehaviour
 
         if (IsPlayerDead)
             return;
-        
+
         _playerState = PlayerState.Idle;
         _rb.gravityScale = 0;
         GetComponent<Collider2D>().enabled = true;
@@ -402,6 +407,10 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingLayerName = "Player";
         reflection.SetActive(true);
         PlayerGotHit(Vector3.zero);
+        if (FindObjectOfType<CinemaMachineShake>())
+        {
+            CinemaMachineShake.Instance.ShakeCamera(0, 0.5f);
+        }
     }
 
     public void PlayerGotHit(Vector3 pos)
@@ -435,5 +444,4 @@ public class PlayerController : MonoBehaviour
             _playerState = PlayerState.Dead;
         Animator.SetInteger(State, (int) _playerState);
     }
-    
 }

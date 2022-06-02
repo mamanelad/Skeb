@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class HourGlass : MonoBehaviour
 {
+    [SerializeField] private GameObject boxTutorial;
     private GameObject player;
     private bool _isInTopHalf;
     private bool _isDead;
     private Rigidbody2D _rb;
-    private PlayerController playerMovement;
     private Animator _animator;
     [SerializeField] private PolygonCollider2D[] iceColliders;
     [SerializeField] private BoxCollider2D hourGlassCollider;
@@ -23,9 +23,10 @@ public class HourGlass : MonoBehaviour
     private bool switchWorld;
 
     private PlayerController _playerController;
-
+    private bool fall;
+    [SerializeField] private float fallDelay = 2f;
     [SerializeField] private float shackDistance = 3;
-    
+
     enum GlassState
     {
         IdleOne,
@@ -40,32 +41,31 @@ public class HourGlass : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         _playerController = FindObjectOfType<PlayerController>();
         _rb = GetComponent<Rigidbody2D>();
-        playerMovement = FindObjectOfType<PlayerController>();
         _animator = GetComponent<Animator>();
     }
-    
 
-    private void FixedUpdate()
+
+    private void Update()
     {
-        var dist = Vector3.Distance(transform.position, player.transform.position);
-        print(dist);
-        if ( dist < shackDistance)
-        {
-            
-            _animator.SetTrigger("Shake");
-        }
-
-        else
-        {
-            _animator.SetTrigger("StopShake");
-        }
-
         if (_playerController._dashStatus && state == GlassState.HourGlassIdle)
         {
             _rb.constraints = RigidbodyConstraints2D.None;
             _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+
+        if (fall)
+        {
+            fallDelay -= Time.deltaTime;
+            if (fallDelay < 0)
+            {
+                SwitchWorld();
+                boxTutorial.SetActive(true); 
+                Destroy(gameObject);
+            }
+        }
     }
+
+   
 
     public void HitHourGlass()
     {
@@ -103,7 +103,17 @@ public class HourGlass : MonoBehaviour
 
     public void SwitchWorld()
     {
-        GameManager.Shared.CurrentState = GameManager.WorldState.Ice;
+        switch (GameManager.Shared.CurrentState)
+        {
+            case GameManager.WorldState.Fire:
+                GameManager.Shared.CurrentState = GameManager.WorldState.Ice;
+                break;
+            
+            case GameManager.WorldState.Ice:
+                GameManager.Shared.CurrentState = GameManager.WorldState.Fire;
+                break;
+        }
+            
         SwitchToHourGlass();
     }
 
@@ -132,6 +142,9 @@ public class HourGlass : MonoBehaviour
             foreach (var sr in GetComponentsInChildren<SpriteRenderer>())
                 sr.sortingLayerName = "Default";
         _rb.gravityScale = 10;
+
+        fall = true;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -141,15 +154,24 @@ public class HourGlass : MonoBehaviour
 
         if (other.gameObject.CompareTag("Bottom"))
             _isInTopHalf = false;
+
+        if (other.gameObject.CompareTag("Player") && _playerController.IsAttacking)
+        {
+            HitHourGlass();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && _playerController.IsAttacking)
+        {
+            HitHourGlass();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
         if (other.gameObject.CompareTag("Arena Collider"))
             SetHourGlassFall();
     }
-
-  
-    
 }

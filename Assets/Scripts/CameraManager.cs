@@ -23,7 +23,6 @@ public class CameraManager : MonoBehaviour
             Time.timeScale = 0.2f;
             targetGroupCamera.SetActive(true);
             timeInZoom -= Time.deltaTime;
-            print(timeInZoom);
 
             if (timeInZoom <= 0)
             {

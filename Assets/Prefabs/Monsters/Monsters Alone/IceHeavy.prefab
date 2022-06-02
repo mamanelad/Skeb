@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireAnimation: {fileID: 0}
-  timeToBurn: 1.5
-  ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
+  timeToBurn: 0.5
+  ParticlePrefab: {fileID: 5520446349924354269, guid: b62c6400639195b4bb5547d9f8abc859, type: 3}
   Rate: 500
   isOn: 0
   fireDamage: 5
@@ -236,11 +236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  attackRangeCheck: 2.5
-  attackRangeHit: 1.2
+  attackRangeCheck: 2
+  attackRangeHit: 2
   attackDamage: 50
   timeBetweenAttacks: 1
-  screenShakeIntensity: 10
+  screenShakeIntensity: 5
   screenShakeTime: 0.3
 --- !u!58 &-669121559460897940
 CircleCollider2D:

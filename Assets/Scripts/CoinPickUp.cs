@@ -59,6 +59,7 @@ public class CoinPickUp : MonoBehaviour
 
     private void SwitchState()
     {
+        if (coinKind == CoinKind.Heart) return;
         _state = GameManager.Shared.CurrentState;
 
         switch (_state)

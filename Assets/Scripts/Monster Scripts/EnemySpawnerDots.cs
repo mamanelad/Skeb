@@ -34,7 +34,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private int waveIndex = -1;
     private float openShopTimer;
     private bool openShop;
-    
+
     #endregion
 
     #region Inspector Control
@@ -63,7 +63,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private float maxTimeToSpawn = 4; //Amount of time between enemies initialization.
 
     [SerializeField] private float timeToOpenTheShopDeley = 3f;
-    
+
     #endregion
 
     private void Start()
@@ -86,17 +86,21 @@ public class EnemySpawnerDots : MonoBehaviour
 
     void Update()
     {
-        if (openShop)
+        if (upgradeShop != null)
         {
-            openShopTimer -= Time.deltaTime;
-            if (openShopTimer <= 0)
+            if (openShop)
             {
-                upgradeShop.OpenShop();
-                openShop = false;
+                openShopTimer -= Time.deltaTime;
+                if (openShopTimer <= 0)
+                {
+                    upgradeShop.OpenShop();
+                    openShop = false;
+                }
             }
         }
+
         if (!spawnIsOn) return;
-        
+
 
         if (currentWaveMonsterCounter < maxTotalMonsterAmount)
         {

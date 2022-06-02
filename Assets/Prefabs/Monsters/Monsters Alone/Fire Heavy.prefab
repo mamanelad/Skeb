@@ -259,11 +259,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  attackRangeCheck: 2.5
-  attackRangeHit: 1
+  attackRangeCheck: 2
+  attackRangeHit: 2
   attackDamage: 10
   timeBetweenAttacks: 1
-  screenShakeIntensity: 10
+  screenShakeIntensity: 5
   screenShakeTime: 0.3
 --- !u!114 &1394484364014220674
 MonoBehaviour:

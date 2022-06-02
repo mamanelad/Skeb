@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Animations;
 
 public class CinemaMachineShake : MonoBehaviour {
 
@@ -10,12 +11,21 @@ public class CinemaMachineShake : MonoBehaviour {
     private float _shakeTimerTotal;
     private float _startingIntensity;
 
+    private bool isShaking;
+
     private void Awake() {
         Instance = this;
         _cm = GetComponent<CinemachineVirtualCamera>();
+        var cmPerlin = _cm.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        cmPerlin.m_AmplitudeGain = 0;
+
     }
 
-    public void ShakeCamera(float intensity, float time) {
+    public void ShakeCamera(float intensity, float time)
+    {
+        if (isShaking) return;
+        isShaking = true;
         var cmPerlin = _cm.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cmPerlin.m_AmplitudeGain = intensity;
@@ -33,6 +43,14 @@ public class CinemaMachineShake : MonoBehaviour {
             cmPerlin.m_AmplitudeGain = 
                 Mathf.Lerp(_startingIntensity, 0f, 1 - _shakeTimer / _shakeTimerTotal);
         }
+
+        else
+        {
+            isShaking = false;
+        }
     }
+
+   
+    
 
 }

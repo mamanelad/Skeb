@@ -671,7 +671,7 @@ MonoBehaviour:
   hourGlassCollider: {fileID: 448909059}
   gapTime: 0.5
   switchWorldTime: 1
-  shackDistance: 3
+  shackDistance: 0
 --- !u!212 &448909056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3306,7 +3306,6 @@ MonoBehaviour:
   attackDashDistance: 0.2
   dashEffectDurationTime: 0.3
   _playerState: 0
-  _dashStatus: 0
   isStunned: 0
 --- !u!114 &1448400411
 MonoBehaviour:
