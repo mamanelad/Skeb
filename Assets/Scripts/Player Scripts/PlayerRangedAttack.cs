@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -44,7 +45,15 @@ public class PlayerRangedAttack : MonoBehaviour
             if (monsterController)
                 monsterController.DamageEnemy(damage);
         }
+
+        if (other.gameObject.CompareTag("HourGlass") )
+        {
+            var hourGlass = FindObjectOfType<HourGlass>();
+            hourGlass.HitHourGlass();
+        }
     }
+
+    
 
     private IEnumerator FadeOut()
     {

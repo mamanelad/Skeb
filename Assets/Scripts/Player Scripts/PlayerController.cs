@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
     private Vector2 _knockBackDirection = Vector2.zero;
-    private bool _dashStatus;
+    [HideInInspector] public bool _dashStatus;
     private bool _attackDash;
     [NonSerialized] public bool KnockBackStatus;
     private List<GameObject> _monstersInRange;
@@ -353,8 +353,18 @@ public class PlayerController : MonoBehaviour
             if(!monList.Contains(enemy))
                 monList.Add(enemy);
         }
+        
+       
         _monstersInRange = monList;
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HourGlass") && IsAttacking )
+        {
+            var hourGlass = FindObjectOfType<HourGlass>();
+            hourGlass.HitHourGlass();
+        }    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
