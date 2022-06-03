@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private GameControls _gameControls;
     public static PlayerController _PlayerController;
+    private Vector2 move;
+    private bool _attackInput;
+
 
     public enum PlayerState
     {
@@ -27,8 +32,9 @@ public class PlayerController : MonoBehaviour
 
     #region Inspector Control
 
-    [Header("Movement Control")] 
-    [SerializeField] private float movementSpeed = 5;
+    [Header("Movement Control")] [SerializeField]
+    private float movementSpeed = 5;
+
     [SerializeField] private GameObject hitBox;
     [SerializeField] private GameObject reflection;
     [SerializeField] private bool canMoveWhileAttacking;
@@ -44,18 +50,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")] 
-    [SerializeField] private LayerMask dashLayerMask;
+    [Header("Dash Settings")] [SerializeField]
+    private LayerMask dashLayerMask;
+
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private float dashEffectDurationTime;
 
-    [Header("Ice Dash")] 
-    [SerializeField] private GameObject iceSpike;
-    [SerializeField] [Range(0,0.5f)] private float spikeSeparation;
-    [SerializeField] [Range(1,5)] private int spikeScaler;
-    
-    
+    [Header("Ice Dash")] [SerializeField] private GameObject iceSpike;
+    [SerializeField] [Range(0, 0.5f)] private float spikeSeparation;
+    [SerializeField] [Range(1, 5)] private int spikeScaler;
 
     #endregion
 
@@ -99,15 +103,53 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    
+
     [Header("Screen Shake Settings")] [SerializeField]
     private float screenShakeIntensity = 1f;
 
     [SerializeField] private float screenShakeTime = .1f;
+
     private void Awake()
     {
         if (_PlayerController == null)
             _PlayerController = this;
+        InitializeControls();
+    }
+
+    private void InitializeControls()
+    {
+        _gameControls = new GameControls();
+        _gameControls.GameControl.MoveLeft.performed += ctx => move.x = -ctx.ReadValue<float>();
+        _gameControls.GameControl.MoveRight.performed += ctx => move.x = ctx.ReadValue<float>();
+        _gameControls.GameControl.MoveUp.performed += ctx => move.y = ctx.ReadValue<float>();
+        _gameControls.GameControl.MoveDown.performed += ctx => move.y = -ctx.ReadValue<float>();
+        _gameControls.GameControl.Attack.performed += ctx => AttackInput(true);
+
+        
+        _gameControls.GameControl.MoveLeft.canceled += ctx => move.x = 0;
+        _gameControls.GameControl.MoveRight.canceled += ctx => move.x = 0;
+        _gameControls.GameControl.MoveUp.canceled += ctx => move.y = 0;
+        _gameControls.GameControl.MoveDown.canceled += ctx => move.y = 0;
+        _gameControls.GameControl.Attack.canceled += ctx => AttackInput(false);
+
+        
+        // _gameControls.GameControl.Attack.performed += ctx => _attackInput = ctx.ReadValue<bool>();
+    }
+
+
+    private void AttackInput(bool mode)
+    {
+        _attackInput = mode;
+    }
+
+    private void OnEnable()
+    {
+        _gameControls.GameControl.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _gameControls.GameControl.Disable();
     }
 
     private void Start()
@@ -143,7 +185,9 @@ public class PlayerController : MonoBehaviour
             Attack();
         PlayAnimation();
 
-        if (Input.GetButtonDown("Attack") )
+
+        // if (Input.GetButtonDown("Attack") )
+        if (_attackInput)
         {
             if (FindObjectOfType<CinemaMachineShake>())
                 CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
@@ -157,6 +201,7 @@ public class PlayerController : MonoBehaviour
                 {
                     hourGlass.PushHourGlass();
                 }
+
                 StartCoroutine(ActivateDashTrail());
             }
         }
@@ -201,7 +246,8 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        if (!Input.GetButtonDown("Attack") || IsAttacking) return;
+        // if (!Input.GetButtonDown("Attack") || IsAttacking) return;
+        if (!_attackInput || IsAttacking) return;
 
         IsAttacking = true; // affects the animations
         var hourGlas = FindObjectOfType<HourGlass>();
@@ -209,6 +255,7 @@ public class PlayerController : MonoBehaviour
         {
             hourGlas.IsAttacking();
         }
+
         _playerState = PlayerState.Combat; // changes player state
         _attackDash = true; // boolean used for attack dash
         //TODO: play attack sound here
@@ -252,11 +299,14 @@ public class PlayerController : MonoBehaviour
 
     private void SetMovementAndIdleDirection()
     {
-        if (
-            Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (_attackInput|| move != (Vector2.zero))
+
         {
-            _moveDirection.x = Input.GetAxis("Horizontal");
-            _moveDirection.y = Input.GetAxis("Vertical");
+            // _moveDirection.x = Input.GetAxis("Horizontal");
+            // _moveDirection.y = Input.GetAxis("Vertical");
+            _moveDirection.x = move.x;
+            _moveDirection.y = move.y;
 
             if (slipperyFloor)
                 _moveDirection *= speedScalerForSlipperyFloor;
@@ -274,8 +324,10 @@ public class PlayerController : MonoBehaviour
         }
         else // non-slippery floor movement fade additions
         {
-            _moveDirection.x = Input.GetAxis("Horizontal");
-            _moveDirection.y = Input.GetAxis("Vertical");
+            // _moveDirection.x = Input.GetAxis("Horizontal");
+            // _moveDirection.y = Input.GetAxis("Vertical");
+            _moveDirection.x = move.x;
+            _moveDirection.y = move.y;
         }
 
 
@@ -311,7 +363,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         ApplyPowerUps();
-        
+
         if (slipperyFloor || _playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
@@ -351,7 +403,7 @@ public class PlayerController : MonoBehaviour
                 dashDistance, dashLayerMask);
             if (hit.collider != null)
                 dashPosition = hit.point;
-            
+
             _rb.MovePosition(dashPosition);
             _dashStatus = false;
         }
@@ -466,7 +518,7 @@ public class PlayerController : MonoBehaviour
             Instantiate(iceSpike, spikePos, Quaternion.identity);
         }
     }
-    
+
     public void KillPlayer()
     {
         IsPlayerDead = true;

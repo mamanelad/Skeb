@@ -36,11 +36,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftControl))
-            SwitchState();
+        // if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftControl))
+        //     SwitchState();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        //     SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
 
         UpdateStageTimer();
     }
