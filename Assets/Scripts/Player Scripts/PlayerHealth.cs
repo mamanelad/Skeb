@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth(float mod, Vector3 pos)
     {
-        if (inTutorial) return;
+        if (inTutorial || PlayerController._PlayerController.IsPlayerDead) return;
 
         if (_playerController.isStunned && mod <= 0)
             return;

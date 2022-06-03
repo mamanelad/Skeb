@@ -11,16 +11,14 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Shared;
     private float _time = 0;
-    
-    [Header("Timer & Score")]
-    [SerializeField] private TextMeshProUGUI timerText;
-    
+
     [Header("Life Bar")]
     [SerializeField] private GameObject lifeBar;
     [SerializeField] private GameObject lifeBarDelay;
     
-    [Header("Stage State")]
-    [SerializeField] private GameObject stageStateBar;
+    [Header("Stage State Indicator")]
+    [SerializeField] private GameObject indicator;
+    
     
 
     private void Awake()
@@ -46,8 +44,8 @@ public class UIManager : MonoBehaviour
         _time += Time.deltaTime;
         var seconds = Mathf.Floor(_time % 60);
         var minutes = Mathf.Floor(_time / 60);
-        timerText.text = (minutes < 10 ? "0" : "") + minutes.ToString()
-                                                   + ":" + (seconds < 10 ? "0" : "") + seconds.ToString();
+        //timerText.text = (minutes < 10 ? "0" : "") + minutes.ToString()
+                                                  // + ":" + (seconds < 10 ? "0" : "") + seconds.ToString();
     }
 
     public void SetBarTransparency(float a)
@@ -78,7 +76,7 @@ public class UIManager : MonoBehaviour
     {
         var lifeBarFill = lifeBar.GetComponent<Image>().fillAmount;
         var lifeBarDelayFill = lifeBarDelay.GetComponent<Image>().fillAmount;
-        var barEmptyScaler = Time.fixedDeltaTime * 0.1f;
+        var barEmptyScaler = Time.fixedDeltaTime * 0.02f;
         
         if (!(lifeBarDelayFill > lifeBarFill)) return;
         lifeBarDelayFill = Mathf.Max(lifeBarDelayFill - barEmptyScaler, lifeBarFill);
@@ -87,6 +85,9 @@ public class UIManager : MonoBehaviour
     
     public void SetStageStateBar(float progressPercentage)
     {
-        stageStateBar.GetComponent<Image>().fillAmount = progressPercentage;
+        var indicatorXPosition = (progressPercentage * 71) - 35.5f;
+        var currPos = indicator.transform.localPosition;
+        currPos.x = indicatorXPosition;
+        indicator.transform.localPosition = currPos;
     }
 }

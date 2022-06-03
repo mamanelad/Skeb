@@ -90,7 +90,7 @@ public class CoinPickUp : MonoBehaviour
 
     private void AddCoins()
     {
-        switch (coinKind)
+        /*switch (coinKind)
         {
             case CoinKind.Fire:
                 GameManager.Shared.fireCoins += coinValue;
@@ -104,7 +104,7 @@ public class CoinPickUp : MonoBehaviour
                 
                 //TODO:: add life to player
                 break;
-        }
+        }*/
 
         Destroy(gameObject);
     }
