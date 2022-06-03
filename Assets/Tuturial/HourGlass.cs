@@ -27,6 +27,9 @@ public class HourGlass : MonoBehaviour
     [SerializeField] private float fallDelay = 2f;
     [SerializeField] private float shackDistance = 3;
 
+    [SerializeField] private float iceMass = 1000000f;
+    [SerializeField] private float hourGlassMass = 10;
+    
     enum GlassState
     {
         IdleOne,
@@ -34,24 +37,55 @@ public class HourGlass : MonoBehaviour
         HourGlassIdle,
     }
 
-    private GlassState state = GlassState.IdleOne;
+    enum shakeSide
+    {
+        Right,
+        Left
+    }
 
+    private shakeSide _shakeSide = shakeSide.Left;
+    private GlassState state = GlassState.IdleOne;
+    [SerializeField] private float shakeTime = 0.2f;
+    private float shakeTimer;
+    private bool shack;
+
+    private bool canPush;
+    [SerializeField] private float pushTime = 0.3f;
+    private float pushTimer;
+    
     private void Awake()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         _playerController = FindObjectOfType<PlayerController>();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _rb.mass = iceMass;
     }
 
 
     private void Update()
     {
+        if (canPush)
+        {
+            pushTimer -= Time.deltaTime;
+            if (pushTimer < 0)
+            {
+                canPush = false;
+                _rb.mass = iceMass;
+            }
+                
+        }
+        
         if (_playerController._dashStatus && state == GlassState.HourGlassIdle)
         {
-            _rb.constraints = RigidbodyConstraints2D.None;
-            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            canPush = true;
+            pushTimer = pushTime;
+            _rb.mass = hourGlassMass;
         }
+
+        
+        
 
         if (fall)
         {
@@ -59,13 +93,23 @@ public class HourGlass : MonoBehaviour
             if (fallDelay < 0)
             {
                 SwitchWorld();
-                boxTutorial.SetActive(true); 
+                boxTutorial.SetActive(true);
                 Destroy(gameObject);
+            }
+        }
+
+        if (shack)
+        {
+            Shack();
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer < 0)
+            {
+                shack = false;
             }
         }
     }
 
-   
+    
 
     public void HitHourGlass()
     {
@@ -85,7 +129,7 @@ public class HourGlass : MonoBehaviour
 
             case GlassState.HourGlassIdle:
                 _animator.SetTrigger("bThree");
-
+                // _rb.mass = hourGlassMass;
 
                 // switchWorld = true;
                 // switchWorldTimer = switchWorldTime;
@@ -108,12 +152,12 @@ public class HourGlass : MonoBehaviour
             case GameManager.WorldState.Fire:
                 GameManager.Shared.CurrentState = GameManager.WorldState.Ice;
                 break;
-            
+
             case GameManager.WorldState.Ice:
                 GameManager.Shared.CurrentState = GameManager.WorldState.Fire;
                 break;
         }
-            
+
         SwitchToHourGlass();
     }
 
@@ -144,7 +188,6 @@ public class HourGlass : MonoBehaviour
         _rb.gravityScale = 10;
 
         fall = true;
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -155,23 +198,55 @@ public class HourGlass : MonoBehaviour
         if (other.gameObject.CompareTag("Bottom"))
             _isInTopHalf = false;
 
-        if (other.gameObject.CompareTag("Player") && _playerController.IsAttacking)
-        {
-            HitHourGlass();
-        }
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && _playerController.IsAttacking)
-        {
-            HitHourGlass();
-        }
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider"))
             SetHourGlassFall();
+
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
+    }
+
+
+    private void HitHelper()
+    {
+        if (_playerController.IsAttacking)
+        {
+            shack = true;
+            shakeTimer = shakeTime;
+            HitHourGlass();
+        }
+    }
+
+    private void Shack()
+    {
+        switch (_shakeSide)
+        {
+            case shakeSide.Left:
+                transform.position += new Vector3(0.1f, 0, 0f);
+                _shakeSide = shakeSide.Right;
+                break;
+            case shakeSide.Right:
+                transform.position -= new Vector3(0.1f, 0, 0f);
+                ;
+                _shakeSide = shakeSide.Left;
+                break;
+        }
     }
 }

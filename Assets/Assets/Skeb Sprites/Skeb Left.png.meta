@@ -59,6 +59,9 @@ TextureImporter:
   - first:
       213: 1925226991777537238
     second: skeb front side view-Sheet_18
+  - first:
+      213: 5079646645742909086
+    second: Skeb Left_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -147,27 +150,6 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: skeb front side view-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.50645936, y: 0.26745364}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd570426693317db0800000000000000
-      internalID: -4795995407186364964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     - serializedVersion: 2
       name: skeb front side view-Sheet_1
       rect:
@@ -542,6 +524,27 @@ TextureImporter:
       bones: []
       spriteID: 6dcd4ecafb7c7ba10800000000000000
       internalID: 1925226991777537238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeb Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96b20016b78e7640800000000000000
+      internalID: 5079646645742909086
       vertices: []
       indices: 
       edges: []

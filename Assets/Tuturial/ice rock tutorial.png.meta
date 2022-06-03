@@ -755,8 +755,8 @@ TextureImporter:
         y: 220
         width: 27
         height: 31
-      alignment: 9
-      pivot: {x: 0.5365951, y: 0.06971199}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -814,7 +814,7 @@ TextureImporter:
       name: ice rock tutorial_26
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 178
         width: 27
         height: 31
@@ -941,7 +941,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 12
-        y: 135
+        y: 136
         width: 30
         height: 31
       alignment: 7
@@ -1007,8 +1007,8 @@ TextureImporter:
         y: 136
         width: 28
         height: 17
-      alignment: 9
-      pivot: {x: 0.46869388, y: 0.00000089757583}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

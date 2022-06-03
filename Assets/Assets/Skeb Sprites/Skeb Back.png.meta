@@ -151,12 +151,12 @@ TextureImporter:
       name: skeb back side view-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.496977, y: 0.27355802}
+        x: 7
+        y: 8
+        width: 20
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: skeb back side view-Sheet_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.48759377, y: 0.27178603}
+        x: 44
+        y: 8
+        width: 20
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: skeb back side view-Sheet_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.27136907}
+        x: 81
+        y: 8
+        width: 20
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,12 +214,12 @@ TextureImporter:
       name: skeb back side view-Sheet_3
       rect:
         serializedVersion: 2
-        x: 111
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5078192, y: 0.2603181}
+        x: 118
+        y: 8
+        width: 20
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,12 +235,12 @@ TextureImporter:
       name: skeb back side view-Sheet_4
       rect:
         serializedVersion: 2
-        x: 148
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.26354995}
+        x: 155
+        y: 8
+        width: 20
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: skeb back side view-Sheet_5
       rect:
         serializedVersion: 2
-        x: 186
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.47237253, y: 0.26657328}
+        x: 192
+        y: 8
+        width: 20
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: skeb back side view-Sheet_6
       rect:
         serializedVersion: 2
-        x: 223
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.4745617, y: 0.26396692}
+        x: 229
+        y: 8
+        width: 20
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,12 +298,12 @@ TextureImporter:
       name: skeb back side view-Sheet_7
       rect:
         serializedVersion: 2
-        x: 259
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5082369, y: 0.26897126}
+        x: 266
+        y: 8
+        width: 20
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,12 +319,12 @@ TextureImporter:
       name: skeb back side view-Sheet_8
       rect:
         serializedVersion: 2
-        x: 296
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5104265, y: 0.26542696}
+        x: 303
+        y: 8
+        width: 25
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,12 +340,12 @@ TextureImporter:
       name: skeb back side view-Sheet_9
       rect:
         serializedVersion: 2
-        x: 333
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5130329, y: 0.2602142}
+        x: 345
+        y: 8
+        width: 20
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: skeb back side view-Sheet_10
       rect:
         serializedVersion: 2
-        x: 370
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.50000095, y: 0.26282057}
+        x: 379
+        y: 8
+        width: 23
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,12 +382,12 @@ TextureImporter:
       name: skeb back side view-Sheet_11
       rect:
         serializedVersion: 2
-        x: 407
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.50000095, y: 0.2784588}
+        x: 414
+        y: 8
+        width: 22
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: skeb back side view-Sheet_12
       rect:
         serializedVersion: 2
-        x: 444
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.49478817, y: 0.26803333}
+        x: 450
+        y: 8
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -424,12 +424,12 @@ TextureImporter:
       name: skeb back side view-Sheet_13
       rect:
         serializedVersion: 2
-        x: 481
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.52085304, y: 0.27324605}
+        x: 486
+        y: 8
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: skeb back side view-Sheet_14
       rect:
         serializedVersion: 2
-        x: 518
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5000019, y: 0.2706397}
+        x: 526
+        y: 8
+        width: 20
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -466,12 +466,12 @@ TextureImporter:
       name: skeb back side view-Sheet_15
       rect:
         serializedVersion: 2
-        x: 555
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.52012634, y: 0.26452655}
+        x: 563
+        y: 8
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -487,12 +487,12 @@ TextureImporter:
       name: skeb back side view-Sheet_16
       rect:
         serializedVersion: 2
-        x: 592
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.51610184, y: 0.26653913}
+        x: 598
+        y: 8
+        width: 26
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -508,12 +508,12 @@ TextureImporter:
       name: skeb back side view-Sheet_17
       rect:
         serializedVersion: 2
-        x: 629
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.52817726, y: 0.26452655}
+        x: 635
+        y: 7
+        width: 26
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -529,12 +529,12 @@ TextureImporter:
       name: skeb back side view-Sheet_18
       rect:
         serializedVersion: 2
-        x: 666
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.51610184, y: 0.2685517}
+        x: 672
+        y: 8
+        width: 26
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

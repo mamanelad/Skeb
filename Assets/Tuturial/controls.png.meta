@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 8a7573331e808a4428917a6748de664a
+guid: 9813c676588bf3f40b1c3e769175ccb9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8124714678909996780
-    second: skeb back  view_0
+      213: 6782813536761691038
+    second: controls_0
+  - first:
+      213: 3303988218376537383
+    second: controls_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,9 +50,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5195856, y: 0.26140797}
-  spritePixelsToUnits: 32
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,7 +71,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -80,7 +83,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -94,22 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skeb back  view_0
+      name: controls_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 8
-        width: 19
-        height: 15
-      alignment: 9
-      pivot: {x: 0.4987831, y: 0.009247843}
+        y: 20
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cee05d134f8c0c070800000000000000
-      internalID: 8124714678909996780
+      spriteID: e9b346c89f4612e50800000000000000
+      internalID: 6782813536761691038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controls_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 34
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725c86287cf1add20800000000000000
+      internalID: 3303988218376537383
       vertices: []
       indices: 
       edges: []

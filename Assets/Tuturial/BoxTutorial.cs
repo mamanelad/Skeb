@@ -6,6 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class BoxTutorial : MonoBehaviour
 {
+    enum shakeSide
+    {
+        Right,
+        Left
+    }
+
+    private shakeSide _shakeSide = shakeSide.Left;
+    [SerializeField] private float shakeTime = 0.2f;
+    private float shakeTimer;
+    private bool shack;
+
     [SerializeField] private GameObject skebName;
 
     [SerializeField] private Animator _animator;
@@ -37,6 +48,16 @@ public class BoxTutorial : MonoBehaviour
             }
         }
 
+        if (shack)
+        {
+            Shack();
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer < 0)
+            {
+                shack = false;
+            }
+        }
+
         if (switchToMainScene)
         {
             switchSceneDelay -= Time.deltaTime;
@@ -49,26 +70,37 @@ public class BoxTutorial : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!hit)
-        {
-            if (other.CompareTag("Player") && _playerController.IsAttacking)
-            {
-                _animator.SetTrigger("hit");
-                hit = true;
-            } 
-        }
-        
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!hit)
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+            HitHelper();
+    }
+
+    private void HitHelper()
+    {
+        if (hit) return;
+        if (_playerController.IsAttacking)
         {
-            if (other.CompareTag("Player") && _playerController.IsAttacking)
-            {
-                _animator.SetTrigger("hit");
-                hit = true;
-            } 
+            shack = true;
+            shakeTimer = shakeTime;
+            _animator.SetTrigger("hit");
+            hit = true;
         }
     }
 
@@ -82,5 +114,21 @@ public class BoxTutorial : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-    
+
+
+    private void Shack()
+    {
+        switch (_shakeSide)
+        {
+            case shakeSide.Left:
+                transform.position += new Vector3(0.1f, 0, 0f);
+                _shakeSide = shakeSide.Right;
+                break;
+            case shakeSide.Right:
+                transform.position -= new Vector3(0.1f, 0, 0f);
+                ;
+                _shakeSide = shakeSide.Left;
+                break;
+        }
+    }
 }
