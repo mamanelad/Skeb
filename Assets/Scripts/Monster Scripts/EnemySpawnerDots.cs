@@ -127,6 +127,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void DecreaseMonster()
     {
+        GameManager.Shared.roundMonsterKillCounter += 1;
         if (_monsterCounter > 0)
             _monsterCounter -= 1;
     }
@@ -209,6 +210,10 @@ public class EnemySpawnerDots : MonoBehaviour
         smallPercentage = curWave.smallPercentage;
         maxTimeToSpawn = curWave.timeToSpawnStep;
 
+        GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
+        GameManager.Shared.roundNumber += 1;
+        GameManager.Shared.roundMonsterKillCounter = 0;
+        
         _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
         _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
