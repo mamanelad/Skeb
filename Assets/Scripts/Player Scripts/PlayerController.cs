@@ -155,6 +155,12 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(ActivateDashTrail());
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            print("aaaaa");
+            GetComponent<ScreenShakeListener>().Shake();
+        }
     }
 
     private void SetWorldState()
