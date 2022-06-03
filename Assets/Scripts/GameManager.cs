@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    
     public enum WorldState
     {
         None,
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool stuckStage;
     [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
-
+    
+    
     private float _stageTimer;
 
 

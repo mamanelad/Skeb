@@ -711,7 +711,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276005647}
-  m_LocalRotation: {x: 1.3654e-41, y: 1.3656e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 1.3857e-41, y: 1.3859e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2089,10 +2089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stuckStage: 1
-  stateSwitchAutomatically: 0
-  timeInStage: 10
-  fireCoins: 0
-  iceCoins: 0
+  timeInStage: 15
   CurrentState: 0
 --- !u!4 &1021125402
 Transform:
@@ -2317,10 +2314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d8a21aaed8e4e8156d02c3803479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 1395991041}
   lifeBar: {fileID: 1359069861}
   lifeBarDelay: {fileID: 1049023991}
-  stageStateBar: {fileID: 1141282551}
+  indicator: {fileID: 0}
 --- !u!114 &1082506220
 MonoBehaviour:
   m_ObjectHideFlags: 0
