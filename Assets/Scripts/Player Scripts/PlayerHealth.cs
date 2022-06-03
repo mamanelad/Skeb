@@ -59,11 +59,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth(float mod, Vector3 pos)
     {
-        if (inTutorial) return;
-        
-        
+        if (inTutorial || PlayerController._PlayerController.IsPlayerDead) return;
+
         if (_playerController.isStunned && mod <= 0)
             return;
+        
+        if (mod < 0)
+            GetComponent<ScreenShakeListener>().Shake();
         
         health = Mathf.Min(health + mod, maxHealth);
         health = Mathf.Max(health, 0);

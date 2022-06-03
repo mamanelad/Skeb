@@ -102,8 +102,8 @@ public class PlayerController : MonoBehaviour
     
     [Header("Screen Shake Settings")] [SerializeField]
     private float screenShakeIntensity = 1f;
-
     [SerializeField] private float screenShakeTime = .1f;
+    
     private void Awake()
     {
         if (_PlayerController == null)
@@ -145,9 +145,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Attack") )
         {
-            if (FindObjectOfType<CinemaMachineShake>())
-                CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
-
             if (_playerState != PlayerState.Falling
                 && _currentWorldState == GameManager.WorldState.Ice)
             {
@@ -160,6 +157,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(ActivateDashTrail());
             }
         }
+        
     }
 
     private void SetWorldState()

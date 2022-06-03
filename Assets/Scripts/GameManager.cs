@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,14 +15,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Shared;
 
     [SerializeField] private bool stuckStage;
-    [SerializeField] private bool stateSwitchAutomatically;
-    [SerializeField] private float timeInStage = 4;
+    [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
 
     private float _stageTimer;
 
-    [HideInInspector] public int fireCoins;
-    [HideInInspector] public int iceCoins;
 
     public WorldState CurrentState;
 
@@ -31,7 +29,7 @@ public class GameManager : MonoBehaviour
             Shared = this;
 
         CurrentState = WorldState.Fire;
-        _stageTimer = 4;
+        _stageTimer = 0;
     }
 
     private void Update()
@@ -47,31 +45,26 @@ public class GameManager : MonoBehaviour
 
     private void UpdateStageTimer()
     {
-        var timeScaler = Time.deltaTime;
-
-        _stageTimer = CurrentState switch
+        if (CurrentState == WorldState.Fire)
         {
-            WorldState.Fire => Mathf.Max(_stageTimer - timeScaler, 0),
-            WorldState.Ice => Mathf.Min(_stageTimer + timeScaler, timeInStage),
-            _ => 1
-        };
-
-        if (_stageTimer >= timeInStage || _stageTimer <= 0)
-        {
-            if (stateSwitchAutomatically)
-                SwitchState();
-            else
-                StageDamage = true;
+            _stageTimer += Time.deltaTime;
+            _stageTimer = math.min(_stageTimer, timeInStage);
         }
-        else
+        if (CurrentState == WorldState.Ice)
         {
-            StageDamage = false;
+            _stageTimer -= Time.deltaTime;
+            _stageTimer = math.max(_stageTimer, 0);
         }
 
-        UIManager.Shared.SetStageStateBar(1 - _stageTimer / timeInStage);
+        if (_stageTimer <= 0)
+            CurrentState = WorldState.Fire;
+        if (_stageTimer >= timeInStage)
+            CurrentState = WorldState.Ice;
+
+        var stagePercentage = timeInStage != 0 ? _stageTimer / timeInStage : 0;
+        UIManager.Shared.SetStageStateBar(stagePercentage);
     }
-
-
+    
     private void SwitchState()
     {
         if (stuckStage) return;
