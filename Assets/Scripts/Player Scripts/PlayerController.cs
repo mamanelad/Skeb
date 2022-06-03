@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     [Header("Ice Dash")] 
     [SerializeField] private GameObject iceSpike;
     [SerializeField] [Range(0,0.5f)] private float spikeSeparation;
+    [SerializeField] [Range(1,5)] private int spikeScaler;
     
     
 
@@ -135,7 +136,6 @@ public class PlayerController : MonoBehaviour
         }
 
         SetWorldState();
-        ApplyPowerUps();
         SetPlayerState();
         SetMovementAndIdleDirection();
         SetHitBoxRotation();
@@ -300,6 +300,8 @@ public class PlayerController : MonoBehaviour
         if (IsPlayerDead)
             return;
 
+        ApplyPowerUps();
+        
         if (slipperyFloor || _playerState != PlayerState.Combat)
             _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         else if (canMoveWhileAttacking)
@@ -442,14 +444,17 @@ public class PlayerController : MonoBehaviour
         IceDash();
     }
 
-    public void IceDash()
+    private void IceDash()
     {
         if (!_playerStats.iceDash || !_dashEffect.emitting)
             return;
-        var spikePos = transform.position;
-        spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
-        spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
-        Instantiate(iceSpike, spikePos, Quaternion.identity);
+        for (var i = 0; i < spikeScaler; i++)
+        {
+            var spikePos = transform.position;
+            spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
+            spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
+            Instantiate(iceSpike, spikePos, Quaternion.identity);
+        }
     }
     
     public void KillPlayer()
