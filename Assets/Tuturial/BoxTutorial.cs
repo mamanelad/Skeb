@@ -28,6 +28,7 @@ public class BoxTutorial : MonoBehaviour
 
     private bool switchToMainScene;
     [SerializeField] private float switchSceneDelay = 2f;
+    private SpriteRenderer _spriteRenderer;
 
 
     private void Start()
@@ -126,9 +127,14 @@ public class BoxTutorial : MonoBehaviour
                 break;
             case shakeSide.Right:
                 transform.position -= new Vector3(0.1f, 0, 0f);
-                ;
                 _shakeSide = shakeSide.Left;
                 break;
         }
+    }
+
+    public void ChangeLayerToGui()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingLayerName = "GUI";
     }
 }

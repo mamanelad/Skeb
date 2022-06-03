@@ -5,31 +5,6 @@ using UnityEngine;
 
 public class HourGlass : MonoBehaviour
 {
-    [SerializeField] private GameObject boxTutorial;
-    private GameObject player;
-    private bool _isInTopHalf;
-    private bool _isDead;
-    private Rigidbody2D _rb;
-    private Animator _animator;
-    [SerializeField] private PolygonCollider2D[] iceColliders;
-    [SerializeField] private BoxCollider2D hourGlassCollider;
-
-    [SerializeField] private float gapTime = 0.5f;
-    private float gapTimer;
-    private bool hit;
-
-    [SerializeField] private float switchWorldTime = 2f;
-    private float switchWorldTimer;
-    private bool switchWorld;
-
-    private PlayerController _playerController;
-    private bool fall;
-    [SerializeField] private float fallDelay = 2f;
-    [SerializeField] private float shackDistance = 3;
-
-    [SerializeField] private float iceMass = 1000000f;
-    [SerializeField] private float hourGlassMass = 10;
-    
     enum GlassState
     {
         IdleOne,
@@ -37,26 +12,48 @@ public class HourGlass : MonoBehaviour
         HourGlassIdle,
     }
 
-    enum shakeSide
+    enum ShakeSide
     {
         Right,
         Left
     }
 
-    private shakeSide _shakeSide = shakeSide.Left;
-    private GlassState state = GlassState.IdleOne;
-    [SerializeField] private float shakeTime = 0.2f;
-    private float shakeTimer;
-    private bool shack;
+    [SerializeField] private GameObject boxTutorial;
+    [SerializeField] private PolygonCollider2D[] iceColliders;
+    [SerializeField] private BoxCollider2D hourGlassCollider;
+    [SerializeField] private float fallDelay = 2f;
+    [SerializeField] private float iceMass = 1000000f;
+    [SerializeField] private float hourGlassMass = 10;
 
-    private bool canPush;
+    [SerializeField] private float shakeTime = 0.1f;
     [SerializeField] private float pushTime = 0.3f;
-    private float pushTimer;
+    [SerializeField] private float attackingTime = 0.5f;
+    private float attackingTimer;
     
+    private PlayerController _playerController;
+    private Rigidbody2D _rb;
+    private Animator _animator;
+
+    private bool isAttacking;
+    private bool _hit;
+    private bool _isInTopHalf;
+    private bool _fall;
+    private bool _shack;
+    private bool _canPush;
+    private bool inColliderTrigger;
+    private ShakeSide _shakeSide = ShakeSide.Left;
+    private GlassState _state = GlassState.IdleOne;
+
+    private float _shakeTimer;
+    private float _pushTimer;
+
+
+    private bool boxShow;
+    [SerializeField] private float boxTimeShow = 0.5f;
+    private float boxTimerShow;
+
     private void Awake()
     {
-        
-        player = GameObject.FindGameObjectWithTag("Player");
         _playerController = FindObjectOfType<PlayerController>();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -66,85 +63,111 @@ public class HourGlass : MonoBehaviour
 
     private void Update()
     {
-        if (canPush)
+        if (isAttacking)
         {
-            pushTimer -= Time.deltaTime;
-            if (pushTimer < 0)
+            attackingTimer -= Time.deltaTime;
+            if (attackingTimer < 0)
             {
-                canPush = false;
+                isAttacking = false;
+            }
+        }
+        
+        //Set if we can push the hour glass
+        if (_canPush)
+        {
+            _pushTimer -= Time.deltaTime;
+            if (_pushTimer < 0)
+            {
+                _canPush = false;
                 _rb.mass = iceMass;
             }
-                
         }
-        
-        if (_playerController._dashStatus && state == GlassState.HourGlassIdle)
+
+        if (inColliderTrigger)
         {
-            canPush = true;
-            pushTimer = pushTime;
-            _rb.mass = hourGlassMass;
+            HitHelper();
         }
 
-        
-        
-
-        if (fall)
+        //After fall of the hour glass
+        if (_fall)
         {
             fallDelay -= Time.deltaTime;
             if (fallDelay < 0)
             {
                 SwitchWorld();
-                boxTutorial.SetActive(true);
-                Destroy(gameObject);
+                boxShow = true;
+                boxTimerShow = boxTimeShow;
+                _fall = false;
+
+
             }
         }
 
-        if (shack)
+        if (boxShow)
+        {
+            boxTimerShow -= Time.deltaTime;
+            if (boxTimerShow < 0)
+            {
+                boxTutorial.SetActive(true);
+                boxTutorial.GetComponent<Dissolve>().StartDissolve();
+                Destroy(gameObject);
+                boxShow = false;
+            }
+        }
+
+        if (_shack)
         {
             Shack();
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer < 0)
+            _shakeTimer -= Time.deltaTime;
+            if (_shakeTimer < 0)
             {
-                shack = false;
+                _shack = false;
             }
         }
     }
 
-    
+
+    public void PushHourGlass()
+    {
+        if (_state == GlassState.HourGlassIdle)
+        {
+            _canPush = true;
+            _pushTimer = pushTime;
+            _rb.mass = hourGlassMass;
+        }
+    }
 
     public void HitHourGlass()
     {
-        if (hit) return;
+        if (_hit) return;
 
-        switch (state)
+        switch (_state)
         {
             case GlassState.IdleOne:
                 _animator.SetTrigger("bOne");
-                state = GlassState.IdleTwo;
+                _state = GlassState.IdleTwo;
                 break;
 
             case GlassState.IdleTwo:
                 _animator.SetTrigger("bTwo");
-                state = GlassState.HourGlassIdle;
+                _state = GlassState.HourGlassIdle;
                 break;
 
             case GlassState.HourGlassIdle:
                 _animator.SetTrigger("bThree");
-                // _rb.mass = hourGlassMass;
-
-                // switchWorld = true;
-                // switchWorldTimer = switchWorldTime;
                 break;
         }
 
-        gapTimer = gapTime;
-        hit = true;
+        _hit = true;
+        isAttacking = false;
     }
 
     public void CanHit()
     {
-        hit = false;
+        _hit = false;
     }
 
+    
     public void SwitchWorld()
     {
         switch (GameManager.Shared.CurrentState)
@@ -187,7 +210,7 @@ public class HourGlass : MonoBehaviour
                 sr.sortingLayerName = "Default";
         _rb.gravityScale = 10;
 
-        fall = true;
+        _fall = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -214,7 +237,11 @@ public class HourGlass : MonoBehaviour
             SetHourGlassFall();
 
         if (other.gameObject.CompareTag("Player"))
+        {
             HitHelper();
+            inColliderTrigger = true;
+        }
+            
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -223,13 +250,19 @@ public class HourGlass : MonoBehaviour
             HitHelper();
     }
 
+    
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        inColliderTrigger = false;
+    }
 
     private void HitHelper()
     {
-        if (_playerController.IsAttacking)
+        if (isAttacking)
         {
-            shack = true;
-            shakeTimer = shakeTime;
+            _shack = true;
+            _shakeTimer = shakeTime;
             HitHourGlass();
         }
     }
@@ -238,15 +271,20 @@ public class HourGlass : MonoBehaviour
     {
         switch (_shakeSide)
         {
-            case shakeSide.Left:
+            case ShakeSide.Left:
                 transform.position += new Vector3(0.1f, 0, 0f);
-                _shakeSide = shakeSide.Right;
+                _shakeSide = ShakeSide.Right;
                 break;
-            case shakeSide.Right:
+            case ShakeSide.Right:
                 transform.position -= new Vector3(0.1f, 0, 0f);
-                ;
-                _shakeSide = shakeSide.Left;
+                _shakeSide = ShakeSide.Left;
                 break;
         }
+    }
+
+    public void IsAttacking()
+    {
+        isAttacking = true;
+        attackingTimer = attackingTime;
     }
 }

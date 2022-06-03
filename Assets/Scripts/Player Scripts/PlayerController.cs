@@ -152,6 +152,11 @@ public class PlayerController : MonoBehaviour
                 && _currentWorldState == GameManager.WorldState.Ice)
             {
                 _dashStatus = true;
+                var hourGlass = FindObjectOfType<HourGlass>();
+                if (hourGlass != null)
+                {
+                    hourGlass.PushHourGlass();
+                }
                 StartCoroutine(ActivateDashTrail());
             }
         }
@@ -199,6 +204,11 @@ public class PlayerController : MonoBehaviour
         if (!Input.GetButtonDown("Attack") || IsAttacking) return;
 
         IsAttacking = true; // affects the animations
+        var hourGlas = FindObjectOfType<HourGlass>();
+        if (hourGlas != null)
+        {
+            hourGlas.IsAttacking();
+        }
         _playerState = PlayerState.Combat; // changes player state
         _attackDash = true; // boolean used for attack dash
         //TODO: play attack sound here

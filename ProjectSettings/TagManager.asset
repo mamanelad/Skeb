@@ -16,6 +16,8 @@ TagManager:
   - Top
   - Bottom
   - Spike
+  - HourGlass
+  - box
   layers:
   - Default
   - TransparentFX

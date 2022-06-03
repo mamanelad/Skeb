@@ -6,7 +6,7 @@ public class Dissolve : MonoBehaviour
 
     private Enemy _enemyTogetherFather;
     private Material _material;
-    private bool _isDissolving;
+    [SerializeField] private bool _isDissolving;
 
     #endregion
 
@@ -42,17 +42,30 @@ public class Dissolve : MonoBehaviour
         if (_isDissolving)
         {
             SetDissolveShader();
-            fade -= Time.deltaTime;
-
-            if (fade <= 0f)
+            if (gameObject.CompareTag("box"))
             {
-                fade = 0f;
-                _isDissolving = false;
-                InstantiateCoin();
-                _enemyTogetherFather.GetComponent<Enemy>().KillEnemy();
-                Destroy(_enemyTogetherFather.gameObject);
-                Destroy(gameObject);
+                fade += Time.deltaTime;
+                if (fade >= 1f)
+                {
+                    fade = 1f;
+                    _isDissolving = false;
+                } 
             }
+            else
+            {
+                fade -= Time.deltaTime;
+
+                if (fade <= 0f)
+                {
+                    fade = 0f;
+                    _isDissolving = false;
+                    InstantiateCoin();
+                    _enemyTogetherFather.GetComponent<Enemy>().KillEnemy();
+                    Destroy(_enemyTogetherFather.gameObject);
+                    Destroy(gameObject);
+                } 
+            }
+            
 
             // Set the property
             _material.SetFloat(Fade, fade);
