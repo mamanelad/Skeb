@@ -1,0 +1,1500 @@
+fileFormatVersion: 2
+guid: 71ba1e6b1e560854692c4e15df674e47
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2986032127773765236
+    second: ice rock tutorial_0
+  - first:
+      213: 2221168161135158053
+    second: ice rock tutorial_1
+  - first:
+      213: 7309781192251973365
+    second: ice rock tutorial_2
+  - first:
+      213: -4704023303904600136
+    second: ice rock tutorial_3
+  - first:
+      213: 746882850059046810
+    second: ice rock tutorial_4
+  - first:
+      213: -6458339842080030865
+    second: ice rock tutorial_5
+  - first:
+      213: 2658130243826036136
+    second: ice rock tutorial_6
+  - first:
+      213: -8347938339630954998
+    second: ice rock tutorial_7
+  - first:
+      213: 5509931612165294589
+    second: ice rock tutorial_8
+  - first:
+      213: 1674379179489166817
+    second: ice rock tutorial_9
+  - first:
+      213: 9029297829019970224
+    second: ice rock tutorial_10
+  - first:
+      213: -2103938878900799909
+    second: ice rock tutorial_11
+  - first:
+      213: 6610714024908452296
+    second: ice rock tutorial_12
+  - first:
+      213: -1808485124801238603
+    second: ice rock tutorial_13
+  - first:
+      213: -2461557958395300413
+    second: ice rock tutorial_14
+  - first:
+      213: -1048388135459722042
+    second: ice rock tutorial_15
+  - first:
+      213: 401321612238178750
+    second: ice rock tutorial_16
+  - first:
+      213: -9032554580683540060
+    second: ice rock tutorial_17
+  - first:
+      213: 1034744407454374909
+    second: ice rock tutorial_18
+  - first:
+      213: 7944085087554317828
+    second: ice rock tutorial_19
+  - first:
+      213: -9206498961965098930
+    second: ice rock tutorial_20
+  - first:
+      213: 318728346721376363
+    second: ice rock tutorial_21
+  - first:
+      213: 2061247915449093233
+    second: ice rock tutorial_22
+  - first:
+      213: 6347989940012368678
+    second: ice rock tutorial_23
+  - first:
+      213: -4622603003733544849
+    second: ice rock tutorial_24
+  - first:
+      213: -2121110981833511388
+    second: ice rock tutorial_25
+  - first:
+      213: -7147156856857497838
+    second: ice rock tutorial_26
+  - first:
+      213: 3901663600697484434
+    second: ice rock tutorial_27
+  - first:
+      213: 4592119652064773986
+    second: ice rock tutorial_28
+  - first:
+      213: 4560694797945901601
+    second: ice rock tutorial_29
+  - first:
+      213: 4014050869945987884
+    second: ice rock tutorial_30
+  - first:
+      213: 4545999559711516
+    second: ice rock tutorial_31
+  - first:
+      213: -4500640560072346364
+    second: ice rock tutorial_32
+  - first:
+      213: -835384671691181211
+    second: ice rock tutorial_33
+  - first:
+      213: -4803377921555887525
+    second: ice rock tutorial_34
+  - first:
+      213: -5373703947400131140
+    second: ice rock tutorial_35
+  - first:
+      213: -2448111826880306982
+    second: ice rock tutorial_36
+  - first:
+      213: 5547525564881482919
+    second: ice rock tutorial_37
+  - first:
+      213: 3590613825744347238
+    second: ice rock tutorial_38
+  - first:
+      213: -608656273235793703
+    second: ice rock tutorial_39
+  - first:
+      213: -6552220039246671970
+    second: ice rock tutorial_40
+  - first:
+      213: -3982832928743892198
+    second: ice rock tutorial_41
+  - first:
+      213: -3433386450814768628
+    second: ice rock tutorial_42
+  - first:
+      213: -6479137820663162749
+    second: ice rock tutorial_43
+  - first:
+      213: 6574023990906945226
+    second: ice rock tutorial_44
+  - first:
+      213: -7016096347867909697
+    second: ice rock tutorial_45
+  - first:
+      213: 8251452317575286394
+    second: ice rock tutorial_46
+  - first:
+      213: -409441495733076500
+    second: ice rock tutorial_47
+  - first:
+      213: 4016818231114753715
+    second: ice rock tutorial_48
+  - first:
+      213: -7460028897094340008
+    second: ice rock tutorial_49
+  - first:
+      213: -5218940561356365259
+    second: ice rock tutorial_50
+  - first:
+      213: -2035750213766911110
+    second: ice rock tutorial_51
+  - first:
+      213: 3858433695392325335
+    second: ice rock tutorial_52
+  - first:
+      213: -8486138363568199683
+    second: ice rock tutorial_53
+  - first:
+      213: -6223575248663779523
+    second: ice rock tutorial_54
+  - first:
+      213: 3416622698797590505
+    second: ice rock tutorial_55
+  - first:
+      213: 5220290638929537185
+    second: ice rock tutorial_56
+  - first:
+      213: 4118299354776755864
+    second: ice rock tutorial_57
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ice rock tutorial_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c811428b99b7f86d0800000000000000
+      internalID: -2986032127773765236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5236ede9cac23de10800000000000000
+      internalID: 2221168161135158053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe9206f34f817560800000000000000
+      internalID: 7309781192251973365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf5b936ab3f7beb0800000000000000
+      internalID: -4704023303904600136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fc996bef57d5a00800000000000000
+      internalID: 746882850059046810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f3112a12e5f56a0800000000000000
+      internalID: -6458339842080030865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad29f59f5393e420800000000000000
+      internalID: 2658130243826036136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 304
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06ce633f4a262c80800000000000000
+      internalID: -8347938339630954998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9cecfbb95377c40800000000000000
+      internalID: 5509931612165294589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_9
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e503c41ef69c3710800000000000000
+      internalID: 1674379179489166817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bae0f549828e4d70800000000000000
+      internalID: 9029297829019970224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56fbfd9cbe4dc2e0800000000000000
+      internalID: -2103938878900799909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c17c5e6169fdbb50800000000000000
+      internalID: 6610714024908452296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_13
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9e4aa5c58f6e6e0800000000000000
+      internalID: -1808485124801238603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_14
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5ffc7241ac6ddd0800000000000000
+      internalID: -2461557958395300413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_15
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 262
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc603f9b806371f0800000000000000
+      internalID: -1048388135459722042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_16
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9c42a41e7c19500800000000000000
+      internalID: 401321612238178750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_17
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9b704277be5a280800000000000000
+      internalID: -9032554580683540060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbd3a76e862c5e00800000000000000
+      internalID: 1034744407454374909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e272d2c4f0f3e60800000000000000
+      internalID: 7944085087554317828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_20
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e485113e8f1fb3080800000000000000
+      internalID: -9206498961965098930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_21
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68dc2e1eb95c6400800000000000000
+      internalID: 318728346721376363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 220
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c8b52ee060b9c10800000000000000
+      internalID: 2061247915449093233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 220
+        width: 27
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5365951, y: 0.06971199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623c034a737981850800000000000000
+      internalID: 6347989940012368678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_24
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60fec84f0739dfb0800000000000000
+      internalID: -4622603003733544849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_25
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e22a6dccc4092e0800000000000000
+      internalID: -2121110981833511388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_26
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fe209b4b230dc90800000000000000
+      internalID: -7147156856857497838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_27
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29425a87f5e752630800000000000000
+      internalID: 3901663600697484434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_28
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26749635e7c7abf30800000000000000
+      internalID: 4592119652064773986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_29
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122998051c7da4f30800000000000000
+      internalID: 4560694797945901601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_30
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c237a75bff5c4b730800000000000000
+      internalID: 4014050869945987884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_31
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 178
+        width: 27
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bd7e00096201000800000000000000
+      internalID: 4545999559711516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_32
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 135
+        width: 30
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4053c2b81438a81c0800000000000000
+      internalID: -4500640560072346364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_33
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 136
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5637a01311e1864f0800000000000000
+      internalID: -835384671691181211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 136
+        width: 29
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a05bfca39f65db0800000000000000
+      internalID: -4803377921555887525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_35
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 136
+        width: 28
+        height: 17
+      alignment: 9
+      pivot: {x: 0.46869388, y: 0.00000089757583}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdc91f1bb4cc65b0800000000000000
+      internalID: -5373703947400131140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_36
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 136
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0ed5c934f860ed0800000000000000
+      internalID: -2448111826880306982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_37
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 136
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4b825fb15ccfc40800000000000000
+      internalID: 5547525564881482919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_38
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 136
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6602919204c64d130800000000000000
+      internalID: 3590613825744347238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_39
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 136
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8a773285e9d87f0800000000000000
+      internalID: -608656273235793703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_40
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f8186e696d115a0800000000000000
+      internalID: -6552220039246671970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_41
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bdd72ad822ab8c0800000000000000
+      internalID: -3982832928743892198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_42
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0aeb8eb6392a50d0800000000000000
+      internalID: -3433386450814768628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_43
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388d294ea7a7516a0800000000000000
+      internalID: -6479137820663162749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_44
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace77e23dff9b3b50800000000000000
+      internalID: 6574023990906945226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_45
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1fa636b81d1ae90800000000000000
+      internalID: -7016096347867909697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_46
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e062e2a2c038270800000000000000
+      internalID: 8251452317575286394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_47
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 94
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced7682012f515af0800000000000000
+      internalID: -409441495733076500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_48
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b668e036ea9eb730800000000000000
+      internalID: 4016818231114753715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_49
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852fa863e37a87890800000000000000
+      internalID: -7460028897094340008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_50
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532e978e5399297b0800000000000000
+      internalID: -5218940561356365259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_51
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b6ff867ff8fb3e0800000000000000
+      internalID: -2035750213766911110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_52
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ded14bc009eb8530800000000000000
+      internalID: 3858433695392325335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_53
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7e3bcae1e2b3a80800000000000000
+      internalID: -8486138363568199683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_54
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d376b76094b61a9a0800000000000000
+      internalID: -6223575248663779523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_55
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 52
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7ed551e384a6f20800000000000000
+      internalID: 3416622698797590505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_56
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 10
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a821b58da2327840800000000000000
+      internalID: 5220290638929537185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice rock tutorial_57
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 10
+        width: 10
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e50388173272930800000000000000
+      internalID: 4118299354776755864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

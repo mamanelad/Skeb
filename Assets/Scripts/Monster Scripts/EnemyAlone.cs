@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class EnemyAlone : MonoBehaviour
 {
     #region Private Fields
 
+    private FireParticleEffect _fireParticleEffect;
     private EnemyAI _enemyAI;
     private GameObject _energyBallFather;
     private Enemy _enemyTogetherFather;
@@ -48,6 +50,7 @@ public class EnemyAlone : MonoBehaviour
             _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
         }
 
+        _fireParticleEffect = GetComponentInChildren<FireParticleEffect>();
         _enemyAI = GetComponentInParent<EnemyAI>();
         _enemyTogetherFather = GetComponentInParent<Enemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -68,7 +71,7 @@ public class EnemyAlone : MonoBehaviour
         }
 
         //Checks the enemy health from the enemy script.
-        
+
         if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
         {
             _isDead = true;
@@ -79,6 +82,12 @@ public class EnemyAlone : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+            _fireParticleEffect.isOn = true;
+    }
+    
     /**
      * See if the player is near enough for attack.
      */

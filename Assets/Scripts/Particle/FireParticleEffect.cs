@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class FireParticleEffect : MonoBehaviour
 {
-
+    [SerializeField] private GameObject fireAnimation;
     [SerializeField] private float timeToBurn = 1.5f;
     private float timerBurning;
     [SerializeField] GameObject ParticlePrefab;
@@ -16,8 +16,8 @@ public class FireParticleEffect : MonoBehaviour
     [SerializeField] private float damageEnemyStep = 0.2f;
     private float damageEnemyTimer;
     public bool damageEnemy;
-    
-    
+
+
     float timeSinceLastSpawn = 0;
 
     private void Start()
@@ -26,8 +26,8 @@ public class FireParticleEffect : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
-
+    void Update()
+    {
         if (!isOn) return;
 
         timerBurning -= Time.deltaTime;
@@ -37,23 +37,21 @@ public class FireParticleEffect : MonoBehaviour
         damageEnemyTimer -= Time.deltaTime;
         if (damageEnemyTimer <= 0)
             FireDamage();
-        
-        timeSinceLastSpawn += Time.deltaTime;
-        
-        float correctTimeBetweenSpawns = 1f/Rate;
 
-        while( timeSinceLastSpawn > correctTimeBetweenSpawns )
+        timeSinceLastSpawn += Time.deltaTime;
+
+        float correctTimeBetweenSpawns = 1f / Rate;
+
+        while (timeSinceLastSpawn > correctTimeBetweenSpawns)
         {
             // Time to spawn a particle
             SpawnFireAlongOutline();
             timeSinceLastSpawn -= correctTimeBetweenSpawns;
         }
-
     }
 
     void SpawnFireAlongOutline()
     {
-
         PolygonCollider2D col = GetComponent<PolygonCollider2D>();
 
         int pathIndex = Random.Range(0, col.pathCount);
@@ -62,23 +60,24 @@ public class FireParticleEffect : MonoBehaviour
 
         int pointIndex = Random.Range(0, points.Length);
 
-        Vector2 pointA = points[ pointIndex ];
-        Vector2 pointB = points[ (pointIndex+1) % points.Length ];
+        Vector2 pointA = points[pointIndex];
+        Vector2 pointB = points[(pointIndex + 1) % points.Length];
 
-        Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f) );
+        Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
 
-        SpawnFireAtPosition(spawnPoint + (Vector2)transform.position);
+        SpawnFireAtPosition(spawnPoint + (Vector2) transform.position);
     }
 
     private void SpawnFireAtPosition(Vector2 position)
     {
         SimplePool.Spawn(ParticlePrefab, position, Quaternion.identity);
-
     }
 
-    
+
     public void CloseAndOpenBurningAffect(bool mode)
     {
+        if (fireAnimation != null)
+            fireAnimation.SetActive(mode);
         isOn = mode;
         timerBurning = timeToBurn;
         damageEnemyTimer = damageEnemyStep;
@@ -86,6 +85,7 @@ public class FireParticleEffect : MonoBehaviour
 
     private void FireDamage()
     {
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice) return;
         damageEnemyTimer = damageEnemyStep;
         damageEnemy = true;
         var enemy = GetComponentInParent<Enemy>();

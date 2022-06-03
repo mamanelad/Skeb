@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveMaterial: {fileID: 2100000, guid: 3d0420a706227c74abee3ca9d2902389, type: 2}
   fade: 1
-  coinPick: {fileID: 2128398988093459002, guid: df9389174370f0c438a0e80e6be37095, type: 3}
+  coinPick: {fileID: 834392562380868328, guid: a96b2c358fa563b4f937cadc69f1285f, type: 3}
 --- !u!95 &7328550441495400171
 Animator:
   serializedVersion: 3
@@ -139,7 +139,7 @@ MonoBehaviour:
   attackRangeHit: 1
   attackDamage: 10
   timeBetweenAttacks: 1
-  screenShakeIntensity: 5
+  screenShakeIntensity: 1
   screenShakeTime: 0.1
 --- !u!60 &2455406489392153300
 PolygonCollider2D:

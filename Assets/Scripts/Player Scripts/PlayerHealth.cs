@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private bool inTutorial;
     [SerializeField] private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float fallDamage = 20;
@@ -58,6 +59,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth(float mod, Vector3 pos)
     {
+        if (inTutorial) return;
+        
+        
         if (_playerController.isStunned && mod <= 0)
             return;
         
