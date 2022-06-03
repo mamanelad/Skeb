@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,9 +27,8 @@ public class PlayerController : MonoBehaviour
 
     #region Inspector Control
 
-    [Header("Movement Control")] [SerializeField]
-    private float movementSpeed = 5;
-
+    [Header("Movement Control")] 
+    [SerializeField] private float movementSpeed = 5;
     [SerializeField] private GameObject hitBox;
     [SerializeField] private GameObject reflection;
     [SerializeField] private bool canMoveWhileAttacking;
@@ -44,12 +44,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedScalerForSlipperyFloor = 1.5f;
 
 
-    [Header("Dash Settings")] [SerializeField]
-    private LayerMask dashLayerMask;
-
+    [Header("Dash Settings")] 
+    [SerializeField] private LayerMask dashLayerMask;
     [SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private float dashEffectDurationTime;
+
+    [Header("Ice Dash")] 
+    [SerializeField] private GameObject iceSpike;
+    [SerializeField] [Range(0,0.5f)] private float spikeSeparation;
+    
+    
 
     #endregion
 
@@ -334,7 +339,7 @@ public class PlayerController : MonoBehaviour
                 dashDistance, dashLayerMask);
             if (hit.collider != null)
                 dashPosition = hit.point;
-
+            
             _rb.MovePosition(dashPosition);
             _dashStatus = false;
         }
@@ -434,8 +439,19 @@ public class PlayerController : MonoBehaviour
     {
         playerCantFall = _playerStats.cantFall;
         hitBox.transform.localScale = new Vector3(1, -1, 1) * _playerStats.attackRange;
+        IceDash();
     }
 
+    public void IceDash()
+    {
+        if (!_playerStats.iceDash || !_dashEffect.emitting)
+            return;
+        var spikePos = transform.position;
+        spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
+        spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
+        Instantiate(iceSpike, spikePos, Quaternion.identity);
+    }
+    
     public void KillPlayer()
     {
         IsPlayerDead = true;
