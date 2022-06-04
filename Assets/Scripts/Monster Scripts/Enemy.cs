@@ -71,8 +71,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        
-
         if (_state != GameManager.Shared.CurrentState)
             ChangeState();
         

@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool _canCreateIceDash = true;
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
@@ -533,6 +534,10 @@ public class PlayerController : MonoBehaviour
             var spikePos = transform.position;
             spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
             spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
+            
+            
+            
+            
             Instantiate(iceSpike, spikePos, Quaternion.identity);
         }
     }

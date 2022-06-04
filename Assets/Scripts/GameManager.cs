@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public int roundNumber = 1;
     [NonSerialized] public int roundMonsterKillCounter = 0;
     [NonSerialized] public int roundMonsterTotalAmount;
-    
+
+    private ArenaParticles _arenaParticles;
     private float _stageTimer;
 
 
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
 
         if (inTutorial)
             dontChangeStateByTime = true;
+
+        _arenaParticles = FindObjectOfType<ArenaParticles>();
     }
 
     private void Update()
@@ -73,27 +76,30 @@ public class GameManager : MonoBehaviour
         }
 
         if (_stageTimer <= 0)
+        {
             CurrentState = WorldState.Fire;
+            SwitchState();
+        }
+
         if (_stageTimer >= timeInStage)
+        {
             CurrentState = WorldState.Ice;
+            SwitchState();
+        }
+            
 
         var stagePercentage = timeInStage != 0 ? _stageTimer / timeInStage : 0;
         UIManager.Shared.SetStageStateBar(stagePercentage);
+
+        
     }
     
     private void SwitchState()
     {
-        if (stuckStage) return;
-            var fireAffects = FindObjectsOfType<FireParticleEffect>();
+        var fireAffects = FindObjectsOfType<FireParticleEffect>();
         foreach (var fireAffect in fireAffects)
             fireAffect.CloseAndOpenBurningAffect(false);
-
-
-        CurrentState = CurrentState switch
-        {
-            WorldState.Fire => WorldState.Ice,
-            WorldState.Ice => WorldState.Fire,
-            _ => CurrentState
-        };
+        _arenaParticles.StartParticles();
+        
     }
 }
