@@ -48,6 +48,7 @@ public class HitBreak : MonoBehaviour
     {
         _hitBreakOn = true;
         yield return new WaitForSecondsRealtime(duration);
+        yield return new WaitUntil(() => Time.timeScale != 0);
         Time.timeScale = 1.0f;
         _hitBreakOn = false;
     }
@@ -60,11 +61,11 @@ public class HitBreak : MonoBehaviour
         var switchTurns = (int) _playerController.stunDuration / 0.2f;
         for (var i = 0; i < switchTurns; i++)
         {
+            yield return new WaitUntil(() => Time.timeScale != 0);
             yield return new WaitForSecondsRealtime(0.1f);
             material.shader = _curShader;
             yield return new WaitForSecondsRealtime(0.1f);
             material.shader = hitShader;
-            
         }
         material.shader = _curShader;
         _playerController.isStunned = false;

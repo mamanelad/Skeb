@@ -20,6 +20,9 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+        
         if (_playerController.IsPlayerDead && timeInZoom > 0)
         {
             Time.timeScale = 0.2f;
@@ -39,9 +42,7 @@ public class CameraManager : MonoBehaviour
             ZoomOnLastEnemy();
         else
             targetGroupCamera.SetActive(false);
-
-        //if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause)
-         //   Time.timeScale = 0f;
+        
     }
 
     private void ZoomOnLastEnemy()

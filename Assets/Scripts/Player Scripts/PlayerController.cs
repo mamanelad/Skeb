@@ -139,6 +139,9 @@ public class PlayerController : MonoBehaviour
 
     private void AttackInput(InputAction.CallbackContext context)
     {
+        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause)
+            return;
+            
         if (context.performed)
         {
             switch (GameManager.Shared.CurrentState)

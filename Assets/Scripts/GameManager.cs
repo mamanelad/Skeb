@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameState.Arena;
         _prevGameState = GameState.Arena;
         InitializeControls();
+        Time.timeScale = 1f;
     }
 
     #region Input Actions
@@ -83,6 +84,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        print(CurrentGameState);
+        
         if (!dontChangeStateByTime)
             UpdateStageTimer();
 
@@ -144,6 +147,9 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame(InputAction.CallbackContext context)
     {
+        if (CurrentGameState == GameState.Pause)
+            return;
+        
         Time.timeScale = 0;
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Pause;

@@ -198,10 +198,10 @@ public class EnemySpawnerDots : MonoBehaviour
     {
         currentWaveMonsterCounter = 0;
         waveIndex += 1;
-        print("initiating wave number: " + waveIndex);
+        //print("initiating wave number: " + waveIndex);
         if (waveIndex >= _waves.Length)
         {
-            print("game won");
+            //print("game won");
             return;
         }
 
