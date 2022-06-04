@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
 {
     #region Private Fields
 
+    private PlayerController _playerController;
     private Enemy.EnemyKind _enemyKind;
     private Transform _target; // What to chase?
     private Seeker _seeker;
@@ -65,6 +66,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        _playerController = FindObjectOfType<PlayerController>();
         _enemyKind = GetComponent<Enemy>()._enemyKind;
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
@@ -142,7 +144,7 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (lockMovement) return;
+        if (lockMovement || _playerController.IsPlayerDead) return;
 
         if (_target == null)
         {

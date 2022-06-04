@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool stuckStage;
     [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
-    [SerializeField] private bool dontChangeStateByTime;
+    private bool dontChangeStateByTime;
+    [SerializeField] private bool inTutorial;
 
     [NonSerialized] public int roundNumber = 1;
     [NonSerialized] public int roundMonsterKillCounter = 0;
@@ -36,6 +37,9 @@ public class GameManager : MonoBehaviour
 
         CurrentState = WorldState.Fire;
         _stageTimer = 0;
+
+        if (inTutorial)
+            dontChangeStateByTime = true;
     }
 
     private void Update()

@@ -10,6 +10,8 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private bool spawnIsOn;
 
+    private PlayerController _playerController;
+
     private int _dotIndexBolt; //Position for the bolt
     private int _dotIndexMonster; //Position for the monster
     private int _monsterIndex; //Which monster to initialize
@@ -68,6 +70,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void Start()
     {
+        _playerController = FindObjectOfType<PlayerController>();
         _timer = maxTimeToSpawn;
         SetNewWave();
     }
@@ -86,6 +89,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     void Update()
     {
+        if (_playerController.IsPlayerDead) return;
         if (upgradeShop != null)
         {
             if (openShop)

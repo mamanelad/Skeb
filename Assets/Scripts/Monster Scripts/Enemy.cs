@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     #region Private Fields
 
+    private PlayerController _playerController;
     private PlayerStats _playerStats;
     private GameObject _player;
     private Rigidbody2D _rb;
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _playerController = FindObjectOfType<PlayerController>();
         _playerStats = FindObjectOfType<PlayerStats>();
         _rb = GetComponent<Rigidbody2D>();
         _enemyAI = GetComponent<EnemyAI>();
@@ -68,6 +70,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (_playerController.IsPlayerDead) return;
+
         if (_state != GameManager.Shared.CurrentState)
             ChangeState();
 
@@ -105,28 +109,27 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         // _enemyAI.lockMovement = true;
-        
-        //Demage enemy setting for the option that the function is not called from the burning effect.
-       
-            if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
-            {
-                var fireAffect = GetComponentInChildren<FireParticleEffect>();
-                if (fireAffect != null && !fireAffect.damageEnemy)
-                {
-                    fireAffect.CloseAndOpenBurningAffect(true);
-                    GoBack();
-                }
-                
-            }
 
-            else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        //Demage enemy setting for the option that the function is not called from the burning effect.
+
+        if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        {
+            var fireAffect = GetComponentInChildren<FireParticleEffect>();
+            if (fireAffect != null && !fireAffect.damageEnemy)
             {
+                fireAffect.CloseAndOpenBurningAffect(true);
                 GoBack();
             }
-        
-        
+        }
+
+        else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+        {
+            GoBack();
+        }
+
+
         currHealth -= damage;
-        
+
         switch (_state)
         {
             case GameManager.WorldState.Fire:
@@ -146,9 +149,8 @@ public class Enemy : MonoBehaviour
 
         if (currHealth <= 0)
             KillEnemy();
-        
-        // _enemyAI.lockMovement = false;
 
+        // _enemyAI.lockMovement = false;
     }
 
     private void GoBack()
@@ -182,6 +184,7 @@ public class Enemy : MonoBehaviour
             {
                 _enemySpawnerDots.DecreaseMonster();
             }
+
             _isDead = true;
         }
 

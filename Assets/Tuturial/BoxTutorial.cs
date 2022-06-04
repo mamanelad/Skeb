@@ -19,7 +19,7 @@ public class BoxTutorial : MonoBehaviour
 
     [SerializeField] private GameObject skebName;
 
-    [SerializeField] private Animator _animator;
+    private Animator _animator;
 
     [SerializeField] private float hitStep = 1f;
     private float hitTimer;
@@ -113,7 +113,7 @@ public class BoxTutorial : MonoBehaviour
 
     private void SwitchToMainScene()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Tamir new Arena");
     }
 
 
