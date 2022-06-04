@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseScreenScript : MonoBehaviour
 {
@@ -15,12 +14,36 @@ public class PauseScreenScript : MonoBehaviour
     [SerializeField] private GameObject indicator;
     [SerializeField] private GameObject menuContinue;
     [SerializeField] private GameObject menuQuit;
+    private GameControls _pauseControls;
 
-
-    private void Start()
+    private void Awake()
     {
         _currMenuOption = Option.Continue;
+        _pauseControls = new GameControls();
+        InitializeControls();
     }
+    
+    #region Input Actions
+
+    private void InitializeControls()
+    {
+        _pauseControls.PauseControl.ArrowUp.performed +=  ClickUp;
+        _pauseControls.PauseControl.ArrowDown.performed +=  ClickDown;
+        _pauseControls.PauseControl.Click.performed +=  OnClick;
+    }
+    
+    
+    private void OnEnable()
+    {
+        _pauseControls.PauseControl.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _pauseControls.PauseControl.Disable();
+    }
+
+    #endregion
     
     private void Update()
     {
@@ -50,7 +73,7 @@ public class PauseScreenScript : MonoBehaviour
         return menuItem.GetComponent<RectTransform>().position.y;
     }
 
-    private void OnClick()
+    private void OnClick(InputAction.CallbackContext context)
     {
         switch (_currMenuOption)
         {
@@ -67,13 +90,25 @@ public class PauseScreenScript : MonoBehaviour
 
     private void Continue()
     {
-        Debug.Log("cont");
-        return;
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
     
     private void Quit()
     {
-        Debug.Log("quit");
+        //TODO: go back to main menu 
         return;
+    }
+
+    private void ClickUp(InputAction.CallbackContext context)
+    {
+        if (_currMenuOption == Option.Quit)
+            _currMenuOption = Option.Continue;
+    }
+
+    private void ClickDown(InputAction.CallbackContext context)
+    {
+        if (_currMenuOption == Option.Continue)
+            _currMenuOption = Option.Quit;
     }
 }

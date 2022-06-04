@@ -233,6 +233,74 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PauseControl"",
+            ""id"": ""28ffc867-b337-4423-a0d6-7c48f84a2442"",
+            ""actions"": [
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""532c3233-d020-4175-b5dd-e2b31066348c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ArrowUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""87512d1e-fdf1-457b-97e1-5bc7b80c5feb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ArrowDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca42aa56-d702-4f93-ab36-6204da6f8530"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4de41150-44ed-4ac1-a889-dff6233c4f77"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb2f0db6-c93e-473a-b544-62496229bc2a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bb9a9a3-768a-4d43-ac49-3385bb140a95"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -258,6 +326,11 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_GameControl_Attack = m_GameControl.FindAction("Attack", throwIfNotFound: true);
         m_GameControl_Movement = m_GameControl.FindAction("Movement", throwIfNotFound: true);
         m_GameControl_Mous = m_GameControl.FindAction("Mous", throwIfNotFound: true);
+        // PauseControl
+        m_PauseControl = asset.FindActionMap("PauseControl", throwIfNotFound: true);
+        m_PauseControl_Click = m_PauseControl.FindAction("Click", throwIfNotFound: true);
+        m_PauseControl_ArrowUp = m_PauseControl.FindAction("ArrowUp", throwIfNotFound: true);
+        m_PauseControl_ArrowDown = m_PauseControl.FindAction("ArrowDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -362,6 +435,55 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         }
     }
     public GameControlActions @GameControl => new GameControlActions(this);
+
+    // PauseControl
+    private readonly InputActionMap m_PauseControl;
+    private IPauseControlActions m_PauseControlActionsCallbackInterface;
+    private readonly InputAction m_PauseControl_Click;
+    private readonly InputAction m_PauseControl_ArrowUp;
+    private readonly InputAction m_PauseControl_ArrowDown;
+    public struct PauseControlActions
+    {
+        private @GameControls m_Wrapper;
+        public PauseControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Click => m_Wrapper.m_PauseControl_Click;
+        public InputAction @ArrowUp => m_Wrapper.m_PauseControl_ArrowUp;
+        public InputAction @ArrowDown => m_Wrapper.m_PauseControl_ArrowDown;
+        public InputActionMap Get() { return m_Wrapper.m_PauseControl; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseControlActions set) { return set.Get(); }
+        public void SetCallbacks(IPauseControlActions instance)
+        {
+            if (m_Wrapper.m_PauseControlActionsCallbackInterface != null)
+            {
+                @Click.started -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnClick;
+                @ArrowUp.started -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.performed -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.canceled -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowUp;
+                @ArrowDown.started -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.performed -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.canceled -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
+            }
+            m_Wrapper.m_PauseControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+                @ArrowUp.started += instance.OnArrowUp;
+                @ArrowUp.performed += instance.OnArrowUp;
+                @ArrowUp.canceled += instance.OnArrowUp;
+                @ArrowDown.started += instance.OnArrowDown;
+                @ArrowDown.performed += instance.OnArrowDown;
+                @ArrowDown.canceled += instance.OnArrowDown;
+            }
+        }
+    }
+    public PauseControlActions @PauseControl => new PauseControlActions(this);
     private int m_KeyBoardSchemeIndex = -1;
     public InputControlScheme KeyBoardScheme
     {
@@ -394,5 +516,11 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnMous(InputAction.CallbackContext context);
+    }
+    public interface IPauseControlActions
+    {
+        void OnClick(InputAction.CallbackContext context);
+        void OnArrowUp(InputAction.CallbackContext context);
+        void OnArrowDown(InputAction.CallbackContext context);
     }
 }
