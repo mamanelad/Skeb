@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void UpdateRoundText()
+    {
+        UIManager.Shared.SetUIText(roundNumber, roundMonsterKillCounter, roundMonsterTotalAmount);
+    }
+
     private void UpdateStageTimer()
     {
         if (CurrentState == WorldState.Fire)

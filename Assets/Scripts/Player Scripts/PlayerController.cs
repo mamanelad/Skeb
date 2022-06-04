@@ -265,11 +265,9 @@ public class PlayerController : MonoBehaviour
 
         
         IsAttacking = true; // affects the animations
-        var hourGlas = FindObjectOfType<HourGlass>();
-        if (hourGlas != null)
-        {
-            hourGlas.IsAttacking();
-        }
+        var hourGlass = FindObjectOfType<HourGlass>();
+        if (hourGlass != null)
+            hourGlass.IsAttacking();
 
         _playerState = PlayerState.Combat; // changes player state
         _attackDash = true; // boolean used for attack dash
@@ -378,10 +376,12 @@ public class PlayerController : MonoBehaviour
 
         ApplyPowerUps();
 
-        if (slipperyFloor || _playerState != PlayerState.Combat)
-            _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-        else if (canMoveWhileAttacking)
-            _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        
+        // if (slipperyFloor || _playerState != PlayerState.Combat)
+        //     _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        // else if (canMoveWhileAttacking)
+        //     _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
 
 
         // dash from attack occurs only on non-slippery floors

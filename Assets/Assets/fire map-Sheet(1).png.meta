@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: c050e93049346ba4e9772413cf02ad4b
+guid: 626b1d7db464c7f4d95f9551e30f5919
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1601880251782029034
-    second: fire map-Sheet_0
+      213: 1444077061599523778
+    second: fire map-Sheet(1)_0
   - first:
-      213: -1800600230001790633
-    second: fire map-Sheet_1
+      213: 596757643674442692
+    second: fire map-Sheet(1)_1
   - first:
-      213: 6980786025010991546
-    second: fire map-Sheet_2
+      213: 8529237558668979615
+    second: fire map-Sheet(1)_2
   - first:
-      213: 1323033201236117926
-    second: fire map-Sheet_3
+      213: 1494144922469768330
+    second: fire map-Sheet(1)_3
   - first:
-      213: 5525466488759412547
-    second: fire map-Sheet_4
+      213: -4962508181541436465
+    second: fire map-Sheet(1)_4
   - first:
-      213: 3469447775773014897
-    second: fire map-Sheet_5
+      213: -430646546119897803
+    second: fire map-Sheet(1)_5
   - first:
-      213: 7333026540876359379
-    second: fire map-Sheet_6
+      213: 3821181782918438853
+    second: fire map-Sheet(1)_6
   - first:
-      213: -5774919109563935093
-    second: fire map-Sheet_7
+      213: 5210396486319106471
+    second: fire map-Sheet(1)_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,7 +113,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 8192
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -127,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire map-Sheet_0
+      name: fire map-Sheet(1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3451
+        y: 3472
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee5e241a950b3610800000000000000
-      internalID: 1601880251782029034
+      spriteID: 2c3fdecbf646a0410800000000000000
+      internalID: 1444077061599523778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_1
+      name: fire map-Sheet(1)_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 2958
+        y: 2976
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 751b14c71abf207e0800000000000000
-      internalID: -1800600230001790633
+      spriteID: 4cbd6384aeb184800800000000000000
+      internalID: 596757643674442692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_2
+      name: fire map-Sheet(1)_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 2465
+        y: 2480
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab19ac967ebb0e060800000000000000
-      internalID: 6980786025010991546
+      spriteID: f9d6269ae50fd5670800000000000000
+      internalID: 8529237558668979615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_3
+      name: fire map-Sheet(1)_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1972
+        y: 1984
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a90ab1dfab5c5210800000000000000
-      internalID: 1323033201236117926
+      spriteID: a8c93c204e44cb410800000000000000
+      internalID: 1494144922469768330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_4
+      name: fire map-Sheet(1)_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 1479
+        y: 1488
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34764d01f766eac40800000000000000
-      internalID: 5525466488759412547
+      spriteID: fc3c044f911a12bb0800000000000000
+      internalID: -4962508181541436465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_5
+      name: fire map-Sheet(1)_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 986
+        y: 992
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17b38b1ce54f52030800000000000000
-      internalID: 3469447775773014897
+      spriteID: 53d46ca7f39060af0800000000000000
+      internalID: -430646546119897803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_6
+      name: fire map-Sheet(1)_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 493
+        y: 496
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +267,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d6627179c424c560800000000000000
-      internalID: 7333026540876359379
+      spriteID: 5cf1c090690970530800000000000000
+      internalID: 3821181782918438853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire map-Sheet_7
+      name: fire map-Sheet(1)_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 747
-        height: 493
+        height: 496
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8693dbaaad5bdfa0800000000000000
-      internalID: -5774919109563935093
+      spriteID: 7a96ef99ffb0f4840800000000000000
+      internalID: 5210396486319106471
       vertices: []
       indices: 
       edges: []
