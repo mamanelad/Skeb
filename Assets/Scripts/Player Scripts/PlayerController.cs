@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
+    private float dashColliderTimer;
+
 
     public enum PlayerState
     {
@@ -59,7 +61,9 @@ public class PlayerController : MonoBehaviour
     [Header("Ice Dash")] [SerializeField] private GameObject iceSpike;
     [SerializeField] [Range(0, 0.5f)] private float spikeSeparation;
     [SerializeField] [Range(1, 5)] private int spikeScaler;
-
+    [SerializeField] private BoxCollider2D dashCollider2D;
+    [SerializeField] private bool isDashColliderOn;
+    [SerializeField] private float dashColliderTime = .2f;
     #endregion
 
     #region Private Fields
@@ -115,6 +119,7 @@ public class PlayerController : MonoBehaviour
         _gameControls = new GameControls();
         InitializeControls();
         _canCreateIceDash = true;
+        dashCollider2D.enabled = false;
     }
 
     private void InitializeControls()
@@ -157,6 +162,10 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
+            dashCollider2D.enabled = true;
+            isDashColliderOn = true;
+            dashColliderTimer = dashColliderTime;
+            
             _dashStatus = true;
             var hourGlass = FindObjectOfType<HourGlass>();
             if (hourGlass != null)
@@ -179,6 +188,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDashColliderOn)
+        {
+            dashColliderTimer -= Time.deltaTime;
+            if (dashColliderTimer < 0)
+            {
+                isDashColliderOn = false;
+                dashCollider2D.enabled = false;
+            }
+        }
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;

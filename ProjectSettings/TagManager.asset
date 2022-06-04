@@ -19,6 +19,7 @@ TagManager:
   - HourGlass
   - box
   - lifeBar
+  - DashCollider
   layers:
   - Default
   - TransparentFX
