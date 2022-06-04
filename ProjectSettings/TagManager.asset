@@ -18,6 +18,7 @@ TagManager:
   - Spike
   - HourGlass
   - box
+  - lifeBar
   layers:
   - Default
   - TransparentFX

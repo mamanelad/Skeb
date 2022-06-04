@@ -9,7 +9,7 @@ public class CoinPickUp : MonoBehaviour
 
     [SerializeField] private float minDistance = 1f;
     [SerializeField] private float step = 0.1f;
-     private GameObject player;
+     [SerializeField] private GameObject target;
 
     private enum CoinKind
     {
@@ -29,7 +29,7 @@ public class CoinPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerHealth>().gameObject;
+        target = GameObject.FindGameObjectWithTag("lifeBar");
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         SwitchState();
@@ -41,6 +41,7 @@ public class CoinPickUp : MonoBehaviour
         if (_state != GameManager.Shared.CurrentState)
         {
             SwitchState();
+            
         }
 
     }
@@ -48,12 +49,13 @@ public class CoinPickUp : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var dist = Vector3.Distance(player.transform.position, transform.position);
+        var dist = Vector3.Distance(target.transform.position, transform.position);
         if (dist <= minDistance)
         {
             AddCoins();
+            
         }
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
     }
 
@@ -90,21 +92,10 @@ public class CoinPickUp : MonoBehaviour
 
     private void AddCoins()
     {
-        /*switch (coinKind)
+        if (coinKind == CoinKind.Heart)
         {
-            case CoinKind.Fire:
-                GameManager.Shared.fireCoins += coinValue;
-                break;
-
-            case CoinKind.Ice:
-                GameManager.Shared.iceCoins += coinValue;
-                break;
-            
-            case CoinKind.Heart:
-                
-                //TODO:: add life to player
-                break;
-        }*/
+            FindObjectOfType<PlayerHealth>().UpdateHealth(coinValue, Vector3.zero);
+        }
 
         Destroy(gameObject);
     }

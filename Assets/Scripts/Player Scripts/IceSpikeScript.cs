@@ -45,7 +45,11 @@ public class IceSpikeScript : MonoBehaviour
                 return;
             
             // play spike damage sound
-            monsterController.DamageEnemy(spikeDamage);
+            if (monsterController != null)
+            {
+                monsterController.DamageEnemy(spikeDamage);
+            }
+            
             
             if (destroyOnCollision)
             {

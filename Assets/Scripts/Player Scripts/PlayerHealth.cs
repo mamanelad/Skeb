@@ -72,7 +72,9 @@ public class PlayerHealth : MonoBehaviour
         health = Mathf.Max(health, 0);
 
         UpdateHealthBar();
-        _playerController.PlayerGotHit(pos);
+        
+        if (mod < 0)
+            _playerController.PlayerGotHit(pos);
     }
 
     private void UpdateHealthBar()
