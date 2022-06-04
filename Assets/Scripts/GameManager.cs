@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
 
     public WorldState CurrentState;
-
+    
     private void Awake()
     {
         if (Shared == null)

@@ -87,6 +87,8 @@ public class Dissolve : MonoBehaviour
 
     private void InstantiateCoin()
     {
-        Instantiate(coinPick, transform.position, Quaternion.identity);
+        var upgradeStat = FindObjectOfType<PlayerStats>();
+        if (upgradeStat.monsterKillRegeneration)
+            Instantiate(coinPick, transform.position, Quaternion.identity);
     }
 }

@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class EnergyBall : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class EnergyBall : MonoBehaviour
     private GameObject _player;
     private bool _startLife;
     private bool _hit;
+    private bool goAfter;
     
     #endregion
 
@@ -43,16 +46,23 @@ public class EnergyBall : MonoBehaviour
                 DestroyBall();
             }
         }
-        if (_startLife)
-        {
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (!_startLife) return;
+        
             transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, step);
             lifeBallTimer -= Time.deltaTime;
             if (lifeBallTimer <= 0)
             {
                 _animator.SetTrigger(Die);
                 _startLife = false;
-            }
-        }
+            } 
+        
+        
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -61,7 +71,7 @@ public class EnergyBall : MonoBehaviour
         {
             _hit = true;
             _player.GetComponent<PlayerHealth>().UpdateHealth(-_attackDamage, transform.position);
-            DestroyBall();
+            _animator.SetTrigger(Die);
         }
        
     }

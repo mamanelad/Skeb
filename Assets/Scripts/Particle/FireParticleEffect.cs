@@ -89,7 +89,11 @@ public class FireParticleEffect : MonoBehaviour
         damageEnemyTimer = damageEnemyStep;
         damageEnemy = true;
         var enemy = GetComponentInParent<Enemy>();
-        enemy.DamageEnemy(fireDamage);
+        if (enemy != null)
+        {
+            enemy.DamageEnemy(fireDamage);
+
+        }
         damageEnemy = false;
     }
 }
