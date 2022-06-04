@@ -30,6 +30,10 @@ public class CameraManager : MonoBehaviour
                 targetGroupCamera.SetActive(false);
             }
         }
+        else if (GameManager.Shared.triggerKillCamera)
+        {
+            ZoomOnLastEnemy();
+        }
     }
 
     public void ZoomOnLastEnemy()

@@ -434,14 +434,17 @@ public class PlayerController : MonoBehaviour
             SetPlayerFall();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Top"))
             _isInTopHalf = true;
 
         if (other.gameObject.CompareTag("Bottom"))
             _isInTopHalf = false;
+    }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         var monList = _monstersInRange ?? new List<GameObject>();
         if (other.gameObject.CompareTag("Enemy"))
         {
