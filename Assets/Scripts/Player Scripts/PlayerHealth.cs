@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private float regenTimer;
 
     [Header("Second Wind")] 
+    [SerializeField] private GameObject angle;
     [SerializeField] private float secondWindHealthBuff;
 
     private void Start()
@@ -126,8 +127,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void SecondWindEffect()
     {
+        var angelSpawned = Instantiate(angle, Vector3.zero, Quaternion.identity);
+        Destroy(angelSpawned, 1f);
         // play second wind sound
-        // play second wind graphics
     }
     
     
