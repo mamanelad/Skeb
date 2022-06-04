@@ -22,8 +22,11 @@ public class UIManager : MonoBehaviour
     [Header("Stage State Indicator")] 
     [SerializeField] private GameObject worldStageStatus;
     [SerializeField] private GameObject indicator;
-    
-    
+
+    [Header("Heart Indicator")] 
+    [SerializeField] private List<Sprite> frames;
+    [SerializeField] private GameObject heartIndicator;
+
 
     private void Awake()
     {
@@ -77,6 +80,7 @@ public class UIManager : MonoBehaviour
     public void SetLifeBar(float progressPercentage)
     {
         lifeBar.GetComponent<Image>().fillAmount = progressPercentage / 100f;
+        UpdateHeartIndicator(progressPercentage);
     }
 
     private void SetLifeBarDelay()
@@ -107,5 +111,13 @@ public class UIManager : MonoBehaviour
     { 
         var anim = worldStageStatus.GetComponent<Animator>();
         anim.SetTrigger("LaunchTimer");
+    }
+
+    private void UpdateHeartIndicator(float progressPercentage)
+    {
+        var amountOfFrames = frames.Count;
+        var frame = (int) Mathf.Floor(amountOfFrames - amountOfFrames * progressPercentage / 100);
+        frame = frame < amountOfFrames ? frame : amountOfFrames - 1;
+        heartIndicator.GetComponent<Image>().sprite = frames[frame];
     }
 }

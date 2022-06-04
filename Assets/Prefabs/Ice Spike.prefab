@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5426484186192415222}
   m_Layer: 0
   m_Name: Ice Spike
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,8 +143,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.0625, y: 0.140625}
-      - {x: -0.109375, y: 0}
-      - {x: -0.109375, y: -0.140625}
-      - {x: 0.109375, y: -0.140625}
-      - {x: 0.109375, y: -0.015625}
-      - {x: 0.03125, y: 0.140625}
+      - {x: -0.0801301, y: 0.07157336}
+      - {x: -0.06319857, y: 0.028688356}
+      - {x: 0.06396842, y: 0.03561479}
+      - {x: 0.08089948, y: 0.070570886}
+      - {x: -0.0064606667, y: 0.30070305}
