@@ -25,15 +25,22 @@ public class ReflectionScript : MonoBehaviour
             return;
 
         if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+        {
             _spriteRenderer.sprite = _objectSpriteRenderer.sprite;
+            SetOpacity(0.4f);
+        }
+            
         else
             _spriteRenderer.sprite = null;
 
         if (_isPlayer) // this code is going to affect player only
         {
             if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            {
                 _spriteRenderer.sprite = playerShadow;
-            
+                SetOpacity(0.5f);
+            }
+
             if (PlayerController._PlayerController.GetPlayerState() == PlayerController.PlayerState.Falling)
                 _spriteRenderer.sprite = null;
         }
@@ -45,6 +52,12 @@ public class ReflectionScript : MonoBehaviour
                 gameObject.SetActive(true);
 
         }
+    }
 
+    private void SetOpacity(float opacity)
+    {
+        var color = _spriteRenderer.color;
+        color.a = opacity;
+        _spriteRenderer.color = color;
     }
 }

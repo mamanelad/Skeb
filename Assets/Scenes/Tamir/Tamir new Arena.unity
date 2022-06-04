@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_TagString
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflection: {fileID: 795194147}
+  playerShadow: {fileID: 21300000, guid: 9677c49b3f532ab47aeab25a483f767c, type: 3}
 --- !u!212 &73920988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3543,7 +3544,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 6.3482e-41, y: 6.3483e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 6.4531e-41, y: 6.4533e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
