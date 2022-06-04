@@ -7,10 +7,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _canCreateIceDash = true;
+    private bool _canCreateIceDash;
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
+    private float dashColliderTimer;
+
 
     public enum PlayerState
     {
@@ -58,7 +60,9 @@ public class PlayerController : MonoBehaviour
     [Header("Ice Dash")] [SerializeField] private GameObject iceSpike;
     [SerializeField] [Range(0, 0.5f)] private float spikeSeparation;
     [SerializeField] [Range(1, 5)] private int spikeScaler;
-
+    [SerializeField] private BoxCollider2D dashCollider2D;
+    [SerializeField] private bool isDashColliderOn;
+    [SerializeField] private float dashColliderTime = .2f;
     #endregion
 
     #region Private Fields
@@ -113,6 +117,8 @@ public class PlayerController : MonoBehaviour
             _PlayerController = this;
         _gameControls = new GameControls();
         InitializeControls();
+        _canCreateIceDash = true;
+        dashCollider2D.enabled = false;
     }
 
     private void InitializeControls()
@@ -155,6 +161,10 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
+            dashCollider2D.enabled = true;
+            isDashColliderOn = true;
+            dashColliderTimer = dashColliderTime;
+            
             _dashStatus = true;
             var hourGlass = FindObjectOfType<HourGlass>();
             if (hourGlass != null)
@@ -177,6 +187,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDashColliderOn)
+        {
+            dashColliderTimer -= Time.deltaTime;
+            if (dashColliderTimer < 0)
+            {
+                isDashColliderOn = false;
+                dashCollider2D.enabled = false;
+            }
+        }
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;
@@ -432,7 +451,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider") && !playerCantFall)
+        {
             SetPlayerFall();
+        }
+            
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -472,6 +494,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerFall()
     {
+        _canCreateIceDash = false;
         _playerState = PlayerState.Falling;
         _rb.gravityScale = 50;
         GetComponent<Collider2D>().enabled = false;
@@ -482,6 +505,7 @@ public class PlayerController : MonoBehaviour
 
     private void ResetPlayerFall()
     {
+        _canCreateIceDash = true;
         GetComponent<PlayerHealth>().ApplyFallDamage();
 
         if (IsPlayerDead)
@@ -526,6 +550,7 @@ public class PlayerController : MonoBehaviour
 
     private void IceDash()
     {
+        if (!_canCreateIceDash) return;
         if (!_playerStats.iceDash || !_dashEffect.emitting)
             return;
         for (var i = 0; i < spikeScaler; i++)
@@ -533,10 +558,6 @@ public class PlayerController : MonoBehaviour
             var spikePos = transform.position;
             spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
             spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
-            
-            
-            
-            
             Instantiate(iceSpike, spikePos, Quaternion.identity);
         }
     }
