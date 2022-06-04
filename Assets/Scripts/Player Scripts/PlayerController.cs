@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _canCreateIceDash = true;
+    private bool _canCreateIceDash;
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
             _PlayerController = this;
         _gameControls = new GameControls();
         InitializeControls();
+        _canCreateIceDash = true;
     }
 
     private void InitializeControls()
@@ -433,7 +434,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider") && !playerCantFall)
+        {
             SetPlayerFall();
+        }
+            
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -473,6 +477,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerFall()
     {
+        _canCreateIceDash = false;
         _playerState = PlayerState.Falling;
         _rb.gravityScale = 50;
         GetComponent<Collider2D>().enabled = false;
@@ -483,6 +488,7 @@ public class PlayerController : MonoBehaviour
 
     private void ResetPlayerFall()
     {
+        _canCreateIceDash = true;
         GetComponent<PlayerHealth>().ApplyFallDamage();
 
         if (IsPlayerDead)
@@ -527,6 +533,7 @@ public class PlayerController : MonoBehaviour
 
     private void IceDash()
     {
+        if (!_canCreateIceDash) return;
         if (!_playerStats.iceDash || !_dashEffect.emitting)
             return;
         for (var i = 0; i < spikeScaler; i++)
@@ -534,10 +541,6 @@ public class PlayerController : MonoBehaviour
             var spikePos = transform.position;
             spikePos.x += Random.Range(-spikeSeparation, spikeSeparation);
             spikePos.y += Random.Range(-spikeSeparation, spikeSeparation);
-            
-            
-            
-            
             Instantiate(iceSpike, spikePos, Quaternion.identity);
         }
     }
