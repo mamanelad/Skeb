@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7738717100734304035}
   - {fileID: 7907728213498860970}
+  - {fileID: 955960515531573183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,6 +132,8 @@ MonoBehaviour:
   _enemyKind: 2
   currHealth: 20
   startHealth: 20
+  _bloodEffect: {fileID: 3130804771916970411, guid: 0f78026728b5e1e4399d38cefa67eb9a, type: 3}
+  bloodPosition: {fileID: 955960515531573183}
 --- !u!58 &3940784132453434540
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +150,36 @@ CircleCollider2D:
   m_Offset: {x: 0.013616115, y: -0.01603283}
   serializedVersion: 2
   m_Radius: 0.22629042
+--- !u!1 &8040921560685954354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955960515531573183}
+  m_Layer: 0
+  m_Name: BlodPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &955960515531573183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8040921560685954354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.024, y: 0.134, z: -0.33496064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3022574100382336380}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &851573756793270754
 PrefabInstance:
   m_ObjectHideFlags: 0
