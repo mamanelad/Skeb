@@ -1,0 +1,648 @@
+fileFormatVersion: 2
+guid: a88d046e61477d34fb1e0b4769c89ed3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4040089078613311144
+    second: world change-Sheet(1)_0
+  - first:
+      213: 3244279571922767492
+    second: world change-Sheet(1)_1
+  - first:
+      213: 8470624240717992683
+    second: world change-Sheet(1)_2
+  - first:
+      213: 3608156657524232590
+    second: world change-Sheet(1)_3
+  - first:
+      213: 3425476793596084133
+    second: world change-Sheet(1)_4
+  - first:
+      213: -1132361365512535233
+    second: world change-Sheet(1)_5
+  - first:
+      213: 1358017587682839429
+    second: world change-Sheet(1)_6
+  - first:
+      213: 7277040539067429055
+    second: world change-Sheet(1)_7
+  - first:
+      213: -2710269386128856881
+    second: world change-Sheet(1)_8
+  - first:
+      213: 6837713105096251310
+    second: world change-Sheet(1)_9
+  - first:
+      213: -6760096739315727150
+    second: world change-Sheet(1)_10
+  - first:
+      213: -829502320469733785
+    second: world change-Sheet(1)_11
+  - first:
+      213: -8156974294940125168
+    second: world change-Sheet(1)_12
+  - first:
+      213: -3720949814732642526
+    second: world change-Sheet(1)_13
+  - first:
+      213: 8910715805453381973
+    second: world change-Sheet(1)_14
+  - first:
+      213: 751262559349359
+    second: world change-Sheet(1)_15
+  - first:
+      213: -8161727857395962803
+    second: world change-Sheet(1)_16
+  - first:
+      213: 1694140165348990850
+    second: world change-Sheet(1)_17
+  - first:
+      213: 8705317456780954578
+    second: world change-Sheet(1)_18
+  - first:
+      213: -2907045909127572610
+    second: world change-Sheet(1)_19
+  - first:
+      213: -7955462338438512121
+    second: world change-Sheet(1)_20
+  - first:
+      213: -1317642962654118628
+    second: world change-Sheet(1)_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: world change-Sheet(1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2324
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae7ea79c97411830800000000000000
+      internalID: 4040089078613311144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_1
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 2324
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e438ce41ff50d20800000000000000
+      internalID: 3244279571922767492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_2
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 2324
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be21fcd1ed3bd8570800000000000000
+      internalID: 8470624240717992683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_3
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 2324
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8151b9fc5fb21230800000000000000
+      internalID: 3608156657524232590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_4
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 2324
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af73acaefcb98f20800000000000000
+      internalID: 3425476793596084133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1743
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33cf3b665b0940f0800000000000000
+      internalID: -1132361365512535233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_6
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1743
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b81980dc5a8d210800000000000000
+      internalID: 1358017587682839429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_7
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1743
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb03b3b90dd3df460800000000000000
+      internalID: 7277040539067429055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_8
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 1743
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc86c2a5a50336ad0800000000000000
+      internalID: -2710269386128856881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_9
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 1743
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea79b4167df64ee50800000000000000
+      internalID: 6837713105096251310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1165
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d44fc505df4f22a0800000000000000
+      internalID: -6760096739315727150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_11
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1162
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e0a00d8040d74f0800000000000000
+      internalID: -829502320469733785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_12
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1162
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018f914a81b9cce80800000000000000
+      internalID: -8156974294940125168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_13
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 1162
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2272ec1abd78c5cc0800000000000000
+      internalID: -3720949814732642526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_14
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 1165
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551f18660d839ab70800000000000000
+      internalID: 8910715805453381973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 581
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6aabf1f44ba20000800000000000000
+      internalID: 751262559349359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_16
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 581
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ce082a1c7bbbe80800000000000000
+      internalID: -8161727857395962803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_17
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 581
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f1953218bc28710800000000000000
+      internalID: 1694140165348990850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_18
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 585
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db8f6caa108fc870800000000000000
+      internalID: 8705317456780954578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_19
+      rect:
+        serializedVersion: 2
+        x: 2996
+        y: 581
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73d2b8d52918a7d0800000000000000
+      internalID: -2907045909127572610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702cf5d2725889190800000000000000
+      internalID: -7955462338438512121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: world change-Sheet(1)_21
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0
+        width: 747
+        height: 493
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d3536e4bac6bde0800000000000000
+      internalID: -1317642962654118628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
