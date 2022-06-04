@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReflectionScript : MonoBehaviour
 {
     [SerializeField] private GameObject reflection;
+    [SerializeField] private Sprite playerShadow;
     private SpriteRenderer _spriteRenderer;
     private SpriteRenderer _objectSpriteRenderer;
     private bool _isPlayer;
@@ -30,8 +31,11 @@ public class ReflectionScript : MonoBehaviour
 
         if (_isPlayer) // this code is going to affect player only
         {
+            if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+                _spriteRenderer.sprite = playerShadow;
+            
             if (PlayerController._PlayerController.GetPlayerState() == PlayerController.PlayerState.Falling)
-                gameObject.SetActive(false);
+                _spriteRenderer.sprite = null;
         }
         else 
         {
