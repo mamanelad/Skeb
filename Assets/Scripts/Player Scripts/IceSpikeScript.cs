@@ -27,21 +27,26 @@ public class IceSpikeScript : MonoBehaviour
         if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
             Destroy(gameObject);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Arena Collider"))
-            Destroy(gameObject);
+        {
+            Debug.Log(other.gameObject.tag);
+        }
         
         if (other.gameObject.CompareTag("Enemy"))
         {
             var monster = other.gameObject;
             var monsterController = monster.GetComponent<Enemy>();
-            if (monsterController != null)
-            {
-                // play spike damage sound
-                monsterController.DamageEnemy(spikeDamage);
-            }
+            if (monsterController == null)
+                return;
+            if (monsterController._enemyKind == Enemy.EnemyKind.Small) // spikes can't hit flying ice skull
+                return;
+            
+            // play spike damage sound
+            monsterController.DamageEnemy(spikeDamage);
+            
             if (destroyOnCollision)
             {
                 // play distruction sound
