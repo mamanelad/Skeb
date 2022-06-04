@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
     private bool dontChangeStateByTime;
-    [SerializeField] private bool inTutorial;
+    public bool inTutorial;
 
     [NonSerialized] public int roundNumber = 1;
     [NonSerialized] public int roundMonsterKillCounter = 0;
@@ -44,14 +44,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftControl))
-        //     SwitchState();
-
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        //     SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
         if (!dontChangeStateByTime)
             UpdateStageTimer();
 
+        if (!inTutorial)
+            UpdateRoundText();
     }
 
     private void UpdateRoundText()

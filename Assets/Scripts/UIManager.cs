@@ -36,6 +36,8 @@ public class UIManager : MonoBehaviour
         lifeBar.GetComponent<Image>().fillAmount = 1f;
         lifeBarDelay.GetComponent<Image>().fillAmount = 1f;
         SetUIText();
+        if (!GameManager.Shared.inTutorial)
+            LaunchWorldStage();
     }
 
     private void Update()
