@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5426484186192414986}
   - component: {fileID: 5426484186192415223}
   - component: {fileID: 5426484186192415222}
+  - component: {fileID: 4745992717313565987}
   m_Layer: 0
   m_Name: Ice Spike
   m_TagString: Spike
@@ -148,3 +149,23 @@ PolygonCollider2D:
       - {x: 0.06396842, y: 0.03561479}
       - {x: 0.08089948, y: 0.070570886}
       - {x: -0.0064606667, y: 0.30070305}
+--- !u!114 &4745992717313565987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5426484186192414987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAnimation: {fileID: 0}
+  timeToBurn: 2
+  ParticlePrefab: {fileID: 5769386592992582346, guid: 8af61b65d9f1aa04da2dc800a41dea5f, type: 3}
+  Rate: 5
+  isOn: 1
+  fireDamage: 12
+  damageEnemyStep: 0.2
+  damageEnemy: 0
