@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stuckStage: 0
   timeInStage: 5
+  dontChangeStateByTime: 0
   CurrentState: 0
 --- !u!4 &525939041
 Transform:
@@ -3124,6 +3125,7 @@ MonoBehaviour:
   UIText: {fileID: 2083300480}
   lifeBar: {fileID: 1754580500}
   lifeBarDelay: {fileID: 113773673}
+  worldStageStatus: {fileID: 954571761}
   indicator: {fileID: 1586029989}
 --- !u!114 &1996970238
 MonoBehaviour:
@@ -3385,7 +3387,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 3.9022e-41, y: 3.9023e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 3.944e-41, y: 3.9441e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
