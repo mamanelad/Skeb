@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: bigPercentage
@@ -306,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73920985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.57, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children:
   - {fileID: 1063344348}
@@ -366,7 +366,7 @@ SpriteRenderer:
   m_SortingLayerID: -1869433519
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8a7573331e808a4428917a6748de664a, type: 3}
+  m_Sprite: {fileID: 3931323994188076114, guid: ff2944b9d40952341811577f96852c1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &74866247
@@ -394,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &74866248
 Transform:
   m_ObjectHideFlags: 0
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   monsterKillRegeneration: 0
   staticRegeneration: 0
   iceDash: 1
-  secondWind: 0
+  secondWind: 1
   cantFall: 0
   burnDamage: 0
   attackRange: 1
@@ -1412,6 +1412,7 @@ MonoBehaviour:
   monsterDeathAddition: 5
   regenAddition: 2
   regenPerSecond: 1
+  angle: {fileID: 8575076220575924888, guid: e08ce3b912db50d458196c34c8464e17, type: 3}
   secondWindHealthBuff: 50
 --- !u!60 &795194154
 PolygonCollider2D:
@@ -1429,9 +1430,9 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5195856, y: 0.26140797}
+    pivot: {x: 0.51247025, y: 0.25309342}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1502,15 +1503,15 @@ SpriteRenderer:
   m_SortingLayerID: -1162428035
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a7573331e808a4428917a6748de664a, type: 3}
+  m_Sprite: {fileID: 3931323994188076114, guid: ff2944b9d40952341811577f96852c1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &795194157
@@ -2113,7 +2114,7 @@ GameObject:
   - component: {fileID: 1203443875}
   - component: {fileID: 1203443876}
   m_Layer: 0
-  m_Name: Ice Arena
+  m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2273,6 +2274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflectionTag: Reflection
+  iceArenaFlickerPercentage: 10
 --- !u!1 &1330973427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,9 +2710,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 5.539044, y: 2.2200198}
-      - {x: 0.43797633, y: 2.3759334}
-      - {x: -2.304165, y: 2.276134}
+    - - {x: 5.57083, y: 2.2094245}
+      - {x: 2.1188676, y: 1.6887311}
+      - {x: -0.109815, y: 1.7617296}
+      - {x: -2.3184388, y: 1.6548071}
       - {x: -5.4314256, y: 2.2451606}
       - {x: -0.9191271, y: 4.414588}
       - {x: 0.95703477, y: 4.4186816}
@@ -3122,9 +3125,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 5.54407, y: 2.2263534}
-      - {x: -0.1733213, y: 1.6819767}
-      - {x: -5.4486585, y: 2.24199}
+    - - {x: 5.5334744, y: 0.011936903}
+      - {x: 5.5179105, y: 2.2064762}
+      - {x: -0.014391914, y: 0.717805}
+      - {x: -5.402746, y: 2.2458127}
+      - {x: -5.480444, y: 0.37721825}
       - {x: -5.4985013, y: -0.22576211}
       - {x: -0.9459537, y: -2.420181}
       - {x: 0.93598664, y: -2.4169233}
@@ -3426,7 +3431,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 4.835e-41, y: 4.8352e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 6.0606e-41, y: 6.0608e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

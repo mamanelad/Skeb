@@ -170,7 +170,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b008a8c7717491f42a8fdb47a06d7485, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6838d258811d464299b0e3de4944338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isDissolving: 0
   dissolveMaterial: {fileID: 2100000, guid: 3d0420a706227c74abee3ca9d2902389, type: 2}
   fade: 1
   coinPick: {fileID: 834392562380868328, guid: a96b2c358fa563b4f937cadc69f1285f, type: 3}
@@ -308,7 +309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3023357144928458639, guid: d3b18659cf0a0864683d8fa1d980f313, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.133
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3023357144928458639, guid: d3b18659cf0a0864683d8fa1d980f313, type: 3}
       propertyPath: m_LocalPosition.z

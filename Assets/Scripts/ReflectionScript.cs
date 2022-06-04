@@ -9,7 +9,7 @@ public class ReflectionScript : MonoBehaviour
     private SpriteRenderer _objectSpriteRenderer;
     private bool _isPlayer;
 
-    void Start()
+    private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _objectSpriteRenderer = reflection.GetComponent<SpriteRenderer>();
@@ -18,12 +18,15 @@ public class ReflectionScript : MonoBehaviour
             _isPlayer = true;
     }
     
-    void Update()
+    private void Update()
     {
         if (_objectSpriteRenderer == null)
             return;
 
-        _spriteRenderer.sprite = _objectSpriteRenderer.sprite;
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+            _spriteRenderer.sprite = _objectSpriteRenderer.sprite;
+        else
+            _spriteRenderer.sprite = null;
 
         if (_isPlayer) // this code is going to affect player only
         {

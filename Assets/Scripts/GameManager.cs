@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool StageDamage;
     private bool dontChangeStateByTime;
     public bool inTutorial;
+    [NonSerialized] public bool triggerKillCamera; 
 
     [NonSerialized] public int roundNumber = 1;
     [NonSerialized] public int roundMonsterKillCounter = 0;
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
 
         if (!inTutorial)
             UpdateRoundText();
+
+        triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterKillCounter;
     }
 
     private void UpdateRoundText()
