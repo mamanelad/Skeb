@@ -5,10 +5,10 @@ using Random = UnityEngine.Random;
 
 public class FireParticleEffect : MonoBehaviour
 {
-    [SerializeField] private GameObject fireAnimation;
+    // [SerializeField] private GameObject fireAnimation;
     [SerializeField] private float timeToBurn = 1.5f;
     private float timerBurning;
-    [SerializeField] GameObject ParticlePrefab;
+    [SerializeField] public GameObject ParticlePrefab;
     [SerializeField] float Rate = 500; // per second
     [SerializeField] public bool isOn;
 
@@ -76,8 +76,8 @@ public class FireParticleEffect : MonoBehaviour
 
     public void CloseAndOpenBurningAffect(bool mode)
     {
-        if (fireAnimation != null)
-            fireAnimation.SetActive(mode);
+        // if (fireAnimation != null)
+        //     fireAnimation.SetActive(mode);
         isOn = mode;
         timerBurning = timeToBurn;
         damageEnemyTimer = damageEnemyStep;
