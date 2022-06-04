@@ -12,11 +12,15 @@ public class UIManager : MonoBehaviour
     public static UIManager Shared;
     private float _time = 0;
 
+    [Header("Stage Text")] 
+    [SerializeField] private TextMeshProUGUI UIText;
+    
     [Header("Life Bar")]
     [SerializeField] private GameObject lifeBar;
     [SerializeField] private GameObject lifeBarDelay;
-    
-    [Header("Stage State Indicator")]
+
+    [Header("Stage State Indicator")] 
+    [SerializeField] private GameObject worldStageStatus;
     [SerializeField] private GameObject indicator;
     
     
@@ -31,6 +35,7 @@ public class UIManager : MonoBehaviour
     {
         lifeBar.GetComponent<Image>().fillAmount = 1f;
         lifeBarDelay.GetComponent<Image>().fillAmount = 1f;
+        SetUIText();
     }
 
     private void Update()
@@ -89,5 +94,16 @@ public class UIManager : MonoBehaviour
         var currPos = indicator.transform.localPosition;
         currPos.x = indicatorXPosition;
         indicator.transform.localPosition = currPos;
+    }
+
+    public void SetUIText(int roundNum = 1, int monstersLeft = 0, int monstersTotal = 100)
+    {
+        UIText.text = $"<u>Round {roundNum}</u> \nKill  {monstersLeft}/{monstersTotal}";
+    }
+
+    public void LaunchWorldStage()
+    {
+        var anim = worldStageStatus.GetComponent<Animator>();
+        anim.SetTrigger("LaunchTimer");
     }
 }
