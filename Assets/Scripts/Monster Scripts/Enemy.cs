@@ -44,7 +44,8 @@ public class Enemy : MonoBehaviour
     private float currHealth;
 
     [SerializeField] private float startHealth = 100;
-
+    [SerializeField] private GameObject _bloodEffect;
+    [SerializeField] private Transform bloodPosition;
     #endregion
 
     #region Animator Labels
@@ -70,10 +71,12 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (_playerController.IsPlayerDead) return;
+        
 
         if (_state != GameManager.Shared.CurrentState)
             ChangeState();
+        
+        if (_playerController.IsPlayerDead) return;
 
         if (transform.position.y < -50) // enemy fell off arena
             KillEnemy();
@@ -134,23 +137,22 @@ public class Enemy : MonoBehaviour
         {
             case GameManager.WorldState.Fire:
                 _fireMonsterAnimator.SetTrigger(Damage);
+                var posB = transform.position + Vector3.up;
+                if (bloodPosition != null)
+                    posB = bloodPosition.position;
+                    var b = Instantiate(_bloodEffect, posB, Quaternion.identity, transform);
+                Destroy(b, 2f);
                 break;
 
             case GameManager.WorldState.Ice:
                 _iceMonsterAnimator.SetTrigger(Damage);
                 break;
         }
-
-        // if (_enemyKind == EnemyKind.Big)
-        // {
-        //     _enemyAI.lockMovement = false;
-        //     return;
-        // }
+        
 
         if (currHealth <= 0)
             KillEnemy();
-
-        // _enemyAI.lockMovement = false;
+        
     }
 
     private void GoBack()

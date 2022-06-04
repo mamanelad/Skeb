@@ -118,22 +118,6 @@ public class PlayerController : MonoBehaviour
     private void InitializeControls()
     {
         _gameControls.GameControl.Attack.performed +=  AttackInput;
-        // _gameControls.GameControl.MoveRight.performed += ctx => move.x = ctx.ReadValue<float>();
-        // _gameControls.GameControl.MoveLeft.performed += ctx => move.x = -ctx.ReadValue<float>();
-        // _gameControls.GameControl.MoveUp.performed += ctx => move.y = ctx.ReadValue<float>();
-        // _gameControls.GameControl.MoveDown.performed += ctx => move.y = -ctx.ReadValue<float>();
-        //
-        // _gameControls.GameControl.MoveRight.canceled += ctx => move.x = 0;
-        // _gameControls.GameControl.MoveLeft.canceled += ctx => move.x = 0;
-        // _gameControls.GameControl.MoveUp.canceled += ctx => move.y = 0;
-        // _gameControls.GameControl.MoveDown.canceled += ctx => move.y = 0;
-
-        // _gameControls.GameControl.Movement.performed += MoveFunction;
-    }
-
-    private void MoveFunction(InputAction.CallbackContext context)
-    {
-        var vecTwo = context.ReadValue<Vector2>();
     }
     
     
