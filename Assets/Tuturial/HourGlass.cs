@@ -29,7 +29,7 @@ public class HourGlass : MonoBehaviour
     [SerializeField] private float pushTime = 0.3f;
     [SerializeField] private float attackingTime = 0.5f;
     private float attackingTimer;
-    
+
     private PlayerController _playerController;
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -71,7 +71,7 @@ public class HourGlass : MonoBehaviour
                 isAttacking = false;
             }
         }
-        
+
         //Set if we can push the hour glass
         if (_canPush)
         {
@@ -96,10 +96,11 @@ public class HourGlass : MonoBehaviour
             {
                 SwitchWorld();
                 boxShow = true;
+                var uiManager = FindObjectOfType<UIManager>();
+                if (uiManager != null)
+                    uiManager.LaunchWorldStage();
                 boxTimerShow = boxTimeShow;
                 _fall = false;
-
-
             }
         }
 
@@ -110,6 +111,7 @@ public class HourGlass : MonoBehaviour
             {
                 boxTutorial.SetActive(true);
                 boxTutorial.GetComponent<Dissolve>().StartDissolve();
+                
                 Destroy(gameObject);
                 boxShow = false;
             }
@@ -167,7 +169,7 @@ public class HourGlass : MonoBehaviour
         _hit = false;
     }
 
-    
+
     public void SwitchWorld()
     {
         switch (GameManager.Shared.CurrentState)
@@ -241,7 +243,6 @@ public class HourGlass : MonoBehaviour
             HitHelper();
             inColliderTrigger = true;
         }
-            
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -250,7 +251,6 @@ public class HourGlass : MonoBehaviour
             HitHelper();
     }
 
-    
 
     private void OnTriggerExit2D(Collider2D other)
     {

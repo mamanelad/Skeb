@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: bigPercentage
@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stuckStage: 0
   timeInStage: 5
+  inTutorial: 0
   CurrentState: 0
 --- !u!4 &525939041
 Transform:
@@ -1162,6 +1163,7 @@ GameObject:
   - component: {fileID: 795194149}
   - component: {fileID: 795194148}
   - component: {fileID: 795194154}
+  - component: {fileID: 795194160}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1553,6 +1555,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0c436ebf870c484e9fa3dd8379d8154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &795194160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795194147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &838843299
@@ -3124,6 +3138,7 @@ MonoBehaviour:
   UIText: {fileID: 2083300480}
   lifeBar: {fileID: 1754580500}
   lifeBarDelay: {fileID: 113773673}
+  worldStageStatus: {fileID: 0}
   indicator: {fileID: 1586029989}
 --- !u!114 &1996970238
 MonoBehaviour:
@@ -3385,7 +3400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 3.9022e-41, y: 3.9023e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 3.9283e-41, y: 3.9284e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -711,7 +711,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276005647}
-  m_LocalRotation: {x: 1.4187e-41, y: 1.4188e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 1.4394e-41, y: 1.4396e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2315,8 +2315,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d8a21aaed8e4e8156d02c3803479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIText: {fileID: 0}
   lifeBar: {fileID: 1359069861}
   lifeBarDelay: {fileID: 1049023991}
+  worldStageStatus: {fileID: 0}
   indicator: {fileID: 0}
 --- !u!114 &1082506220
 MonoBehaviour:

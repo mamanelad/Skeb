@@ -15,7 +15,9 @@ public class EnemyAlone : MonoBehaviour
     private bool _isDead;
     private float _timerBetweenAttacks;
     private bool _canAttack = true;
+    private PlayerController _playerController;
 
+    
     #endregion
 
     #region Animator Labels
@@ -45,6 +47,8 @@ public class EnemyAlone : MonoBehaviour
 
     private void Start()
     {
+        _playerController = FindObjectOfType<PlayerController>();
+
         if (FindObjectOfType<EnemySpawnerDots>())
         {
             _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
@@ -59,6 +63,7 @@ public class EnemyAlone : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_playerController.IsPlayerDead) return;
         //See if the player close enough for attack.
         if (_canAttack)
             DetectPlayer();
