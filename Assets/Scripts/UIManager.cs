@@ -104,7 +104,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void LaunchWorldStage()
-    {
+    { 
         var anim = worldStageStatus.GetComponent<Animator>();
         anim.SetTrigger("LaunchTimer");
     }

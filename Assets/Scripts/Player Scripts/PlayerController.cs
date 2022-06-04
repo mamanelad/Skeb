@@ -117,18 +117,26 @@ public class PlayerController : MonoBehaviour
 
     private void InitializeControls()
     {
-        _gameControls.GameControl.Attack.performed += ctx => AttackInput();
-        _gameControls.GameControl.MoveRight.performed += ctx => move.x = ctx.ReadValue<float>();
-        _gameControls.GameControl.MoveLeft.performed += ctx => move.x = -ctx.ReadValue<float>();
-        _gameControls.GameControl.MoveUp.performed += ctx => move.y = ctx.ReadValue<float>();
-        _gameControls.GameControl.MoveDown.performed += ctx => move.y = -ctx.ReadValue<float>();
+        _gameControls.GameControl.Attack.performed +=  AttackInput;
+        // _gameControls.GameControl.MoveRight.performed += ctx => move.x = ctx.ReadValue<float>();
+        // _gameControls.GameControl.MoveLeft.performed += ctx => move.x = -ctx.ReadValue<float>();
+        // _gameControls.GameControl.MoveUp.performed += ctx => move.y = ctx.ReadValue<float>();
+        // _gameControls.GameControl.MoveDown.performed += ctx => move.y = -ctx.ReadValue<float>();
+        //
+        // _gameControls.GameControl.MoveRight.canceled += ctx => move.x = 0;
+        // _gameControls.GameControl.MoveLeft.canceled += ctx => move.x = 0;
+        // _gameControls.GameControl.MoveUp.canceled += ctx => move.y = 0;
+        // _gameControls.GameControl.MoveDown.canceled += ctx => move.y = 0;
 
-        _gameControls.GameControl.MoveRight.canceled += ctx => move.x = 0;
-        _gameControls.GameControl.MoveLeft.canceled += ctx => move.x = 0;
-        _gameControls.GameControl.MoveUp.canceled += ctx => move.y = 0;
-        _gameControls.GameControl.MoveDown.canceled += ctx => move.y = 0;
+        // _gameControls.GameControl.Movement.performed += MoveFunction;
     }
 
+    private void MoveFunction(InputAction.CallbackContext context)
+    {
+        var vecTwo = context.ReadValue<Vector2>();
+    }
+    
+    
     private void OnEnable()
     {
         _gameControls.GameControl.Enable();
@@ -139,18 +147,22 @@ public class PlayerController : MonoBehaviour
         _gameControls.GameControl.Disable();
     }
 
-    private void AttackInput()
+    private void AttackInput(InputAction.CallbackContext context)
     {
-        switch (GameManager.Shared.CurrentState)
+        if (context.performed)
         {
-            case GameManager.WorldState.Fire:
-                FireStateAttack();
-                break;
+            switch (GameManager.Shared.CurrentState)
+            {
+                case GameManager.WorldState.Fire:
+                    FireStateAttack();
+                    break;
 
-            case GameManager.WorldState.Ice:
-                IceStateAttack();
-                break;
+                case GameManager.WorldState.Ice:
+                    IceStateAttack();
+                    break;
+            } 
         }
+        
     }
 
     
@@ -371,6 +383,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        move = _gameControls.GameControl.Movement.ReadValue<Vector2>();
+        
+        
+
         if (IsPlayerDead)
             return;
 
