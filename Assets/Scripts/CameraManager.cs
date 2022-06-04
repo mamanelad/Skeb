@@ -39,6 +39,9 @@ public class CameraManager : MonoBehaviour
             ZoomOnLastEnemy();
         else
             targetGroupCamera.SetActive(false);
+
+        //if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause)
+         //   Time.timeScale = 0f;
     }
 
     private void ZoomOnLastEnemy()

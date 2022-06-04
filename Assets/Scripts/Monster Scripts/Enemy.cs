@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
                 var posB = transform.position + Vector3.up;
                 if (bloodPosition != null)
                     posB = bloodPosition.position;
-                    var b = Instantiate(_bloodEffect, posB, Quaternion.identity, transform);
+                var b = Instantiate(_bloodEffect, posB, Quaternion.identity, transform);
                 Destroy(b, 2f);
                 break;
 

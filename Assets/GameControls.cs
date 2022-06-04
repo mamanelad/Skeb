@@ -53,6 +53,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""aeaaf723-e809-4250-b7ea-40e8949fb406"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -231,6 +240,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""Mous"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c28dcd4b-d3f1-4474-992b-66ce476e576b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -264,6 +284,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""06deba27-3b23-4b15-b988-086bb6ae5896"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +300,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""4de41150-44ed-4ac1-a889-dff6233c4f77"",
                     ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0370f6ca-8426-4dc2-944e-2537ff4d63f9"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -297,6 +337,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ArrowDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d700615-99dc-457e-be70-8a9d6c2a6d70"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -326,11 +377,13 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_GameControl_Attack = m_GameControl.FindAction("Attack", throwIfNotFound: true);
         m_GameControl_Movement = m_GameControl.FindAction("Movement", throwIfNotFound: true);
         m_GameControl_Mous = m_GameControl.FindAction("Mous", throwIfNotFound: true);
+        m_GameControl_Pause = m_GameControl.FindAction("Pause", throwIfNotFound: true);
         // PauseControl
         m_PauseControl = asset.FindActionMap("PauseControl", throwIfNotFound: true);
         m_PauseControl_Click = m_PauseControl.FindAction("Click", throwIfNotFound: true);
         m_PauseControl_ArrowUp = m_PauseControl.FindAction("ArrowUp", throwIfNotFound: true);
         m_PauseControl_ArrowDown = m_PauseControl.FindAction("ArrowDown", throwIfNotFound: true);
+        m_PauseControl_Escape = m_PauseControl.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -393,6 +446,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_GameControl_Attack;
     private readonly InputAction m_GameControl_Movement;
     private readonly InputAction m_GameControl_Mous;
+    private readonly InputAction m_GameControl_Pause;
     public struct GameControlActions
     {
         private @GameControls m_Wrapper;
@@ -400,6 +454,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_GameControl_Attack;
         public InputAction @Movement => m_Wrapper.m_GameControl_Movement;
         public InputAction @Mous => m_Wrapper.m_GameControl_Mous;
+        public InputAction @Pause => m_Wrapper.m_GameControl_Pause;
         public InputActionMap Get() { return m_Wrapper.m_GameControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -418,6 +473,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Mous.started -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
                 @Mous.performed -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
                 @Mous.canceled -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
+                @Pause.started -= m_Wrapper.m_GameControlActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GameControlActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GameControlActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_GameControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -431,6 +489,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Mous.started += instance.OnMous;
                 @Mous.performed += instance.OnMous;
                 @Mous.canceled += instance.OnMous;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -442,6 +503,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PauseControl_Click;
     private readonly InputAction m_PauseControl_ArrowUp;
     private readonly InputAction m_PauseControl_ArrowDown;
+    private readonly InputAction m_PauseControl_Escape;
     public struct PauseControlActions
     {
         private @GameControls m_Wrapper;
@@ -449,6 +511,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @Click => m_Wrapper.m_PauseControl_Click;
         public InputAction @ArrowUp => m_Wrapper.m_PauseControl_ArrowUp;
         public InputAction @ArrowDown => m_Wrapper.m_PauseControl_ArrowDown;
+        public InputAction @Escape => m_Wrapper.m_PauseControl_Escape;
         public InputActionMap Get() { return m_Wrapper.m_PauseControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -467,6 +530,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ArrowDown.started -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
                 @ArrowDown.performed -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
                 @ArrowDown.canceled -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnArrowDown;
+                @Escape.started -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_PauseControlActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_PauseControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -480,6 +546,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ArrowDown.started += instance.OnArrowDown;
                 @ArrowDown.performed += instance.OnArrowDown;
                 @ArrowDown.canceled += instance.OnArrowDown;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -516,11 +585,13 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnMous(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IPauseControlActions
     {
         void OnClick(InputAction.CallbackContext context);
         void OnArrowUp(InputAction.CallbackContext context);
         void OnArrowDown(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

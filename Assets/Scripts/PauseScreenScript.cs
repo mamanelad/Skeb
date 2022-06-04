@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseScreenScript : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class PauseScreenScript : MonoBehaviour
         _pauseControls.PauseControl.ArrowUp.performed +=  ClickUp;
         _pauseControls.PauseControl.ArrowDown.performed +=  ClickDown;
         _pauseControls.PauseControl.Click.performed +=  OnClick;
+        _pauseControls.PauseControl.Escape.performed += ClosePauseMenu;
     }
     
     
@@ -91,11 +93,14 @@ public class PauseScreenScript : MonoBehaviour
     private void Continue()
     {
         Time.timeScale = 1;
+        GameManager.Shared.ResumeState();
         gameObject.SetActive(false);
     }
     
     private void Quit()
     {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Tamir new Arena", LoadSceneMode.Single);
         //TODO: go back to main menu 
         return;
     }
@@ -110,5 +115,12 @@ public class PauseScreenScript : MonoBehaviour
     {
         if (_currMenuOption == Option.Continue)
             _currMenuOption = Option.Quit;
+    }
+
+    private void ClosePauseMenu(InputAction.CallbackContext context)
+    {
+        Time.timeScale = 1;
+        GameManager.Shared.ResumeState();
+        gameObject.SetActive(false);
     }
 }

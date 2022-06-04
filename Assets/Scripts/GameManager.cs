@@ -1,7 +1,7 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +13,16 @@ public class GameManager : MonoBehaviour
         Fire
     };
 
+    public enum GameState
+    {
+        Arena,
+        Store,
+        Pause
+    }
+
     public static GameManager Shared;
 
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private bool stuckStage;
     [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
@@ -27,6 +35,9 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public int roundMonsterTotalAmount;
 
     private ArenaParticles _arenaParticles;
+    private GameControls _gameControls;
+    [NonSerialized] public GameState CurrentGameState;
+    private GameState _prevGameState;
     private float _stageTimer;
 
 
@@ -44,7 +55,31 @@ public class GameManager : MonoBehaviour
             dontChangeStateByTime = true;
 
         _arenaParticles = FindObjectOfType<ArenaParticles>();
+        _gameControls = new GameControls();
+        CurrentGameState = GameState.Arena;
+        _prevGameState = GameState.Arena;
+        InitializeControls();
     }
+
+    #region Input Actions
+
+    private void InitializeControls()
+    {
+        _gameControls.GameControl.Pause.performed +=  PauseGame;
+    }
+    
+    
+    private void OnEnable()
+    {
+        _gameControls.GameControl.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _gameControls.GameControl.Disable();
+    }
+
+    #endregion
 
     private void Update()
     {
@@ -97,9 +132,26 @@ public class GameManager : MonoBehaviour
     private void SwitchState()
     {
         var fireAffects = FindObjectsOfType<FireParticleEffect>();
+        if (fireAffects == null)
+            return;
         foreach (var fireAffect in fireAffects)
             fireAffect.CloseAndOpenBurningAffect(false);
-        _arenaParticles.StartParticles();
-        
+        if (_arenaParticles != null)
+        {
+            _arenaParticles.StartParticles(); 
+        }
+    }
+
+    private void PauseGame(InputAction.CallbackContext context)
+    {
+        Time.timeScale = 0;
+        _prevGameState = CurrentGameState;
+        CurrentGameState = GameState.Pause;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeState()
+    {
+        CurrentGameState = _prevGameState;
     }
 }

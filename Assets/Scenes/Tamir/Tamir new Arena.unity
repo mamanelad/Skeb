@@ -1103,6 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d179daf71aedb4e953b4b124df388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 6891573521876719331}
   stuckStage: 0
   timeInStage: 5
   inTutorial: 0
@@ -3244,11 +3245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnimation: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
   timeToBurn: 1.5
   ParticlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
-  Rate: 1000
-  isOn: 1
+  Rate: 60
+  isOn: 0
   fireDamage: 5
   damageEnemyStep: 0.2
   damageEnemy: 0
@@ -4158,7 +4158,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 9.0894e-41, y: 9.0895e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 9.1087e-41, y: 9.1089e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
