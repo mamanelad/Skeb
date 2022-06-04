@@ -44,6 +44,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mous"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""4dc04707-b028-446c-aac8-a4ba71c817a1"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -211,6 +220,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13dd8c36-2b30-4b62-a079-1bdaec1d192c"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Mous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -237,6 +257,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_GameControl = asset.FindActionMap("GameControl", throwIfNotFound: true);
         m_GameControl_Attack = m_GameControl.FindAction("Attack", throwIfNotFound: true);
         m_GameControl_Movement = m_GameControl.FindAction("Movement", throwIfNotFound: true);
+        m_GameControl_Mous = m_GameControl.FindAction("Mous", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -298,12 +319,14 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private IGameControlActions m_GameControlActionsCallbackInterface;
     private readonly InputAction m_GameControl_Attack;
     private readonly InputAction m_GameControl_Movement;
+    private readonly InputAction m_GameControl_Mous;
     public struct GameControlActions
     {
         private @GameControls m_Wrapper;
         public GameControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Attack => m_Wrapper.m_GameControl_Attack;
         public InputAction @Movement => m_Wrapper.m_GameControl_Movement;
+        public InputAction @Mous => m_Wrapper.m_GameControl_Mous;
         public InputActionMap Get() { return m_Wrapper.m_GameControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -319,6 +342,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMovement;
+                @Mous.started -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
+                @Mous.performed -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
+                @Mous.canceled -= m_Wrapper.m_GameControlActionsCallbackInterface.OnMous;
             }
             m_Wrapper.m_GameControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -329,6 +355,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Mous.started += instance.OnMous;
+                @Mous.performed += instance.OnMous;
+                @Mous.canceled += instance.OnMous;
             }
         }
     }
@@ -364,5 +393,6 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     {
         void OnAttack(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
+        void OnMous(InputAction.CallbackContext context);
     }
 }
