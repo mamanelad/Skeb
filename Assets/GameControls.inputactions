@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Mous",
+                    "type": "PassThrough",
+                    "id": "4dc04707-b028-446c-aac8-a4ba71c817a1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -189,6 +198,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "13dd8c36-2b30-4b62-a079-1bdaec1d192c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyBoard",
+                    "action": "Mous",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
