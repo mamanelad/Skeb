@@ -106,7 +106,7 @@ public class EnemySpawnerDots : MonoBehaviour
         if (!spawnIsOn) return;
 
 
-        if (currentWaveMonsterCounter < maxTotalMonsterAmount)
+        if (currentWaveMonsterCounter < maxTotalMonsterAmount - 1)
         {
             _timer -= Time.deltaTime;
             if (_timer <= 0)

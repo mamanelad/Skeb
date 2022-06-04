@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
+using Cinemachine;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     private PlayerController _playerController;
     [SerializeField] private GameObject targetGroupCamera;
+    [SerializeField] private CinemachineTargetGroup _cinemachineTargetGroup;
+    private GameObject _target;
 
     [SerializeField] private float timeInZoom;
     
@@ -29,15 +31,23 @@ public class CameraManager : MonoBehaviour
                 Time.timeScale = 1f;
                 targetGroupCamera.SetActive(false);
             }
+            return;
         }
-        else if (GameManager.Shared.triggerKillCamera)
-        {
+        
+        
+        if (GameManager.Shared.triggerKillCamera)
             ZoomOnLastEnemy();
-        }
+        else
+            targetGroupCamera.SetActive(false);
     }
 
-    public void ZoomOnLastEnemy()
+    private void ZoomOnLastEnemy()
     {
-        
+        var lastEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+        if (lastEnemy.Length / 2 != 1 || _cinemachineTargetGroup.m_Targets.Length >= 2)
+            return;
+        _target = lastEnemy[0];
+        _cinemachineTargetGroup.AddMember(_target.transform, 1f, 1f);
+        targetGroupCamera.SetActive(true);
     }
 }

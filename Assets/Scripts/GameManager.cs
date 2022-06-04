@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour
 
         if (!inTutorial)
             UpdateRoundText();
-
-        triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterKillCounter;
+        
+        triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterTotalAmount;
     }
 
     private void UpdateRoundText()
