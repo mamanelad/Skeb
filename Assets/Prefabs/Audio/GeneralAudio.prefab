@@ -70,7 +70,7 @@ MonoBehaviour:
     soundDelay: 0.3
   - loop: 1
     audioClip: {fileID: 8300000, guid: 385876244f7757d499ce158008e68aa7, type: 3}
-    volume: 0.3
+    volume: 0.2
     audioSource: {fileID: 0}
     soundKindsGeneral: 4
     soundDelay: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
     volume: 0.5
     audioSource: {fileID: 0}
     soundKindsGeneral: 8
-    soundDelay: 0.1
+    soundDelay: 0.2
   - loop: 0
     audioClip: {fileID: 8300000, guid: 54ba3323aa9d9af48b5280ea3cebbdfb, type: 3}
     volume: 0.5

@@ -49,6 +49,7 @@ public class AudioManagerStore : MonoBehaviour
         var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
         if (s == null)
             return;
+        
         s.audioSource.Stop();
         // if (!CanPlaySound(soundKindStore, s))
         //     s.audioSource.Stop();
