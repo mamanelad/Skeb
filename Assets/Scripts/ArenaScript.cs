@@ -52,7 +52,7 @@ public class ArenaScript : MonoBehaviour
     private IEnumerator IceArenaFlicker()
     {
         _animator.SetBool("Special Effect", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         _animator.SetBool("Special Effect", false);
         iceArenaFlicker = false;
 

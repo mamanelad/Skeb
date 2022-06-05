@@ -87,8 +87,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        print(CurrentGameState);
-        
         if (!dontChangeStateByTime)
             UpdateStageTimer();
 
