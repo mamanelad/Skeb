@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private float dashColliderTimer;
 
-
     public enum PlayerState
     {
         Idle,
@@ -164,6 +163,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
+            GameManager.Shared._audioManager.PlaySound("Dash");
             dashCollider2D.enabled = true;
             isDashColliderOn = true;
             dashColliderTimer = dashColliderTime;
@@ -281,7 +281,7 @@ public class PlayerController : MonoBehaviour
         // if (!Input.GetButtonDown("Attack") || IsAttacking) return;
         if (IsAttacking) return;
 
-        
+        GameManager.Shared._audioManager.PlaySound("Sword");
         IsAttacking = true; // affects the animations
         var hourGlass = FindObjectOfType<HourGlass>();
         if (hourGlass != null)
@@ -567,6 +567,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        GameManager.Shared._audioManager.PlaySound("Lose");
         IsPlayerDead = true;
         _moveDirection = Vector2.zero;
         if (_playerState != PlayerState.Falling)

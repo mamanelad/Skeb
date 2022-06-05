@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    
     [SerializeField] private bool inTutorial;
-    [SerializeField] private float health = 0f;
+    [SerializeField] public float health = 0f;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float fallDamage = 20;
     private float _healthScaler = 1f;
@@ -65,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
         if (_playerController.isStunned && mod <= 0)
             return;
         
+        
         if (mod < 0)
             GetComponent<ScreenShakeListener>().Shake();
         
@@ -79,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateHealthBar()
     {
+        FindObjectOfType<AudioManager>().PlaySound("lowHp");
         var lifeBarFillPercentage = health / maxHealth * 100;
         UIManager.Shared.SetLifeBar(lifeBarFillPercentage);
     }

@@ -1,20 +1,23 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+
 public class AudioManager : MonoBehaviour
 {
     #region Private Fields
 
-    private int hitSoundIndex;
+    private PlayerHealth _playerHealth;
+    private string currAudio;
     private static AudioManager instance;
-    
+    private int swordIndexSound;
     #endregion
 
     #region Inspector Control
 
+    [SerializeField] private float healthAmountForHealthAlertSound = 10f;
     [SerializeField] private Sound[] sounds;
-    [SerializeField] private Sound[] screamSounds;
-    
+    [SerializeField] private Sound[] swordSounds;
+
     #endregion
 
     private void Awake()
@@ -29,7 +32,10 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
-        InitializeSounds(screamSounds);
+        InitializeSounds(swordSounds);
+
+
+        _playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
 
@@ -41,27 +47,39 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.clip = sound.audioClip;
             sound.audioSource.volume = sound.volume;
             sound.audioSource.loop = sound.loop;
+            // sound.audioTime = sound.audioClip.length;
         }
     }
+
     public void PlaySound(string soundName)
     {
-        if (soundName == "Scream")
+        if (_playerHealth.health <= 0 && soundName != "Lose") return;
+        
+        Sound s;
+        if (soundName == "Sword")
         {
-            
-            var s = screamSounds[hitSoundIndex];
-            hitSoundIndex = (hitSoundIndex + 1) % screamSounds.Length;
-            s.audioSource.Play();
+            s = swordSounds[swordIndexSound];
+            swordIndexSound = (swordIndexSound + 1) % swordSounds.Length;
         }
-
+        
         else
-        {
-            var s = Array.Find(sounds, sound => sound.name == soundName);
-            if (s == null)
-                return;
+            s = Array.Find(sounds, sound => sound.name == soundName);
 
-            s.audioSource.Play(); 
+        if (s == null)
+            return;
+
+        
+        bool canPlay = true;
+        switch (s.name)
+        {
+            case "lowHp":
+                if (!(_playerHealth.health <= healthAmountForHealthAlertSound))
+                    canPlay = false;
+                break;
         }
-        
-        
+
+
+        if (canPlay)
+            s.audioSource.Play();
     }
 }
