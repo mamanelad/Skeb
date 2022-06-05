@@ -97,6 +97,7 @@ public class BoxTutorial : MonoBehaviour
         if (hit) return;
         if (_playerController.IsAttacking)
         {
+            GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.TutorialBoxHit);
             shack = true;
             shakeTimer = shakeTime;
             _animator.SetTrigger("hit");
@@ -131,6 +132,12 @@ public class BoxTutorial : MonoBehaviour
         }
     }
 
+    public void ExplosionSoundBox()
+    {
+        GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.TutorialBoxExplosion);
+
+    }
+    
     public void ChangeLayerToGui()
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();

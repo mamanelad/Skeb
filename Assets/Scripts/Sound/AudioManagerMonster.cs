@@ -49,8 +49,9 @@ public class AudioManagerMonster : MonoBehaviour
         var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
         if (s == null)
             return;
-        if (!CanPlaySound(soundKindsMonster, s))
-            s.audioSource.Stop();
+        s.audioSource.Stop();
+        // if (!CanPlaySound(soundKindsMonster, s))
+        //     s.audioSource.Stop();
     }
     public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster)
     {

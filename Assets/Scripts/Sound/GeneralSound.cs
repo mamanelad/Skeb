@@ -7,7 +7,9 @@ public class GeneralSound
     public enum SoundKindsGeneral
     {
         HeartAdd,
-        
+        HeartExist,
+        TutorialBoxHit,
+        TutorialBoxExplosion
     }
 
     [SerializeField] public bool loop;
