@@ -1520,8 +1520,6 @@ MonoBehaviour:
   dashColliderTime: 0
   _playerState: 0
   isStunned: 0
-  screenShakeIntensity: 1
-  screenShakeTime: 0.1
 --- !u!114 &795194153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,6 +3259,7 @@ GameObject:
   - component: {fileID: 1489815045}
   - component: {fileID: 1489815047}
   - component: {fileID: 1489815046}
+  - component: {fileID: 1489815048}
   m_Layer: 0
   m_Name: arenaParticleCollider
   m_TagString: Untagged
@@ -3295,7 +3294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEnemy: 0
-  particlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
+  particlePrefab: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
   timeToBurn: 2.5
   rate: 60
   isOn: 0
@@ -3460,6 +3459,23 @@ PolygonCollider2D:
       - {x: 0.33087182, y: -5.7598534}
       - {x: 8.129237, y: -1.9905112}
       - {x: 7.9911823, y: 2.1302054}
+--- !u!114 &1489815048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489815044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8941c215322dc264a90a83dae3f9c46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 1
+  showFire: 1
+  showIce: 0
+  fireArenaParticle: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
+  iceArenaParticle: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
 --- !u!1 &1526001601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,6 +3903,52 @@ Transform:
   m_Father: {fileID: 795194157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1863975433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863975435}
+  - component: {fileID: 1863975434}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1863975434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863975433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0998f226b911e6a4a81dec5dd49ae222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmountForHealthAlertSound: 10
+  sounds: []
+  swordSounds: []
+--- !u!4 &1863975435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863975433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11715816, y: 0.12677263, z: -0.060265124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965706730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,7 +4046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da4d8a21aaed8e4e8156d02c3803479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIText: {fileID: 2083300480}
+  uiText: {fileID: 2083300480}
   lifeBar: {fileID: 1754580500}
   lifeBarDelay: {fileID: 113773673}
   worldStageStatus: {fileID: 954571761}
@@ -4264,7 +4326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 1.0394e-40, y: 1.03941e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.04213e-40, y: 1.04215e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

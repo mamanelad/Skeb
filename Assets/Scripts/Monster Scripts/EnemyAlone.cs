@@ -39,11 +39,6 @@ public class EnemyAlone : MonoBehaviour
     [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
-    [Header("Screen Shake Settings")] [SerializeField]
-    
-    private float screenShakeIntensity = 5f;
-
-    [SerializeField] private float screenShakeTime = .1f;
 
     #endregion
 

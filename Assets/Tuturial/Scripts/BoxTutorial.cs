@@ -1,35 +1,37 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BoxTutorial : MonoBehaviour
 {
-    enum shakeSide
+    private enum ShakeSide
     {
         Right,
         Left
     }
 
-    private shakeSide _shakeSide = shakeSide.Left;
-    [SerializeField] private float shakeTime = 0.2f;
-    private float shakeTimer;
-    private bool shack;
+    #region Private Fields
 
-    [SerializeField] private GameObject skebName;
+    private ShakeSide _shakeSide = ShakeSide.Left;
+    private float _hitTimer;
+    private float _shakeTimer;
+    private bool _shack;
+
+    private bool _hit;
+    private bool _switchToMainScene;
 
     private Animator _animator;
-
-    [SerializeField] private float hitStep = 1f;
-    private float hitTimer;
-    private bool hit;
     private PlayerController _playerController;
 
-    private bool switchToMainScene;
-    [SerializeField] private float switchSceneDelay = 2f;
-    private SpriteRenderer _spriteRenderer;
+    #endregion
 
+    #region Inspector Control
+
+    [SerializeField] private float switchSceneDelay = 2f;
+    [SerializeField] private float shakeTime = 0.2f;
+    [SerializeField] private GameObject skebName;
+    private static readonly int Hit = Animator.StringToHash("hit");
+
+    #endregion
 
     private void Start()
     {
@@ -40,32 +42,26 @@ public class BoxTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (hit)
+        if (_hit)
         {
-            hitTimer -= Time.deltaTime;
-            if (hitTimer < 0)
-            {
-                hit = false;
-            }
+            _hitTimer -= Time.deltaTime;
+            if (_hitTimer < 0)
+                _hit = false;
         }
 
-        if (shack)
+        if (_shack)
         {
             Shack();
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer < 0)
-            {
-                shack = false;
-            }
+            _shakeTimer -= Time.deltaTime;
+            if (_shakeTimer < 0)
+                _shack = false;
         }
 
-        if (switchToMainScene)
+        if (_switchToMainScene)
         {
             switchSceneDelay -= Time.deltaTime;
             if (switchSceneDelay < 0)
-            {
                 SwitchToMainScene();
-            }
         }
     }
 
@@ -95,20 +91,20 @@ public class BoxTutorial : MonoBehaviour
 
     private void HitHelper()
     {
-        if (hit) return;
+        if (_hit) return;
         if (_playerController.IsAttacking)
         {
-            shack = true;
-            shakeTimer = shakeTime;
-            _animator.SetTrigger("hit");
-            hit = true;
+            _shack = true;
+            _shakeTimer = shakeTime;
+            _animator.SetTrigger(Hit);
+            _hit = true;
         }
     }
 
     public void ShowName()
     {
         skebName.SetActive(true);
-        switchToMainScene = true;
+        _switchToMainScene = true;
     }
 
     private void SwitchToMainScene()
@@ -121,13 +117,13 @@ public class BoxTutorial : MonoBehaviour
     {
         switch (_shakeSide)
         {
-            case shakeSide.Left:
+            case ShakeSide.Left:
                 transform.position += new Vector3(0.1f, 0, 0f);
-                _shakeSide = shakeSide.Right;
+                _shakeSide = ShakeSide.Right;
                 break;
-            case shakeSide.Right:
+            case ShakeSide.Right:
                 transform.position -= new Vector3(0.1f, 0, 0f);
-                _shakeSide = shakeSide.Left;
+                _shakeSide = ShakeSide.Left;
                 break;
         }
     }
