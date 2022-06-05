@@ -51,9 +51,8 @@ public class StoreManager : MonoBehaviour
     private void Start()
     {
         PlaySound(StoreSounds.SoundKindsStore.ChestOpen);
-        PlaySound(StoreSounds.SoundKindsStore.Background);
     }
-
+    
     void Update()
     {
         SelectChest();
@@ -63,6 +62,7 @@ public class StoreManager : MonoBehaviour
 
     public void EnableUpgrade()
     {
+        PlaySound(StoreSounds.SoundKindsStore.Background);
         canUpgrade = true;
     }
 

@@ -4984,6 +4984,7 @@ MonoBehaviour:
   PlayerAudioManager: {fileID: 7046512118684140767}
   StoreAudioManager: {fileID: 472864781}
   monsterAudioManager: {fileID: 850059050216465918}
+  AudioManagerGeneral: {fileID: 0}
   pauseMenu: {fileID: 1906159426}
   store: {fileID: 302231934}
   stuckStage: 0
@@ -9098,7 +9099,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084947979}
-  m_LocalRotation: {x: 1.34798e-40, y: 1.348e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.34819e-40, y: 1.3482e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
