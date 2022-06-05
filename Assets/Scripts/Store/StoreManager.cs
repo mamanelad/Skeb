@@ -11,9 +11,11 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private List<GameObject> chests;
     [SerializeField][Range(1,3)] private int chestSelected;
     [SerializeField][Range(0,3)] private int upgradeSelected;
+    [SerializeField] private bool infiniteUpgrades;
     private GameControls _storeControls;
     [SerializeField] private bool canUpgrade;
     [SerializeField] private TextMeshProUGUI displayText;
+    [SerializeField] private GameObject shopKeeper;
     private GameObject _selectedUpgrade;
 
     private void Awake()
@@ -31,7 +33,7 @@ public class StoreManager : MonoBehaviour
         _storeControls.StoreControl.ArrowLeft.performed +=  ArrowLeft;
         _storeControls.StoreControl.ArrowRight.performed +=  ArrowRight;
         _storeControls.StoreControl.Select.performed +=  Select;
-        _storeControls.StoreControl.Escape.performed +=  DoNothing;
+        _storeControls.StoreControl.Escape.performed +=  CloseStore;
     }
     
     private void OnEnable()
@@ -80,36 +82,36 @@ public class StoreManager : MonoBehaviour
 
     private void DisplayText()
     {
-        var text = "Select and upgrade.";
+        var text = "Select a chest to upgrade.";
         if (_selectedUpgrade != null)
             text = _selectedUpgrade.GetComponent<UpgradeScript>().GetUpgradeDescription();
         displayText.text = text;
     }
 
-    private void UpgradeSelectedChest()
+    private bool UpgradeSelectedChest()
     {
-        chests[chestSelected - 1].GetComponent<ChestScript>().UpgradeChest();
-    }
-
-    private void DoNothing(InputAction.CallbackContext context)
-    {
-        return;
+        return chests[chestSelected - 1].GetComponent<ChestScript>().UpgradeChest();
     }
     
     private void ArrowUp(InputAction.CallbackContext context)
     {
+        if (CheckIfPaused()) return;
         upgradeSelected += 1;
         upgradeSelected = math.min(upgradeSelected, 3);
+        shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
     }
     
     private void ArrowDown(InputAction.CallbackContext context)
     {
+        if (CheckIfPaused()) return;
         upgradeSelected -= 1;
         upgradeSelected = math.max(upgradeSelected, 0);
+        shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
     }
     
     private void ArrowRight(InputAction.CallbackContext context)
     {
+        if (CheckIfPaused()) return;
         chestSelected += 1;
         chestSelected = math.min(chestSelected, 3);
         upgradeSelected = 0;
@@ -117,6 +119,7 @@ public class StoreManager : MonoBehaviour
     
     private void ArrowLeft(InputAction.CallbackContext context)
     {
+        if (CheckIfPaused()) return;
         chestSelected -= 1;
         chestSelected = math.max(chestSelected, 1);
         upgradeSelected = 0;
@@ -124,8 +127,28 @@ public class StoreManager : MonoBehaviour
     
     private void Select(InputAction.CallbackContext context)
     {
-        UpgradeSelectedChest();
+        if (CheckIfPaused()) return;
+        if (canUpgrade || infiniteUpgrades)
+        {
+            if (UpgradeSelectedChest())
+            {
+                FindObjectOfType<PlayerStats>().ActivateUpgrade(chestSelected);
+                canUpgrade = false;
+            }
+        }
     }
     
-    
+    private void CloseStore(InputAction.CallbackContext context)
+    {
+        if (CheckIfPaused()) return;
+        if (canUpgrade)
+            return;
+        GameManager.Shared.CloseStore();
+    }
+
+    private bool CheckIfPaused()
+    {
+        return GameManager.Shared.CurrentGameState == GameManager.GameState.Pause;
+    }
+
 }

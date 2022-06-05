@@ -1,5 +1,4 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemySpawnerDots : MonoBehaviour
@@ -87,21 +86,20 @@ public class EnemySpawnerDots : MonoBehaviour
             mostWantedEnemy = monstersSmall;
     }
 
-    void Update()
+    private void Update()
     {
         if (_playerController.IsPlayerDead) return;
-        if (upgradeShop != null)
+
+        if (openShop)
         {
-            if (openShop)
+            openShopTimer -= Time.deltaTime;
+            if (openShopTimer <= 0)
             {
-                openShopTimer -= Time.deltaTime;
-                if (openShopTimer <= 0)
-                {
-                    upgradeShop.OpenShop();
-                    openShop = false;
-                }
+                GameManager.Shared.OpenStore();
+                openShop = false;
             }
         }
+
 
         if (!spawnIsOn) return;
 
@@ -122,7 +120,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void SpawnLightNingBolt()
     {
-        var lightning = Instantiate(this.lightningStrike,
+        var lightning = Instantiate(lightningStrike,
             spawnerDots[_dotIndexBolt].position, Quaternion.identity);
         _dotIndexBolt = (_dotIndexBolt + 1) % spawnerDots.Length;
         lightning.transform.SetParent(gameObject.transform);
@@ -170,13 +168,11 @@ public class EnemySpawnerDots : MonoBehaviour
         }
 
         if (_monsterIndex == 2)
-        {
             if (_smallMonsterCounter < _smallMonsterMaxAmount)
             {
                 monsterToSpawn = monstersSmall;
                 _smallMonsterCounter += 1;
             }
-        }
 
 
         if (monsterToSpawn)
@@ -200,10 +196,8 @@ public class EnemySpawnerDots : MonoBehaviour
         waveIndex += 1;
         //print("initiating wave number: " + waveIndex);
         if (waveIndex >= _waves.Length)
-        {
             //print("game won");
             return;
-        }
 
         var curWave = _waves[waveIndex];
 
@@ -217,7 +211,7 @@ public class EnemySpawnerDots : MonoBehaviour
         GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
-        
+
         _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
         _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
@@ -234,8 +228,8 @@ public class EnemySpawnerDots : MonoBehaviour
         }
     }
 
-    public void StartBlockSpawn(bool mood)
+    public void StartBlockSpawn(bool mode)
     {
-        spawnIsOn = mood;
+        spawnIsOn = mode;
     }
 }

@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
 
     private void AttackInput(InputAction.CallbackContext context)
     {
-        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause)
+        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause 
+            || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
             
         if (context.performed)
@@ -390,10 +391,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
 
+        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause 
+            || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
+            return;
+        
         move = _gameControls.GameControl.Movement.ReadValue<Vector2>();
         
-        
-
         if (IsPlayerDead)
             return;
 
@@ -401,12 +404,6 @@ public class PlayerController : MonoBehaviour
 
         _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         
-        // if (slipperyFloor || _playerState != PlayerState.Combat)
-        //     _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-        // else if (canMoveWhileAttacking)
-        //     _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-
-
         // dash from attack occurs only on non-slippery floors
         if (!slipperyFloor && _attackDash)
         {

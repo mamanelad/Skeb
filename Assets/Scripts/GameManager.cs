@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Shared;
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject store;
     [SerializeField] private bool stuckStage;
     [SerializeField] private int timeInStage = 15;
     [NonSerialized] public bool StageDamage;
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
             UpdateRoundText();
         
         triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterTotalAmount;
+        
     }
 
     private void UpdateRoundText()
@@ -157,5 +159,19 @@ public class GameManager : MonoBehaviour
     public void ResumeState()
     {
         CurrentGameState = _prevGameState;
+    }
+
+    public void OpenStore()
+    {
+        CurrentGameState = GameState.Store;
+        store.SetActive(true);
+        store.GetComponent<StoreManager>().EnableUpgrade();
+    }
+
+    public void CloseStore()
+    {
+        CurrentGameState = GameState.Arena;
+        store.SetActive(false);
+        FindObjectOfType<EnemySpawnerDots>().StartBlockSpawn(true);
     }
 }

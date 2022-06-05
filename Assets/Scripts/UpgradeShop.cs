@@ -33,7 +33,6 @@ public class UpgradeShop : MonoBehaviour
     public void OpenShop()
     {
         gameObject.SetActive(true);
-
     }
 
     private void CloseShop()

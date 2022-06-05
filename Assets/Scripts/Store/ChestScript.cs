@@ -59,11 +59,15 @@ public class ChestScript : MonoBehaviour
         }
     }
 
-    public void UpgradeChest(int upgradeLevel = 1)
+    public bool UpgradeChest(int upgradeLevel = 1)
     {
+        if (chestUpgradeLevel >= 3)
+            return false;
+
         chestUpgradeLevel += upgradeLevel;
         chestUpgradeLevel = Mathf.Max(chestUpgradeLevel, 0);
         chestUpgradeLevel = Mathf.Min(upgrades.Count, chestUpgradeLevel);
+        return true;
     }
 
     private void UpdateUpgrades()

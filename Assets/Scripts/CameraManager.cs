@@ -47,6 +47,8 @@ public class CameraManager : MonoBehaviour
 
     private void ZoomOnLastEnemy()
     {
+        return;
+        
         var lastEnemy = GameObject.FindGameObjectsWithTag("Enemy");
         if (lastEnemy.Length / 2 != 1 || _cinemachineTargetGroup.m_Targets.Length >= 2)
             return;
