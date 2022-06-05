@@ -197,9 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnimation: {fileID: 0}
   timeToBurn: 1.5
-  ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
+  ParticlePrefab: {fileID: 2273662187065366443, guid: 3db1d567ae6a25f4ebe2db1083319534, type: 3}
   Rate: 500
   isOn: 0
   fireDamage: 5
