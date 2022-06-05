@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7403802907849139888
+--- !u!1 &4394700735746158071
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7403802907849139889}
-  - component: {fileID: 7403802907849139891}
-  - component: {fileID: 7403802907849139890}
-  - component: {fileID: 7006422134563733926}
+  - component: {fileID: 4394700735746158068}
+  - component: {fileID: 4394700735746158066}
+  - component: {fileID: 4394700735746158069}
+  - component: {fileID: 8229080334021140735}
   m_Layer: 0
-  m_Name: arenaParticleCollider 1
+  m_Name: arenaParticleCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7403802907849139889
+--- !u!4 &4394700735746158068
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7403802907849139888}
+  m_GameObject: {fileID: 4394700735746158071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.2780828, y: 1.5094707, z: -0.47426397}
   m_LocalScale: {x: 1, y: 1, z: 0.58823526}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &7403802907849139891
+--- !u!60 &4394700735746158066
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7403802907849139888}
+  m_GameObject: {fileID: 4394700735746158071}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -192,32 +192,32 @@ PolygonCollider2D:
       - {x: 0.33087182, y: -5.7598534}
       - {x: 8.129237, y: -1.9905112}
       - {x: 7.9911823, y: 2.1302054}
---- !u!114 &7403802907849139890
+--- !u!114 &4394700735746158069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7403802907849139888}
+  m_GameObject: {fileID: 4394700735746158071}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeToBurn: 2.5
-  ParticlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
-  Rate: 60
-  isOn: 0
+  ParticlePrefab: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
+  Rate: 500
+  isOn: 1
   fireDamage: 5
   damageEnemyStep: 0.2
   damageEnemy: 0
---- !u!114 &7006422134563733926
+--- !u!114 &8229080334021140735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7403802907849139888}
+  m_GameObject: {fileID: 4394700735746158071}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8941c215322dc264a90a83dae3f9c46d, type: 3}

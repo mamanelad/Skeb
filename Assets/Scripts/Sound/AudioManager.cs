@@ -1,39 +1,39 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+
 public class AudioManager : MonoBehaviour
 {
     #region Private Fields
 
-    private int hitSoundIndex;
-    private static AudioManager instance;
-    
+    private static AudioManager _instance;
+
     #endregion
 
     #region Inspector Control
 
-    [SerializeField] private Sound[] sounds;
-    [SerializeField] private Sound[] screamSounds;
-    
+    [SerializeField] private PlayerSound[] sounds;
+    private Dictionary<PlayerSound.SoundKinds, float> _soundTimerDict;
+
     #endregion
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (_instance == null)
+            _instance = this;
         else
         {
             Destroy(gameObject);
             return;
         }
 
+        _soundTimerDict = new Dictionary<PlayerSound.SoundKinds, float>();
         DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
-        InitializeSounds(screamSounds);
     }
 
 
-    private void InitializeSounds(IEnumerable<Sound> soundArray)
+    private void InitializeSounds(IEnumerable<PlayerSound> soundArray)
     {
         foreach (var sound in soundArray)
         {
@@ -43,25 +43,55 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.loop = sound.loop;
         }
     }
-    public void PlaySound(string soundName)
-    {
-        if (soundName == "Scream")
-        {
-            
-            var s = screamSounds[hitSoundIndex];
-            hitSoundIndex = (hitSoundIndex + 1) % screamSounds.Length;
-            s.audioSource.Play();
-        }
 
+    public void PlaySound(PlayerSound.SoundKinds soundKind)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKind == soundKind);
+        if (!CanPlaySound(soundKind, s)) return;
+        if (s == null)
+            return;
+
+        s.audioSource.PlayOneShot(s.audioClip);
+    }
+    
+    public void PlaySound(PlayerSound.SoundKinds soundKind , Vector3 position)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKind == soundKind);
+        if (!CanPlaySound(soundKind, s)) return;
+        if (s == null)
+            return;
+
+        GameObject soundGameObject = new GameObject("sound");
+        soundGameObject.transform.position = position;
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = s.audioClip;
+        audioSource.loop = s.loop;
+        audioSource.volume = s.volume;
+        audioSource.Play();
+    }
+
+    private bool CanPlaySound(PlayerSound.SoundKinds soundToPlayKind, PlayerSound soundToPlay)
+    {
+        if (_soundTimerDict.ContainsKey(soundToPlayKind))
+        {
+            var lastTimePlayed = _soundTimerDict[soundToPlayKind];
+            if (lastTimePlayed + soundToPlay.soundDelay <= Time.time)
+            {
+                _soundTimerDict[soundToPlayKind] = Time.time;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+         
         else
         {
-            var s = Array.Find(sounds, sound => sound.name == soundName);
-            if (s == null)
-                return;
-
-            s.audioSource.Play(); 
+            _soundTimerDict[soundToPlayKind] = Time.time;
         }
-        
-        
+
+
+        return true;
     }
 }

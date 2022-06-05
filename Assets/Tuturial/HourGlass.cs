@@ -29,7 +29,7 @@ public class HourGlass : MonoBehaviour
     [SerializeField] private float pushTime = 0.3f;
     [SerializeField] private float attackingTime = 0.5f;
     private float attackingTimer;
-
+    private FireParticleEffect _fireParticleEffect;
     private PlayerController _playerController;
     private Rigidbody2D _rb;
     private Animator _animator;
@@ -54,6 +54,7 @@ public class HourGlass : MonoBehaviour
 
     private void Awake()
     {
+        _fireParticleEffect = GetComponentInChildren<FireParticleEffect>();
         _playerController = FindObjectOfType<PlayerController>();
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -156,6 +157,7 @@ public class HourGlass : MonoBehaviour
                 break;
 
             case GlassState.HourGlassIdle:
+                _fireParticleEffect.isOn = false;
                 _animator.SetTrigger("bThree");
                 break;
         }

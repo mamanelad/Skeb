@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Shared;
 
+    [SerializeField] public AudioManager PlayerAudioManager;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject store;
     [SerializeField] private bool stuckStage;

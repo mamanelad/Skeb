@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
+            SoundsPlayer(PlayerSound.SoundKinds.Dash);
             dashCollider2D.enabled = true;
             isDashColliderOn = true;
             dashColliderTimer = dashColliderTime;
@@ -180,6 +181,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void SwordsSoundPlayer()
+    {
+        switch (_attackStatus)
+        {
+            case AttackStatus.First:
+                SoundsPlayer(PlayerSound.SoundKinds.SwordOne);
+                SoundsPlayer(PlayerSound.SoundKinds.PAttackOne);
+                break;
+            case AttackStatus.Second:
+                SoundsPlayer(PlayerSound.SoundKinds.SwordTwo);
+                SoundsPlayer(PlayerSound.SoundKinds.PAttackTwo);
+                break;
+            case AttackStatus.Special:
+                SoundsPlayer(PlayerSound.SoundKinds.SwordThree);
+                SoundsPlayer(PlayerSound.SoundKinds.PAttackThree);
+                break;
+        }
+    }
+    private void WalkingSoundPlayer()
+    {
+        switch (GameManager.Shared.CurrentState)
+        {
+            case GameManager.WorldState.Fire:
+                SoundsPlayer(PlayerSound.SoundKinds.WalkingFire);
+                break;
+            case GameManager.WorldState.Ice:
+                SoundsPlayer(PlayerSound.SoundKinds.WalkingIce);
+                break;
+        }
+    }
+    
+    private void SoundsPlayer(PlayerSound.SoundKinds soundKind)
+    {
+        GameManager.Shared.PlayerAudioManager.PlaySound(soundKind, transform.position);
+
+    }
 
     private void Start()
     {
@@ -305,12 +342,14 @@ public class PlayerController : MonoBehaviour
                         fireParticle.CloseAndOpenBurningAffect(true);
                 }
             }
-
+        SwordsSoundPlayer();
         slashAnimator.SetInteger("AttackStage", (int) _attackStatus);
         slashAnimator.SetTrigger("Attack");
         _attackStatus++;
     }
 
+    
+    
     private int CalculateDamage()
     {
         return _attackStatus switch
@@ -363,12 +402,18 @@ public class PlayerController : MonoBehaviour
 
 
         if (_moveDirection != Vector2.zero)
+        {
             _idleDirection = _moveDirection;
+            WalkingSoundPlayer();
+            
+        }
+            
 
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
 
+    
     private void SetHitBoxRotation()
     {
         var hitBoxAngle = Vector2.SignedAngle(Vector2.down, _idleDirection);
@@ -564,6 +609,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        SoundsPlayer(PlayerSound.SoundKinds.Death);
         IsPlayerDead = true;
         _moveDirection = Vector2.zero;
         if (_playerState != PlayerState.Falling)
