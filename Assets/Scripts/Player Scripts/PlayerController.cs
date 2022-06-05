@@ -215,7 +215,6 @@ public class PlayerController : MonoBehaviour
     private void SoundsPlayer(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
         GameManager.Shared.PlayerAudioManager.PlaySound(soundKindPlayer, transform.position);
-
     }
 
     private void Start()
