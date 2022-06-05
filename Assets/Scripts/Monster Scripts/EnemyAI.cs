@@ -212,27 +212,90 @@ public class EnemyAI : MonoBehaviour
                 MonsterSound(MonsterSounds.SoundKindsMonster.SWalk);
                 break;
             case Enemy.EnemyKind.Middle:
-                MonsterSound(MonsterSounds.SoundKindsMonster.MWalk);
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MwWalk);
+                        break;
+                    case GameManager.WorldState.Ice:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MmWalk);
+                        break;
+                }
+
                 break;
             case Enemy.EnemyKind.Big:
                 MonsterSound(MonsterSounds.SoundKindsMonster.BWalk);
                 break;
         }
     }
-    
-    public void MonsterFallSound()
+
+    public void MonsterDieSound()
     {
         switch (_enemyKind)
         {
+            case Enemy.EnemyKind.Small:
+                MonsterSound(MonsterSounds.SoundKindsMonster.SDeath);
+                break;
             case Enemy.EnemyKind.Middle:
-                MonsterSound(MonsterSounds.SoundKindsMonster.MFall);
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MwDeath);
+                        break;
+                    case GameManager.WorldState.Ice:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MmDeath);
+                        break;
+                }
+
                 break;
             case Enemy.EnemyKind.Big:
-                MonsterSound(MonsterSounds.SoundKindsMonster.BFall);
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.BFireDeath);
+                        break;
+                    case GameManager.WorldState.Ice:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.BIceDeath);
+                        break;
+                }
+
                 break;
         }
     }
-    
+
+    public void MonsterDamageSound()
+    {
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            MonsterSound(MonsterSounds.SoundKindsMonster.Blood);
+        if (_enemyKind == Enemy.EnemyKind.Middle && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            MonsterSound(MonsterSounds.SoundKindsMonster.MwDamage);
+        else
+            MonsterSound(MonsterSounds.SoundKindsMonster.Damage);
+    }
+
+
+    public void MonsterFallSound()
+    {
+        // switch (_enemyKind)
+        // {
+        //     case Enemy.EnemyKind.Middle:
+        //         switch (GameManager.Shared.CurrentState)
+        //         {
+        //             case GameManager.WorldState.Fire:
+        //                 MonsterSound(MonsterSounds.SoundKindsMonster.MwFall);
+        //                 break;
+        //             case GameManager.WorldState.Ice:
+        //                 MonsterSound(MonsterSounds.SoundKindsMonster.MmFall);
+        //                 break;
+        //         }
+        //
+        //         break;
+        //     case Enemy.EnemyKind.Big:
+        //         MonsterSound(MonsterSounds.SoundKindsMonster.BFall);
+        //         break;
+        // }
+    }
+
     public void MonsterAttackSound()
     {
         switch (_enemyKind)
@@ -241,7 +304,16 @@ public class EnemyAI : MonoBehaviour
                 MonsterSound(MonsterSounds.SoundKindsMonster.SAttack);
                 break;
             case Enemy.EnemyKind.Middle:
-                MonsterSound(MonsterSounds.SoundKindsMonster.MAttack);
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MwAttack);
+                        break;
+                    case GameManager.WorldState.Ice:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.MmAttack);
+                        break;
+                }
+
                 break;
             case Enemy.EnemyKind.Big:
                 switch (GameManager.Shared.CurrentState)
@@ -253,6 +325,7 @@ public class EnemyAI : MonoBehaviour
                         MonsterSound(MonsterSounds.SoundKindsMonster.BIceAttack);
                         break;
                 }
+
                 break;
         }
     }

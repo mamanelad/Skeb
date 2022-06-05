@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float startHealth = 100;
     [SerializeField] private GameObject _bloodEffect;
     [SerializeField] private Transform bloodPosition;
+
     #endregion
 
     #region Animator Labels
@@ -73,7 +74,7 @@ public class Enemy : MonoBehaviour
     {
         if (_state != GameManager.Shared.CurrentState)
             ChangeState();
-        
+
         if (_playerController.IsPlayerDead) return;
 
         if (transform.position.y < -50) // enemy fell off arena
@@ -146,11 +147,12 @@ public class Enemy : MonoBehaviour
                 _iceMonsterAnimator.SetTrigger(Damage);
                 break;
         }
-        
+
 
         if (currHealth <= 0)
             KillEnemy();
-        
+        else
+            _enemyAI.MonsterDamageSound();
     }
 
     private void GoBack()
@@ -173,12 +175,7 @@ public class Enemy : MonoBehaviour
 
         if (!_isDead)
         {
-            // var stMenu = FindObjectOfType<StartMenu>();
-            //
-            // if (stMenu != null )
-            // {
-            //     stMenu.DecreaseMonster();
-            // }
+            
 
             if (_enemySpawnerDots != null)
             {
@@ -186,6 +183,7 @@ public class Enemy : MonoBehaviour
             }
 
             _isDead = true;
+            _enemyAI.MonsterDieSound();
         }
 
         // increase player health if MonsterRegenerationBuff is on

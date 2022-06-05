@@ -207,7 +207,8 @@ public class PlayerController : MonoBehaviour
 
     private void WalkingSoundPlayer()
     {
-        if (_moveDirection.sqrMagnitude < 0.9f)
+        // print(_moveDirection.sqrMagnitude);
+        if (_moveDirection.sqrMagnitude < 0.3f)
             return;
         
         switch (GameManager.Shared.CurrentState)
