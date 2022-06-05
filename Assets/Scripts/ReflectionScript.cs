@@ -1,22 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ReflectionScript : MonoBehaviour
 {
-    #region Private Fields
-    
+    [SerializeField] private GameObject reflection;
+    [SerializeField] private Sprite playerShadow;
     private SpriteRenderer _spriteRenderer;
     private SpriteRenderer _objectSpriteRenderer;
     private bool _isPlayer;
-
-    #endregion
-
-    #region Inspector Control
-
-    [SerializeField] private GameObject reflection;
-    [SerializeField] private Sprite playerShadow;
-    
-    #endregion
-
 
     private void Start()
     {

@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireAnimation: {fileID: 0}
   timeToBurn: 1.5
   ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
   Rate: 300
@@ -246,10 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  AfterDashWaitTime: 0.3
   attackRangeCheck: 2
-  attackRangeHit: 1.5
-  attackDamage: 20
+  attackRangeHit: 1
+  attackDamage: 5
   timeBetweenAttacks: 1
   screenShakeIntensity: 3
   screenShakeTime: 0.2

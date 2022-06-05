@@ -1,90 +1,87 @@
 using UnityEngine;
-using UnityEngine.Serialization;
+using System.Collections;
 
 namespace FireParticle
 {
-    public enum AlphaFalloff
-    {
-        None,
-        Linear,
-        Sqrt
-    }; 
+    public enum AlphaFalloff { NONE, LINEAR, SQRT };   // TODO: Consider other falloffs, like Square Root?
 
-    public class FireParticle : MonoBehaviour
-    {
-        #region private Fields
+    public class FireParticle : MonoBehaviour {
+        [SerializeField] Vector2 MinVelocity = new Vector2(-0.05f, 0.1f);
+        [SerializeField] Vector2 MaxVelocity = new Vector2(0.05f, 0.2f);
+        [SerializeField] float LifeSpan = 2f;
 
-        private float _actualLifeSpan;
-        private float _timeAlive;
-        private Vector2 _velocity;
-        private SpriteRenderer _spriteRenderer;
-        private Color _originalColor;
+        [SerializeField] private Sprite[] fireSprites;
         
-        #endregion
+        public bool DestroysSelf = true;
+
+        public AlphaFalloff AlphaFalloff;
+
+        float actualLifeSpan;
+        float timeAlive;
+
+        SpriteRenderer spriteRenderer;
+        Color originalColor;
+
+        Vector2 velocity;
         
-        #region Inspector Control
-
-        [FormerlySerializedAs("MinVelocity")] [SerializeField]
-        private Vector2 minVelocity = new Vector2(-0.05f, 0.1f);
-
-        [FormerlySerializedAs("MaxVelocity")] [SerializeField]
-        private Vector2 maxVelocity = new Vector2(0.05f, 0.2f);
-
-        [FormerlySerializedAs("LifeSpan")] [SerializeField] private float lifeSpan = 2f;
         
-        [FormerlySerializedAs("DestroysSelf")] public bool destroysSelf = true;
-
-        [FormerlySerializedAs("AlphaFalloff")] public AlphaFalloff alphaFalloff;
-
-        #endregion
-        
-        private void Awake()
+        void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _originalColor = _spriteRenderer.color;
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            // var index = Random.Range(0, fireSprites.Length-1);
+            // spriteRenderer.sprite = fireSprites[index] ;
+            originalColor = spriteRenderer.color;
+
         }
 
-        private void OnEnable()
-        {
-            _velocity = new Vector2(Random.Range(minVelocity.x, maxVelocity.x),
-                Random.Range(minVelocity.y, maxVelocity.y));
+    	void OnEnable () {
+            velocity = new Vector2( Random.Range(MinVelocity.x, MaxVelocity.x), Random.Range( MinVelocity.y, MaxVelocity.y) );
 
-            _actualLifeSpan = lifeSpan * Random.Range(0.9f, 1.1f);
+            actualLifeSpan = LifeSpan * Random.Range(0.9f, 1.1f);
 
-            _timeAlive = 0;
+            timeAlive = 0;
 
-            _spriteRenderer.color = _originalColor;
-        }
+            spriteRenderer.color = originalColor;
+    	}
+
         
-        private void Update()
-        {
-            _timeAlive += Time.deltaTime;
 
-            if (destroysSelf && _timeAlive >= _actualLifeSpan)
+    	// Update is called once per frame
+    	void Update () {
+    	    
+            timeAlive += Time.deltaTime;
+
+            if(DestroysSelf && timeAlive >= actualLifeSpan)
             {
                 SimplePool.Despawn(gameObject);
                 return;
             }
 
-            if (alphaFalloff == AlphaFalloff.Linear)
+            if(AlphaFalloff == AlphaFalloff.LINEAR)
             {
                 // As the particle gets older, it fades out
-                var alpha = Mathf.Clamp01(1.0f - (_timeAlive / _actualLifeSpan));
-                var newColor = _originalColor;
+
+                float alpha = Mathf.Clamp01( 1.0f - (timeAlive / actualLifeSpan) );
+
+                Color newColor = originalColor;
                 newColor.a *= alpha;
-                _spriteRenderer.color = newColor;
+                spriteRenderer.color = newColor;
             }
-            else if (alphaFalloff == AlphaFalloff.Sqrt)
+            else if(AlphaFalloff == AlphaFalloff.SQRT)
             {
                 // As the particle gets older, it fades out
-                var alpha = Mathf.Clamp01(1.0f - (_timeAlive / _actualLifeSpan));
-                alpha = Mathf.Sqrt(alpha);
-                var newColor = _originalColor;
+
+                float alpha = Mathf.Clamp01( 1.0f - (timeAlive / actualLifeSpan) );
+
+                alpha = Mathf.Sqrt( alpha );
+
+                Color newColor = originalColor;
                 newColor.a *= alpha;
-                _spriteRenderer.color = newColor;
+                spriteRenderer.color = newColor;
             }
 
-            this.transform.Translate(_velocity * Time.deltaTime);
-        }
+            this.transform.Translate( velocity * Time.deltaTime );
+
+    	}
     }
 }

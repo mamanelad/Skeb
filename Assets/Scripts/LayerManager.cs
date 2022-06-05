@@ -1,17 +1,18 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class LayerManager : MonoBehaviour
 {
-    #region Private Fields
-
+    
     private SpriteRenderer _spriteRenderer;
-    private float epsilon = .01f;
-    private float _yPos;
-    private int multConst = 10;
-    private int _layerPos;
 
-    #endregion
+    private float epsilon = .01f;
+    private float yPos;
+    private int multConst = 10;
+    private int layerPos;
 
     private void Start()
     {
@@ -20,13 +21,13 @@ public class LayerManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Update()
+    void Update()
     {
-        if (_yPos > transform.position.y + epsilon || _yPos < transform.position.y - epsilon)
+        if (yPos > transform.position.y + epsilon || yPos < transform.position.y - epsilon)
         {
-            _yPos = transform.position.y;
-            _layerPos = (int) math.floor(_yPos * multConst);
-            _spriteRenderer.sortingOrder = -_layerPos;
+            yPos = transform.position.y;
+            layerPos = (int) math.floor(yPos * multConst);
+            _spriteRenderer.sortingOrder = -layerPos;
         }
     }
 }

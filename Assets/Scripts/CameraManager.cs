@@ -1,37 +1,28 @@
+using System.Linq;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraManager : MonoBehaviour
 {
-    #region Private Fields
-
     private PlayerController _playerController;
+    [SerializeField] private GameObject targetGroupCamera;
+    [SerializeField] private CinemachineTargetGroup _cinemachineTargetGroup;
     private GameObject _target;
 
-    [FormerlySerializedAs("_cinemachineTargetGroup")] [SerializeField]
-    private CinemachineTargetGroup cinemachineTargetGroup;
-
-    #endregion
-
-    #region Inspector Control
-
-    [SerializeField] private GameObject targetGroupCamera;
     [SerializeField] private float timeInZoom;
-
-    #endregion
-
-    private void Start()
+    
+    void Start()
     {
         _playerController = FindObjectOfType<PlayerController>();
         timeInZoom /= 5f;
+
     }
 
-    private void Update()
+    void Update()
     {
         if (Time.timeScale == 0)
             return;
-
+        
         if (_playerController.IsPlayerDead && timeInZoom > 0)
         {
             Time.timeScale = 0.2f;
@@ -43,24 +34,24 @@ public class CameraManager : MonoBehaviour
                 Time.timeScale = 1f;
                 targetGroupCamera.SetActive(false);
             }
-
             return;
         }
-
-
+        
+        
         if (GameManager.Shared.triggerKillCamera)
             ZoomOnLastEnemy();
         else
             targetGroupCamera.SetActive(false);
+        
     }
 
     private void ZoomOnLastEnemy()
     {
         var lastEnemy = GameObject.FindGameObjectsWithTag("Enemy");
-        if (lastEnemy.Length / 2 != 1 || cinemachineTargetGroup.m_Targets.Length >= 2)
+        if (lastEnemy.Length / 2 != 1 || _cinemachineTargetGroup.m_Targets.Length >= 2)
             return;
         _target = lastEnemy[0];
-        cinemachineTargetGroup.AddMember(_target.transform, 1f, 1f);
+        _cinemachineTargetGroup.AddMember(_target.transform, 1f, 1f);
         targetGroupCamera.SetActive(true);
     }
 }

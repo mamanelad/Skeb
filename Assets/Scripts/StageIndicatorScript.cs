@@ -2,20 +2,10 @@ using UnityEngine;
 
 public class StageIndicatorScript : MonoBehaviour
 {
-    #region Private Fields
-
     private SpriteRenderer _sp;
-    
-    #endregion
-
-    #region Inspector Control
-
     [SerializeField] private Sprite iceIndicator;
     [SerializeField] private Sprite fireIndicator;
-    
-    #endregion
-
-    private void Start()
+    void Start()
     {
         _sp = GetComponent<SpriteRenderer>();
     }

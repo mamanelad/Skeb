@@ -1,104 +1,99 @@
+using System;
 using UnityEngine;
-using UnityEngine.Serialization;
+using System.Collections;
 using Random = UnityEngine.Random;
 
 public class FireParticleEffect : MonoBehaviour
 {
-    #region Private Fields
-    
-    private float _timerBurning;
-    private float _damageEnemyTimer;
-    private float _timeSinceLastSpawn;
-    #endregion
-    
-    #region Public Fields
+    // [SerializeField] private GameObject fireAnimation;
+    [SerializeField] private float timeToBurn = 1.5f;
+    private float timerBurning;
+    [SerializeField] public GameObject ParticlePrefab;
+    [SerializeField] float Rate = 500; // per second
+    [SerializeField] public bool isOn;
 
+    [SerializeField] private int fireDamage = 5;
+    [SerializeField] private float damageEnemyStep = 0.2f;
+    private float damageEnemyTimer;
     public bool damageEnemy;
 
-    #endregion
 
-    #region Inspector Control
-    
-    [FormerlySerializedAs("ParticlePrefab")] [SerializeField] public GameObject particlePrefab;
-    
-    [SerializeField] private float timeToBurn = 1.5f;
-    [FormerlySerializedAs("Rate")] [SerializeField] private float rate = 500; // per second
-    [SerializeField] public bool isOn;
-    [SerializeField] private float damageEnemyStep = 0.2f;
-    [SerializeField] private int fireDamage = 5;
-    
-    #endregion
-
+    float timeSinceLastSpawn = 0;
 
     private void Start()
     {
-        _timerBurning = timeToBurn;
+        timerBurning = timeToBurn;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (!isOn) return;
 
-        _timerBurning -= Time.deltaTime;
-        if (_timerBurning <= 0)
+        timerBurning -= Time.deltaTime;
+        if (timerBurning <= 0)
             CloseAndOpenBurningAffect(false);
 
-        _damageEnemyTimer -= Time.deltaTime;
-        if (_damageEnemyTimer <= 0)
+        damageEnemyTimer -= Time.deltaTime;
+        if (damageEnemyTimer <= 0)
             FireDamage();
 
-        _timeSinceLastSpawn += Time.deltaTime;
+        timeSinceLastSpawn += Time.deltaTime;
 
-        var correctTimeBetweenSpawns = 1f / rate;
+        float correctTimeBetweenSpawns = 1f / Rate;
 
-        while (_timeSinceLastSpawn > correctTimeBetweenSpawns)
+        while (timeSinceLastSpawn > correctTimeBetweenSpawns)
         {
             // Time to spawn a particle
             SpawnFireAlongOutline();
-            _timeSinceLastSpawn -= correctTimeBetweenSpawns;
+            timeSinceLastSpawn -= correctTimeBetweenSpawns;
         }
     }
 
-    private void SpawnFireAlongOutline()
+    void SpawnFireAlongOutline()
     {
-        var col = GetComponent<PolygonCollider2D>();
+        PolygonCollider2D col = GetComponent<PolygonCollider2D>();
 
-        var pathIndex = Random.Range(0, col.pathCount);
+        int pathIndex = Random.Range(0, col.pathCount);
 
-        var points = col.GetPath(pathIndex);
+        Vector2[] points = col.GetPath(pathIndex);
 
-        var pointIndex = Random.Range(0, points.Length);
+        int pointIndex = Random.Range(0, points.Length);
 
-        var pointA = points[pointIndex];
-        var pointB = points[(pointIndex + 1) % points.Length];
+        Vector2 pointA = points[pointIndex];
+        Vector2 pointB = points[(pointIndex + 1) % points.Length];
 
-        var spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
+        Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
 
         SpawnFireAtPosition(spawnPoint + (Vector2) transform.position);
     }
 
     private void SpawnFireAtPosition(Vector2 position)
     {
-        SimplePool.Spawn(particlePrefab, position, Quaternion.identity);
+        SimplePool.Spawn(ParticlePrefab, position, Quaternion.identity);
     }
 
 
     public void CloseAndOpenBurningAffect(bool mode)
     {
+        // if (fireAnimation != null)
+        //     fireAnimation.SetActive(mode);
         isOn = mode;
-        _timerBurning = timeToBurn;
-        _damageEnemyTimer = damageEnemyStep;
+        timerBurning = timeToBurn;
+        damageEnemyTimer = damageEnemyStep;
     }
 
     private void FireDamage()
     {
         if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice) return;
-        _damageEnemyTimer = damageEnemyStep;
+        damageEnemyTimer = damageEnemyStep;
         damageEnemy = true;
         var enemy = GetComponentInParent<Enemy>();
         if (enemy != null)
+        {
             enemy.DamageEnemy(fireDamage);
-            
+
+        }
         damageEnemy = false;
     }
 }

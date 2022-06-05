@@ -2,29 +2,18 @@ using System.Collections;
 using UnityEngine;
 using Cinemachine;
 
+
 public class ArenaScript : MonoBehaviour
 {
-    #region Private Fields
-
-    private float _flickerUpdateTime = 0.2f;
-    private bool _iceArenaFlicker;
-    private Animator _animator;
     [TagField][SerializeField] private string reflectionTag;
-    
-    #endregion
-
-    #region Inspector Control
-
+    private Animator _animator;
     [SerializeField] [Range(0,100)] private int iceArenaFlickerPercentage;
+    private float flickerUpdateTime = 0.2f;
+    private bool iceArenaFlicker;
     
-    #endregion
-
-    #region Animator Labels
-
+    
     private static readonly int WorldState = Animator.StringToHash("World State");
-    private static readonly int Property = Animator.StringToHash("Special Effect");
 
-    #endregion
 
     private void Start()
     {
@@ -35,37 +24,37 @@ public class ArenaScript : MonoBehaviour
     {
         _animator.SetInteger(WorldState, (int) GameManager.Shared.CurrentState);
 
-        _flickerUpdateTime -= Time.deltaTime;
+        flickerUpdateTime -= Time.deltaTime;
 
-        if (_flickerUpdateTime < 0)
+        if (flickerUpdateTime < 0)
         {
             CheckForFlicker();
-            _flickerUpdateTime = 0.2f;
+            flickerUpdateTime = 0.2f;
         }
 
         if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
-            _animator.SetBool(Property, false);
-            _iceArenaFlicker = false;
+            _animator.SetBool("Special Effect", false);
+            iceArenaFlicker = false;
         }
     }
 
     private void CheckForFlicker()
     {
-        if (!_iceArenaFlicker && Random.Range(0, 100) <= iceArenaFlickerPercentage
+        if (!iceArenaFlicker && Random.Range(0, 100) <= iceArenaFlickerPercentage
                              && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
         {
-            _iceArenaFlicker = true;
+            iceArenaFlicker = true;
             StartCoroutine(IceArenaFlicker());
         }
     }
 
     private IEnumerator IceArenaFlicker()
     {
-        _animator.SetBool(Property, true);
+        _animator.SetBool("Special Effect", true);
         yield return new WaitForSeconds(0.5f);
-        _animator.SetBool(Property, false);
-        _iceArenaFlicker = false;
+        _animator.SetBool("Special Effect", false);
+        iceArenaFlicker = false;
 
     }
     

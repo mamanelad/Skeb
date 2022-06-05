@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using Pathfinding;
@@ -35,7 +36,7 @@ public class EnemyAI : MonoBehaviour
 
     #region Inspector Control
 
-    [Header("Special Movement Settings")] [SerializeField]
+    [Header("Speciel Movement Settings")] [SerializeField]
     private float distanceMagePlayer = 2f;
 
 
@@ -63,10 +64,10 @@ public class EnemyAI : MonoBehaviour
 
     #endregion
 
-    private void Start()
+    void Start()
     {
         _playerController = FindObjectOfType<PlayerController>();
-        _enemyKind = GetComponent<Enemy>().enemyKind;
+        _enemyKind = GetComponent<Enemy>()._enemyKind;
         _seeker = GetComponent<Seeker>();
         _rb = GetComponent<Rigidbody2D>();
 
@@ -96,7 +97,7 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator SearchPlayer()
     {
-        var sResult = GameObject.FindGameObjectWithTag("Player");
+        GameObject sResult = GameObject.FindGameObjectWithTag("Player");
         if (sResult == null)
         {
             yield return new WaitForSeconds(0.5f);
@@ -141,7 +142,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (lockMovement || _playerController.IsPlayerDead) return;
 
@@ -174,20 +175,24 @@ public class EnemyAI : MonoBehaviour
 
         //Direction to the next waypoint
         var position = transform.position;
-        var dir = (_path.vectorPath[_currentWaypoint] - position).normalized;
+        Vector3 dir = (_path.vectorPath[_currentWaypoint] - position).normalized;
         var curSpeed = _speed;
         dir *= curSpeed * Time.fixedDeltaTime;
 
         //Move the AI
 
         //Mage Special movement
-        var distance = Vector3.Distance(position, _target.position);
+        var distance = Vector3.Distance(transform.position, _target.position);
         if (_enemyKind == Enemy.EnemyKind.Middle && GameManager.Shared.CurrentState == GameManager.WorldState.Ice &&
             distance <= distanceMagePlayer)
+        {
             _rb.AddForce(-dir, fMode);
+        }
 
         else
+        {
             _rb.AddForce(dir, fMode);
+        }
 
 
         var dist = Vector3.Distance(position, _path.vectorPath[_currentWaypoint]);

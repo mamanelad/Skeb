@@ -9,7 +9,4 @@ public class Sound
    [Range(0f,1f)]
    [SerializeField] public float volume;
    [HideInInspector] public AudioSource audioSource;
-   [HideInInspector] public float audioTime;
-   [HideInInspector] public float lastTime;
-   
 }

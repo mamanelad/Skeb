@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.PlayerLoop;
 
 public class EnergyBall : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class EnergyBall : MonoBehaviour
     private GameObject _player;
     private bool _startLife;
     private bool _hit;
-
+    private bool goAfter;
+    
     #endregion
 
     #region Inspector Control
@@ -17,10 +19,8 @@ public class EnergyBall : MonoBehaviour
     [SerializeField] private float lifeBallTimer = 3f;
     [SerializeField] private float timeToDieAfterHit = 0.05f;
     [SerializeField] private float step = 1f;
-
-    [FormerlySerializedAs("_attackDamage")] [HideInInspector]
-    public float attackDamage = 20f;
-
+    [HideInInspector] public float _attackDamage = 20f;
+    
     #endregion
 
     #region Animator Labels
@@ -35,25 +35,34 @@ public class EnergyBall : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (!_hit) return;
-        timeToDieAfterHit -= Time.deltaTime;
-        if (timeToDieAfterHit <= 0)
-            DestroyBall();
+        if (_hit)
+        {
+            timeToDieAfterHit -= Time.deltaTime;
+            if (timeToDieAfterHit <= 0 )
+            {
+                DestroyBall();
+            }
+        }
+        
     }
 
     private void FixedUpdate()
     {
         if (!_startLife) return;
-
-        transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, step);
-        lifeBallTimer -= Time.deltaTime;
-        if (lifeBallTimer <= 0)
-        {
-            _animator.SetTrigger(Die);
-            _startLife = false;
-        }
+        
+            transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, step);
+            lifeBallTimer -= Time.deltaTime;
+            if (lifeBallTimer <= 0)
+            {
+                _animator.SetTrigger(Die);
+                _startLife = false;
+            } 
+        
+        
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -61,9 +70,10 @@ public class EnergyBall : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _hit = true;
-            _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
+            _player.GetComponent<PlayerHealth>().UpdateHealth(-_attackDamage, transform.position);
             _animator.SetTrigger(Die);
         }
+       
     }
 
     /**

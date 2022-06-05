@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public GameState CurrentGameState;
     private GameState _prevGameState;
     private float _stageTimer;
-    public AudioManager _audioManager;
 
 
     public WorldState CurrentState;
@@ -61,8 +60,6 @@ public class GameManager : MonoBehaviour
         _prevGameState = GameState.Arena;
         InitializeControls();
         Time.timeScale = 1f;
-        _audioManager = FindObjectOfType<AudioManager>();
-
     }
 
     #region Input Actions
