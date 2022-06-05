@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     private ArenaParticles _arenaParticles;
     private GameControls _gameControls;
     [NonSerialized] public GameState CurrentGameState;
-    private GameState _prevGameState;
+    private GameState _prevGameState = GameState.Arena;
     private float _stageTimer;
 
 
@@ -165,7 +165,11 @@ public class GameManager : MonoBehaviour
         if (CurrentGameState == GameState.Pause)
             return;
 
-        PauseSound(GeneralSound.SoundKindsGeneral.MainSong);
+        if (CurrentGameState == GameState.Arena)
+            PauseSound(GeneralSound.SoundKindsGeneral.MainSong);
+        if (CurrentGameState == GameState.Store)
+            Shared.StoreAudioManager.StopSound(StoreSounds.SoundKindsStore.Background);
+        PlaySound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
         Time.timeScale = 0;
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Pause;
@@ -175,6 +179,13 @@ public class GameManager : MonoBehaviour
     public void ResumeState()
     {
         CurrentGameState = _prevGameState;
+        
+        PauseSound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
+        
+        if (CurrentGameState == GameState.Arena)
+            PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
+        if (CurrentGameState == GameState.Store)
+            Shared.StoreAudioManager.PlaySound(StoreSounds.SoundKindsStore.Background);
     }
 
     public void OpenStore()
