@@ -66,6 +66,7 @@ public class FireParticleEffect : MonoBehaviour
         Vector2 spawnPoint = Vector2.Lerp(pointA, pointB, Random.Range(0f, 1f));
 
         SpawnFireAtPosition(spawnPoint + (Vector2) transform.position);
+        
     }
 
     private void SpawnFireAtPosition(Vector2 position)

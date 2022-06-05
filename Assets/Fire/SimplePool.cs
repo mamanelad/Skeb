@@ -176,7 +176,6 @@ public static class SimplePool {
     /// </summary>
     static public GameObject Spawn(GameObject prefab, Vector3 pos, Quaternion rot) {
         Init(prefab);
-
         return pools[prefab].Spawn(pos, rot);
     }
 

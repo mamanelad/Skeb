@@ -21,7 +21,6 @@ public class BoxTutorial : MonoBehaviour
 
     private Animator _animator;
 
-    [SerializeField] private float hitStep = 1f;
     private float hitTimer;
     private bool hit;
     private PlayerController _playerController;

@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public bool inTutorial;
     [NonSerialized] public bool triggerKillCamera; 
 
-    [NonSerialized] public int roundNumber = 1;
+    [NonSerialized] public int roundNumber = 0;
     [NonSerialized] public int roundMonsterKillCounter = 0;
     [NonSerialized] public int roundMonsterTotalAmount;
 

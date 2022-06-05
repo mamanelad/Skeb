@@ -208,9 +208,7 @@ public class EnemySpawnerDots : MonoBehaviour
         smallPercentage = curWave.smallPercentage;
         maxTimeToSpawn = curWave.timeToSpawnStep;
 
-        GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
-        GameManager.Shared.roundNumber += 1;
-        GameManager.Shared.roundMonsterKillCounter = 0;
+        
 
         _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
@@ -231,5 +229,8 @@ public class EnemySpawnerDots : MonoBehaviour
     public void StartBlockSpawn(bool mode)
     {
         spawnIsOn = mode;
+        GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
+        GameManager.Shared.roundNumber += 1;
+        GameManager.Shared.roundMonsterKillCounter = 0;
     }
 }
