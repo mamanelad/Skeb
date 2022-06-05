@@ -175,12 +175,7 @@ public class Enemy : MonoBehaviour
 
         if (!_isDead)
         {
-            // var stMenu = FindObjectOfType<StartMenu>();
-            //
-            // if (stMenu != null )
-            // {
-            //     stMenu.DecreaseMonster();
-            // }
+            
 
             if (_enemySpawnerDots != null)
             {
@@ -188,6 +183,7 @@ public class Enemy : MonoBehaviour
             }
 
             _isDead = true;
+            _enemyAI.MonsterDieSound();
         }
 
         // increase player health if MonsterRegenerationBuff is on

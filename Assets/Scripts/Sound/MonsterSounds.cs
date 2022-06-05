@@ -19,18 +19,18 @@ public class MonsterSounds
         MwWalk,
         MwDamage,
         MwDeath,
-        
+
 
         BDamage,
         BWalk,
-        
+
         BFireAttack,
         BFireDeath,
         BIceAttack,
         BIceDeath,
-        
+
         Damage,
-       
+        Blood,
         BFall,
         MwFall,
         MmFall,

@@ -262,21 +262,18 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
     }
-    
+
     public void MonsterDamageSound()
     {
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
+            MonsterSound(MonsterSounds.SoundKindsMonster.Blood);
         if (_enemyKind == Enemy.EnemyKind.Middle && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
-        {
             MonsterSound(MonsterSounds.SoundKindsMonster.MwDamage);
-        }
         else
-        {
-            MonsterSound(MonsterSounds.SoundKindsMonster.Damage);    
-        }
-        
+            MonsterSound(MonsterSounds.SoundKindsMonster.Damage);
     }
-    
-    
+
+
     public void MonsterFallSound()
     {
         // switch (_enemyKind)
