@@ -91,7 +91,7 @@ MonoBehaviour:
     volume: 0.5
     audioSource: {fileID: 0}
     soundKindsGeneral: 8
-    soundDelay: 0.05
+    soundDelay: 0.1
   - loop: 0
     audioClip: {fileID: 8300000, guid: 54ba3323aa9d9af48b5280ea3cebbdfb, type: 3}
     volume: 0.5
@@ -104,3 +104,15 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     soundKindsGeneral: 5
     soundDelay: 0
+  - loop: 0
+    audioClip: {fileID: 8300000, guid: 76639e6e768aade439350b939fc9aece, type: 3}
+    volume: 0.7
+    audioSource: {fileID: 0}
+    soundKindsGeneral: 10
+    soundDelay: 0
+  - loop: 0
+    audioClip: {fileID: 8300000, guid: e49fcc4c7ae2d5746a1b1a8e995680fd, type: 3}
+    volume: 0.7
+    audioSource: {fileID: 0}
+    soundKindsGeneral: 11
+    soundDelay: 0.05
