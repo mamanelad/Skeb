@@ -429,6 +429,134 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""StoreControl"",
+            ""id"": ""6b10d1aa-8d6f-41f7-b800-1577d39603b6"",
+            ""actions"": [
+                {
+                    ""name"": ""ArrowLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""159f3dcc-d9cf-4ad7-afae-e432f214ae1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ArrowRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""83d261d3-ecf9-4094-9af7-ecbb600b60f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ArrowUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""b327f0f1-8bf6-4853-a4eb-beccf49e0cdc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ArrowDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""155f0a9f-77be-4261-ab78-5c868f2eba6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""28f4743c-c90f-44e2-8b2f-ddc256f58424"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b010e79-7003-4024-bf8f-8c28e287a23c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d967495d-ee06-496a-8e50-297ec378638d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""13b53b31-5d7c-4b20-b7f7-75bc96f77430"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dad1a09c-63fb-4eed-bc12-9380a127f7be"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3da7ac92-bcb4-41cf-ac01-b70f1a738168"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ArrowDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08155521-841d-448a-a0ba-02e345c89971"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""313f4c5a-e15d-424e-9ceb-a6f7e7695c6d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -461,6 +589,14 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_PauseControl_ArrowUp = m_PauseControl.FindAction("ArrowUp", throwIfNotFound: true);
         m_PauseControl_ArrowDown = m_PauseControl.FindAction("ArrowDown", throwIfNotFound: true);
         m_PauseControl_Escape = m_PauseControl.FindAction("Escape", throwIfNotFound: true);
+        // StoreControl
+        m_StoreControl = asset.FindActionMap("StoreControl", throwIfNotFound: true);
+        m_StoreControl_ArrowLeft = m_StoreControl.FindAction("ArrowLeft", throwIfNotFound: true);
+        m_StoreControl_ArrowRight = m_StoreControl.FindAction("ArrowRight", throwIfNotFound: true);
+        m_StoreControl_ArrowUp = m_StoreControl.FindAction("ArrowUp", throwIfNotFound: true);
+        m_StoreControl_ArrowDown = m_StoreControl.FindAction("ArrowDown", throwIfNotFound: true);
+        m_StoreControl_Select = m_StoreControl.FindAction("Select", throwIfNotFound: true);
+        m_StoreControl_Escape = m_StoreControl.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -630,6 +766,79 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         }
     }
     public PauseControlActions @PauseControl => new PauseControlActions(this);
+
+    // StoreControl
+    private readonly InputActionMap m_StoreControl;
+    private IStoreControlActions m_StoreControlActionsCallbackInterface;
+    private readonly InputAction m_StoreControl_ArrowLeft;
+    private readonly InputAction m_StoreControl_ArrowRight;
+    private readonly InputAction m_StoreControl_ArrowUp;
+    private readonly InputAction m_StoreControl_ArrowDown;
+    private readonly InputAction m_StoreControl_Select;
+    private readonly InputAction m_StoreControl_Escape;
+    public struct StoreControlActions
+    {
+        private @GameControls m_Wrapper;
+        public StoreControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ArrowLeft => m_Wrapper.m_StoreControl_ArrowLeft;
+        public InputAction @ArrowRight => m_Wrapper.m_StoreControl_ArrowRight;
+        public InputAction @ArrowUp => m_Wrapper.m_StoreControl_ArrowUp;
+        public InputAction @ArrowDown => m_Wrapper.m_StoreControl_ArrowDown;
+        public InputAction @Select => m_Wrapper.m_StoreControl_Select;
+        public InputAction @Escape => m_Wrapper.m_StoreControl_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_StoreControl; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StoreControlActions set) { return set.Get(); }
+        public void SetCallbacks(IStoreControlActions instance)
+        {
+            if (m_Wrapper.m_StoreControlActionsCallbackInterface != null)
+            {
+                @ArrowLeft.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowLeft;
+                @ArrowLeft.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowLeft;
+                @ArrowLeft.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowLeft;
+                @ArrowRight.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowRight;
+                @ArrowRight.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowRight;
+                @ArrowRight.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowRight;
+                @ArrowUp.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowUp;
+                @ArrowUp.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowUp;
+                @ArrowDown.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowDown;
+                @ArrowDown.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnArrowDown;
+                @Select.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnSelect;
+                @Escape.started -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_StoreControlActionsCallbackInterface.OnEscape;
+            }
+            m_Wrapper.m_StoreControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ArrowLeft.started += instance.OnArrowLeft;
+                @ArrowLeft.performed += instance.OnArrowLeft;
+                @ArrowLeft.canceled += instance.OnArrowLeft;
+                @ArrowRight.started += instance.OnArrowRight;
+                @ArrowRight.performed += instance.OnArrowRight;
+                @ArrowRight.canceled += instance.OnArrowRight;
+                @ArrowUp.started += instance.OnArrowUp;
+                @ArrowUp.performed += instance.OnArrowUp;
+                @ArrowUp.canceled += instance.OnArrowUp;
+                @ArrowDown.started += instance.OnArrowDown;
+                @ArrowDown.performed += instance.OnArrowDown;
+                @ArrowDown.canceled += instance.OnArrowDown;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+            }
+        }
+    }
+    public StoreControlActions @StoreControl => new StoreControlActions(this);
     private int m_KeyBoardSchemeIndex = -1;
     public InputControlScheme KeyBoardScheme
     {
@@ -669,6 +878,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnClick(InputAction.CallbackContext context);
         void OnArrowUp(InputAction.CallbackContext context);
         void OnArrowDown(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface IStoreControlActions
+    {
+        void OnArrowLeft(InputAction.CallbackContext context);
+        void OnArrowRight(InputAction.CallbackContext context);
+        void OnArrowUp(InputAction.CallbackContext context);
+        void OnArrowDown(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
     }
 }

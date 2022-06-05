@@ -407,6 +407,134 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "StoreControl",
+            "id": "6b10d1aa-8d6f-41f7-b800-1577d39603b6",
+            "actions": [
+                {
+                    "name": "ArrowLeft",
+                    "type": "Button",
+                    "id": "159f3dcc-d9cf-4ad7-afae-e432f214ae1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArrowRight",
+                    "type": "Button",
+                    "id": "83d261d3-ecf9-4094-9af7-ecbb600b60f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArrowUp",
+                    "type": "Button",
+                    "id": "b327f0f1-8bf6-4853-a4eb-beccf49e0cdc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArrowDown",
+                    "type": "Button",
+                    "id": "155f0a9f-77be-4261-ab78-5c868f2eba6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "28f4743c-c90f-44e2-8b2f-ddc256f58424",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "5b010e79-7003-4024-bf8f-8c28e287a23c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d967495d-ee06-496a-8e50-297ec378638d",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13b53b31-5d7c-4b20-b7f7-75bc96f77430",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dad1a09c-63fb-4eed-bc12-9380a127f7be",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3da7ac92-bcb4-41cf-ac01-b70f1a738168",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08155521-841d-448a-a0ba-02e345c89971",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "313f4c5a-e15d-424e-9ceb-a6f7e7695c6d",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

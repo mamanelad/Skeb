@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,10 @@ public class ChestScript : MonoBehaviour
     [SerializeField] private bool isChestOpen;
     [SerializeField] private List<GameObject> upgrades;
     [SerializeField] private int chestUpgradeLevel;
-    [SerializeField] private int chooseUpgrade;
+    [NonSerialized] public int chooseUpgrade;
 
     private Animator _animator;
     private bool showingUpgrades;
-    
     
     private static readonly int ChestOpen = Animator.StringToHash("ChestOpen");
 
@@ -59,9 +59,9 @@ public class ChestScript : MonoBehaviour
         }
     }
 
-    public void UpgradeChest(int upgradeLevel)
+    public void UpgradeChest(int upgradeLevel = 1)
     {
-        chestUpgradeLevel = upgradeLevel;
+        chestUpgradeLevel += upgradeLevel;
         chestUpgradeLevel = Mathf.Max(chestUpgradeLevel, 0);
         chestUpgradeLevel = Mathf.Min(upgrades.Count, chestUpgradeLevel);
     }
@@ -82,5 +82,22 @@ public class ChestScript : MonoBehaviour
                 upgrades[i].GetComponent<UpgradeScript>().apply = false;
         }
     }
-    
+
+    public void OpenChest()
+    {
+        isChestOpen = true;
+    }
+
+    public void CloseChest()
+    {
+        isChestOpen = false;
+    }
+
+    public GameObject GetUpgrade(int index)
+    {
+        if (index < 1 || index > upgrades.Count)
+            return null;
+        return upgrades[index - 1];
+    }
+
 }
