@@ -104,3 +104,9 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     soundKindsGeneral: 5
     soundDelay: 0
+  - loop: 1
+    audioClip: {fileID: 8300000, guid: 76639e6e768aade439350b939fc9aece, type: 3}
+    volume: 0.7
+    audioSource: {fileID: 0}
+    soundKindsGeneral: 10
+    soundDelay: 0
