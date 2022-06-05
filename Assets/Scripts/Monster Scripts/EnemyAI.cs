@@ -195,10 +195,70 @@ public class EnemyAI : MonoBehaviour
             _rb.AddForce(dir, fMode);
         }
 
+        if (dir != Vector3.zero)
+            MonsterWalkSound();
 
         var dist = Vector3.Distance(position, _path.vectorPath[_currentWaypoint]);
         var nextWaypointDistance = _nextWaypointDistance;
         if (!(dist < nextWaypointDistance)) return;
         _currentWaypoint++;
+    }
+
+    private void MonsterWalkSound()
+    {
+        switch (_enemyKind)
+        {
+            case Enemy.EnemyKind.Small:
+                MonsterSound(MonsterSounds.SoundKindsMonster.SWalk);
+                break;
+            case Enemy.EnemyKind.Middle:
+                MonsterSound(MonsterSounds.SoundKindsMonster.MWalk);
+                break;
+            case Enemy.EnemyKind.Big:
+                MonsterSound(MonsterSounds.SoundKindsMonster.BWalk);
+                break;
+        }
+    }
+    
+    public void MonsterFallSound()
+    {
+        switch (_enemyKind)
+        {
+            case Enemy.EnemyKind.Middle:
+                MonsterSound(MonsterSounds.SoundKindsMonster.MFall);
+                break;
+            case Enemy.EnemyKind.Big:
+                MonsterSound(MonsterSounds.SoundKindsMonster.BFall);
+                break;
+        }
+    }
+    
+    public void MonsterAttackSound()
+    {
+        switch (_enemyKind)
+        {
+            case Enemy.EnemyKind.Small:
+                MonsterSound(MonsterSounds.SoundKindsMonster.SAttack);
+                break;
+            case Enemy.EnemyKind.Middle:
+                MonsterSound(MonsterSounds.SoundKindsMonster.MAttack);
+                break;
+            case Enemy.EnemyKind.Big:
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.BFireAttack);
+                        break;
+                    case GameManager.WorldState.Ice:
+                        MonsterSound(MonsterSounds.SoundKindsMonster.BIceAttack);
+                        break;
+                }
+                break;
+        }
+    }
+
+    private void MonsterSound(MonsterSounds.SoundKindsMonster soundKindsMonster)
+    {
+        GameManager.Shared.monsterAudioManager.PlaySound(soundKindsMonster);
     }
 }

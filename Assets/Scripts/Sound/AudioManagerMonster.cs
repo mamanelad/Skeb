@@ -47,11 +47,17 @@ public class AudioManagerMonster : MonoBehaviour
     public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster)
     {
         var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
-        if (!CanPlaySound(soundKindsMonster, s)) return;
         if (s == null)
             return;
+        if (!CanPlaySound(soundKindsMonster, s)) return;
+        
 
-        s.audioSource.PlayOneShot(s.audioClip);
+        GameObject soundGameObject = new GameObject("sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = s.audioClip;
+        audioSource.loop = s.loop;
+        audioSource.volume = s.volume;
+        audioSource.Play();
     }
     
     public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster , Vector3 position)
@@ -76,7 +82,7 @@ public class AudioManagerMonster : MonoBehaviour
         if (_soundTimerDict.ContainsKey(soundKindsMonster))
         {
             var lastTimePlayed = _soundTimerDict[soundKindsMonster];
-            if (lastTimePlayed + soundToPlay.soundDelay <= Time.time)
+            if (soundToPlay.soundDelay + lastTimePlayed <= Time.time)
             {
                 _soundTimerDict[soundKindsMonster] = Time.time;
                 return true;

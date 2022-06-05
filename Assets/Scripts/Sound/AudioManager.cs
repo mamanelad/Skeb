@@ -51,7 +51,13 @@ public class AudioManager : MonoBehaviour
         if (s == null)
             return;
 
-        s.audioSource.PlayOneShot(s.audioClip);
+        
+        GameObject soundGameObject = new GameObject("sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = s.audioClip;
+        audioSource.loop = s.loop;
+        audioSource.volume = s.volume;
+        audioSource.Play();
     }
     
     public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer , Vector3 position)

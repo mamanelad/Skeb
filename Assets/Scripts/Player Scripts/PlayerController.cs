@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         Second,
         Special
     }
+    
+    
 
     #region Inspector Control
 
@@ -75,6 +77,8 @@ public class PlayerController : MonoBehaviour
     [NonSerialized] public Animator Animator;
     private GameManager.WorldState _currentWorldState;
     private AttackStatus _attackStatus = AttackStatus.First;
+    private AttackStatus _hitStatus = AttackStatus.First;
+
     public PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
@@ -216,6 +220,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void PlayerHitSound()
+    {
+        switch (_hitStatus)
+        {
+            case AttackStatus.First:
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PHitOne);
+                _hitStatus = AttackStatus.Second;
+                break;
+            case AttackStatus.Second:
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PHitTwo);
+                _hitStatus = AttackStatus.Special;
+
+                break;
+            case AttackStatus.Special:
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PHitThree);
+                _hitStatus = AttackStatus.First;
+                break;
+        }
+    }
     private void SoundsPlayer(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
         GameManager.Shared.PlayerAudioManager.PlaySound(soundKindPlayer, transform.position);
@@ -573,8 +596,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
     public void PlayerGotHit(Vector3 pos)
     {
+        PlayerHitSound();
         var direction = (pos - transform.position).normalized;
         _knockBackDirection = new Vector2(direction.x, direction.z);
         GetComponent<HitBreak>().HitBreakAction();

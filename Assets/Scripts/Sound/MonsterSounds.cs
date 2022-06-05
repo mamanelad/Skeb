@@ -6,7 +6,18 @@ public class MonsterSounds
 {
     public enum SoundKindsMonster
     {
-        
+        SAttack,
+        SWalk,
+        SDamage,
+        MAttack,
+        MWalk,
+        MFall,
+        MDamage,
+        BIceAttack,
+        BFireAttack,
+        BWalk,
+        BFall,
+        BDamage
     }
     
     [SerializeField] public bool loop;

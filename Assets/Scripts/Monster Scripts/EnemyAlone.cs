@@ -138,6 +138,7 @@ public class EnemyAlone : MonoBehaviour
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
 
+        _enemyAI.MonsterAttackSound();
         _isAttacking = false;
     }
 
@@ -147,6 +148,7 @@ public class EnemyAlone : MonoBehaviour
      */
     public void DamagePlayerEnergyBall()
     {
+        //TODO :: ENERGYBALL MUSIC
         var ball = Instantiate(energyBall, transform.position, Quaternion.identity);
         ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
         if (_energyBallFather)
