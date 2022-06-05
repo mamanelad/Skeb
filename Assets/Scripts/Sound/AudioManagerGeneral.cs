@@ -37,7 +37,7 @@ public class AudioManagerGeneral : MonoBehaviour
     {
         foreach (var sound in soundArray)
         {
-            // sound.audioSource = gameObject.AddComponent<AudioSource>();
+            sound.audioSource = gameObject.AddComponent<AudioSource>();
             sound.audioSource.clip = sound.audioClip;
             sound.audioSource.volume = sound.volume;
             sound.audioSource.loop = sound.loop;
@@ -49,8 +49,9 @@ public class AudioManagerGeneral : MonoBehaviour
         var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
         if (s == null)
             return;
-        if (!CanPlaySound(soundKindsGeneral, s))
-            s.audioSource.Stop();
+        s.audioSource.Stop();
+        // if (!CanPlaySound(soundKindsGeneral, s)) 
+        //     s.audioSource.Stop();
     }
     
     public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral)

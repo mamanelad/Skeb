@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public AudioManager PlayerAudioManager;
     [SerializeField] public AudioManagerStore StoreAudioManager;
     [SerializeField] public AudioManagerMonster monsterAudioManager;
+    [SerializeField] public AudioManagerGeneral AudioManagerGeneral;
 
 
     [SerializeField] private GameObject pauseMenu;

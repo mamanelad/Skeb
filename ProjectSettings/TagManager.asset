@@ -20,6 +20,7 @@ TagManager:
   - box
   - lifeBar
   - DashCollider
+  - Name
   layers:
   - Default
   - TransparentFX

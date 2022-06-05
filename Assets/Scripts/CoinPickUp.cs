@@ -29,6 +29,7 @@ public class CoinPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HeartExist);
         target = GameObject.FindGameObjectWithTag("lifeBar");
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -94,6 +95,7 @@ public class CoinPickUp : MonoBehaviour
     {
         if (coinKind == CoinKind.Heart)
         {
+            GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HeartAdd);
             FindObjectOfType<PlayerHealth>().UpdateHealth(coinValue, Vector3.zero);
         }
 
