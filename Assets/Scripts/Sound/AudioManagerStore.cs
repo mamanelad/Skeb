@@ -44,22 +44,33 @@ public class AudioManagerStore : MonoBehaviour
         }
     }
 
+    public void StopSound(StoreSounds.SoundKindsStore soundKindStore)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
+        if (s == null)
+            return;
+        if (!CanPlaySound(soundKindStore, s))
+            s.audioSource.Stop();
+    }
+
     public void PlaySound(StoreSounds.SoundKindsStore soundKindStore)
     {
         var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
-        if (!CanPlaySound(soundKindStore, s)) return;
         if (s == null)
             return;
+        if (!CanPlaySound(soundKindStore, s)) return;
+
 
         s.audioSource.PlayOneShot(s.audioClip);
     }
-    
-    public void PlaySound(StoreSounds.SoundKindsStore soundKindStore , Vector3 position)
+
+    public void PlaySound(StoreSounds.SoundKindsStore soundKindStore, Vector3 position)
     {
         var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
-        if (!CanPlaySound(soundKindStore, s)) return;
         if (s == null)
             return;
+        if (!CanPlaySound(soundKindStore, s)) return;
+
 
         GameObject soundGameObject = new GameObject("sound");
         soundGameObject.transform.position = position;
@@ -68,6 +79,7 @@ public class AudioManagerStore : MonoBehaviour
         audioSource.loop = s.loop;
         audioSource.volume = s.volume;
         audioSource.Play();
+        s.audioSource = audioSource;
     }
 
     private bool CanPlaySound(StoreSounds.SoundKindsStore soundToPlayKindStore, StoreSounds soundToPlay)
@@ -85,7 +97,7 @@ public class AudioManagerStore : MonoBehaviour
                 return false;
             }
         }
-         
+
         else
         {
             _soundTimerDict[soundToPlayKindStore] = Time.time;

@@ -44,29 +44,39 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopSound(PlayerSound.SoundKindsPlayer soundKindPlayer)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
+        if (s == null)
+            return;
+        if (!CanPlaySound(soundKindPlayer, s))
+            s.audioSource.Stop();
+    }
+
     public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
         var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
-        if (!CanPlaySound(soundKindPlayer, s)) return;
         if (s == null)
             return;
+        if (!CanPlaySound(soundKindPlayer, s)) return;
 
-        
+
         GameObject soundGameObject = new GameObject("sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.clip = s.audioClip;
         audioSource.loop = s.loop;
         audioSource.volume = s.volume;
         audioSource.Play();
+        s.audioSource = audioSource;
     }
-    
-    public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer , Vector3 position)
+
+    public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer, Vector3 position)
     {
         var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
         if (s == null)
             return;
         if (!CanPlaySound(soundKindPlayer, s)) return;
-        
+
 
         GameObject soundGameObject = new GameObject("sound");
         soundGameObject.transform.position = position;
@@ -75,6 +85,7 @@ public class AudioManager : MonoBehaviour
         audioSource.loop = s.loop;
         audioSource.volume = s.volume;
         audioSource.Play();
+        s.audioSource = audioSource;
     }
 
     private bool CanPlaySound(PlayerSound.SoundKindsPlayer soundToPlayKindPlayer, PlayerSound soundToPlay)
@@ -92,7 +103,7 @@ public class AudioManager : MonoBehaviour
                 return false;
             }
         }
-         
+
         else
         {
             _soundTimerDict[soundToPlayKindPlayer] = Time.time;

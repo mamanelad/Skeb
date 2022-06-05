@@ -91,6 +91,8 @@ public class EnergyBall : MonoBehaviour
      */
     public void DestroyBall()
     {
+        GameManager.Shared.monsterAudioManager.
+            PlaySound(MonsterSounds.SoundKindsMonster.EnergyBallExplosion, transform.position);
         Destroy(gameObject);
     }
 }

@@ -44,6 +44,14 @@ public class AudioManagerMonster : MonoBehaviour
         }
     }
 
+    public void StopSound(MonsterSounds.SoundKindsMonster soundKindsMonster)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
+        if (s == null)
+            return;
+        if (!CanPlaySound(soundKindsMonster, s))
+            s.audioSource.Stop();
+    }
     public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster)
     {
         var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
@@ -58,6 +66,8 @@ public class AudioManagerMonster : MonoBehaviour
         audioSource.loop = s.loop;
         audioSource.volume = s.volume;
         audioSource.Play();
+        s.audioSource = audioSource;
+
     }
     
     public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster , Vector3 position)
@@ -75,6 +85,8 @@ public class AudioManagerMonster : MonoBehaviour
         audioSource.loop = s.loop;
         audioSource.volume = s.volume;
         audioSource.Play();
+        s.audioSource = audioSource;
+
     }
 
     private bool CanPlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster, MonsterSounds soundToPlay)

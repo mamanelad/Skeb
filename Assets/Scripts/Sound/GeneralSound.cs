@@ -6,6 +6,7 @@ public class GeneralSound
 {
     public enum SoundKindsGeneral
     {
+        HeartAdd,
         
     }
 

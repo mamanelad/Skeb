@@ -146,3 +146,9 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     soundKindMonster: 17
     soundDelay: 0.1
+  - loop: 0
+    audioClip: {fileID: 8300000, guid: 3dbbffb55849a4a41958e608b31c259e, type: 3}
+    volume: 0.3
+    audioSource: {fileID: 0}
+    soundKindMonster: 18
+    soundDelay: 0.1

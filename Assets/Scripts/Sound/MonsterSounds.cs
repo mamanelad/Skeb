@@ -31,6 +31,7 @@ public class MonsterSounds
 
         Damage,
         Blood,
+        EnergyBallExplosion,
         BFall,
         MwFall,
         MmFall,
