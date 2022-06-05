@@ -8,25 +8,45 @@ public class MonsterSounds
     {
         SAttack,
         SWalk,
-        SDamage,
-        MAttack,
-        MWalk,
-        MFall,
-        MDamage,
-        BIceAttack,
-        BFireAttack,
+        SDeath,
+
+        MmAttack,
+        MmDeath,
+        MmWalk,
+
+
+        MwAttack,
+        MwWalk,
+        MwDamage,
+        MwDeath,
+        
+
+        BDamage,
         BWalk,
+        
+        BFireAttack,
+        BFireDeath,
+        BIceAttack,
+        BIceDeath,
+        
+        Damage,
+       
         BFall,
-        BDamage
+        MwFall,
+        MmFall,
+        MmDamage,
+        SDamage
     }
-    
+
     [SerializeField] public bool loop;
+
     // [SerializeField] public string name;
     [SerializeField] public AudioClip audioClip;
-    [Range(0f,1f)]
-    [SerializeField] public float volume;
+    [Range(0f, 1f)] [SerializeField] public float volume;
     [HideInInspector] public AudioSource audioSource;
-    [FormerlySerializedAs("soundKind")] [SerializeField] public SoundKindsMonster soundKindMonster;
+
+    [FormerlySerializedAs("soundKind")] [SerializeField]
+    public SoundKindsMonster soundKindMonster;
+
     [SerializeField] public float soundDelay;
 }
-
