@@ -206,6 +206,8 @@ public class EnemyAI : MonoBehaviour
 
     private void MonsterWalkSound()
     {
+        print("kaka");
+        MonsterSound(MonsterSounds.SoundKindsMonster.MonsterIdle);
         switch (_enemyKind)
         {
             case Enemy.EnemyKind.Small:
