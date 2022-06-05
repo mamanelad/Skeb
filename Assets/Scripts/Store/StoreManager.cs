@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -15,6 +12,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private bool infiniteUpgrades;
     [SerializeField] private bool muteShopkeeper;
     private GameControls _storeControls;
+    private StoreSounds.SoundKindsStore _lastPlayedAudioShopKeeper;
     [SerializeField] private bool canUpgrade;
     [SerializeField] private TextMeshProUGUI displayText;
     [SerializeField] private GameObject shopKeeper;
@@ -107,7 +105,7 @@ public class StoreManager : MonoBehaviour
         upgradeSelected += 1;
         PlaySound(StoreSounds.SoundKindsStore.Click);
         shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
-        AfifitTalk();
+        ShopKeeperAudio();
     }
     
     private void ArrowDown(InputAction.CallbackContext context)
@@ -117,7 +115,7 @@ public class StoreManager : MonoBehaviour
         upgradeSelected -= 1;
         PlaySound(StoreSounds.SoundKindsStore.Click);
         shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
-        AfifitTalk();
+        ShopKeeperAudio();
     }
     
     private void ArrowRight(InputAction.CallbackContext context)
@@ -167,10 +165,11 @@ public class StoreManager : MonoBehaviour
         if (canUpgrade)
         {
             shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
+            PauseShopKeeperAudio();
             PlaySound(StoreSounds.SoundKindsStore.ForgotToUpgrade);
             return;
         }
-            //PlaySound(StoreSounds.SoundKindsStore.CloseStore);
+        PauseSound(StoreSounds.SoundKindsStore.Background);
         PlaySound(StoreSounds.SoundKindsStore.ChestClose);
         GameManager.Shared.CloseStore();
     }
@@ -184,26 +183,41 @@ public class StoreManager : MonoBehaviour
     {
         GameManager.Shared.StoreAudioManager.PlaySound(sound, transform.position);
     }
+    
+    private void PauseSound(StoreSounds.SoundKindsStore sound)
+    {
+        GameManager.Shared.StoreAudioManager.StopSound(sound);
+    }
 
-    private void AfifitTalk()
+    private void ShopKeeperAudio()
     {
         if (muteShopkeeper)
             return;
         
-        var audio = Random.Range(1, 4);
-        switch (audio)
+        PauseShopKeeperAudio();
+        
+        var audioIndex = Random.Range(1, 4);
+        switch (audioIndex)
         {
             case 1:
                 PlaySound(StoreSounds.SoundKindsStore.Afifit1);
+                _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.Afifit1;
                 break;
             case 2:
                 PlaySound(StoreSounds.SoundKindsStore.Afifit2);
+                _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.Afifit2;
                 break;
             case 3:
                 PlaySound(StoreSounds.SoundKindsStore.Afifit3);
+                _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.Afifit3;
                 break;
             
         }
+    }
+
+    private void PauseShopKeeperAudio()
+    {
+        PauseSound(_lastPlayedAudioShopKeeper);
     }
 
 }
