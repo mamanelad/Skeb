@@ -56,6 +56,7 @@ public class LightningStrike : MonoBehaviour
     private void Start()
     {
         _enemySpawner = GetComponentInParent<EnemySpawnerDots>();
+        GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.Lightning);
     }
 
 

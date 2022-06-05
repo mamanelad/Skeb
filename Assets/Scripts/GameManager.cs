@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    
     public enum WorldState
     {
         None,
@@ -35,7 +34,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool StageDamage;
     private bool dontChangeStateByTime;
     public bool inTutorial;
-    [NonSerialized] public bool triggerKillCamera; 
+    [NonSerialized] public bool triggerKillCamera;
 
     [NonSerialized] public int roundNumber = 0;
     [NonSerialized] public int roundMonsterKillCounter = 0;
@@ -49,7 +48,7 @@ public class GameManager : MonoBehaviour
 
 
     public WorldState CurrentState;
-    
+
     private void Awake()
     {
         if (Shared == null)
@@ -73,10 +72,10 @@ public class GameManager : MonoBehaviour
 
     private void InitializeControls()
     {
-        _gameControls.GameControl.Pause.performed +=  PauseGame;
+        _gameControls.GameControl.Pause.performed += PauseGame;
     }
-    
-    
+
+
     private void OnEnable()
     {
         _gameControls.GameControl.Enable();
@@ -89,6 +88,14 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    private void Start()
+    {
+        if (inTutorial)
+            AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.TutorialSong);
+        else
+            AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
+    }
+
     private void Update()
     {
         if (!dontChangeStateByTime)
@@ -96,9 +103,8 @@ public class GameManager : MonoBehaviour
 
         if (!inTutorial)
             UpdateRoundText();
-        
+
         triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterTotalAmount;
-        
     }
 
     private void UpdateRoundText()
@@ -113,6 +119,7 @@ public class GameManager : MonoBehaviour
             _stageTimer += Time.deltaTime;
             _stageTimer = math.min(_stageTimer, timeInStage);
         }
+
         if (CurrentState == WorldState.Ice)
         {
             _stageTimer -= Time.deltaTime;
@@ -130,14 +137,12 @@ public class GameManager : MonoBehaviour
             CurrentState = WorldState.Ice;
             SwitchState();
         }
-            
+
 
         var stagePercentage = timeInStage != 0 ? _stageTimer / timeInStage : 0;
         UIManager.Shared.SetStageStateBar(stagePercentage);
-
-        
     }
-    
+
     private void SwitchState()
     {
         var fireAffects = FindObjectsOfType<FireParticleEffect>();
@@ -147,7 +152,7 @@ public class GameManager : MonoBehaviour
             fireAffect.CloseAndOpenBurningAffect(false);
         if (_arenaParticles != null)
         {
-            _arenaParticles.StartParticles(); 
+            _arenaParticles.StartParticles();
         }
     }
 
@@ -155,7 +160,7 @@ public class GameManager : MonoBehaviour
     {
         if (CurrentGameState == GameState.Pause)
             return;
-        
+
         Time.timeScale = 0;
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Pause;

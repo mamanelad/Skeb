@@ -31,6 +31,7 @@ public class EnergyBall : MonoBehaviour
 
     private void Start()
     {
+        transform.parent = null;
         _animator = GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player");
     }

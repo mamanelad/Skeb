@@ -215,6 +215,7 @@ public class HourGlass : MonoBehaviour
         _rb.gravityScale = 10;
 
         _fall = true;
+        GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HourGlassBreak);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

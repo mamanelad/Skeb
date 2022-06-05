@@ -9,7 +9,16 @@ public class GeneralSound
         HeartAdd,
         HeartExist,
         TutorialBoxHit,
-        TutorialBoxExplosion
+        TutorialBoxExplosion,
+        MainSong,
+        TutorialSong,
+        HourGlassBreak,
+        Lightning,
+        IceBergHit,
+        IceBergBreak,
+        Click,
+        
+        
     }
 
     [SerializeField] public bool loop;
