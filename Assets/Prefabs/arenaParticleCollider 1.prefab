@@ -204,13 +204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToBurn: 2.5
-  ParticlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
-  Rate: 60
-  isOn: 0
-  fireDamage: 5
-  damageEnemyStep: 0.2
   damageEnemy: 0
+  particlePrefab: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
+  timeToBurn: 2.5
+  rate: 60
+  isOn: 0
+  damageEnemyStep: 0.2
+  fireDamage: 5
 --- !u!114 &7006422134563733926
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private float dashColliderTimer;
 
-
     public enum PlayerState
     {
         Idle,
@@ -105,11 +104,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
-    [Header("Screen Shake Settings")] [SerializeField]
-    private float screenShakeIntensity = 1f;
-
-    [SerializeField] private float screenShakeTime = .1f;
+    
 
     private void Awake()
     {
@@ -164,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
+            GameManager.Shared._audioManager.PlaySound("Dash");
             dashCollider2D.enabled = true;
             isDashColliderOn = true;
             dashColliderTimer = dashColliderTime;
@@ -281,7 +277,7 @@ public class PlayerController : MonoBehaviour
         // if (!Input.GetButtonDown("Attack") || IsAttacking) return;
         if (IsAttacking) return;
 
-        
+        GameManager.Shared._audioManager.PlaySound("Sword");
         IsAttacking = true; // affects the animations
         var hourGlass = FindObjectOfType<HourGlass>();
         if (hourGlass != null)
@@ -521,10 +517,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingLayerName = "Player";
         reflection.SetActive(true);
         PlayerGotHit(Vector3.zero);
-        if (FindObjectOfType<CinemaMachineShake>())
-        {
-            CinemaMachineShake.Instance.ShakeCamera(0, 0.5f);
-        }
+        
     }
 
     public void PlayerGotHit(Vector3 pos)
@@ -567,6 +560,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        GameManager.Shared._audioManager.PlaySound("Lose");
         IsPlayerDead = true;
         _moveDirection = Vector2.zero;
         if (_playerState != PlayerState.Falling)

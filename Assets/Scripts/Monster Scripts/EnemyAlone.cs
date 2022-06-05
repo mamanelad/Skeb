@@ -1,22 +1,23 @@
-using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyAlone : MonoBehaviour
 {
     #region Private Fields
 
-    private FireParticleEffect _fireParticleEffect;
+    private PlayerController _playerController;
+    private FireParticleEffect _iceParticleEffect;
     private EnemyAI _enemyAI;
     private GameObject _energyBallFather;
     private Enemy _enemyTogetherFather;
     private GameObject _player;
     private Animator _animator;
+    private float _timerBetweenAttacks;
+    private float _afterDashWaitTimer;
+    private bool _canAttack = true;
+    private bool _canAttackAfterCollisionIce;
     private bool _isAttacking;
     private bool _isDead;
-    private float _timerBetweenAttacks;
-    private bool _canAttack = true;
-    private PlayerController _playerController;
-
     
     #endregion
 
@@ -33,31 +34,26 @@ public class EnemyAlone : MonoBehaviour
     [Header("Attack Settings")] [SerializeField]
     private GameObject energyBall;
 
+    [FormerlySerializedAs("AfterDashWaitTime")] [SerializeField] private float afterDashWaitTime = .3f;
     [SerializeField] private float attackRangeCheck = 0.5f;
     [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
     [SerializeField] private float timeBetweenAttacks = 0.5f;
 
-    [Header("Screen Shake Settings")] [SerializeField]
-    private float screenShakeIntensity = 5f;
-
-    [SerializeField] private float screenShakeTime = .1f;
-
     #endregion
 
     private void Start()
     {
+        _canAttackAfterCollisionIce = true;
         _playerController = FindObjectOfType<PlayerController>();
 
         if (FindObjectOfType<EnemySpawnerDots>())
-        {
             _energyBallFather = FindObjectOfType<EnemySpawnerDots>().gameObject;
-        }
 
-        _fireParticleEffect = GetComponentInChildren<FireParticleEffect>();
+        _iceParticleEffect = GetComponentInChildren<FireParticleEffect>();
         _enemyAI = GetComponentInParent<EnemyAI>();
         _enemyTogetherFather = GetComponentInParent<Enemy>();
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = FindObjectOfType<PlayerController>().gameObject;
         _animator = GetComponent<Animator>();
     }
 
@@ -65,6 +61,13 @@ public class EnemyAlone : MonoBehaviour
     {
         if (_playerController.IsPlayerDead) return;
         //See if the player close enough for attack.
+        if (!_canAttackAfterCollisionIce)
+        {
+            _afterDashWaitTimer -= Time.deltaTime;
+            if (_afterDashWaitTimer < 0)
+                _canAttackAfterCollisionIce = true;
+        }
+
         if (_canAttack)
             DetectPlayer();
 
@@ -76,23 +79,24 @@ public class EnemyAlone : MonoBehaviour
         }
 
         //Checks the enemy health from the enemy script.
-
         if (_enemyTogetherFather.GetHealth() <= 0 && !_isDead)
         {
             _isDead = true;
             _animator.SetTrigger(Dead);
             _animator.SetBool(Die, true);
-
-            // MovementLock();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player") && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
-            _fireParticleEffect.isOn = true;
+        {
+            _iceParticleEffect.isOn = true;
+            _canAttackAfterCollisionIce = false;
+            _afterDashWaitTimer = afterDashWaitTime;
+        }
     }
-    
+
     /**
      * See if the player is near enough for attack.
      */
@@ -112,7 +116,38 @@ public class EnemyAlone : MonoBehaviour
 
     private void AttackPlayer()
     {
+        if (!_canAttackAfterCollisionIce) return;
+        SoundEnemy("Attack");
         _animator.SetTrigger(Attack);
+    }
+
+    private void SoundEnemy(string mode)
+    {
+        switch (_enemyTogetherFather.enemyKind)
+        {
+            case Enemy.EnemyKind.Big:
+                switch (GameManager.Shared.CurrentState)
+                {
+                    case GameManager.WorldState.Fire:
+                        switch (mode)
+                        {
+                            case "Attack":
+                                GameManager.Shared._audioManager.PlaySound("BigMonsterAttackFire");
+                                break;
+                        }
+                        break;
+                    case GameManager.WorldState.Ice:
+                        switch (mode)
+                        {
+                            case "Attack":
+                                GameManager.Shared._audioManager.PlaySound("BigMonsterAttackIce");
+                                break;
+                        }
+                    break;
+                        
+                }
+                break;
+        }
     }
 
     /**
@@ -126,17 +161,13 @@ public class EnemyAlone : MonoBehaviour
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeHit)
         {
-            if (FindObjectOfType<CinemaMachineShake>())
-            {
-                CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
-            }
 
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
-
         _isAttacking = false;
     }
 
+    
     /**
      * For the mage.
      * Creating the energy ball.
@@ -144,12 +175,9 @@ public class EnemyAlone : MonoBehaviour
     public void DamagePlayerEnergyBall()
     {
         var ball = Instantiate(energyBall, transform.position, Quaternion.identity);
-        ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
+        ball.GetComponent<EnergyBall>().attackDamage = attackDamage;
         if (_energyBallFather)
-        {
             ball.transform.SetParent(_energyBallFather.transform);
-        }
-
         _isAttacking = false;
     }
 
