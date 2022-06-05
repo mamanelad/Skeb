@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: c1919cf50286e6b4ea3f9ed84769d11b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2401744002463692077
+    second: play butto n-Sheet (3)_0
+  - first:
+      213: -895075890574756014
+    second: play butto n-Sheet (3)_1
+  - first:
+      213: -7825161098829873509
+    second: play butto n-Sheet (3)_2
+  - first:
+      213: -4489012239031787552
+    second: play butto n-Sheet (3)_3
+  - first:
+      213: 9033129599891916731
+    second: play butto n-Sheet (3)_4
+  - first:
+      213: -4201695112646550146
+    second: play butto n-Sheet (3)_5
+  - first:
+      213: -7167988105568700004
+    second: play butto n-Sheet (3)_6
+  - first:
+      213: -5227080246437197287
+    second: play butto n-Sheet (3)_7
+  - first:
+      213: -2294845643292741530
+    second: play butto n-Sheet (3)_8
+  - first:
+      213: -5495636116931141928
+    second: play butto n-Sheet (3)_9
+  - first:
+      213: 3818209947737683845
+    second: play butto n-Sheet (3)_10
+  - first:
+      213: 1907934750496389387
+    second: play butto n-Sheet (3)_11
+  - first:
+      213: 1734286805701463584
+    second: play butto n-Sheet (3)_12
+  - first:
+      213: -4626744096775469124
+    second: play butto n-Sheet (3)_13
+  - first:
+      213: -8989498019617150403
+    second: play butto n-Sheet (3)_14
+  - first:
+      213: 1195413864931854077
+    second: play butto n-Sheet (3)_15
+  - first:
+      213: 1658316243628548142
+    second: play butto n-Sheet (3)_16
+  - first:
+      213: 2996901388620145747
+    second: play butto n-Sheet (3)_17
+  - first:
+      213: -437167098756266221
+    second: play butto n-Sheet (3)_18
+  - first:
+      213: -473491644687057332
+    second: play butto n-Sheet (3)_19
+  - first:
+      213: 438625090648603817
+    second: play butto n-Sheet (3)_20
+  - first:
+      213: -2108106450454996316
+    second: play butto n-Sheet (3)_21
+  - first:
+      213: 4177743081755752534
+    second: play butto n-Sheet (3)_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_0
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2974
+        width: 54
+        height: 52
+      alignment: 9
+      pivot: {x: 0.4989641, y: 0.1952186}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25f54cf175b45120800000000000000
+      internalID: 2401744002463692077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_1
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 2974
+        width: 54
+        height: 51
+      alignment: 9
+      pivot: {x: 0.49078596, y: 0.19897461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2577647483d0493f0800000000000000
+      internalID: -895075890574756014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_2
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 2974
+        width: 54
+        height: 52
+      alignment: 9
+      pivot: {x: 0.4983272, y: 0.19859901}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e3a0aa071776390800000000000000
+      internalID: -7825161098829873509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_3
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 2974
+        width: 54
+        height: 53
+      alignment: 9
+      pivot: {x: 0.49799263, y: 0.20114884}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef11240723d3b1c0800000000000000
+      internalID: -4489012239031787552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_4
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 2974
+        width: 54
+        height: 53
+      alignment: 9
+      pivot: {x: 0.49915004, y: 0.1940227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7cf93f28f1c5d70800000000000000
+      internalID: 9033129599891916731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2283
+        width: 54
+        height: 53
+      alignment: 9
+      pivot: {x: 0.49537092, y: 0.19510981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d153c7e8490b5c0800000000000000
+      internalID: -4201695112646550146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_6
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 2283
+        width: 54
+        height: 53
+      alignment: 9
+      pivot: {x: 0.4945204, y: 0.19369565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c993a5dabc0368c90800000000000000
+      internalID: -7167988105568700004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_7
+      rect:
+        serializedVersion: 2
+        x: 2629
+        y: 2283
+        width: 80
+        height: 105
+      alignment: 9
+      pivot: {x: 0.46704102, y: 0.1019229}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a46aac53ea577b0800000000000000
+      internalID: -5227080246437197287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_8
+      rect:
+        serializedVersion: 2
+        x: 3627
+        y: 2283
+        width: 311
+        height: 502
+      alignment: 9
+      pivot: {x: 0.38105485, y: 0.022722099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660fe29cb021720e0800000000000000
+      internalID: -2294845643292741530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_9
+      rect:
+        serializedVersion: 2
+        x: 4503
+        y: 2283
+        width: 786
+        height: 481
+      alignment: 9
+      pivot: {x: 0.40878025, y: 0.024514053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de138b91149bb3b0800000000000000
+      internalID: -5495636116931141928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_10
+      rect:
+        serializedVersion: 2
+        x: 4799
+        y: 1592
+        width: 54
+        height: 481
+      alignment: 9
+      pivot: {x: 0.44205728, y: 0.021456204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58774ccb7b10df430800000000000000
+      internalID: 3818209947737683845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_11
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 1592
+        width: 50
+        height: 481
+      alignment: 9
+      pivot: {x: 0.46478903, y: 0.020968115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09f5f10c885a7a10800000000000000
+      internalID: 1907934750496389387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_12
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 1592
+        width: 54
+        height: 481
+      alignment: 9
+      pivot: {x: 0.49260345, y: 0.02185287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e8b7049ac611810800000000000000
+      internalID: 1734286805701463584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_13
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1591
+        width: 74
+        height: 482
+      alignment: 9
+      pivot: {x: 0.315466, y: 0.028656133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7001de1c08acfb0800000000000000
+      internalID: -4626744096775469124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_14
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1592
+        width: 926
+        height: 481
+      alignment: 9
+      pivot: {x: 0.41138753, y: 0.023926796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a64a7fd23ee3380800000000000000
+      internalID: -8989498019617150403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_15
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 901
+        width: 50
+        height: 481
+      alignment: 9
+      pivot: {x: 0.5, y: 0.022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df607da9396f69010800000000000000
+      internalID: 1195413864931854077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_16
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 901
+        width: 54
+        height: 481
+      alignment: 9
+      pivot: {x: 0.50315124, y: 0.021135928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e206db266d5830710800000000000000
+      internalID: 1658316243628548142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_17
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 903
+        width: 54
+        height: 481
+      alignment: 9
+      pivot: {x: 0.49641022, y: 0.021358244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35424974fe1279920800000000000000
+      internalID: 2996901388620145747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_18
+      rect:
+        serializedVersion: 2
+        x: 3720
+        y: 901
+        width: 50
+        height: 481
+      alignment: 9
+      pivot: {x: 0.49305665, y: 0.02142093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317052307dedee9f0800000000000000
+      internalID: -437167098756266221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_19
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 901
+        width: 54
+        height: 481
+      alignment: 9
+      pivot: {x: 0.48500797, y: 0.021647178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4eff4a9bd1dd69f0800000000000000
+      internalID: -473491644687057332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_20
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 211
+        width: 64
+        height: 453
+      alignment: 9
+      pivot: {x: 0.49266624, y: 0.00068388344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acfead223f461600800000000000000
+      internalID: 438625090648603817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_21
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 183
+        width: 239
+        height: 508
+      alignment: 9
+      pivot: {x: 0.4999995, y: 0.019902326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa9bef3a508eb2e0800000000000000
+      internalID: -2108106450454996316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play butto n-Sheet (3)_22
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 36
+        width: 617
+        height: 615
+      alignment: 9
+      pivot: {x: 0.50189775, y: 0.018157749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658b5eeb2335af930800000000000000
+      internalID: 4177743081755752534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
