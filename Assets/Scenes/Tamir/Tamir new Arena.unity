@@ -5223,13 +5223,13 @@ MonoBehaviour:
     volume: 0.01
     audioSource: {fileID: 0}
     soundKindPlayer: 0
-    soundDelay: 0.1
+    soundDelay: 0.35
   - loop: 0
     audioClip: {fileID: 8300000, guid: 52299d9a15e3a3b4ba76c62bb04ec503, type: 3}
     volume: 0.01
     audioSource: {fileID: 0}
     soundKindPlayer: 1
-    soundDelay: 0.1
+    soundDelay: 0.25
   - loop: 0
     audioClip: {fileID: 8300000, guid: 0fa704a90fc48e347adc3a76c14bb528, type: 3}
     volume: 0.1
@@ -6547,7 +6547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_TagString
@@ -9200,7 +9200,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084947979}
-  m_LocalRotation: {x: 1.33255e-40, y: 1.33256e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.33443e-40, y: 1.33444e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
