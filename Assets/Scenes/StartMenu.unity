@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGroupCamera: {fileID: 922561351}
+  _cinemachineTargetGroup: {fileID: 0}
   timeInZoom: 5
 --- !u!114 &36846868
 MonoBehaviour:
@@ -340,7 +341,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36846865}
-  m_LocalRotation: {x: 3.9805e-41, y: 3.9807e-41, z: 0, w: 1}
+  m_LocalRotation: {x: 3.9903e-41, y: 3.9905e-41, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -704,6 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflection: {fileID: 1329003179}
+  playerShadow: {fileID: 0}
 --- !u!212 &437052190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1784,6 +1786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reflectionTag: Reflection
+  iceArenaFlickerPercentage: 0
 --- !u!95 &1213607423
 Animator:
   serializedVersion: 3
@@ -1908,7 +1911,7 @@ SpriteRenderer:
   m_Size: {x: 2.75, y: 1.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1301194262
@@ -2305,15 +2308,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9137474c3ea054bb1e657c63a5cc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnDamage: 0
+  attackRange: 1
+  swordRangedAttack: 0
   maxHealthScaler: 1
   monsterKillRegeneration: 0
   staticRegeneration: 0
   iceDash: 1
   secondWind: 0
   cantFall: 0
-  burnDamage: 0
-  attackRange: 1
-  swordRangedAttack: 0
 --- !u!114 &1329003184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2414,6 +2417,9 @@ MonoBehaviour:
   iceSpike: {fileID: 5426484186192414987, guid: 8a75d46eeabe3a64abf12319aac5e0bd, type: 3}
   spikeSeparation: 0.15
   spikeScaler: 2
+  dashCollider2D: {fileID: 0}
+  isDashColliderOn: 0
+  dashColliderTime: 0
   _playerState: 0
   isStunned: 0
   screenShakeIntensity: 1
@@ -2437,6 +2443,7 @@ MonoBehaviour:
   monsterDeathAddition: 5
   regenAddition: 2
   regenPerSecond: 1
+  angle: {fileID: 0}
   secondWindHealthBuff: 50
 --- !u!50 &1329003189
 Rigidbody2D:
@@ -3096,6 +3103,8 @@ MonoBehaviour:
   lifeBarDelay: {fileID: 1721468374}
   worldStageStatus: {fileID: 953086846}
   indicator: {fileID: 1657013227}
+  frames: []
+  heartIndicator: {fileID: 0}
 --- !u!114 &1562005075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,6 +3387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d179daf71aedb4e953b4b124df388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  store: {fileID: 0}
   stuckStage: 0
   timeInStage: 5
   inTutorial: 1

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8178377746727728621}
   - component: {fileID: 7462131764911734646}
   m_Layer: 0
-  m_Name: FireParticleNew
+  m_Name: FireParticlePurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
