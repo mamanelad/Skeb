@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].monsterAmount
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[1].bigPercentage
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 6891573521876719331}
   store: {fileID: 1564039669}
   stuckStage: 0
-  timeInStage: 5
+  timeInStage: 8
   inTutorial: 0
   CurrentState: 0
 --- !u!4 &525939041
@@ -3857,7 +3857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063344347}
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.57, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children:
   - {fileID: 838843304}
@@ -3889,19 +3889,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.017716482, y: 0.14622557}
-      - {x: -0.2760769, y: -0.18729144}
-      - {x: -0.5156351, y: -0.17193007}
+    - - {x: 0.290887, y: 0.14622562}
+      - {x: -0.39081407, y: 0.1450507}
+      - {x: -0.59618586, y: -0.19878031}
       - {x: -0.784097, y: -0.32385662}
       - {x: -1.1812176, y: -0.58401096}
       - {x: -0.95776534, y: -0.795313}
       - {x: -0.42089704, y: -1.10477}
       - {x: 0.14161952, y: -1.0827819}
-      - {x: 0.7378282, y: -0.88277346}
-      - {x: 1.1855681, y: -0.495798}
-      - {x: 1.0357618, y: -0.27024654}
-      - {x: 0.56210226, y: -0.21905445}
-      - {x: 0.3058554, y: -0.17736524}
+      - {x: 0.7378282, y: -0.88660926}
+      - {x: 1.2085826, y: -0.51881254}
+      - {x: 1.0971338, y: -0.18202434}
+      - {x: 0.7385467, y: -0.19603997}
+      - {x: 0.3864061, y: -0.1888725}
 --- !u!1 &1085748523
 GameObject:
   m_ObjectHideFlags: 0
@@ -6280,7 +6280,7 @@ MonoBehaviour:
   infiniteUpgrades: 0
   canUpgrade: 0
   displayText: {fileID: 1722705063}
-  shopKeeper: {fileID: 0}
+  shopKeeper: {fileID: 2127037261}
 --- !u!222 &1564039671
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8070,7 +8070,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 1.30963e-40, y: 1.30964e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.32023e-40, y: 1.32025e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
