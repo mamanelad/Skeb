@@ -120,4 +120,5 @@ public class UIManager : MonoBehaviour
         frame = frame < amountOfFrames ? frame : amountOfFrames - 1;
         heartIndicator.GetComponent<Image>().sprite = frames[frame];
     }
+    
 }

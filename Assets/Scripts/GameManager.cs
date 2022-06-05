@@ -114,6 +114,9 @@ public class GameManager : MonoBehaviour
 
     private void UpdateStageTimer()
     {
+        if (CurrentGameState != GameState.Arena)
+            return;
+        
         if (CurrentState == WorldState.Fire)
         {
             _stageTimer += Time.deltaTime;
@@ -145,6 +148,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchState()
     {
+        PlaySound(GeneralSound.SoundKindsGeneral.Bell);
         var fireAffects = FindObjectsOfType<FireParticleEffect>();
         if (fireAffects == null)
             return;
@@ -161,6 +165,7 @@ public class GameManager : MonoBehaviour
         if (CurrentGameState == GameState.Pause)
             return;
 
+        PauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         Time.timeScale = 0;
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Pause;
@@ -174,6 +179,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenStore()
     {
+        PauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         CurrentGameState = GameState.Store;
         store.SetActive(true);
         store.GetComponent<StoreManager>().EnableUpgrade();
@@ -181,8 +187,19 @@ public class GameManager : MonoBehaviour
 
     public void CloseStore()
     {
+        PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
         CurrentGameState = GameState.Arena;
         store.SetActive(false);
         FindObjectOfType<EnemySpawnerDots>().StartBlockSpawn(true);
+    }
+    
+    private void PlaySound(GeneralSound.SoundKindsGeneral sound)
+    {
+        Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
+    }
+    
+    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
+    {
+        Shared.AudioManagerGeneral.StopSound(sound);
     }
 }

@@ -122,6 +122,7 @@ public class PauseScreenScript : MonoBehaviour
     private void ClosePauseMenu(InputAction.CallbackContext context)
     {
         PlaySound(GeneralSound.SoundKindsGeneral.Click);
+        PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
         Time.timeScale = 1;
         GameManager.Shared.ResumeState();
         gameObject.SetActive(false);
