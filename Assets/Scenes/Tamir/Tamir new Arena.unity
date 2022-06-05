@@ -6258,7 +6258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1564039670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6280,6 +6280,7 @@ MonoBehaviour:
   infiniteUpgrades: 0
   canUpgrade: 0
   displayText: {fileID: 1722705063}
+  shopKeeper: {fileID: 0}
 --- !u!222 &1564039671
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8069,7 +8070,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 1.30923e-40, y: 1.30925e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.30963e-40, y: 1.30964e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
