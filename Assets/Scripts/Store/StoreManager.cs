@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class StoreManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField][Range(1,3)] private int chestSelected;
     [SerializeField][Range(0,3)] private int upgradeSelected;
     [SerializeField] private bool infiniteUpgrades;
+    [SerializeField] private bool muteShopkeeper;
     private GameControls _storeControls;
     [SerializeField] private bool canUpgrade;
     [SerializeField] private TextMeshProUGUI displayText;
@@ -47,7 +49,13 @@ public class StoreManager : MonoBehaviour
     }
 
     #endregion
-    
+
+    private void Start()
+    {
+        PlaySound(StoreSounds.SoundKindsStore.ChestOpen);
+        PlaySound(StoreSounds.SoundKindsStore.Background);
+    }
+
     void Update()
     {
         SelectChest();
@@ -95,34 +103,48 @@ public class StoreManager : MonoBehaviour
     
     private void ArrowUp(InputAction.CallbackContext context)
     {
-        if (CheckIfPaused()) return;
+        if (CheckIfPaused() || upgradeSelected == 3) return;
         upgradeSelected += 1;
-        upgradeSelected = math.min(upgradeSelected, 3);
+        PlaySound(StoreSounds.SoundKindsStore.Click);
         shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
+        AfifitTalk();
     }
     
     private void ArrowDown(InputAction.CallbackContext context)
     {
-        if (CheckIfPaused()) return;
+        PlaySound(StoreSounds.SoundKindsStore.Click);
+        if (CheckIfPaused() || upgradeSelected == 0) return;
         upgradeSelected -= 1;
-        upgradeSelected = math.max(upgradeSelected, 0);
+        PlaySound(StoreSounds.SoundKindsStore.Click);
         shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
+        AfifitTalk();
     }
     
     private void ArrowRight(InputAction.CallbackContext context)
     {
+        PlaySound(StoreSounds.SoundKindsStore.Click);
         if (CheckIfPaused()) return;
-        chestSelected += 1;
-        chestSelected = math.min(chestSelected, 3);
-        upgradeSelected = 0;
+        if (chestSelected < 3)
+        {
+            PlaySound(StoreSounds.SoundKindsStore.ChestClose);
+            PlaySound(StoreSounds.SoundKindsStore.ChestOpen);
+            chestSelected += 1;
+            upgradeSelected = 0;
+        }
     }
     
     private void ArrowLeft(InputAction.CallbackContext context)
     {
+        PlaySound(StoreSounds.SoundKindsStore.Click);
         if (CheckIfPaused()) return;
-        chestSelected -= 1;
-        chestSelected = math.max(chestSelected, 1);
-        upgradeSelected = 0;
+        if (chestSelected > 1)
+        {
+            PlaySound(StoreSounds.SoundKindsStore.ChestClose);
+            PlaySound(StoreSounds.SoundKindsStore.ChestOpen);
+            chestSelected -= 1;
+            upgradeSelected = 0;
+        }
+
     }
     
     private void Select(InputAction.CallbackContext context)
@@ -132,6 +154,7 @@ public class StoreManager : MonoBehaviour
         {
             if (UpgradeSelectedChest())
             {
+                PlaySound(StoreSounds.SoundKindsStore.GetUpgrade);
                 FindObjectOfType<PlayerStats>().ActivateUpgrade(chestSelected);
                 canUpgrade = false;
             }
@@ -142,13 +165,45 @@ public class StoreManager : MonoBehaviour
     {
         if (CheckIfPaused()) return;
         if (canUpgrade)
+        {
+            shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
+            PlaySound(StoreSounds.SoundKindsStore.ForgotToUpgrade);
             return;
+        }
+            //PlaySound(StoreSounds.SoundKindsStore.CloseStore);
+        PlaySound(StoreSounds.SoundKindsStore.ChestClose);
         GameManager.Shared.CloseStore();
     }
 
     private bool CheckIfPaused()
     {
         return GameManager.Shared.CurrentGameState == GameManager.GameState.Pause;
+    }
+    
+    private void PlaySound(StoreSounds.SoundKindsStore sound)
+    {
+        GameManager.Shared.StoreAudioManager.PlaySound(sound, transform.position);
+    }
+
+    private void AfifitTalk()
+    {
+        if (muteShopkeeper)
+            return;
+        
+        var audio = Random.Range(1, 4);
+        switch (audio)
+        {
+            case 1:
+                PlaySound(StoreSounds.SoundKindsStore.Afifit1);
+                break;
+            case 2:
+                PlaySound(StoreSounds.SoundKindsStore.Afifit2);
+                break;
+            case 3:
+                PlaySound(StoreSounds.SoundKindsStore.Afifit3);
+                break;
+            
+        }
     }
 
 }

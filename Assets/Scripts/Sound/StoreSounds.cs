@@ -6,7 +6,16 @@ public class StoreSounds
 {
     public enum SoundKindsStore
     {
-        
+        ChestOpen,
+        ChestClose,
+        CloseStore,
+        GetUpgrade,
+        Click,
+        Background,
+        Afifit1,
+        Afifit2,
+        Afifit3,
+        ForgotToUpgrade,
     }
    
    
