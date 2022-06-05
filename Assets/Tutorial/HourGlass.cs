@@ -157,6 +157,7 @@ public class HourGlass : MonoBehaviour
                 break;
 
             case GlassState.HourGlassIdle:
+                GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.IceBergBreak);
                 _fireParticleEffect.isOn = false;
                 _animator.SetTrigger("bThree");
                 break;
@@ -264,6 +265,7 @@ public class HourGlass : MonoBehaviour
     {
         if (isAttacking)
         {
+            GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.IceBergHit);
             _shack = true;
             _shakeTimer = shakeTime;
             HitHourGlass();
