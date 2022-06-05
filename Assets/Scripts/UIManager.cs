@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject lifeBar;
     [SerializeField] private GameObject lifeBarDelay;
 
+    
     [Header("Stage State Indicator")] 
     [SerializeField] private GameObject worldStageStatus;
     [SerializeField] private GameObject indicator;
