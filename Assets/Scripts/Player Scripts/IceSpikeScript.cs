@@ -41,17 +41,15 @@ public class IceSpikeScript : MonoBehaviour
             var monsterController = monster.GetComponent<Enemy>();
             if (monsterController == null)
                 return;
-            if (monsterController._enemyKind == Enemy.EnemyKind.Small) // spikes can't hit flying ice skull
+            if (monsterController.enemyKind == Enemy.EnemyKind.Small) // spikes can't hit flying ice skull
                 return;
             
             // play spike damage sound
-            if (monsterController != null)
-            {
+            if (monsterController != null && monster != null)
                 monsterController.DamageEnemy(spikeDamage);
-            }
-            
-            
-            if (destroyOnCollision)
+
+
+                if (destroyOnCollision)
             {
                 // play distruction sound
                 Destroy(gameObject);

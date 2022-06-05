@@ -2,18 +2,29 @@ using System.Collections;
 using UnityEngine;
 using Cinemachine;
 
-
 public class ArenaScript : MonoBehaviour
 {
-    [TagField][SerializeField] private string reflectionTag;
-    private Animator _animator;
-    [SerializeField] [Range(0,100)] private int iceArenaFlickerPercentage;
-    private float flickerUpdateTime = 0.2f;
-    private bool iceArenaFlicker;
-    
-    
-    private static readonly int WorldState = Animator.StringToHash("World State");
+    #region Private Fields
 
+    private float _flickerUpdateTime = 0.2f;
+    private bool _iceArenaFlicker;
+    private Animator _animator;
+    [TagField][SerializeField] private string reflectionTag;
+    
+    #endregion
+
+    #region Inspector Control
+
+    [SerializeField] [Range(0,100)] private int iceArenaFlickerPercentage;
+    
+    #endregion
+
+    #region Animator Labels
+
+    private static readonly int WorldState = Animator.StringToHash("World State");
+    private static readonly int Property = Animator.StringToHash("Special Effect");
+
+    #endregion
 
     private void Start()
     {
@@ -24,37 +35,37 @@ public class ArenaScript : MonoBehaviour
     {
         _animator.SetInteger(WorldState, (int) GameManager.Shared.CurrentState);
 
-        flickerUpdateTime -= Time.deltaTime;
+        _flickerUpdateTime -= Time.deltaTime;
 
-        if (flickerUpdateTime < 0)
+        if (_flickerUpdateTime < 0)
         {
             CheckForFlicker();
-            flickerUpdateTime = 0.2f;
+            _flickerUpdateTime = 0.2f;
         }
 
         if (GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
-            _animator.SetBool("Special Effect", false);
-            iceArenaFlicker = false;
+            _animator.SetBool(Property, false);
+            _iceArenaFlicker = false;
         }
     }
 
     private void CheckForFlicker()
     {
-        if (!iceArenaFlicker && Random.Range(0, 100) <= iceArenaFlickerPercentage
+        if (!_iceArenaFlicker && Random.Range(0, 100) <= iceArenaFlickerPercentage
                              && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
         {
-            iceArenaFlicker = true;
+            _iceArenaFlicker = true;
             StartCoroutine(IceArenaFlicker());
         }
     }
 
     private IEnumerator IceArenaFlicker()
     {
-        _animator.SetBool("Special Effect", true);
+        _animator.SetBool(Property, true);
         yield return new WaitForSeconds(0.5f);
-        _animator.SetBool("Special Effect", false);
-        iceArenaFlicker = false;
+        _animator.SetBool(Property, false);
+        _iceArenaFlicker = false;
 
     }
     

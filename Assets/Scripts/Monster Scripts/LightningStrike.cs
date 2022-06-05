@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightningStrike : MonoBehaviour
@@ -59,7 +56,7 @@ public class LightningStrike : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (lockMovement) return;
 

@@ -104,11 +104,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
-    [Header("Screen Shake Settings")] [SerializeField]
-    private float screenShakeIntensity = 1f;
-
-    [SerializeField] private float screenShakeTime = .1f;
+    
 
     private void Awake()
     {
@@ -521,10 +517,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingLayerName = "Player";
         reflection.SetActive(true);
         PlayerGotHit(Vector3.zero);
-        if (FindObjectOfType<CinemaMachineShake>())
-        {
-            CinemaMachineShake.Instance.ShakeCamera(0, 0.5f);
-        }
+        
     }
 
     public void PlayerGotHit(Vector3 pos)

@@ -207,8 +207,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[0].bigPercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[0].monsterAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[1].bigPercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[1].monsterAmount
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].bigPercentage
@@ -227,6 +247,22 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[0].smallPercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[0].timeToSpawnStep
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[1].smallPercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[1].timeToSpawnStep
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].smallPercentage
       value: 0.3
       objectReference: {fileID: 0}
@@ -241,6 +277,14 @@ PrefabInstance:
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[1].timeToSpawnStep
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[0].middlePercentage
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
+      propertyPath: waves.Array.data[1].middlePercentage
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].middlePercentage
@@ -1107,6 +1151,7 @@ MonoBehaviour:
   stuckStage: 0
   timeInStage: 5
   inTutorial: 0
+  _audioManager: {fileID: 0}
   CurrentState: 0
 --- !u!4 &525939041
 Transform:
@@ -3249,13 +3294,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToBurn: 2.5
-  ParticlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
-  Rate: 60
-  isOn: 0
-  fireDamage: 5
-  damageEnemyStep: 0.2
   damageEnemy: 0
+  particlePrefab: {fileID: 4103617124452457783, guid: 12e4b41d5f96d7e498ccd892c18af8e8, type: 3}
+  timeToBurn: 2.5
+  rate: 60
+  isOn: 0
+  damageEnemyStep: 0.2
+  fireDamage: 5
 --- !u!60 &1489815047
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4117,8 +4162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0edaf74f8c9ca344bfa167c0adabc49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineTargetGroup: {fileID: 891968179}
   targetGroupCamera: {fileID: 1526001601}
-  _cinemachineTargetGroup: {fileID: 891968179}
   timeInZoom: 5
 --- !u!114 &2012748213
 MonoBehaviour:
@@ -4219,7 +4264,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012748210}
-  m_LocalRotation: {x: 1.03747e-40, y: 1.03748e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.0394e-40, y: 1.03941e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

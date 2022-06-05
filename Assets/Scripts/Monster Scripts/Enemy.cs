@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
@@ -38,19 +38,20 @@ public class Enemy : MonoBehaviour
     private GameObject fireMonster;
 
     [SerializeField] private GameObject iceMonster;
-    [SerializeField] public EnemyKind _enemyKind;
+    [FormerlySerializedAs("_enemyKind")] [SerializeField] public EnemyKind enemyKind;
 
     [Header("Health Settings")] [SerializeField]
     private float currHealth;
 
     [SerializeField] private float startHealth = 100;
-    [SerializeField] private GameObject _bloodEffect;
+    [FormerlySerializedAs("_bloodEffect")] [SerializeField] private GameObject bloodEffect;
     [SerializeField] private Transform bloodPosition;
     #endregion
 
     #region Animator Labels
 
     private static readonly int Damage = Animator.StringToHash("Demage");
+    private static readonly int Fall = Animator.StringToHash("Fall");
 
     #endregion
 
@@ -109,10 +110,6 @@ public class Enemy : MonoBehaviour
      */
     public void DamageEnemy(int damage)
     {
-        // _enemyAI.lockMovement = true;
-
-        //Demage enemy setting for the option that the function is not called from the burning effect.
-
         if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
             var fireAffect = GetComponentInChildren<FireParticleEffect>();
@@ -124,9 +121,8 @@ public class Enemy : MonoBehaviour
         }
 
         else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
-        {
             GoBack();
-        }
+        
 
 
         currHealth -= damage;
@@ -138,7 +134,7 @@ public class Enemy : MonoBehaviour
                 var posB = transform.position + Vector3.up;
                 if (bloodPosition != null)
                     posB = bloodPosition.position;
-                var b = Instantiate(_bloodEffect, posB, Quaternion.identity, transform);
+                var b = Instantiate(bloodEffect, posB, Quaternion.identity, transform);
                 Destroy(b, 2f);
                 break;
 
@@ -147,10 +143,8 @@ public class Enemy : MonoBehaviour
                 break;
         }
         
-
         if (currHealth <= 0)
             KillEnemy();
-        
     }
 
     private void GoBack()
@@ -170,20 +164,10 @@ public class Enemy : MonoBehaviour
     public void KillEnemy()
     {
         GetComponent<EnemyAI>().enabled = false;
-
         if (!_isDead)
         {
-            // var stMenu = FindObjectOfType<StartMenu>();
-            //
-            // if (stMenu != null )
-            // {
-            //     stMenu.DecreaseMonster();
-            // }
-
             if (_enemySpawnerDots != null)
-            {
                 _enemySpawnerDots.DecreaseMonster();
-            }
 
             _isDead = true;
         }
@@ -233,9 +217,9 @@ public class Enemy : MonoBehaviour
     private void SetMonsterFall()
     {
         _rb.velocity = Vector2.zero;
-        foreach (var collider in GetComponentsInChildren<Collider2D>())
-            collider.enabled = false;
-        GetComponentInChildren<Animator>().SetTrigger("Fall");
+        foreach (var coll in GetComponentsInChildren<Collider2D>())
+            coll.enabled = false;
+        GetComponentInChildren<Animator>().SetTrigger(Fall);
         _enemyAI.enabled = false;
         StartCoroutine(FallDelay());
     }

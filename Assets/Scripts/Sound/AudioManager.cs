@@ -53,33 +53,33 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string soundName)
     {
-        if (_playerHealth.health <= 0 && soundName != "Lose") return;
-        
-        Sound s;
-        if (soundName == "Sword")
-        {
-            s = swordSounds[swordIndexSound];
-            swordIndexSound = (swordIndexSound + 1) % swordSounds.Length;
-        }
-        
-        else
-            s = Array.Find(sounds, sound => sound.name == soundName);
-
-        if (s == null)
-            return;
-
-        
-        bool canPlay = true;
-        switch (s.name)
-        {
-            case "lowHp":
-                if (!(_playerHealth.health <= healthAmountForHealthAlertSound))
-                    canPlay = false;
-                break;
-        }
-
-
-        if (canPlay)
-            s.audioSource.Play();
+        // if (_playerHealth.health <= 0 && soundName != "Lose") return;
+        //
+        // Sound s;
+        // if (soundName == "Sword")
+        // {
+        //     s = swordSounds[swordIndexSound];
+        //     swordIndexSound = (swordIndexSound + 1) % swordSounds.Length;
+        // }
+        //
+        // else
+        //     s = Array.Find(sounds, sound => sound.name == soundName);
+        //
+        // if (s == null)
+        //     return;
+        //
+        //
+        // bool canPlay = true;
+        // switch (s.name)
+        // {
+        //     case "lowHp":
+        //         if (!(_playerHealth.health <= healthAmountForHealthAlertSound))
+        //             canPlay = false;
+        //         break;
+        // }
+        //
+        //
+        // if (canPlay)
+        //     s.audioSource.Play();
     }
 }

@@ -1,14 +1,13 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemySpawnerDots : MonoBehaviour
 {
     #region Private Fields
 
-    private bool gameStarted;
-
-    private bool spawnIsOn;
+    private bool _gameStarted;
+    private bool _spawnIsOn;
 
     private PlayerController _playerController;
 
@@ -17,25 +16,23 @@ public class EnemySpawnerDots : MonoBehaviour
     private int _monsterIndex; //Which monster to initialize
     private float _timer;
     private int _monsterCounter; //Count how many monsters are alive.
-    private int currentWaveMonsterCounter;
-
-
-    private Enemy mostWantedEnemy;
+    private int _currentWaveMonsterCounter;
+    
+    private Enemy _mostWantedEnemy;
     private int _bigMonsterMaxAmount;
     private int _midMonsterMaxAmount;
     private int _smallMonsterMaxAmount;
     private int _bigMonsterCounter;
     private int _midMonsterCounter;
     private int _smallMonsterCounter;
-
-
-    private int maxTotalMonsterAmount = 9; //Max amount of monster that can be alive.
-    private float bigPercentage = .33f;
-    private float middlePercentage = .33f;
-    private float smallPercentage = .33f;
-    private int waveIndex = -1;
-    private float openShopTimer;
-    private bool openShop;
+    
+    private int _maxTotalMonsterAmount = 9; //Max amount of monster that can be alive.
+    private float _bigPercentage = .33f;
+    private float _middlePercentage = .33f;
+    private float _smallPercentage = .33f;
+    private int _waveIndex = -1;
+    private float _openShopTimer;
+    private bool _openShop;
 
     #endregion
 
@@ -56,8 +53,8 @@ public class EnemySpawnerDots : MonoBehaviour
     [SerializeField] private Enemy monstersMiddle;
     [SerializeField] private Enemy monstersSmall;
 
-    [Header("Monster Amount Setting")] [SerializeField]
-    private Wave[] _waves;
+    [FormerlySerializedAs("_waves")] [Header("Monster Amount Setting")] [SerializeField]
+    private Wave[] waves;
 
     [SerializeField] private int monsterKindsAmount = 3;
 
@@ -77,44 +74,43 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void CalculateMostWanted()
     {
-        if (bigPercentage >= middlePercentage && bigPercentage >= smallPercentage)
-            mostWantedEnemy = monstersBig;
+        if (_bigPercentage >= _middlePercentage && _bigPercentage >= _smallPercentage)
+            _mostWantedEnemy = monstersBig;
 
-        else if (middlePercentage >= bigPercentage && middlePercentage >= smallPercentage)
-            mostWantedEnemy = monstersMiddle;
+        else if (_middlePercentage >= _bigPercentage && _middlePercentage >= _smallPercentage)
+            _mostWantedEnemy = monstersMiddle;
 
-        else if (smallPercentage >= bigPercentage && smallPercentage >= middlePercentage)
-            mostWantedEnemy = monstersSmall;
+        else if (_smallPercentage >= _bigPercentage && _smallPercentage >= _middlePercentage)
+            _mostWantedEnemy = monstersSmall;
     }
 
-    void Update()
+    private void Update()
     {
         if (_playerController.IsPlayerDead) return;
         if (upgradeShop != null)
         {
-            if (openShop)
+            if (_openShop)
             {
-                openShopTimer -= Time.deltaTime;
-                if (openShopTimer <= 0)
+                _openShopTimer -= Time.deltaTime;
+                if (_openShopTimer <= 0)
                 {
                     upgradeShop.OpenShop();
-                    openShop = false;
+                    _openShop = false;
                 }
             }
         }
 
-        if (!spawnIsOn) return;
-
-
-        if (currentWaveMonsterCounter < maxTotalMonsterAmount - 1)
+        if (!_spawnIsOn) return;
+        
+        if (_currentWaveMonsterCounter < _maxTotalMonsterAmount - 1)
         {
             _timer -= Time.deltaTime;
             if (_timer <= 0)
                 SpawnLightNingBolt();
         }
-        else if (_monsterCounter <= 0 && currentWaveMonsterCounter >= maxTotalMonsterAmount)
+        else if (_monsterCounter <= 0 && _currentWaveMonsterCounter >= _maxTotalMonsterAmount)
         {
-            spawnIsOn = false;
+            _spawnIsOn = false;
             SetNewWave();
         }
     }
@@ -139,7 +135,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void CreatMonster()
     {
-        var monsterToSpawn = mostWantedEnemy;
+        var monsterToSpawn = _mostWantedEnemy;
 
         if (_monsterIndex == 0)
         {
@@ -149,9 +145,7 @@ public class EnemySpawnerDots : MonoBehaviour
                 _bigMonsterCounter += 1;
             }
             else
-            {
                 _monsterIndex += 1;
-            }
         }
 
 
@@ -190,52 +184,47 @@ public class EnemySpawnerDots : MonoBehaviour
         _monsterIndex = (_monsterIndex + 1) % monsterKindsAmount;
         _dotIndexMonster = (_dotIndexMonster + 1) % spawnerDots.Length;
 
-        currentWaveMonsterCounter += 1;
+        _currentWaveMonsterCounter += 1;
         _monsterCounter += 1;
     }
 
     public void SetNewWave()
     {
-        currentWaveMonsterCounter = 0;
-        waveIndex += 1;
-        //print("initiating wave number: " + waveIndex);
-        if (waveIndex >= _waves.Length)
-        {
-            //print("game won");
+        _currentWaveMonsterCounter = 0;
+        _waveIndex += 1;
+        if (_waveIndex >= waves.Length)
             return;
-        }
-
-        var curWave = _waves[waveIndex];
+        var curWave = waves[_waveIndex];
 
 
-        maxTotalMonsterAmount = curWave.monsterAmount;
-        bigPercentage = curWave.bigPercentage;
-        middlePercentage = curWave.middlePercentage;
-        smallPercentage = curWave.smallPercentage;
+        _maxTotalMonsterAmount = curWave.monsterAmount;
+        _bigPercentage = curWave.bigPercentage;
+        _middlePercentage = curWave.middlePercentage;
+        _smallPercentage = curWave.smallPercentage;
         maxTimeToSpawn = curWave.timeToSpawnStep;
 
-        GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
+        GameManager.Shared.roundMonsterTotalAmount = _maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
         
-        _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
-        _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
-        _smallMonsterMaxAmount = (int) Math.Floor(smallPercentage * maxTotalMonsterAmount);
+        _bigMonsterMaxAmount = (int) Math.Floor(_bigPercentage * _maxTotalMonsterAmount);
+        _midMonsterMaxAmount = (int) Math.Floor(_middlePercentage * _maxTotalMonsterAmount);
+        _smallMonsterMaxAmount = (int) Math.Floor(_smallPercentage * _maxTotalMonsterAmount);
         CalculateMostWanted();
-        if (!gameStarted)
+        if (!_gameStarted)
         {
             StartBlockSpawn(true);
-            gameStarted = true;
+            _gameStarted = true;
         }
         else
         {
-            openShop = true;
-            openShopTimer = timeToOpenTheShopDeley;
+            _openShop = true;
+            _openShopTimer = timeToOpenTheShopDeley;
         }
     }
 
     public void StartBlockSpawn(bool mood)
     {
-        spawnIsOn = mood;
+        _spawnIsOn = mood;
     }
 }
