@@ -144,7 +144,8 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (lockMovement || _playerController.IsPlayerDead) return;
+        if (lockMovement || _playerController.IsPlayerDead || _playerController._playerState
+            == PlayerController.PlayerState.Falling) return;
 
         if (_target == null)
         {

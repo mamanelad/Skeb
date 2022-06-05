@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D dashCollider2D;
     [SerializeField] private bool isDashColliderOn;
     [SerializeField] private float dashColliderTime = .2f;
+
     #endregion
 
     #region Private Fields
@@ -123,10 +124,10 @@ public class PlayerController : MonoBehaviour
 
     private void InitializeControls()
     {
-        _gameControls.GameControl.Attack.performed +=  AttackInput;
+        _gameControls.GameControl.Attack.performed += AttackInput;
     }
-    
-    
+
+
     private void OnEnable()
     {
         _gameControls.GameControl.Enable();
@@ -139,10 +140,10 @@ public class PlayerController : MonoBehaviour
 
     private void AttackInput(InputAction.CallbackContext context)
     {
-        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause 
+        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
-            
+
         if (context.performed)
         {
             switch (GameManager.Shared.CurrentState)
@@ -154,22 +155,22 @@ public class PlayerController : MonoBehaviour
                 case GameManager.WorldState.Ice:
                     IceStateAttack();
                     break;
-            } 
+            }
         }
-        
     }
 
-    
 
     private void IceStateAttack()
     {
         if (_playerState != PlayerState.Falling)
         {
+            if (_playerStats.iceDash)
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.DashIce);
             SoundsPlayer(PlayerSound.SoundKindsPlayer.Dash);
             dashCollider2D.enabled = true;
             isDashColliderOn = true;
             dashColliderTimer = dashColliderTime;
-            
+
             _dashStatus = true;
             var hourGlass = FindObjectOfType<HourGlass>();
             if (hourGlass != null)
@@ -186,19 +187,22 @@ public class PlayerController : MonoBehaviour
         switch (_attackStatus)
         {
             case AttackStatus.First:
-                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordOne);
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackOne);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordOne);
                 break;
             case AttackStatus.Second:
-                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordTwo);
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackTwo);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordTwo);
                 break;
             case AttackStatus.Special:
-                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordThree);
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackThree);
+                SoundsPlayer(_playerStats.swordRangedAttack
+                    ? PlayerSound.SoundKindsPlayer.RangedSwordAttack
+                    : PlayerSound.SoundKindsPlayer.SwordThree);
                 break;
         }
     }
+
     private void WalkingSoundPlayer()
     {
         switch (GameManager.Shared.CurrentState)
@@ -211,11 +215,10 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
+
     private void SoundsPlayer(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
         GameManager.Shared.PlayerAudioManager.PlaySound(soundKindPlayer, transform.position);
-
     }
 
     private void Start()
@@ -237,6 +240,7 @@ public class PlayerController : MonoBehaviour
                 dashCollider2D.enabled = false;
             }
         }
+
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;
@@ -319,7 +323,7 @@ public class PlayerController : MonoBehaviour
         // if (!Input.GetButtonDown("Attack") || IsAttacking) return;
         if (IsAttacking) return;
 
-        
+
         IsAttacking = true; // affects the animations
         var hourGlass = FindObjectOfType<HourGlass>();
         if (hourGlass != null)
@@ -342,14 +346,14 @@ public class PlayerController : MonoBehaviour
                         fireParticle.CloseAndOpenBurningAffect(true);
                 }
             }
+
         SwordsSoundPlayer();
         slashAnimator.SetInteger("AttackStage", (int) _attackStatus);
         slashAnimator.SetTrigger("Attack");
         _attackStatus++;
     }
 
-    
-    
+
     private int CalculateDamage()
     {
         return _attackStatus switch
@@ -371,7 +375,9 @@ public class PlayerController : MonoBehaviour
     private void SetMovementAndIdleDirection()
     {
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
-        if (move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (
+            move != Vector2
+                .zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");
@@ -405,15 +411,14 @@ public class PlayerController : MonoBehaviour
         {
             _idleDirection = _moveDirection;
             WalkingSoundPlayer();
-            
         }
-            
+
 
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
 
-    
+
     private void SetHitBoxRotation()
     {
         var hitBoxAngle = Vector2.SignedAngle(Vector2.down, _idleDirection);
@@ -435,20 +440,19 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause 
+        if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
-        
+
         move = _gameControls.GameControl.Movement.ReadValue<Vector2>();
-        
+
         if (IsPlayerDead)
             return;
 
         ApplyPowerUps();
 
         _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-        
+
         // dash from attack occurs only on non-slippery floors
         if (!slipperyFloor && _attackDash)
         {
@@ -499,7 +503,6 @@ public class PlayerController : MonoBehaviour
         {
             SetPlayerFall();
         }
-            
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -539,6 +542,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerFall()
     {
+        SoundsPlayer(PlayerSound.SoundKindsPlayer.Fall);
         _canCreateIceDash = false;
         _playerState = PlayerState.Falling;
         _rb.gravityScale = 50;

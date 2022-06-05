@@ -90,7 +90,11 @@ public class EnemyAlone : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player") && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+        {
             _fireParticleEffect.isOn = true;
+            GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.DashHitMonster);
+        }
+            
     }
     
     /**

@@ -2,18 +2,18 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class AudioManager : MonoBehaviour
+public class AudioManagerMonster : MonoBehaviour
 {
     #region Private Fields
 
-    private static AudioManager _instance;
+    private static AudioManagerMonster _instance;
 
     #endregion
 
     #region Inspector Control
 
-    [SerializeField] private PlayerSound[] sounds;
-    private Dictionary<PlayerSound.SoundKindsPlayer, float> _soundTimerDict;
+    [SerializeField] private MonsterSounds[] sounds;
+    private Dictionary<MonsterSounds.SoundKindsMonster, float> _soundTimerDict;
 
     #endregion
 
@@ -27,13 +27,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        _soundTimerDict = new Dictionary<PlayerSound.SoundKindsPlayer, float>();
+        _soundTimerDict = new Dictionary<MonsterSounds.SoundKindsMonster, float>();
         DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
     }
 
 
-    private void InitializeSounds(IEnumerable<PlayerSound> soundArray)
+    private void InitializeSounds(IEnumerable<MonsterSounds> soundArray)
     {
         foreach (var sound in soundArray)
         {
@@ -44,22 +44,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer)
+    public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster)
     {
-        var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
-        if (!CanPlaySound(soundKindPlayer, s)) return;
+        var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
+        if (!CanPlaySound(soundKindsMonster, s)) return;
         if (s == null)
             return;
 
         s.audioSource.PlayOneShot(s.audioClip);
     }
     
-    public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer , Vector3 position)
+    public void PlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster , Vector3 position)
     {
-        var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
+        var s = Array.Find(sounds, sound => sound.soundKindMonster == soundKindsMonster);
         if (s == null)
             return;
-        if (!CanPlaySound(soundKindPlayer, s)) return;
+        if (!CanPlaySound(soundKindsMonster, s)) return;
         
 
         GameObject soundGameObject = new GameObject("sound");
@@ -71,14 +71,14 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    private bool CanPlaySound(PlayerSound.SoundKindsPlayer soundToPlayKindPlayer, PlayerSound soundToPlay)
+    private bool CanPlaySound(MonsterSounds.SoundKindsMonster soundKindsMonster, MonsterSounds soundToPlay)
     {
-        if (_soundTimerDict.ContainsKey(soundToPlayKindPlayer))
+        if (_soundTimerDict.ContainsKey(soundKindsMonster))
         {
-            var lastTimePlayed = _soundTimerDict[soundToPlayKindPlayer];
+            var lastTimePlayed = _soundTimerDict[soundKindsMonster];
             if (lastTimePlayed + soundToPlay.soundDelay <= Time.time)
             {
-                _soundTimerDict[soundToPlayKindPlayer] = Time.time;
+                _soundTimerDict[soundKindsMonster] = Time.time;
                 return true;
             }
             else
@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
          
         else
         {
-            _soundTimerDict[soundToPlayKindPlayer] = Time.time;
+            _soundTimerDict[soundKindsMonster] = Time.time;
             return true;
         }
 

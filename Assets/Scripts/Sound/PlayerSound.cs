@@ -19,7 +19,10 @@ public class PlayerSound
       Hit,
       Dash,
       CrystalBreak,
-      DashIce
+      DashIce,
+      SecondWind,
+      RangedSwordAttack,
+      DashHitMonster
    }
    
    
