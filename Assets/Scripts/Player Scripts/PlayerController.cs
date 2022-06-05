@@ -7,13 +7,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool _canCreateIceDash;
-    public static PlayerController _PlayerController;
-    private GameControls _gameControls;
-    private Vector2 move;
-    private float dashColliderTimer;
-
-
     public enum PlayerState
     {
         Idle,
@@ -90,6 +83,11 @@ public class PlayerController : MonoBehaviour
     private bool _isInTopHalf;
     public bool isStunned;
     [NonSerialized] public bool IsPlayerDead;
+    private bool _canCreateIceDash;
+    public static PlayerController _PlayerController;
+    private GameControls _gameControls;
+    private Vector2 move;
+    private float dashColliderTimer;
 
     #endregion
 
@@ -209,6 +207,10 @@ public class PlayerController : MonoBehaviour
 
     private void WalkingSoundPlayer()
     {
+        print(_moveDirection.sqrMagnitude);
+        if (_moveDirection.sqrMagnitude < 0.3f)
+            return;
+        
         switch (GameManager.Shared.CurrentState)
         {
             case GameManager.WorldState.Fire:
