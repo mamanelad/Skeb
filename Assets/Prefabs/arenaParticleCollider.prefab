@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToBurn: 2.5
   ParticlePrefab: {fileID: 7649760837873724361, guid: 9d66039b2e21c394ca79aee747a5c392, type: 3}
-  Rate: 500
+  Rate: 60
   isOn: 1
   fireDamage: 5
   damageEnemyStep: 0.2

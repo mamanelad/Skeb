@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 [System.Serializable]
 public class PlayerSound
 {
-   public enum SoundKinds
+   public enum SoundKindsPlayer
    {
       WalkingFire,
       WalkingIce,
@@ -17,16 +17,18 @@ public class PlayerSound
       Death,
       Fall,
       Hit,
-      Dash
-      
-      
+      Dash,
+      CrystalBreak,
+      DashIce
    }
+   
+   
    [SerializeField] public bool loop;
    // [SerializeField] public string name;
    [SerializeField] public AudioClip audioClip;
    [Range(0f,1f)]
    [SerializeField] public float volume;
    [HideInInspector] public AudioSource audioSource;
-   [SerializeField] public SoundKinds soundKind;
+   [FormerlySerializedAs("soundKind")] [SerializeField] public SoundKindsPlayer soundKindPlayer;
    [SerializeField] public float soundDelay;
 }

@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_playerState != PlayerState.Falling)
         {
-            SoundsPlayer(PlayerSound.SoundKinds.Dash);
+            SoundsPlayer(PlayerSound.SoundKindsPlayer.Dash);
             dashCollider2D.enabled = true;
             isDashColliderOn = true;
             dashColliderTimer = dashColliderTime;
@@ -186,16 +186,16 @@ public class PlayerController : MonoBehaviour
         switch (_attackStatus)
         {
             case AttackStatus.First:
-                SoundsPlayer(PlayerSound.SoundKinds.SwordOne);
-                SoundsPlayer(PlayerSound.SoundKinds.PAttackOne);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordOne);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackOne);
                 break;
             case AttackStatus.Second:
-                SoundsPlayer(PlayerSound.SoundKinds.SwordTwo);
-                SoundsPlayer(PlayerSound.SoundKinds.PAttackTwo);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordTwo);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackTwo);
                 break;
             case AttackStatus.Special:
-                SoundsPlayer(PlayerSound.SoundKinds.SwordThree);
-                SoundsPlayer(PlayerSound.SoundKinds.PAttackThree);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.SwordThree);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.PAttackThree);
                 break;
         }
     }
@@ -204,17 +204,17 @@ public class PlayerController : MonoBehaviour
         switch (GameManager.Shared.CurrentState)
         {
             case GameManager.WorldState.Fire:
-                SoundsPlayer(PlayerSound.SoundKinds.WalkingFire);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.WalkingFire);
                 break;
             case GameManager.WorldState.Ice:
-                SoundsPlayer(PlayerSound.SoundKinds.WalkingIce);
+                SoundsPlayer(PlayerSound.SoundKindsPlayer.WalkingIce);
                 break;
         }
     }
     
-    private void SoundsPlayer(PlayerSound.SoundKinds soundKind)
+    private void SoundsPlayer(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
-        GameManager.Shared.PlayerAudioManager.PlaySound(soundKind, transform.position);
+        GameManager.Shared.PlayerAudioManager.PlaySound(soundKindPlayer, transform.position);
 
     }
 
@@ -609,7 +609,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
-        SoundsPlayer(PlayerSound.SoundKinds.Death);
+        SoundsPlayer(PlayerSound.SoundKindsPlayer.Death);
         IsPlayerDead = true;
         _moveDirection = Vector2.zero;
         if (_playerState != PlayerState.Falling)

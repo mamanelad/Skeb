@@ -37,6 +37,7 @@ public class IceSpikeScript : MonoBehaviour
         
         if (other.gameObject.CompareTag("Enemy"))
         {
+            
             var monster = other.gameObject;
             var monsterController = monster.GetComponent<Enemy>();
             if (monsterController == null)
@@ -47,6 +48,7 @@ public class IceSpikeScript : MonoBehaviour
             // play spike damage sound
             if (monsterController != null)
             {
+                GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.CrystalBreak);
                 monsterController.DamageEnemy(spikeDamage);
             }
             
