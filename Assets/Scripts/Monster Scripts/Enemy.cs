@@ -232,6 +232,7 @@ public class Enemy : MonoBehaviour
 
     private void SetMonsterFall()
     {
+        _enemyAI.MonsterFallSound();
         _rb.velocity = Vector2.zero;
         foreach (var collider in GetComponentsInChildren<Collider2D>())
             collider.enabled = false;

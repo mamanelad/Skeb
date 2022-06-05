@@ -16,13 +16,15 @@ public class PlayerSound
       SwordThree,
       Death,
       Fall,
-      Hit,
       Dash,
       CrystalBreak,
       DashIce,
       SecondWind,
       RangedSwordAttack,
-      DashHitMonster
+      DashHitMonster,
+      PHitOne,
+      PHitTwo,
+      PHitThree,
    }
    
    
