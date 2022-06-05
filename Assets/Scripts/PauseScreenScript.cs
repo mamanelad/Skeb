@@ -107,20 +107,33 @@ public class PauseScreenScript : MonoBehaviour
 
     private void ClickUp(InputAction.CallbackContext context)
     {
+        PlaySound(GeneralSound.SoundKindsGeneral.Click);
         if (_currMenuOption == Option.Quit)
             _currMenuOption = Option.Continue;
     }
 
     private void ClickDown(InputAction.CallbackContext context)
     {
+        PlaySound(GeneralSound.SoundKindsGeneral.Click);
         if (_currMenuOption == Option.Continue)
             _currMenuOption = Option.Quit;
     }
 
     private void ClosePauseMenu(InputAction.CallbackContext context)
     {
+        PlaySound(GeneralSound.SoundKindsGeneral.Click);
         Time.timeScale = 1;
         GameManager.Shared.ResumeState();
         gameObject.SetActive(false);
+    }
+    
+    private void PlaySound(GeneralSound.SoundKindsGeneral sound)
+    {
+        GameManager.Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
+    }
+    
+    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
+    {
+        GameManager.Shared.AudioManagerGeneral.StopSound(sound);
     }
 }
