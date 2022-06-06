@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
         if (CurrentGameState == GameState.Arena)
             PauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         if (CurrentGameState == GameState.Store)
-            Shared.StoreAudioManager.StopSound(StoreSounds.SoundKindsStore.Background);
+            Shared.StoreAudioManager.PauseSound(StoreSounds.SoundKindsStore.Background);
         PlaySound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
         Time.timeScale = 0;
         _prevGameState = CurrentGameState;
@@ -214,12 +214,12 @@ public class GameManager : MonoBehaviour
     {
         CurrentGameState = _prevGameState;
         
-        PauseSound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
+        StopSound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
         
         if (CurrentGameState == GameState.Arena)
-            PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
+            UnPauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         if (CurrentGameState == GameState.Store)
-            Shared.StoreAudioManager.PlaySound(StoreSounds.SoundKindsStore.Background);
+            Shared.StoreAudioManager.UnPauseSound(StoreSounds.SoundKindsStore.Background);
     }
 
     public void OpenStore()
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
 
     public void CloseStore()
     {
-        PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
+        UnPauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         CurrentGameState = GameState.Arena;
         store.SetActive(false);
         FindObjectOfType<EnemySpawnerDots>().StartBlockSpawn(true);
@@ -243,8 +243,18 @@ public class GameManager : MonoBehaviour
         Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
     }
     
-    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
+    private void StopSound(GeneralSound.SoundKindsGeneral sound)
     {
         Shared.AudioManagerGeneral.StopSound(sound);
+    }
+    
+    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
+    {
+        Shared.AudioManagerGeneral.PauseSound(sound);
+    }
+    
+    private void UnPauseSound(GeneralSound.SoundKindsGeneral sound)
+    {
+        Shared.AudioManagerGeneral.UnPauseSound(sound);
     }
 }
