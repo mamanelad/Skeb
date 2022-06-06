@@ -143,4 +143,13 @@ public class BoxTutorial : MonoBehaviour
         var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sortingLayerName = "GUI";
     }
+
+    public void CloseColliders()
+    {
+        var cols = GetComponents<BoxCollider2D>();
+        foreach (var col in cols)
+        {
+            col.enabled = false;
+        }
+    }
 }
