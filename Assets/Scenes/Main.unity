@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[2].timeToSpawnStep
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[3].smallPercentage
@@ -7936,7 +7936,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 1.46204e-40, y: 1.46206e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.46668e-40, y: 1.4667e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8512,7 +8512,6 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   fallDamage: 25
-  monsterDeathAddition: 5
   regenAddition: 1
   regenPerSecond: 2
   angle: {fileID: 8575076220575924888, guid: e08ce3b912db50d458196c34c8464e17, type: 3}
