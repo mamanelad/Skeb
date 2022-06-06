@@ -364,6 +364,11 @@ public class PlayerController : MonoBehaviour
                 var monsterController = monster.GetComponent<Enemy>();
                 if (monsterController != null)
                     monsterController.DamageEnemy(CalculateDamage());
+                var box = monster.GetComponent<BoxTutorial>();
+                if (box != null)
+                {
+                    box.HitHelper();
+                }
                 if (_playerStats.burnDamage)
                 {
                     var fireParticle = monster.GetComponent<FireParticleEffect>();
@@ -542,7 +547,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var monList = _monstersInRange ?? new List<GameObject>();
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("box") )
         {
             var enemy = other.gameObject;
             if (!monList.Contains(enemy))

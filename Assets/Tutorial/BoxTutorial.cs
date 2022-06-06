@@ -68,33 +68,33 @@ public class BoxTutorial : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            HitHelper();
-    }
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //         HitHelper();
+    // }
+    //
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //         HitHelper();
+    // }
+    //
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //         HitHelper();
+    // }
+    //
+    // private void OnCollisionStay2D(Collision2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //         HitHelper();
+    // }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void HitHelper()
     {
-        if (other.gameObject.CompareTag("Player"))
-            HitHelper();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            HitHelper();
-    }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            HitHelper();
-    }
-
-    private void HitHelper()
-    {
-        if (hit) return;
+        // if (hit) return;
         if (_playerController.IsAttacking)
         {
             GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.TutorialBoxHit);
@@ -113,7 +113,7 @@ public class BoxTutorial : MonoBehaviour
 
     private void SwitchToMainScene()
     {
-        SceneManager.LoadScene("Tamir new Arena");
+        SceneManager.LoadScene("Main");
     }
 
 

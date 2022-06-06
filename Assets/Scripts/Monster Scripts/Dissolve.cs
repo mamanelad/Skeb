@@ -3,7 +3,7 @@ using UnityEngine;
 public class Dissolve : MonoBehaviour
 {
     #region Private Fields
-
+    
     private Enemy _enemyTogetherFather;
     private Material _material;
     [SerializeField] private bool _isDissolving;
