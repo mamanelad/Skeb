@@ -19,6 +19,8 @@ public class AudioManagerGeneral : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        
         if (_instance == null)
             _instance = this;
         else
