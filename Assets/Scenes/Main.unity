@@ -930,7 +930,8 @@ MonoBehaviour:
   checkBox: {fileID: 210139477}
   upgradeBorder: {fileID: 258726894}
   selectUpgrade: 0
-  upgradeDescription: 33333
+  upgradeDescription: Range Attack - Releasing a powerful attack at the end of a
+    combo
 --- !u!212 &107266254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1951,7 +1952,7 @@ MonoBehaviour:
   checkBox: {fileID: 747009611}
   upgradeBorder: {fileID: 1963749940}
   selectUpgrade: 0
-  upgradeDescription: 666666
+  upgradeDescription: Regeneration - A steady passive increase in HP
 --- !u!212 &383780544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2052,7 +2053,7 @@ MonoBehaviour:
   checkBox: {fileID: 1565684014}
   upgradeBorder: {fileID: 207423507}
   selectUpgrade: 0
-  upgradeDescription: 111111
+  upgradeDescription: Range Upgrade - Sword attck range increases by 50%
 --- !u!212 &412355977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2235,7 +2236,8 @@ MonoBehaviour:
   checkBox: {fileID: 1436978467}
   upgradeBorder: {fileID: 1369436210}
   selectUpgrade: 0
-  upgradeDescription: 9999999
+  upgradeDescription: Pro Skater - Its simple, as a pro you will never fall off the
+    arena
 --- !u!212 &432271531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2470,7 +2472,7 @@ MonoBehaviour:
   checkBox: {fileID: 1516211010}
   upgradeBorder: {fileID: 1008913330}
   selectUpgrade: 0
-  upgradeDescription: 44444
+  upgradeDescription: HP Up - You will now have 50% more HP
 --- !u!212 &585954823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5805,7 +5807,8 @@ MonoBehaviour:
   checkBox: {fileID: 1577065272}
   upgradeBorder: {fileID: 431364913}
   selectUpgrade: 0
-  upgradeDescription: 555555
+  upgradeDescription: Life Steal - Killing enemies will now grant you a small HP
+    bonus
 --- !u!212 &1439095657
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7239,7 +7242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 1.36161e-40, y: 1.36163e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.39534e-40, y: 1.39536e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7297,7 +7300,8 @@ MonoBehaviour:
   checkBox: {fileID: 818202456}
   upgradeBorder: {fileID: 323050284}
   selectUpgrade: 0
-  upgradeDescription: 22222
+  upgradeDescription: Brun Damage - Your sword will now inflict burn damage upon
+    hitting enemies
 --- !u!212 &1791406910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8252,6 +8256,7 @@ MonoBehaviour:
   monsterAudioManager: {fileID: 1671097073}
   AudioManagerGeneral: {fileID: 1861216118}
   pauseMenu: {fileID: 106847964}
+  gameWonScreenMenu: {fileID: 0}
   store: {fileID: 773011036}
   stuckStage: 0
   timeInStage: 8
@@ -8552,7 +8557,8 @@ MonoBehaviour:
   checkBox: {fileID: 2113125208}
   upgradeBorder: {fileID: 21510514}
   selectUpgrade: 0
-  upgradeDescription: 777777
+  upgradeDescription: Ice Dash - Your dash will now leave a trail of ice spikes that
+    will badly damage enemies
 --- !u!212 &1928261867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9153,7 +9159,8 @@ MonoBehaviour:
   checkBox: {fileID: 1120306725}
   upgradeBorder: {fileID: 1364625961}
   selectUpgrade: 0
-  upgradeDescription: 888888
+  upgradeDescription: Second Wind - Will grant you a one time revival upon dying
+    from fall damage
 --- !u!212 &2094378009
 SpriteRenderer:
   m_ObjectHideFlags: 0
