@@ -46,13 +46,13 @@ MonoBehaviour:
   sounds:
   - loop: 0
     audioClip: {fileID: 8300000, guid: 70e2870674bc89c418edf7b831293eed, type: 3}
-    volume: 0.3
+    volume: 0.5
     audioSource: {fileID: 0}
     soundKindsGeneral: 0
     soundDelay: 0.3
   - loop: 0
     audioClip: {fileID: 8300000, guid: bef18502b427597499be7eb842b6b3b8, type: 3}
-    volume: 0.3
+    volume: 0.4
     audioSource: {fileID: 0}
     soundKindsGeneral: 1
     soundDelay: 0.3
@@ -88,16 +88,16 @@ MonoBehaviour:
     soundDelay: 0.1
   - loop: 0
     audioClip: {fileID: 8300000, guid: ec6b45f6eb8b28d4f81a06f2a3f7f537, type: 3}
-    volume: 0.5
+    volume: 0.7
     audioSource: {fileID: 0}
     soundKindsGeneral: 8
     soundDelay: 0.2
   - loop: 0
     audioClip: {fileID: 8300000, guid: 54ba3323aa9d9af48b5280ea3cebbdfb, type: 3}
-    volume: 0.5
+    volume: 0.7
     audioSource: {fileID: 0}
     soundKindsGeneral: 9
-    soundDelay: 0
+    soundDelay: 0.1
   - loop: 1
     audioClip: {fileID: 8300000, guid: 9033d4abed5df094fa9e17e2867713fb, type: 3}
     volume: 0.15
