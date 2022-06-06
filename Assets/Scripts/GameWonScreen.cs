@@ -100,7 +100,7 @@ public class GameWonScreen : MonoBehaviour
     private void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Tamir new Arena", LoadSceneMode.Single);
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
         //TODO: go back to main menu 
         return;
     }
@@ -132,9 +132,5 @@ public class GameWonScreen : MonoBehaviour
         GameManager.Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
     }
     
-    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
-    {
-        GameManager.Shared.AudioManagerGeneral.StopSound(sound);
-    }
 }
 

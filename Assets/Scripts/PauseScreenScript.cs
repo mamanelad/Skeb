@@ -130,8 +130,4 @@ public class PauseScreenScript : MonoBehaviour
         GameManager.Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
     }
     
-    private void PauseSound(GeneralSound.SoundKindsGeneral sound)
-    {
-        GameManager.Shared.AudioManagerGeneral.StopSound(sound);
-    }
 }

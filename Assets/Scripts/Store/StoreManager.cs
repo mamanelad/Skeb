@@ -170,7 +170,7 @@ public class StoreManager : MonoBehaviour
             _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.ForgotToUpgrade;
             return;
         }
-        PauseSound(StoreSounds.SoundKindsStore.Background);
+        StopSound(StoreSounds.SoundKindsStore.Background);
         PlaySound(StoreSounds.SoundKindsStore.ChestClose);
         GameManager.Shared.CloseStore();
     }
@@ -185,10 +185,22 @@ public class StoreManager : MonoBehaviour
         GameManager.Shared.StoreAudioManager.PlaySound(sound, transform.position);
     }
     
-    private void PauseSound(StoreSounds.SoundKindsStore sound)
+    private void StopSound(StoreSounds.SoundKindsStore sound)
     {
         GameManager.Shared.StoreAudioManager.StopSound(sound);
     }
+    
+    private void PauseSound(StoreSounds.SoundKindsStore sound)
+    {
+        GameManager.Shared.StoreAudioManager.PauseSound(sound);
+    }
+    
+    private void UnPauseSound(StoreSounds.SoundKindsStore sound)
+    {
+        GameManager.Shared.StoreAudioManager.UnPauseSound(sound);
+    }
+    
+    
 
     private void ShopKeeperAudio()
     {
@@ -218,7 +230,7 @@ public class StoreManager : MonoBehaviour
 
     private void PauseShopKeeperAudio()
     {
-        PauseSound(_lastPlayedAudioShopKeeper);
+        StopSound(_lastPlayedAudioShopKeeper);
     }
 
 }

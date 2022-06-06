@@ -17,7 +17,6 @@ public class IntroScreenScript : MonoBehaviour
         _menuControls = new GameControls();
         _audioManager = GetComponent<AudioManagerGeneral>();
         InitializeControls();
-        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
     }
 
     #region Input Action
@@ -45,6 +44,7 @@ public class IntroScreenScript : MonoBehaviour
     {
         DeselectAllButtons();
         buttons[0].SelectButton();
+        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
     }
 
     private void DeselectAllButtons()
