@@ -51,8 +51,24 @@ public class AudioManagerStore : MonoBehaviour
             return;
         
         s.audioSource.Stop();
-        // if (!CanPlaySound(soundKindStore, s))
-        //     s.audioSource.Stop();
+    }
+    
+    public void PauseSound(StoreSounds.SoundKindsStore soundKindStore)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
+        if (s == null)
+            return;
+        
+        s.audioSource.Pause();
+    }
+    
+    public void UnPauseSound(StoreSounds.SoundKindsStore soundKindStore)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindStore == soundKindStore);
+        if (s == null)
+            return;
+        
+        s.audioSource.UnPause();
     }
 
     public void PlaySound(StoreSounds.SoundKindsStore soundKindStore)
