@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
         Second,
         Special
     }
-    
-    
 
     #region Inspector Control
 
@@ -285,25 +283,8 @@ public class PlayerController : MonoBehaviour
         SetPlayerState();
         SetMovementAndIdleDirection();
         SetHitBoxRotation();
-        // if (_currentWorldState == GameManager.WorldState.Fire)
-        //     FireStateAttack();
         PlayAnimation();
 
-        // if (Input.GetButtonDown("Attack"))
-        // {
-        //     if (_playerState != PlayerState.Falling
-        //         && _currentWorldState == GameManager.WorldState.Ice)
-        //     {
-        //         _dashStatus = true;
-        //         var hourGlass = FindObjectOfType<HourGlass>();
-        //         if (hourGlass != null)
-        //         {
-        //             hourGlass.PushHourGlass();
-        //         }
-        //
-        //         StartCoroutine(ActivateDashTrail());
-        //     }
-        // }
     }
 
     private void SetWorldState()
