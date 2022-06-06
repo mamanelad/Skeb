@@ -248,7 +248,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   attackRangeCheck: 2
   attackRangeHit: 1
-  attackDamage: 15
+  attackDamage: 10
   timeBetweenAttacks: 1
   screenShakeIntensity: 3
   screenShakeTime: 0.2
