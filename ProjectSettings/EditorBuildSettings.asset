@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
-    guid: 716ddaef917213e4ca6f3fd28f77cccf
+    path: Assets/Scenes/Intro.unity
+    guid: 836c36f7887404743bc057784e21e31f
   - enabled: 1
-    path: Assets/Scenes/Tamir/Tamir new Arena.unity
-    guid: 8a9deed0381f0004f8dc7cc61e7e3f0b
+    path: Assets/Scenes/Tutorial.unity
+    guid: 27b31e403a97c4941accff1e47c8909e
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: aa4b697ab06d1dd4ca9800b58d09359e
   m_configObjects: {}
