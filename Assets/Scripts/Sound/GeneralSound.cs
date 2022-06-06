@@ -18,7 +18,8 @@ public class GeneralSound
         IceBergBreak,
         Click,
         Bell,
-        PauseScreenTheme
+        PauseScreenTheme,
+        Select
     }
 
     [SerializeField] public bool loop;

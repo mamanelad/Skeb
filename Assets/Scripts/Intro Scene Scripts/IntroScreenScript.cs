@@ -8,13 +8,16 @@ public class IntroScreenScript : MonoBehaviour
 {
 
     [SerializeField] private List<ButtonScript> buttons;
+    private AudioManagerGeneral _audioManager;
     private GameControls _menuControls;
     private int _buttonIndex;
 
     private void Awake()
     {
         _menuControls = new GameControls();
+        _audioManager = GetComponent<AudioManagerGeneral>();
         InitializeControls();
+        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.MainSong);
     }
 
     #region Input Action
@@ -57,7 +60,7 @@ public class IntroScreenScript : MonoBehaviour
         buttons[_buttonIndex].DeselectButton();
         _buttonIndex -= 1;
         buttons[_buttonIndex].SelectButton();
-        // play click sound
+        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.Click);
     }
     
     private void ArrowDown(InputAction.CallbackContext context)
@@ -67,13 +70,13 @@ public class IntroScreenScript : MonoBehaviour
         buttons[_buttonIndex].DeselectButton();
         _buttonIndex += 1;
         buttons[_buttonIndex].SelectButton();
-        // play click sound
+        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.Click);
 
     }
     
     private void Select(InputAction.CallbackContext context)
     {
-        // play click sound
+        _audioManager.PlaySound(GeneralSound.SoundKindsGeneral.Select);
         PressButton();
     }
 
@@ -106,7 +109,6 @@ public class IntroScreenScript : MonoBehaviour
     
     private void Quit()
     {
-        print("qqqq");
         Application.Quit();
     }
     
