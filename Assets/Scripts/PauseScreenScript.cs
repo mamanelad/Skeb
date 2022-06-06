@@ -100,9 +100,7 @@ public class PauseScreenScript : MonoBehaviour
     private void Quit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Tamir new Arena", LoadSceneMode.Single);
-        //TODO: go back to main menu 
-        return;
+        SceneManager.LoadScene("Intro", LoadSceneMode.Single);
     }
 
     private void ClickUp(InputAction.CallbackContext context)
