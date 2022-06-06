@@ -50,8 +50,22 @@ public class AudioManager : MonoBehaviour
         if (s == null)
             return;
         s.audioSource.Stop();
-        // if (!CanPlaySound(soundKindPlayer, s))
-        //     s.audioSource.Stop();
+    }
+
+    public void PauseSound(PlayerSound.SoundKindsPlayer soundKindPlayer)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
+        if (s == null)
+            return;
+        s.audioSource.Pause();
+    }
+
+    public void UnPauseSound(PlayerSound.SoundKindsPlayer soundKindPlayer)
+    {
+        var s = Array.Find(sounds, sound => sound.soundKindPlayer == soundKindPlayer);
+        if (s == null)
+            return;
+        s.audioSource.UnPause();
     }
 
     public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer)
@@ -99,19 +113,12 @@ public class AudioManager : MonoBehaviour
                 _soundTimerDict[soundToPlayKindPlayer] = Time.time;
                 return true;
             }
-            else
-            {
-                return false;
-            }
-        }
 
-        else
-        {
-            _soundTimerDict[soundToPlayKindPlayer] = Time.time;
-            return true;
+            return false;
         }
 
 
-        return false;
+        _soundTimerDict[soundToPlayKindPlayer] = Time.time;
+        return true;
     }
 }
