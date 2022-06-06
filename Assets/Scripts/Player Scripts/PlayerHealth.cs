@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
         }
         
         // activate static regeneration 
-        if (_playerStats.staticRegeneration)
+        if (_playerStats.staticRegeneration && GameManager.Shared.CurrentGameState == GameManager.GameState.Arena)
             StaticRegeneration();
 
         if (GameManager.Shared.StageDamage)
