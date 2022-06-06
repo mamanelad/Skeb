@@ -88,7 +88,7 @@ public class StoreManager : MonoBehaviour
 
     private void DisplayText()
     {
-        var text = "Select a chest to upgrade.";
+        var text = "Please select a chest to upgrade. You will get the lowest level upgrade of that chest that you have yet to unlock.";
         if (_selectedUpgrade != null)
             text = _selectedUpgrade.GetComponent<UpgradeScript>().GetUpgradeDescription();
         displayText.text = text;
@@ -167,6 +167,7 @@ public class StoreManager : MonoBehaviour
             shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
             PauseShopKeeperAudio();
             PlaySound(StoreSounds.SoundKindsStore.ForgotToUpgrade);
+            _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.ForgotToUpgrade;
             return;
         }
         PauseSound(StoreSounds.SoundKindsStore.Background);
