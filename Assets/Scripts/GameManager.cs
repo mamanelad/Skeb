@@ -172,7 +172,8 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame(InputAction.CallbackContext context)
     {
-        if (CurrentGameState == GameState.Pause)
+        if (CurrentGameState == GameState.Pause || CurrentGameState == GameState.Won 
+                                                || CurrentGameState == GameState.Lose)
             return;
 
         if (CurrentGameState == GameState.Arena)

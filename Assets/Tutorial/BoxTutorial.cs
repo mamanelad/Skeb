@@ -113,7 +113,7 @@ public class BoxTutorial : MonoBehaviour
 
     private void SwitchToMainScene()
     {
-        SceneManager.LoadScene("Tamir new Arena");
+        SceneManager.LoadScene("Main");
     }
 
 

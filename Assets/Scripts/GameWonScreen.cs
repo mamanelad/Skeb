@@ -100,7 +100,7 @@ public class GameWonScreen : MonoBehaviour
     private void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Tamir new Arena", LoadSceneMode.Single);
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
         //TODO: go back to main menu 
         return;
     }
