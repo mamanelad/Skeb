@@ -187,9 +187,6 @@ public class Enemy : MonoBehaviour
         }
 
         // increase player health if MonsterRegenerationBuff is on
-        var playerHealth = _player.GetComponent<PlayerHealth>();
-        if (playerHealth)
-            playerHealth.MonsterKillRegeneration();
     }
 
     /**

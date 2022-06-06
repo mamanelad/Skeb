@@ -13,10 +13,6 @@ public class PlayerHealth : MonoBehaviour
     private PlayerStats _playerStats;
     private bool _usedSecondWindThisRound;
     
-
-    [Header("Monster Regeneration")] 
-    [SerializeField] private float monsterDeathAddition;
-    
     [Header("Static Regeneration")] 
     [SerializeField] private float regenAddition;
     [SerializeField] private float regenPerSecond;
@@ -100,15 +96,6 @@ public class PlayerHealth : MonoBehaviour
 
         regenTimer = regenPerSecond;
         health = Mathf.Min(maxHealth, health + regenAddition);
-        UpdateHealthBar();
-    }
-
-    public void MonsterKillRegeneration()
-    {
-        if (!_playerStats.monsterKillRegeneration || _playerController.IsPlayerDead)
-            return;
-        
-        health = Mathf.Min(maxHealth, health + monsterDeathAddition);
         UpdateHealthBar();
     }
 
