@@ -3,7 +3,7 @@ using UnityEngine;
 public class Dissolve : MonoBehaviour
 {
     #region Private Fields
-    
+
     private Enemy _enemyTogetherFather;
     private Material _material;
     [SerializeField] private bool _isDissolving;
@@ -17,13 +17,13 @@ public class Dissolve : MonoBehaviour
 
     [Header("Coin Settings")] [SerializeField]
     private CoinPickUp coinPick;
-    
+
     #endregion
 
     #region Animator Labels
 
     private static readonly int Fade = Shader.PropertyToID("Fade");
-    
+
     #endregion
 
 
@@ -49,7 +49,7 @@ public class Dissolve : MonoBehaviour
                 {
                     fade = 1f;
                     _isDissolving = false;
-                } 
+                }
             }
             else
             {
@@ -63,9 +63,9 @@ public class Dissolve : MonoBehaviour
                     _enemyTogetherFather.GetComponent<Enemy>().KillEnemy();
                     Destroy(_enemyTogetherFather.gameObject);
                     Destroy(gameObject);
-                } 
+                }
             }
-            
+
 
             // Set the property
             _material.SetFloat(Fade, fade);
@@ -89,6 +89,9 @@ public class Dissolve : MonoBehaviour
     {
         var upgradeStat = FindObjectOfType<PlayerStats>();
         if (upgradeStat.monsterKillRegeneration)
-            Instantiate(coinPick, transform.position, Quaternion.identity);
+        {
+            var heart = Instantiate(coinPick, transform.position, Quaternion.identity);
+            heart.setValue(_enemyTogetherFather.heartValue);
+        }
     }
 }

@@ -55,6 +55,8 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    public int heartValue = 1;
+
     private void Start()
     {
         _playerController = FindObjectOfType<PlayerController>();

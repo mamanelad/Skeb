@@ -136,10 +136,10 @@ MonoBehaviour:
     soundDelay: 0.1
   - loop: 0
     audioClip: {fileID: 8300000, guid: e9070435bc190e745a29a54c7b2f0d45, type: 3}
-    volume: 0.3
+    volume: 0.7
     audioSource: {fileID: 0}
     soundKindMonster: 16
-    soundDelay: 0.1
+    soundDelay: 0.06
   - loop: 0
     audioClip: {fileID: 8300000, guid: 01818a9a732e4064a80ab73ba6c4b325, type: 3}
     volume: 0.3

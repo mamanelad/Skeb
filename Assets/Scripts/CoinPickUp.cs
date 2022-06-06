@@ -47,6 +47,10 @@ public class CoinPickUp : MonoBehaviour
 
     }
 
+    public void setValue(int newValue)
+    {
+        coinValue = newValue;
+    }
 
     private void FixedUpdate()
     {
