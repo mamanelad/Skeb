@@ -28,7 +28,7 @@ public class AudioManagerMonster : MonoBehaviour
         }
 
         _soundTimerDict = new Dictionary<MonsterSounds.SoundKindsMonster, float>();
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
     }
 

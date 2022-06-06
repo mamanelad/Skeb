@@ -15,6 +15,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private int _dotIndexMonster; //Position for the monster
     private int _monsterIndex; //Which monster to initialize
     private float _timer;
+    private float _wonScreenTimer;
     private int _monsterCounter; //Count how many monsters are alive.
     private int currentWaveMonsterCounter;
 
@@ -35,11 +36,14 @@ public class EnemySpawnerDots : MonoBehaviour
     private int waveIndex = -1;
     private float openShopTimer;
     private bool openShop;
+    private bool wonScreen;
+    private bool wonScreenOpen;
 
     #endregion
 
     #region Inspector Control
 
+    [SerializeField] private float gameWonScreenDelay = 0.5f;
     [SerializeField] private UpgradeShop upgradeShop;
 
     [SerializeField] private GameObject lightningStrike;
@@ -88,8 +92,20 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void Update()
     {
+        if (wonScreen && !wonScreenOpen)
+        {
+            _wonScreenTimer -= Time.deltaTime;
+            if (_wonScreenTimer <= 0)
+            {
+                GameWon();
+                wonScreen = false;
+                wonScreenOpen = true;
+            }
+                
+        }
         if (_playerController.IsPlayerDead) return;
 
+        
         if (openShop)
         {
             openShopTimer -= Time.deltaTime;
@@ -192,12 +208,17 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void SetNewWave()
     {
+        
         currentWaveMonsterCounter = 0;
         waveIndex += 1;
         //print("initiating wave number: " + waveIndex);
-        if (waveIndex >= _waves.Length)
-            //print("game won");
+        if (waveIndex >= _waves.Length && !wonScreen)
+        {
+            wonScreen = true;
+            _wonScreenTimer = gameWonScreenDelay;
             return;
+        }
+            
 
         var curWave = _waves[waveIndex];
 
@@ -232,5 +253,11 @@ public class EnemySpawnerDots : MonoBehaviour
         GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
+    }
+
+    private void GameWon()
+    {
+        spawnIsOn = false;
+        GameManager.Shared.WonGame();
     }
 }

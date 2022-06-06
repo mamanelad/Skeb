@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
         }
 
         _soundTimerDict = new Dictionary<PlayerSound.SoundKindsPlayer, float>();
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
     }
 

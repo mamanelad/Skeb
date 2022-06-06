@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     {
         Arena,
         Store,
-        Pause
+        Pause,
+        Won
     }
 
     public static GameManager Shared;
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameWonScreenMenu;
+
     [SerializeField] private GameObject store;
     [SerializeField] private bool stuckStage;
     [SerializeField] private int timeInStage = 15;
@@ -90,6 +93,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (gameWonScreenMenu == null)
+            print("Need To add game won screen");
         if (inTutorial)
             AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.TutorialSong);
         else
@@ -165,6 +170,18 @@ public class GameManager : MonoBehaviour
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Pause;
         pauseMenu.SetActive(true);
+    }
+    
+    public void WonGame()
+    {
+        if (CurrentGameState == GameState.Won)
+            return;
+
+        FindObjectOfType<PlayerController>().enabled = false;
+        // Time.timeScale = 0;
+        _prevGameState = CurrentGameState;
+        CurrentGameState = GameState.Won;
+        gameWonScreenMenu.SetActive(true);
     }
 
     public void ResumeState()
