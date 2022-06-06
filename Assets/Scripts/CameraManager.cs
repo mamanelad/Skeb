@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject targetGroupCamera;
     [SerializeField] private CinemachineTargetGroup _cinemachineTargetGroup;
     private GameObject _target;
+    [SerializeField] private float gameOverDelay = 0.3f;
 
     [SerializeField] private float timeInZoom;
     
@@ -25,16 +26,22 @@ public class CameraManager : MonoBehaviour
         
         if (_playerController.IsPlayerDead && timeInZoom > 0)
         {
-            Time.timeScale = 0.2f;
-            targetGroupCamera.SetActive(true);
-            timeInZoom -= Time.deltaTime;
-
-            if (timeInZoom <= 0)
+            if (_playerController.GetPlayerState() != PlayerController.PlayerState.Falling)
             {
-                Time.timeScale = 1f;
-                targetGroupCamera.SetActive(false);
+                Time.timeScale = 0.2f;
+                targetGroupCamera.SetActive(true);
+                timeInZoom -= Time.deltaTime;
+
+                if (timeInZoom <= 0)
+                {
+                    Time.timeScale = 1f;
+                    targetGroupCamera.SetActive(false);
+                    GameOver();
+                }
+
+                return;
             }
-            return;
+            Invoke(nameof(GameOver), gameOverDelay);
         }
         
         
@@ -45,6 +52,10 @@ public class CameraManager : MonoBehaviour
         
     }
 
+    private void GameOver()
+    {
+        GameManager.Shared.GameOver();
+    }
     private void ZoomOnLastEnemy()
     {
         return;
