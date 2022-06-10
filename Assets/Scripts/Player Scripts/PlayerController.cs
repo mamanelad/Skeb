@@ -379,7 +379,11 @@ public class PlayerController : MonoBehaviour
 
     private void SetMovementAndIdleDirection()
     {
-        if (!GameManager.Shared.playerCanMove) return;
+        if (!GameManager.Shared.playerCanMove)
+        {
+            _rb.velocity = Vector2.zero;
+            return;
+        }
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         if (
             move != Vector2
