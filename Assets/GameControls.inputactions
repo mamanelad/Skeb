@@ -667,6 +667,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CheatControl",
+            "id": "afbce948-e4d3-450d-bf66-87459808b673",
+            "actions": [
+                {
+                    "name": "Action1",
+                    "type": "Button",
+                    "id": "c0e37b6c-368d-43ba-9fba-fe49fe525eda",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Action2",
+                    "type": "Button",
+                    "id": "bb3a84dd-04ff-4822-9bbd-9cbfd346f3e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Action3",
+                    "type": "Button",
+                    "id": "71b3dc28-d94b-4155-94f9-3f348248d56d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f93a6972-3b59-498e-a035-7dc0ae744d7a",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc67c2b3-2be7-4530-86c1-e64a4680a3d4",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5c4558b-4a6c-49b8-8f52-70749774dbc3",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

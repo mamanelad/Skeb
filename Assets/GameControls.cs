@@ -689,6 +689,74 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CheatControl"",
+            ""id"": ""afbce948-e4d3-450d-bf66-87459808b673"",
+            ""actions"": [
+                {
+                    ""name"": ""Action1"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0e37b6c-368d-43ba-9fba-fe49fe525eda"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action2"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb3a84dd-04ff-4822-9bbd-9cbfd346f3e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action3"",
+                    ""type"": ""Button"",
+                    ""id"": ""71b3dc28-d94b-4155-94f9-3f348248d56d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f93a6972-3b59-498e-a035-7dc0ae744d7a"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc67c2b3-2be7-4530-86c1-e64a4680a3d4"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5c4558b-4a6c-49b8-8f52-70749774dbc3"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -729,6 +797,11 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_StoreControl_ArrowDown = m_StoreControl.FindAction("ArrowDown", throwIfNotFound: true);
         m_StoreControl_Select = m_StoreControl.FindAction("Select", throwIfNotFound: true);
         m_StoreControl_Escape = m_StoreControl.FindAction("Escape", throwIfNotFound: true);
+        // CheatControl
+        m_CheatControl = asset.FindActionMap("CheatControl", throwIfNotFound: true);
+        m_CheatControl_Action1 = m_CheatControl.FindAction("Action1", throwIfNotFound: true);
+        m_CheatControl_Action2 = m_CheatControl.FindAction("Action2", throwIfNotFound: true);
+        m_CheatControl_Action3 = m_CheatControl.FindAction("Action3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -971,6 +1044,55 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         }
     }
     public StoreControlActions @StoreControl => new StoreControlActions(this);
+
+    // CheatControl
+    private readonly InputActionMap m_CheatControl;
+    private ICheatControlActions m_CheatControlActionsCallbackInterface;
+    private readonly InputAction m_CheatControl_Action1;
+    private readonly InputAction m_CheatControl_Action2;
+    private readonly InputAction m_CheatControl_Action3;
+    public struct CheatControlActions
+    {
+        private @GameControls m_Wrapper;
+        public CheatControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Action1 => m_Wrapper.m_CheatControl_Action1;
+        public InputAction @Action2 => m_Wrapper.m_CheatControl_Action2;
+        public InputAction @Action3 => m_Wrapper.m_CheatControl_Action3;
+        public InputActionMap Get() { return m_Wrapper.m_CheatControl; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CheatControlActions set) { return set.Get(); }
+        public void SetCallbacks(ICheatControlActions instance)
+        {
+            if (m_Wrapper.m_CheatControlActionsCallbackInterface != null)
+            {
+                @Action1.started -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction1;
+                @Action1.performed -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction1;
+                @Action1.canceled -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction1;
+                @Action2.started -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction2;
+                @Action2.performed -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction2;
+                @Action2.canceled -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction2;
+                @Action3.started -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction3;
+                @Action3.performed -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction3;
+                @Action3.canceled -= m_Wrapper.m_CheatControlActionsCallbackInterface.OnAction3;
+            }
+            m_Wrapper.m_CheatControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Action1.started += instance.OnAction1;
+                @Action1.performed += instance.OnAction1;
+                @Action1.canceled += instance.OnAction1;
+                @Action2.started += instance.OnAction2;
+                @Action2.performed += instance.OnAction2;
+                @Action2.canceled += instance.OnAction2;
+                @Action3.started += instance.OnAction3;
+                @Action3.performed += instance.OnAction3;
+                @Action3.canceled += instance.OnAction3;
+            }
+        }
+    }
+    public CheatControlActions @CheatControl => new CheatControlActions(this);
     private int m_KeyBoardSchemeIndex = -1;
     public InputControlScheme KeyBoardScheme
     {
@@ -1020,5 +1142,11 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnArrowDown(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface ICheatControlActions
+    {
+        void OnAction1(InputAction.CallbackContext context);
+        void OnAction2(InputAction.CallbackContext context);
+        void OnAction3(InputAction.CallbackContext context);
     }
 }

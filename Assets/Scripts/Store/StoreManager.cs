@@ -285,4 +285,9 @@ public class StoreManager : MonoBehaviour
     {
         StopSound(_lastPlayedAudioShopKeeper);
     }
+
+    public void GetUnlimitedUpgrades()
+    {
+        infiniteUpgrades = !infiniteUpgrades;
+    }
 }

@@ -1,0 +1,864 @@
+fileFormatVersion: 2
+guid: 781966be62b8af34097cfa98df58c9e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4771217463925382556
+    second: skeb upgrade slash-Sheet(1)_0
+  - first:
+      213: -8269847498995709109
+    second: skeb upgrade slash-Sheet(1)_1
+  - first:
+      213: -3502091134855205073
+    second: skeb upgrade slash-Sheet(1)_2
+  - first:
+      213: -5573610830443567383
+    second: skeb upgrade slash-Sheet(1)_3
+  - first:
+      213: -2073797458741483539
+    second: skeb upgrade slash-Sheet(1)_4
+  - first:
+      213: 5983439155920573023
+    second: skeb upgrade slash-Sheet(1)_5
+  - first:
+      213: -7261622514875544027
+    second: skeb upgrade slash-Sheet(1)_6
+  - first:
+      213: 1713044055886807525
+    second: skeb upgrade slash-Sheet(1)_7
+  - first:
+      213: 4668648420546147052
+    second: skeb upgrade slash-Sheet(1)_8
+  - first:
+      213: 6666699855906383880
+    second: skeb upgrade slash-Sheet(1)_9
+  - first:
+      213: 3112864972949023431
+    second: skeb upgrade slash-Sheet(1)_10
+  - first:
+      213: 1914077572962755097
+    second: skeb upgrade slash-Sheet(1)_11
+  - first:
+      213: 7886657201650845003
+    second: skeb upgrade slash-Sheet(1)_12
+  - first:
+      213: 2549633094812041205
+    second: skeb upgrade slash-Sheet(1)_13
+  - first:
+      213: 6088012491611669281
+    second: skeb upgrade slash-Sheet(1)_14
+  - first:
+      213: -1138193652943926153
+    second: skeb upgrade slash-Sheet(1)_15
+  - first:
+      213: -5897751538080728997
+    second: skeb upgrade slash-Sheet(1)_16
+  - first:
+      213: 6506850052062752760
+    second: skeb upgrade slash-Sheet(1)_17
+  - first:
+      213: 5143355484423168262
+    second: skeb upgrade slash-Sheet(1)_18
+  - first:
+      213: -6387668247388246574
+    second: skeb upgrade slash-Sheet(1)_19
+  - first:
+      213: -5280600171235931220
+    second: skeb upgrade slash-Sheet(1)_20
+  - first:
+      213: 461970729042954746
+    second: skeb upgrade slash-Sheet(1)_21
+  - first:
+      213: 1688729645890657968
+    second: skeb upgrade slash-Sheet(1)_22
+  - first:
+      213: 1246869956230950665
+    second: skeb upgrade slash-Sheet(1)_23
+  - first:
+      213: -4699450706912270581
+    second: skeb upgrade slash-Sheet(1)_24
+  - first:
+      213: -1933221506684214459
+    second: skeb upgrade slash-Sheet(1)_25
+  - first:
+      213: 8000278806939564826
+    second: skeb upgrade slash-Sheet(1)_26
+  - first:
+      213: -6574998067394899988
+    second: skeb upgrade slash-Sheet(1)_27
+  - first:
+      213: -3103990718599050034
+    second: skeb upgrade slash-Sheet(1)_28
+  - first:
+      213: 2437196926317701258
+    second: skeb upgrade slash-Sheet(1)_29
+  - first:
+      213: -3370053259395425093
+    second: skeb upgrade slash-Sheet(1)_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 246
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d99632105c63240800000000000000
+      internalID: 4771217463925382556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b45b3e3899b3d80800000000000000
+      internalID: -8269847498995709109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 246
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f29efeaa2166fc0800000000000000
+      internalID: -3502091134855205073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6242fda7e86a2b0800000000000000
+      internalID: -5573610830443567383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_4
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de72b9fd2346833e0800000000000000
+      internalID: -2073797458741483539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_5
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f521fcfe532790350800000000000000
+      internalID: 5983439155920573023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e4dd3ebc8893b90800000000000000
+      internalID: -7261622514875544027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 246
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e14ab32e74f5c710800000000000000
+      internalID: 1713044055886807525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_8
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce277dfb00f5ac040800000000000000
+      internalID: 4668648420546147052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_9
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 246
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808a27f7230e48c50800000000000000
+      internalID: 6666699855906383880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 246
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cae162433e133b20800000000000000
+      internalID: 3112864972949023431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 211
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912acf0596b209a10800000000000000
+      internalID: 1914077572962755097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 211
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45cca980f8037d60800000000000000
+      internalID: 7886657201650845003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 215
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fff9db8acd126320800000000000000
+      internalID: 2549633094812041205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_14
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 215
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12387aefa17fc7450800000000000000
+      internalID: 6088012491611669281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_15
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 215
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c4cae27e25430f0800000000000000
+      internalID: -1138193652943926153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_16
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 146
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b583f27493af62ea0800000000000000
+      internalID: -5897751538080728997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_17
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 145
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffaee7c5a9fc4a50800000000000000
+      internalID: 6506850052062752760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_18
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 150
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601a99aff8ed06740800000000000000
+      internalID: 5143355484423168262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_19
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 147
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dda16382917a57a0800000000000000
+      internalID: -6387668247388246574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_20
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 145
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab8d904f1a87b6b0800000000000000
+      internalID: -5280600171235931220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_21
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 81
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9cb313eef396600800000000000000
+      internalID: 461970729042954746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_22
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 80
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bedbf86aa29f6710800000000000000
+      internalID: 1688729645890657968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 85
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90fa0467e95cd4110800000000000000
+      internalID: 1246869956230950665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 82
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0729071b7238ceb0800000000000000
+      internalID: -4699450706912270581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_25
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 83
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54321f54841db25e0800000000000000
+      internalID: -1933221506684214459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_26
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 16
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bf7b70033b60f60800000000000000
+      internalID: 8000278806939564826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_27
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 16
+        width: 29
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef0c02f71ae0c4a0800000000000000
+      internalID: -6574998067394899988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 19
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc4bc713e86ce4d0800000000000000
+      internalID: -3103990718599050034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_29
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 18
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8827d011b9a2d120800000000000000
+      internalID: 2437196926317701258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeb upgrade slash-Sheet(1)_30
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 16
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc96977a6a2b31d0800000000000000
+      internalID: -3370053259395425093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
