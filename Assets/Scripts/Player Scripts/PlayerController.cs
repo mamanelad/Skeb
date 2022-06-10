@@ -162,7 +162,8 @@ public class PlayerController : MonoBehaviour
 
     private void IceStateAttack()
     {
-        if (_playerState != PlayerState.Falling)
+        print(GameManager.Shared.canDash);
+        if (_playerState != PlayerState.Falling && GameManager.Shared.canDash)
         {
             if (_playerStats.iceDash)
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.DashIce);
