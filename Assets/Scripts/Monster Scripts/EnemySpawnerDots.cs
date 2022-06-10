@@ -8,7 +8,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private bool gameStarted;
 
     private bool spawnIsOn;
-
+    [NonSerialized] public bool wonLevel;
     private PlayerController _playerController;
 
     private int _dotIndexBolt; //Position for the bolt
@@ -242,6 +242,7 @@ public class EnemySpawnerDots : MonoBehaviour
         }
         else
         {
+            wonLevel = true;
             openShop = true;
             openShopTimer = timeToOpenTheShopDeley;
         }
@@ -249,6 +250,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void StartBlockSpawn(bool mode)
     {
+        wonLevel = false;
         spawnIsOn = mode;
         GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;

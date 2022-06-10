@@ -106,7 +106,6 @@ public class EnemyAlone : MonoBehaviour
                 var dashColEffect = other.gameObject.GetComponentInChildren<FireParticleEffect>();
                 if (dashColEffect != null)
                 {
-                    print("kaka");
                     dashColEffect.isOn = true;    
                 }
                 _enemyTogetherFather.GoBack(Enemy.pushKind.Player, _player.transform.position);

@@ -257,13 +257,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         
-
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;
             _rb.velocity = Vector2.zero;
         }
 
+        
         if (IsPlayerDead)
             return;
 
@@ -380,8 +380,7 @@ public class PlayerController : MonoBehaviour
     private void SetMovementAndIdleDirection()
     {
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
-        if (
-            move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");
@@ -421,6 +420,8 @@ public class PlayerController : MonoBehaviour
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
+    
+    
 
 
     private void SetHitBoxRotation()
