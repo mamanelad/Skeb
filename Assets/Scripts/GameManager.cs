@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public bool canDash;
     private float dashDelayTimer;
 
+    public bool playerCanMove;
     public WorldState CurrentState;
 
     private void Awake()
