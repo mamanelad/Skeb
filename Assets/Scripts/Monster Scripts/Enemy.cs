@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
 
         if (_playerController.IsPlayerDead) return;
 
-        if (transform.position.y < -50) // enemy fell off arena
+        if (transform.position.y < -20) // enemy fell off arena
             KillEnemy();
 
         SideHandler();
