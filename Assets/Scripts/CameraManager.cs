@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    private EnemySpawnerDots _enemySpawnerDots;
     private PlayerController _playerController;
     [SerializeField] private GameObject targetGroupCamera;
     [SerializeField] private CinemachineTargetGroup _cinemachineTargetGroup;
     private GameObject _target;
     [SerializeField] private float gameOverDelay = 0.3f;
-
+    [SerializeField] private float lifeEndOfLevelBonus = 20f;
+    [SerializeField] private GameObject roundWonText;
     [SerializeField] private float timeInZoom;
+    private float originTimeInZoom; 
     
     void Start()
     {
+        _enemySpawnerDots = FindObjectOfType<EnemySpawnerDots>();
         _playerController = FindObjectOfType<PlayerController>();
         timeInZoom /= 5f;
+        originTimeInZoom = timeInZoom;
 
     }
 
@@ -24,19 +29,35 @@ public class CameraManager : MonoBehaviour
         if (Time.timeScale == 0)
             return;
         
-        if (_playerController.IsPlayerDead && timeInZoom > 0)
+        if ((_enemySpawnerDots.wonLevel || _playerController.IsPlayerDead )&& timeInZoom > 0)
         {
             if (_playerController.GetPlayerState() != PlayerController.PlayerState.Falling)
             {
+                if (_enemySpawnerDots.wonLevel && timeInZoom <= (originTimeInZoom / 3))
+                {
+                    FindObjectOfType<PlayerHealth>().UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
+
+                }
+                
+                if (_enemySpawnerDots.wonLevel && timeInZoom <= (originTimeInZoom / 2))
+                {
+                    roundWonText.SetActive(true);
+                }
+                   
+                
                 Time.timeScale = 0.2f;
                 targetGroupCamera.SetActive(true);
                 timeInZoom -= Time.deltaTime;
 
                 if (timeInZoom <= 0)
                 {
+                    _enemySpawnerDots.wonLevel = false;
+                    roundWonText.SetActive(false);
                     Time.timeScale = 1f;
                     targetGroupCamera.SetActive(false);
-                    GameOver();
+                    timeInZoom = originTimeInZoom;
+                    if ( _playerController.IsPlayerDead)
+                        GameOver();
                 }
 
                 return;
@@ -52,6 +73,13 @@ public class CameraManager : MonoBehaviour
         
     }
 
+    private void levelWon(int state)
+    {
+        if (state == 0)
+        {
+            
+        }
+    }
     private void GameOver()
     {
         GameManager.Shared.GameOver();

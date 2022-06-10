@@ -20,7 +20,7 @@ public class AudioManagerGeneral : MonoBehaviour
     private void Awake()
     {
         Cursor.visible = false;
-        
+
         if (_instance == null)
             _instance = this;
         else
@@ -53,7 +53,7 @@ public class AudioManagerGeneral : MonoBehaviour
             return;
         s.audioSource.Stop();
     }
-    
+
     public void PauseSound(GeneralSound.SoundKindsGeneral soundKindsGeneral)
     {
         var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
@@ -61,7 +61,7 @@ public class AudioManagerGeneral : MonoBehaviour
             return;
         s.audioSource.Pause();
     }
-    
+
     public void UnPauseSound(GeneralSound.SoundKindsGeneral soundKindsGeneral)
     {
         var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
@@ -69,14 +69,14 @@ public class AudioManagerGeneral : MonoBehaviour
             return;
         s.audioSource.UnPause();
     }
-    
+
     public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral)
     {
         var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
         if (s == null)
             return;
         if (!CanPlaySound(soundKindsGeneral, s)) return;
-        
+
 
         GameObject soundGameObject = new GameObject("sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
@@ -86,14 +86,14 @@ public class AudioManagerGeneral : MonoBehaviour
         audioSource.Play();
         s.audioSource = audioSource;
     }
-    
-    public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral , Vector3 position)
+
+    public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral, Vector3 position)
     {
         var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
         if (s == null)
             return;
         if (!CanPlaySound(soundKindsGeneral, s)) return;
-        
+
 
         GameObject soundGameObject = new GameObject("sound");
         soundGameObject.transform.position = position;
@@ -103,7 +103,6 @@ public class AudioManagerGeneral : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
-
     }
 
     private bool CanPlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral, GeneralSound soundToPlay)
@@ -121,14 +120,9 @@ public class AudioManagerGeneral : MonoBehaviour
                 return false;
             }
         }
-         
-        else
-        {
-            _soundTimerDict[soundKindsGeneral] = Time.time;
-            return true;
-        }
 
 
-        return false;
+        _soundTimerDict[soundKindsGeneral] = Time.time;
+        return true;
     }
 }

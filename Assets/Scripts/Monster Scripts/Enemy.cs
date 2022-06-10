@@ -256,6 +256,14 @@ public class Enemy : MonoBehaviour
         foreach (var collider in GetComponentsInChildren<Collider2D>())
             collider.enabled = false;
         GetComponentInChildren<Animator>().SetTrigger("Fall");
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+        {
+            var iceParticles = GetComponentInChildren<FireParticleEffect>();
+            if (iceParticles != null)
+            {
+                iceParticles.isOn = false;
+            }
+        }
         _enemyAI.enabled = false;
         StartCoroutine(FallDelay());
     }
