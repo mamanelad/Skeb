@@ -18,6 +18,7 @@ public class ChestScript : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        SetUpgradesLockStatus();
     }
     
     private void Update()
@@ -69,6 +70,7 @@ public class ChestScript : MonoBehaviour
         if (chestUpgradeLevel + 1 != upgradeLevel)
             return false;
         chestUpgradeLevel += 1;
+        SetUpgradesLockStatus();
         return true;
     }
 
@@ -104,6 +106,18 @@ public class ChestScript : MonoBehaviour
         if (index < 1 || index > upgrades.Count)
             return null;
         return upgrades[index - 1];
+    }
+
+    private void SetUpgradesLockStatus()
+    {
+        for (var i = 0; i < upgrades.Count; i++)
+        {
+            if (i <= chestUpgradeLevel)
+                upgrades[i].GetComponent<UpgradeScript>().LockCardStatus(false);
+            else
+                upgrades[i].GetComponent<UpgradeScript>().LockCardStatus(true);
+            
+        }
     }
 
 }

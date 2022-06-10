@@ -6,6 +6,7 @@ using UnityEngine;
 public class UpgradeScript : MonoBehaviour
 {
     [SerializeField] private GameObject checkBox;
+    [SerializeField] private GameObject lockBox;
     [SerializeField] private GameObject upgradeBorder;
     [NonSerialized] public bool apply;
     [NonSerialized] public bool selectApply;
@@ -83,5 +84,10 @@ public class UpgradeScript : MonoBehaviour
         var color = spriteRenderer.color;
         color.a = opacity;
         spriteRenderer.color = color;
+    }
+
+    public void LockCardStatus(bool isLocked)
+    {
+        lockBox.SetActive(isLocked);
     }
 }
