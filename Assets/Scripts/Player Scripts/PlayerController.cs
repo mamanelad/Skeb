@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
     private GameManager.WorldState _currentWorldState;
     private AttackStatus _attackStatus = AttackStatus.First;
     private AttackStatus _hitStatus = AttackStatus.First;
-
     public PlayerState _playerState = PlayerState.Idle;
     private Vector2 _moveDirection = Vector2.zero;
     private Vector2 _idleDirection = Vector2.down;
@@ -86,6 +85,10 @@ public class PlayerController : MonoBehaviour
     private GameControls _gameControls;
     private Vector2 move;
     private float dashColliderTimer;
+
+    [SerializeField] private float dashTimer = 0.3f;
+    [SerializeField] private float dashSpeed;
+    private float currDashTimer;
 
     #endregion
 
@@ -120,6 +123,7 @@ public class PlayerController : MonoBehaviour
         InitializeControls();
         _canCreateIceDash = true;
         dashCollider2D.enabled = false;
+        currDashTimer = dashTimer;
     }
 
     private void InitializeControls()
@@ -462,7 +466,12 @@ public class PlayerController : MonoBehaviour
 
         ApplyPowerUps();
 
-        _rb.MovePosition(_rb.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        var currMovementSpeed = movementSpeed;
+
+        if (_dashStatus)
+            currMovementSpeed *= dashSpeed;
+        
+        _rb.MovePosition(_rb.position + _moveDirection * currMovementSpeed * Time.fixedDeltaTime);
 
         // dash from attack occurs only on non-slippery floors
         if (!slipperyFloor && _attackDash)
@@ -490,17 +499,30 @@ public class PlayerController : MonoBehaviour
             KnockBackStatus = false;
         }
 
+        // if (_dashStatus)
+        // {
+        //     var dashPosition = _rb.position + _idleDirection * dashDistance;
+        //     var hit = Physics2D.Raycast(transform.position, _idleDirection,
+        //         dashDistance, dashLayerMask);
+        //     if (hit.collider != null)
+        //         dashPosition = hit.point;
+        //
+        //     _rb.MovePosition(dashPosition);
+        //     _dashStatus = false;
+        // }
+
         if (_dashStatus)
         {
-            var dashPosition = _rb.position + _idleDirection * dashDistance;
-            var hit = Physics2D.Raycast(transform.position, _idleDirection,
-                dashDistance, dashLayerMask);
-            if (hit.collider != null)
-                dashPosition = hit.point;
-
-            _rb.MovePosition(dashPosition);
-            _dashStatus = false;
+            currDashTimer -= Time.deltaTime;
+            if (currDashTimer <= 0)
+            {
+                _dashStatus = false;
+                currDashTimer = dashTimer;
+            }
+            
         }
+        
+        
     }
 
     public void SetPlayerState(PlayerState status)

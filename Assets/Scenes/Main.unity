@@ -372,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126078, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: m_TagString
@@ -7936,7 +7936,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 1.46668e-40, y: 1.4667e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.4671e-40, y: 1.46712e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8494,6 +8494,8 @@ MonoBehaviour:
   dashColliderTime: 0
   _playerState: 0
   isStunned: 0
+  dashTimer: 0.15
+  dashSpeed: 3
   screenShakeIntensity: 0
   screenShakeTime: 0
 --- !u!114 &1798034506
