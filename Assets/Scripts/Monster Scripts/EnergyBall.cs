@@ -82,7 +82,6 @@ public class EnergyBall : MonoBehaviour
     private void FixedUpdate()
     {
         if (!_startLife) return;
-
         transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, step);
         lifeBallTimer -= Time.deltaTime;
         if (lifeBallTimer <= 0)

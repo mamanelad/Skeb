@@ -53,15 +53,13 @@ public class PlayerController : MonoBehaviour
     [Header("Ice Dash")] [SerializeField] private GameObject iceSpike;
     [SerializeField] [Range(0, 0.5f)] private float spikeSeparation;
     [SerializeField] [Range(1, 5)] private int spikeScaler;
-    [SerializeField] private BoxCollider2D dashCollider2D;
-    [SerializeField] private bool isDashColliderOn;
-    [SerializeField] private float dashColliderTime = .2f;
+    [SerializeField] private GameObject dashCollider2D;
 
     #endregion
 
     #region Private Fields
 
-    private Rigidbody2D _rb;
+    [NonSerialized] private Rigidbody2D _rb;
     private TrailRenderer _dashEffect;
     private PlayerStats _playerStats;
     [NonSerialized] public bool IsAttacking;
@@ -84,7 +82,6 @@ public class PlayerController : MonoBehaviour
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
-    private float dashColliderTimer;
 
     [SerializeField] private float dashTimer = 0.3f;
     [SerializeField] private float dashSpeed;
@@ -122,7 +119,9 @@ public class PlayerController : MonoBehaviour
         _gameControls = new GameControls();
         InitializeControls();
         _canCreateIceDash = true;
-        dashCollider2D.enabled = false;
+        if (dashCollider2D == null)
+            print("need to add dash collider");
+        dashCollider2D.SetActive(false); 
         currDashTimer = dashTimer;
     }
 
@@ -166,17 +165,15 @@ public class PlayerController : MonoBehaviour
 
     private void IceStateAttack()
     {
-        print(GameManager.Shared.canDash);
         if (_playerState != PlayerState.Falling && GameManager.Shared.canDash)
         {
             if (_playerStats.iceDash)
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.DashIce);
             SoundsPlayer(PlayerSound.SoundKindsPlayer.Dash);
-            dashCollider2D.enabled = true;
-            isDashColliderOn = true;
-            dashColliderTimer = dashColliderTime;
-
+            
+            
             _dashStatus = true;
+            dashCollider2D.SetActive(_dashStatus);
             var hourGlass = FindObjectOfType<HourGlass>();
             if (hourGlass != null)
             {
@@ -259,15 +256,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isDashColliderOn)
-        {
-            dashColliderTimer -= Time.deltaTime;
-            if (dashColliderTimer < 0)
-            {
-                isDashColliderOn = false;
-                dashCollider2D.enabled = false;
-            }
-        }
+        
 
         if (transform.position.y < -50)
         {
@@ -459,6 +448,8 @@ public class PlayerController : MonoBehaviour
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
 
+        
+        
         move = _gameControls.GameControl.Movement.ReadValue<Vector2>();
 
         if (IsPlayerDead)
@@ -521,12 +512,11 @@ public class PlayerController : MonoBehaviour
             if (currDashTimer <= 0)
             {
                 _dashStatus = false;
+                dashCollider2D.SetActive(_dashStatus);
                 currDashTimer = dashTimer;
             }
             
         }
-        
-        
     }
 
     public void SetPlayerState(PlayerState status)
@@ -662,5 +652,10 @@ public class PlayerController : MonoBehaviour
         if (_playerState != PlayerState.Falling)
             _playerState = PlayerState.Dead;
         Animator.SetInteger(State, (int) _playerState);
+    }
+
+    public float GetPlayerSpeed()
+    {
+        return Vector3.Magnitude(_moveDirection);
     }
 }
