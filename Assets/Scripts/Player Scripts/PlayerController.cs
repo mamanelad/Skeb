@@ -392,8 +392,7 @@ public class PlayerController : MonoBehaviour
     {
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         if (
-            move != Vector2
-                .zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+            move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");
@@ -468,11 +467,15 @@ public class PlayerController : MonoBehaviour
         ApplyPowerUps();
 
         var currMovementSpeed = movementSpeed;
+        var currMoveDirection = _moveDirection;
 
         if (_dashStatus)
+        {
             currMovementSpeed *= dashSpeed;
-        
-        _rb.MovePosition(_rb.position + _moveDirection * currMovementSpeed * Time.fixedDeltaTime);
+            currMoveDirection = _moveDirection.magnitude < 0.7f ? _idleDirection : _moveDirection;
+        }
+
+        _rb.MovePosition(_rb.position + currMoveDirection * currMovementSpeed * Time.fixedDeltaTime);
 
         // dash from attack occurs only on non-slippery floors
         if (!slipperyFloor && _attackDash)
@@ -583,7 +586,10 @@ public class PlayerController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         Animator.SetInteger(State, (int) _playerState);
         if (_isInTopHalf)
+        {
             GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+            _rb.gravityScale = 100;
+        }
     }
 
     private void ResetPlayerFall()
