@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: timeToOpenTheShopDeley
-      value: 3.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5867245367987126079, guid: 345e7d4eb735b644684927fab20821c3, type: 3}
       propertyPath: _waves.Array.data[0].bigPercentage
@@ -673,7 +673,7 @@ RectTransform:
   - {fileID: 222061938}
   - {fileID: 1572228723}
   m_Father: {fileID: 1817960513}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2202,6 +2202,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &389457269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1817960513}
+    m_Modifications:
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 413.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419950950661688541, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+      propertyPath: m_Name
+      value: Round Won
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
 --- !u!1 &412355974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,7 +3302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657348275}
   - component: {fileID: 657348276}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Top Half
   m_TagString: Top
   m_Icon: {fileID: 0}
@@ -3269,7 +3366,7 @@ GameObject:
   - component: {fileID: 658725552}
   - component: {fileID: 658725554}
   - component: {fileID: 658725553}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Map Edge Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3348,6 +3445,16 @@ CircleCollider2D:
   m_Offset: {x: -0, y: 3.9454541}
   serializedVersion: 2
   m_Radius: 0.7545457
+--- !u!1 &673124152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8419950950661688541, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+  m_PrefabInstance: {fileID: 389457269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &673124153 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8419950950661688540, guid: 3cd1a47ddb633fb4183cf125c267b76a, type: 3}
+  m_PrefabInstance: {fileID: 389457269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &747009611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,7 +3551,7 @@ GameObject:
   - component: {fileID: 750537344}
   - component: {fileID: 750537343}
   - component: {fileID: 750537342}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3941,7 +4048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 788043958}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ===== Arena =====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4461,7 +4568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826180518}
   - component: {fileID: 826180519}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4729,7 +4836,7 @@ RectTransform:
   m_Children:
   - {fileID: 211833576}
   m_Father: {fileID: 1817960513}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4948,7 +5055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917145310}
   - component: {fileID: 917145311}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Arena Collider
   m_TagString: Arena Collider
   m_Icon: {fileID: 0}
@@ -5914,7 +6021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193278122}
   - component: {fileID: 1193278123}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Botton Half
   m_TagString: Bottom
   m_Icon: {fileID: 0}
@@ -6642,6 +6749,10 @@ PrefabInstance:
     - target: {fileID: 4394700735746158071, guid: a271bda88d94a2b45a6309335437501e, type: 3}
       propertyPath: m_Name
       value: arenaParticleCollider (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394700735746158071, guid: a271bda88d94a2b45a6309335437501e, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a271bda88d94a2b45a6309335437501e, type: 3}
@@ -7985,7 +8096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1671091296}
   - component: {fileID: 1671091297}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Arena Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8648,6 +8759,8 @@ MonoBehaviour:
   targetGroupCamera: {fileID: 773755405}
   _cinemachineTargetGroup: {fileID: 0}
   gameOverDelay: 0.2
+  lifeEndOfLevelBonus: 20
+  roundWonText: {fileID: 673124152}
   timeInZoom: 5
 --- !u!114 &1740443609
 MonoBehaviour:
@@ -8748,7 +8861,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 1.57405e-40, y: 1.57406e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.57705e-40, y: 1.57706e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9618,6 +9731,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 673124153}
   - {fileID: 44474816}
   - {fileID: 856012562}
   m_Father: {fileID: 0}
@@ -9905,6 +10019,7 @@ MonoBehaviour:
   timeInStage: 8
   inTutorial: 0
   toIceDashDelayTime: 0.3
+  playerCanMove: 0
   CurrentState: 0
 --- !u!4 &1864771057
 Transform:
@@ -11766,7 +11881,7 @@ GameObject:
   - component: {fileID: 7924390098816417819}
   - component: {fileID: 7924390098816417816}
   - component: {fileID: 7924390098816417818}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DashCollider
   m_TagString: DashCollider
   m_Icon: {fileID: 0}
