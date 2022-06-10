@@ -17,7 +17,6 @@ public class EnemyAlone : MonoBehaviour
     private bool _canAttack = true;
     private PlayerController _playerController;
 
-    
     #endregion
 
     #region Animator Labels
@@ -25,6 +24,7 @@ public class EnemyAlone : MonoBehaviour
     private static readonly int Dead = Animator.StringToHash("Dead");
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Die = Animator.StringToHash("Die");
+    private static readonly int Damage = Animator.StringToHash("Demage");
 
     #endregion
 
@@ -41,6 +41,9 @@ public class EnemyAlone : MonoBehaviour
     [Header("Screen Shake Settings")] [SerializeField]
     private float screenShakeIntensity = 5f;
 
+    [NonSerialized] public float speed;
+    private Vector3 oldPosition;
+    
     [SerializeField] private float screenShakeTime = .1f;
 
     #endregion
@@ -59,6 +62,12 @@ public class EnemyAlone : MonoBehaviour
         _enemyTogetherFather = GetComponentInParent<Enemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
         _animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        speed = (transform.position - oldPosition).magnitude / Time.deltaTime;
+        oldPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -89,14 +98,36 @@ public class EnemyAlone : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
         {
-            _fireParticleEffect.isOn = true;
-            GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.DashHitMonster);
+            if (other.gameObject.CompareTag("Player") && _playerController.GetPlayerSpeed() >= 0.5f &&
+                _playerController._dashStatus)
+            {
+                _enemyTogetherFather.GoBack(Enemy.pushKind.Player, _player.transform.position);
+                _animator.SetTrigger(Damage);
+                _fireParticleEffect.isOn = true;
+                GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.DashHitMonster);
+            }
+
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                var otherEnemyAllone = GetComponent<EnemyAlone>();
+                if (otherEnemyAllone != null)
+                {
+                    var speedEnemy = otherEnemyAllone.speed;
+                    print(speedEnemy);
+                    if (speedEnemy >= 1.5f)
+                    {
+                        _enemyTogetherFather.GoBack(Enemy.pushKind.Enemy, other.transform.position);
+                        _animator.SetTrigger(Damage);
+                        _fireParticleEffect.isOn = true;
+                        GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.DashHitMonster);
+                    }
+                }
+            }
         }
-            
     }
-    
+
     /**
      * See if the player is near enough for attack.
      */

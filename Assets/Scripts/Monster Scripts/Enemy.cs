@@ -10,6 +10,13 @@ public class Enemy : MonoBehaviour
         Middle,
         Small
     }
+    
+    public enum pushKind
+    {
+        Fire,
+        Player,
+        Enemy
+    }
 
     #region Private Fields
 
@@ -122,13 +129,13 @@ public class Enemy : MonoBehaviour
             if (fireAffect != null && !fireAffect.damageEnemy)
             {
                 fireAffect.CloseAndOpenBurningAffect(true);
-                GoBack();
+                GoBack(0, _player.transform.position);
             }
         }
 
         else if (!_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
-            GoBack();
+            GoBack(0, _player.transform.position);
         }
 
 
@@ -157,13 +164,30 @@ public class Enemy : MonoBehaviour
             _enemyAI.MonsterDamageSound();
     }
 
-    private void GoBack()
+    public void GoBack(pushKind whoIsPushing, Vector3 posOfPush)
     {
         var forceAmount = pushBackStrengthFire;
         if (_state == GameManager.WorldState.Ice)
             forceAmount = pushBackStrengthIce;
 
-        var dir = transform.position - _player.transform.position;
+        
+        var playerVelocity = _playerController.GetPlayerSpeed();
+        switch (whoIsPushing)
+        {
+            case pushKind.Player: // playerPush
+                if (playerVelocity > 1)
+                    forceAmount *= playerVelocity;
+                break;
+            
+            case pushKind.Enemy:
+                forceAmount *= 1.3f;
+                break;
+        }
+        
+
+        var dir = transform.position - posOfPush;
+
+        // var dir = transform.position - _player.transform.position;
         _rb.AddForce(new Vector2(dir.x * forceAmount, dir.y * forceAmount), ForceMode2D.Impulse);
     }
 
@@ -177,8 +201,6 @@ public class Enemy : MonoBehaviour
 
         if (!_isDead)
         {
-            
-
             if (_enemySpawnerDots != null)
             {
                 _enemySpawnerDots.DecreaseMonster();

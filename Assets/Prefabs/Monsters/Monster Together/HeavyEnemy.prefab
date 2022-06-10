@@ -54,7 +54,7 @@ Rigidbody2D:
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ea5dc8c18125eb042892fa34407f1efc, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9dd1dbccf7e2f48bb4e117cc7e4455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackStrengthFire: 2
-  pushBackStrengthIce: 5
+  pushBackStrengthFire: 4
+  pushBackStrengthIce: 15
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
   _enemyKind: 0
