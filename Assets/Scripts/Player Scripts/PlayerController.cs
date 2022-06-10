@@ -381,13 +381,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameManager.Shared.playerCanMove)
         {
+            _moveDirection = Vector2.zero;
             _rb.velocity = Vector2.zero;
             return;
         }
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
-        if (
-            move != Vector2
-                .zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");

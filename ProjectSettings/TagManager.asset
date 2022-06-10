@@ -34,8 +34,8 @@ TagManager:
   - Player
   - Enemy
   - fireEffect
-  - 
-  - 
+  - Arena
+  - colliderDashPlayer
   - 
   - 
   - 
