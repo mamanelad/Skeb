@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3571366550281506643}
   - component: {fileID: 1641255854388834737}
   m_Layer: 0
-  m_Name: EnergyBall
+  m_Name: EnergyBallIce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7392572333538659150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.408, y: -1.877, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,10 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c3323d10161ae44b52c6eeb9e849b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBallTimer: 0.85
+  lifeBallTimer: 2
   timeToDieAfterHit: 0
   step: 0.085
   _attackDamage: 20
+  fireParticlePrefab: {fileID: 2273662187065366443, guid: 3db1d567ae6a25f4ebe2db1083319534, type: 3}
+  iceParticlePrefab: {fileID: 5520446349924354269, guid: b62c6400639195b4bb5547d9f8abc859, type: 3}
 --- !u!58 &5941270720099977041
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,8 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnimation: {fileID: 0}
-  timeToBurn: 1
+  timeToBurn: 5
   ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
   Rate: 20
   isOn: 1

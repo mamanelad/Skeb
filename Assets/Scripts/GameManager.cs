@@ -51,13 +51,18 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public GameState CurrentGameState;
     private GameState _prevGameState = GameState.Arena;
     private float _stageTimer;
-
+    
+    [SerializeField] private float toIceDashDelayTime = .3f;
+    [NonSerialized] public bool canDash;
+    private float dashDelayTimer;
 
     public WorldState CurrentState;
 
     private void Awake()
     {
         Cursor.visible = false;
+        
+        
         
         if (Shared == null)
             Shared = this;
@@ -110,6 +115,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!canDash)
+            DashDelay();
+        
         if (!dontChangeStateByTime)
             UpdateStageTimer();
 
@@ -119,6 +127,12 @@ public class GameManager : MonoBehaviour
         triggerKillCamera = roundMonsterKillCounter + 1 == roundMonsterTotalAmount;
     }
 
+    private void DashDelay()
+    {
+        dashDelayTimer -= Time.deltaTime;
+        if (dashDelayTimer <= 0)
+            canDash = true;
+    } 
     private void UpdateRoundText()
     {
         UIManager.Shared.SetUIText(roundNumber, roundMonsterKillCounter, roundMonsterTotalAmount);
@@ -160,6 +174,12 @@ public class GameManager : MonoBehaviour
 
     private void SwitchState()
     {
+        if (CurrentState == WorldState.Fire)
+        {
+            canDash = false;
+            dashDelayTimer = toIceDashDelayTime;
+        }
+            
         PlaySound(GeneralSound.SoundKindsGeneral.Bell);
         var fireAffects = FindObjectsOfType<FireParticleEffect>();
         if (fireAffects == null)
@@ -167,9 +187,8 @@ public class GameManager : MonoBehaviour
         foreach (var fireAffect in fireAffects)
             fireAffect.CloseAndOpenBurningAffect(false);
         if (_arenaParticles != null)
-        {
             _arenaParticles.StartParticles();
-        }
+        
     }
 
     private void PauseGame(InputAction.CallbackContext context)
