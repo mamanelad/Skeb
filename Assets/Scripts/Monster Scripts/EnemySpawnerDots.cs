@@ -242,7 +242,7 @@ public class EnemySpawnerDots : MonoBehaviour
         }
         else
         {
-            wonLevel = true;
+            ZoomRoundWon();
             openShop = true;
             openShopTimer = timeToOpenTheShopDeley;
         }
@@ -250,11 +250,18 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void StartBlockSpawn(bool mode)
     {
+        GameManager.Shared.playerCanMove = true;
         wonLevel = false;
         spawnIsOn = mode;
         GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
+    }
+
+    public void ZoomRoundWon()
+    {
+        GameManager.Shared.playerCanMove = false;
+        wonLevel = true;
     }
 
     private void GameWon()

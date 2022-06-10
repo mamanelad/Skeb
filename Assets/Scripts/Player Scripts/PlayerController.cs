@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         _canCreateIceDash = true;
         if (dashCollider2D == null)
             print("need to add dash collider");
-        dashCollider2D.SetActive(false); 
+        dashCollider2D.SetActive(false);
         currDashTimer = dashTimer;
     }
 
@@ -170,8 +170,8 @@ public class PlayerController : MonoBehaviour
             if (_playerStats.iceDash)
                 SoundsPlayer(PlayerSound.SoundKindsPlayer.DashIce);
             SoundsPlayer(PlayerSound.SoundKindsPlayer.Dash);
-            
-            
+
+
             _dashStatus = true;
             dashCollider2D.SetActive(_dashStatus);
             var hourGlass = FindObjectOfType<HourGlass>();
@@ -210,7 +210,7 @@ public class PlayerController : MonoBehaviour
         // print(_moveDirection.sqrMagnitude);
         if (_moveDirection.sqrMagnitude < 0.3f)
             return;
-        
+
         switch (GameManager.Shared.CurrentState)
         {
             case GameManager.WorldState.Fire:
@@ -241,6 +241,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
     private void SoundsPlayer(PlayerSound.SoundKindsPlayer soundKindPlayer)
     {
         GameManager.Shared.PlayerAudioManager.PlaySound(soundKindPlayer, transform.position);
@@ -256,14 +257,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;
             _rb.velocity = Vector2.zero;
         }
 
-        
+
         if (IsPlayerDead)
             return;
 
@@ -278,7 +278,6 @@ public class PlayerController : MonoBehaviour
         SetMovementAndIdleDirection();
         SetHitBoxRotation();
         PlayAnimation();
-
     }
 
     private void SetWorldState()
@@ -344,6 +343,7 @@ public class PlayerController : MonoBehaviour
                 {
                     box.HitHelper();
                 }
+
                 if (_playerStats.burnDamage)
                 {
                     var fireParticle = monster.GetComponent<FireParticleEffect>();
@@ -379,8 +379,15 @@ public class PlayerController : MonoBehaviour
 
     private void SetMovementAndIdleDirection()
     {
+        if (!GameManager.Shared.playerCanMove)
+        {
+            _rb.velocity = Vector2.zero;
+            return;
+        }
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
-        if (move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (
+            move != Vector2
+                .zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");
@@ -420,8 +427,6 @@ public class PlayerController : MonoBehaviour
         _idleDirection.x = _idleDirection.x == 0 ? 0 : _idleDirection.x > 0 ? 1 : -1;
         _idleDirection.y = _idleDirection.y == 0 ? 0 : _idleDirection.y > 0 ? 1 : -1;
     }
-    
-    
 
 
     private void SetHitBoxRotation()
@@ -449,8 +454,7 @@ public class PlayerController : MonoBehaviour
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
 
-        
-        
+
         move = _gameControls.GameControl.Movement.ReadValue<Vector2>();
 
         if (IsPlayerDead)
@@ -516,7 +520,6 @@ public class PlayerController : MonoBehaviour
                 dashCollider2D.SetActive(_dashStatus);
                 currDashTimer = dashTimer;
             }
-            
         }
     }
 
@@ -545,7 +548,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var monList = _monstersInRange ?? new List<GameObject>();
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("box") )
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("box"))
         {
             var enemy = other.gameObject;
             if (!monList.Contains(enemy))
@@ -604,7 +607,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
 
     public void PlayerGotHit(Vector3 pos)
     {
