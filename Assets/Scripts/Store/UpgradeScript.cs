@@ -7,15 +7,16 @@ public class UpgradeScript : MonoBehaviour
 {
     [SerializeField] private GameObject checkBox;
     [SerializeField] private GameObject upgradeBorder;
-    [NonSerialized]public bool apply;
+    [NonSerialized] public bool apply;
+    [NonSerialized] public bool selectApply;
     public bool selectUpgrade;
     [SerializeField] private string upgradeDescription;
     private bool _isApplied;
 
     private void Start()
     {
-        SetOpacity(0.5f);
-        upgradeBorder.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+        SetOpacity(0.75f);
+        //upgradeBorder.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     void Update()
@@ -25,9 +26,34 @@ public class UpgradeScript : MonoBehaviour
         else
             RemoveUpgrade();
         
-        upgradeBorder.SetActive(selectUpgrade);
+        if(selectApply && !apply)
+            SelectApply();
+        else
+            DeSelectApply();
+
+        if (selectUpgrade)
+        {
+            upgradeBorder.SetActive(selectUpgrade);
+            SetOpacity(1);
+        }
+        else
+        {
+            upgradeBorder.SetActive(selectUpgrade);
+            if (!apply)
+                SetOpacity(0.75f);
+        }
     }
 
+    private void SelectApply()
+    {
+        upgradeBorder.GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    
+    private void DeSelectApply()
+    {
+        upgradeBorder.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    
     private void ApplyUpgrade()
     {
         if(_isApplied)
@@ -43,7 +69,7 @@ public class UpgradeScript : MonoBehaviour
             return;
         _isApplied = false;
         checkBox.SetActive(false);
-        SetOpacity(0.5f);
+        SetOpacity(0.75f);
     }
     
     public string GetUpgradeDescription()
