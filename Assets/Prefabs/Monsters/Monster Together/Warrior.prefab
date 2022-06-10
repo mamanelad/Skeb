@@ -164,7 +164,7 @@ MonoBehaviour:
   startHealth: 40
   _bloodEffect: {fileID: 3130804771916970411, guid: 0f78026728b5e1e4399d38cefa67eb9a, type: 3}
   bloodPosition: {fileID: 7545207494842584244}
-  heartValue: 1
+  heartValue: 4
 --- !u!58 &2573537948864715719
 CircleCollider2D:
   m_ObjectHideFlags: 0

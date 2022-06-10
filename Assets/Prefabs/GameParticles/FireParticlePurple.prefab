@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3019337942925234243}
   - component: {fileID: 8178377746727728621}
   - component: {fileID: 7462131764911734646}
+  - component: {fileID: -1064387113899076536}
   m_Layer: 0
   m_Name: FireParticlePurple
   m_TagString: Untagged
@@ -70,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -248240473
-  m_SortingLayer: 3
+  m_SortingLayerID: -1162428035
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5191773661390188496, guid: 12fd0b30f152eb1489c1c2ebc248eb11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +107,18 @@ MonoBehaviour:
   - {fileID: 8699206875487602785, guid: 12fd0b30f152eb1489c1c2ebc248eb11, type: 3}
   DestroysSelf: 1
   AlphaFalloff: 1
+--- !u!114 &-1064387113899076536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273662187065366443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4925918527520701901
 GameObject:
   m_ObjectHideFlags: 0

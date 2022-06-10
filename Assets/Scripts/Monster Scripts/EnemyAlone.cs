@@ -103,6 +103,12 @@ public class EnemyAlone : MonoBehaviour
             if (other.gameObject.CompareTag("Player") && _playerController.GetPlayerSpeed() >= 0.5f &&
                 _playerController._dashStatus)
             {
+                var dashColEffect = other.gameObject.GetComponentInChildren<FireParticleEffect>();
+                if (dashColEffect != null)
+                {
+                    print("kaka");
+                    dashColEffect.isOn = true;    
+                }
                 _enemyTogetherFather.GoBack(Enemy.pushKind.Player, _player.transform.position);
                 _animator.SetTrigger(Damage);
                 _fireParticleEffect.isOn = true;
@@ -111,11 +117,10 @@ public class EnemyAlone : MonoBehaviour
 
             if (other.gameObject.CompareTag("Enemy"))
             {
-                var otherEnemyAllone = GetComponent<EnemyAlone>();
-                if (otherEnemyAllone != null)
+                var otherEnemyAlone = GetComponent<EnemyAlone>();
+                if (otherEnemyAlone != null)
                 {
-                    var speedEnemy = otherEnemyAllone.speed;
-                    print(speedEnemy);
+                    var speedEnemy = otherEnemyAlone.speed;
                     if (speedEnemy >= 1.5f)
                     {
                         _enemyTogetherFather.GoBack(Enemy.pushKind.Enemy, other.transform.position);
