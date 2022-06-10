@@ -18,6 +18,7 @@ public class ChestScript : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        SetUpgradesLockStatus();
     }
     
     private void Update()
@@ -59,14 +60,17 @@ public class ChestScript : MonoBehaviour
         }
     }
 
-    public bool UpgradeChest(int upgradeLevel = 1)
+    public bool TryUpgradeChest(int upgradeLevel)
     {
-        if (chestUpgradeLevel >= 3)
+        return chestUpgradeLevel + 1 == upgradeLevel;
+    }
+    
+    public bool UpgradeChest(int upgradeLevel)
+    {
+        if (chestUpgradeLevel + 1 != upgradeLevel)
             return false;
-
-        chestUpgradeLevel += upgradeLevel;
-        chestUpgradeLevel = Mathf.Max(chestUpgradeLevel, 0);
-        chestUpgradeLevel = Mathf.Min(upgrades.Count, chestUpgradeLevel);
+        chestUpgradeLevel += 1;
+        SetUpgradesLockStatus();
         return true;
     }
 
@@ -96,12 +100,24 @@ public class ChestScript : MonoBehaviour
     {
         isChestOpen = false;
     }
-
+    
     public GameObject GetUpgrade(int index)
     {
         if (index < 1 || index > upgrades.Count)
             return null;
         return upgrades[index - 1];
+    }
+
+    private void SetUpgradesLockStatus()
+    {
+        for (var i = 0; i < upgrades.Count; i++)
+        {
+            if (i <= chestUpgradeLevel)
+                upgrades[i].GetComponent<UpgradeScript>().LockCardStatus(false);
+            else
+                upgrades[i].GetComponent<UpgradeScript>().LockCardStatus(true);
+            
+        }
     }
 
 }

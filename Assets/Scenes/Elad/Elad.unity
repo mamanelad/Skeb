@@ -536,6 +536,7 @@ MonoBehaviour:
   canUpgrade: 0
   displayText: {fileID: 623820429}
   shopKeeper: {fileID: 282427234}
+  _buttonsPanel: {fileID: 0}
 --- !u!222 &42317660
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3129,6 +3130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 242655231}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 1568472880}
   selectUpgrade: 0
   upgradeDescription: Life Steal - Killing enemies will now grant you a small HP
@@ -3231,6 +3233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 594789464}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 243599620}
   selectUpgrade: 0
   upgradeDescription: Pro Skater - Its simple, as a pro you will never fall off the
@@ -3586,6 +3589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 813816652}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 1466697324}
   selectUpgrade: 0
   upgradeDescription: Range Attack - Releasing a powerful attack at the end of a
@@ -3932,6 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 426167550}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 1067420151}
   selectUpgrade: 0
   upgradeDescription: Range Upgrade - Sword attck range increases by 50%
@@ -4547,6 +4552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 2142949818}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 465080489}
   selectUpgrade: 0
   upgradeDescription: Ice Dash - Your dash will now leave a trail of ice spikes that
@@ -4811,6 +4817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 510076673}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 1096585999}
   selectUpgrade: 0
   upgradeDescription: Second Wind - Will grant you a one time revival upon dying
@@ -5877,7 +5884,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266224944}
-  m_LocalRotation: {x: 1.48433e-40, y: 1.48434e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.48441e-40, y: 1.48442e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5933,6 +5940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 284046113}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 1484284165}
   selectUpgrade: 0
   upgradeDescription: Regeneration - A steady passive increase in HP
@@ -7262,6 +7270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 1041175945}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 466155635}
   selectUpgrade: 0
   upgradeDescription: HP Up - You will now have 50% more HP
@@ -9882,6 +9891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkBox: {fileID: 499481133}
+  lockBox: {fileID: 0}
   upgradeBorder: {fileID: 211973531}
   selectUpgrade: 0
   upgradeDescription: Brun Damage - Your sword will now inflict burn damage upon
@@ -9937,53 +9947,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2092986596
+--- !u!1 &2092986596 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 818660835683195556, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+  m_PrefabInstance: {fileID: 818660835217615424}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2092986598}
-  - component: {fileID: 2092986597}
-  m_Layer: 0
-  m_Name: DashCollider
-  m_TagString: DashCollider
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!58 &2092986597
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092986596}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.020480515, y: -0.0711999}
-  serializedVersion: 2
-  m_Radius: 0.66823024
---- !u!4 &2092986598
+--- !u!4 &2092986598 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+  m_PrefabInstance: {fileID: 818660835217615424}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092986596}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.012470233, y: 0.24690653, z: 0}
-  m_LocalScale: {x: 0.83333325, y: 0.83333325, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1957928255}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110097393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10263,3 +10236,60 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &818660835217615424
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1957928255}
+    m_Modifications:
+    - target: {fileID: 818660835683195556, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_Name
+      value: DashCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012470233
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24690653
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818660835683195558, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 259962bf7b331a247a738a7ee937a7e9, type: 3}
