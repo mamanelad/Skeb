@@ -1539,7 +1539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211833573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 1, z: -0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 856012562}
@@ -7148,7 +7148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527161598e6eaf143b68cb7f526fefba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storeManager: {fileID: 773011037}
+  storeManager: {fileID: 773011037}
 --- !u!1 &1436978467
 GameObject:
   m_ObjectHideFlags: 0
@@ -8984,7 +8984,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.0489e-40, y: 2.04891e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.05405e-40, y: 2.05407e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9555,6 +9555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edd35940058d747bf2f453f39aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeEffect: {fileID: 0}
   inTutorial: 0
   health: 100
   maxHealth: 100
