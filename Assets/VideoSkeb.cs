@@ -33,8 +33,13 @@ public class VideoSkeb : MonoBehaviour
 
     void Update()
     {
-        if (_videoPlayer.isPlaying)
+        if (_videoPlayer.isPlaying && !videoStarted)
+        {
             videoStarted = true;
+            skipButton.SetActive(false);
+
+        }
+            
 
         if (videoStarted)
         {
@@ -61,7 +66,7 @@ public class VideoSkeb : MonoBehaviour
 
     private void AnyKeyInput(InputAction.CallbackContext context)
     {
-        if (!skipButtonIsOn)
+        if (!skipButtonIsOn && videoStarted)
         {
             skipButtonIsOn = true;
             skipButton.SetActive(true);
@@ -73,7 +78,6 @@ public class VideoSkeb : MonoBehaviour
         if (canSkip)
         {
             SceneManager.LoadScene("Intro", LoadSceneMode.Single);
-
         }
     }
     
