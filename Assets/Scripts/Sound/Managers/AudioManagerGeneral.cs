@@ -37,8 +37,10 @@ public class AudioManagerGeneral : MonoBehaviour
         _soundTimerDict = new Dictionary<GeneralSound.SoundKindsGeneral, float>();
         // DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
-        InitializeSounds(startRoundsSounds);
-        InitializeSounds(endRoundsSounds);
+        if (startRoundsSounds.Length > 0)
+            InitializeSounds(startRoundsSounds);
+        if (endRoundsSounds.Length > 0)
+            InitializeSounds(endRoundsSounds);
     }
 
 
@@ -85,17 +87,17 @@ public class AudioManagerGeneral : MonoBehaviour
             s = endRoundsSounds[_roundEndIndex];
             _roundEndIndex = (_roundEndIndex + 1) % endRoundsSounds.Length;
         }
-            
+
 
         else if (soundKindsGeneral == GeneralSound.SoundKindsGeneral.StartRound)
         {
             s = startRoundsSounds[_roundStartIndex];
             _roundStartIndex = (_roundStartIndex + 1) % startRoundsSounds.Length;
         }
-           
+
         else
             s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
-        
+
         if (s == null)
             return;
         if (!CanPlaySound(soundKindsGeneral, s)) return;
