@@ -16,7 +16,6 @@ public class EnergyBall : MonoBehaviour
 
     #region Inspector Control
 
-    [SerializeField] private bool StayInFireWorld;
     [SerializeField] private float lifeBallTimer = 3f;
     [SerializeField] private float timeToDieAfterHit = 0.05f;
     [SerializeField] private float step = 1f;
@@ -68,8 +67,6 @@ public class EnergyBall : MonoBehaviour
         switch (curWorldState)
         {
             case GameManager.WorldState.Fire:
-                if (!StayInFireWorld)
-                    DestroyBall();
                 _spriteRenderer.color = Color.red;
                 _fireParticleEffect.ParticlePrefab = fireParticlePrefab;
                 _fireParticleEffect.isOn = true;
