@@ -6,6 +6,8 @@ public class AudioManagerGeneral : MonoBehaviour
 {
     #region Private Fields
 
+    private int _roundEndIndex;
+    private int _roundStartIndex;
     private static AudioManagerGeneral _instance;
 
     #endregion
@@ -13,6 +15,9 @@ public class AudioManagerGeneral : MonoBehaviour
     #region Inspector Control
 
     [SerializeField] private GeneralSound[] sounds;
+    [SerializeField] private GeneralSound[] startRoundsSounds;
+    [SerializeField] private GeneralSound[] endRoundsSounds;
+
     private Dictionary<GeneralSound.SoundKindsGeneral, float> _soundTimerDict;
 
     #endregion
@@ -32,6 +37,10 @@ public class AudioManagerGeneral : MonoBehaviour
         _soundTimerDict = new Dictionary<GeneralSound.SoundKindsGeneral, float>();
         // DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
+        if (startRoundsSounds.Length > 0)
+            InitializeSounds(startRoundsSounds);
+        if (endRoundsSounds.Length > 0)
+            InitializeSounds(endRoundsSounds);
     }
 
 
@@ -72,7 +81,23 @@ public class AudioManagerGeneral : MonoBehaviour
 
     public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral)
     {
-        var s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
+        GeneralSound s;
+        if (soundKindsGeneral == GeneralSound.SoundKindsGeneral.EndRound)
+        {
+            s = endRoundsSounds[_roundEndIndex];
+            _roundEndIndex = (_roundEndIndex + 1) % endRoundsSounds.Length;
+        }
+
+
+        else if (soundKindsGeneral == GeneralSound.SoundKindsGeneral.StartRound)
+        {
+            s = startRoundsSounds[_roundStartIndex];
+            _roundStartIndex = (_roundStartIndex + 1) % startRoundsSounds.Length;
+        }
+
+        else
+            s = Array.Find(sounds, sound => sound.soundKindsGeneral == soundKindsGeneral);
+
         if (s == null)
             return;
         if (!CanPlaySound(soundKindsGeneral, s)) return;
