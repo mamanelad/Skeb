@@ -757,6 +757,34 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MovieControl"",
+            ""id"": ""fc1f1bad-4265-4866-8fc2-1552b99f5ac8"",
+            ""actions"": [
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""8a4d6c5b-70c5-4d6c-9a53-e87df003518b"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0d20b2ce-70e1-42ed-bd12-cfbbbc83f520"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard"",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -802,6 +830,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_CheatControl_Action1 = m_CheatControl.FindAction("Action1", throwIfNotFound: true);
         m_CheatControl_Action2 = m_CheatControl.FindAction("Action2", throwIfNotFound: true);
         m_CheatControl_Action3 = m_CheatControl.FindAction("Action3", throwIfNotFound: true);
+        // MovieControl
+        m_MovieControl = asset.FindActionMap("MovieControl", throwIfNotFound: true);
+        m_MovieControl_Skip = m_MovieControl.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1093,6 +1124,39 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         }
     }
     public CheatControlActions @CheatControl => new CheatControlActions(this);
+
+    // MovieControl
+    private readonly InputActionMap m_MovieControl;
+    private IMovieControlActions m_MovieControlActionsCallbackInterface;
+    private readonly InputAction m_MovieControl_Skip;
+    public struct MovieControlActions
+    {
+        private @GameControls m_Wrapper;
+        public MovieControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Skip => m_Wrapper.m_MovieControl_Skip;
+        public InputActionMap Get() { return m_Wrapper.m_MovieControl; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MovieControlActions set) { return set.Get(); }
+        public void SetCallbacks(IMovieControlActions instance)
+        {
+            if (m_Wrapper.m_MovieControlActionsCallbackInterface != null)
+            {
+                @Skip.started -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
+            }
+            m_Wrapper.m_MovieControlActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
+            }
+        }
+    }
+    public MovieControlActions @MovieControl => new MovieControlActions(this);
     private int m_KeyBoardSchemeIndex = -1;
     public InputControlScheme KeyBoardScheme
     {
@@ -1148,5 +1212,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnAction1(InputAction.CallbackContext context);
         void OnAction2(InputAction.CallbackContext context);
         void OnAction3(InputAction.CallbackContext context);
+    }
+    public interface IMovieControlActions
+    {
+        void OnSkip(InputAction.CallbackContext context);
     }
 }
