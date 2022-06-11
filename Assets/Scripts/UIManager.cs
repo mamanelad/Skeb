@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     
     [Header("Stage State Indicator")] 
     [SerializeField] private GameObject worldStageStatus;
+    [SerializeField] private Image worldStateStatusFilling;
     [SerializeField] private GameObject indicator;
 
     [Header("Heart Indicator")] 
@@ -96,10 +97,12 @@ public class UIManager : MonoBehaviour
     
     public void SetStageStateBar(float progressPercentage)
     {
-        var indicatorXPosition = (progressPercentage * 71) - 35.5f;
+        var indicatorXPosition = (progressPercentage * 71f) - 35.5f;
         var currPos = indicator.transform.localPosition;
         currPos.x = indicatorXPosition;
         indicator.transform.localPosition = currPos;
+
+        worldStateStatusFilling.fillAmount = 1 - progressPercentage;
     }
 
     public void SetUIText(int roundNum = 1, int monstersLeft = 0, int monstersTotal = 100)
