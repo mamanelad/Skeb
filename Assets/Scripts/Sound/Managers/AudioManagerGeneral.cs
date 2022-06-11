@@ -37,9 +37,9 @@ public class AudioManagerGeneral : MonoBehaviour
         _soundTimerDict = new Dictionary<GeneralSound.SoundKindsGeneral, float>();
         // DontDestroyOnLoad(gameObject);
         InitializeSounds(sounds);
-        if (startRoundsSounds.Length > 0)
+        if (startRoundsSounds != null && startRoundsSounds.Length > 0)
             InitializeSounds(startRoundsSounds);
-        if (endRoundsSounds.Length > 0)
+        if (endRoundsSounds != null && endRoundsSounds.Length > 0)
             InitializeSounds(endRoundsSounds);
     }
 

@@ -126,8 +126,6 @@ public class AudioManagerMonster : MonoBehaviour
             _soundTimerDict[soundKindsMonster] = Time.time;
             return true;
         }
-
-
-        return false;
+        
     }
 }

@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float knockBackDistance;
     [SerializeField] private Animator slashAnimator;
     [SerializeField] private bool playerCantFall;
+    [SerializeField] private float dashTimer = 0.3f;
+    [SerializeField] private float dashSpeed;
 
     [Header("Slippery Floor")] [SerializeField]
     private bool slipperyFloor = true;
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
     [Header("Dash Settings")] [SerializeField]
     private LayerMask dashLayerMask;
 
-    [SerializeField] private float dashDistance = 50;
+    //[SerializeField] private float dashDistance = 50;
     [SerializeField] private float attackDashDistance = 50;
     [SerializeField] private float dashEffectDurationTime;
 
@@ -83,10 +85,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController _PlayerController;
     private GameControls _gameControls;
     private Vector2 move;
-
-    [SerializeField] private float dashTimer = 0.3f;
-    [SerializeField] private float dashSpeed;
     private float currDashTimer;
+    private bool _didFirstAttack;
 
     #endregion
 
@@ -108,10 +108,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    [Header("Screen Shake Settings")] [SerializeField]
-    private float screenShakeIntensity = 1f;
-
-    [SerializeField] private float screenShakeTime = .1f;
+    // [Header("Screen Shake Settings")] [SerializeField]
+    // private float screenShakeIntensity = 1f;
+    // [SerializeField] private float screenShakeTime = .1f;
 
     private void Awake()
     {
@@ -144,6 +143,12 @@ public class PlayerController : MonoBehaviour
 
     private void AttackInput(InputAction.CallbackContext context)
     {
+        if (!_didFirstAttack)
+        {
+            _didFirstAttack = true;
+            return;
+        }
+        
         if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;

@@ -85,10 +85,10 @@ public class IntroScreenScript : MonoBehaviour
         switch (_buttonIndex)
         {
             case 0:
-                Play();
+                Tutorial();
                 break;
             case 1:
-                Tutorial();
+                Play();
                 break;
             case 2:
                 FreeForAll();
