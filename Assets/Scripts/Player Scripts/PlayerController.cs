@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
             _didFirstAttack = true;
             return;
         }
-        
+
         if (GameManager.Shared.CurrentGameState == GameManager.GameState.Pause
             || GameManager.Shared.CurrentGameState == GameManager.GameState.Store)
             return;
@@ -322,6 +322,7 @@ public class PlayerController : MonoBehaviour
             _playerState = PlayerState.Dashing;
             return;
         }
+
         if (_moveDirection.sqrMagnitude > 0.01f)
             _playerState = PlayerState.Move;
         else
@@ -396,8 +397,11 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = Vector2.zero;
             return;
         }
+
         // if (Input.anyKey) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
-        if (move != Vector2.zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
+        if (
+            move != Vector2
+                .zero) // (!Input.GetButton("Attack") && Input.anyKey) - enable if you dont want player attack to stop movement
         {
             // _moveDirection.x = Input.GetAxis("Horizontal");
             // _moveDirection.y = Input.GetAxis("Vertical");
@@ -533,6 +537,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
     public void SetPlayerState(PlayerState status)
     {
         _playerState = status;
@@ -622,7 +628,8 @@ public class PlayerController : MonoBehaviour
     {
         PlayerHitSound();
         var direction = (pos - transform.position).normalized;
-        _knockBackDirection = new Vector2(direction.x, direction.z);
+        _knockBackDirection = new Vector2(direction.x, direction.y);
+        
         GetComponent<HitBreak>().HitBreakAction();
     }
 

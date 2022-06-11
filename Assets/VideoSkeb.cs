@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Video;
@@ -55,7 +53,6 @@ public class VideoSkeb : MonoBehaviour
         if (!videoStarted)
         {
             skipButton.SetActive(false);
-
         }
 
         if (skipButtonIsOn)
