@@ -78,7 +78,10 @@ public class CameraManager : MonoBehaviour
 
 
         if (GameManager.Shared.triggerKillCamera)
-            ZoomOnLastEnemy();
+        {
+            return;
+            //ZoomOnLastEnemy();
+        }
         else
             targetGroupCamera.SetActive(false);
     }
@@ -89,15 +92,15 @@ public class CameraManager : MonoBehaviour
         GameManager.Shared.GameOver();
     }
 
-    private void ZoomOnLastEnemy()
-    {
-        return;
-
-        var lastEnemy = GameObject.FindGameObjectsWithTag("Enemy");
-        if (lastEnemy.Length / 2 != 1 || _cinemachineTargetGroup.m_Targets.Length >= 2)
-            return;
-        _target = lastEnemy[0];
-        _cinemachineTargetGroup.AddMember(_target.transform, 1f, 1f);
-        targetGroupCamera.SetActive(true);
-    }
+    // private void ZoomOnLastEnemy()
+    // {
+    //     return;
+    //
+    //     var lastEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+    //     if (lastEnemy.Length / 2 != 1 || _cinemachineTargetGroup.m_Targets.Length >= 2)
+    //         return;
+    //     _target = lastEnemy[0];
+    //     _cinemachineTargetGroup.AddMember(_target.transform, 1f, 1f);
+    //     targetGroupCamera.SetActive(true);
+    // }
 }

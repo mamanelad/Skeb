@@ -10,14 +10,6 @@ public class PlayerRangedAttack : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _direction;
     
-    private enum Direction
-    {
-        Back,
-        Right,
-        Front,
-        Left
-    }
-    
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
