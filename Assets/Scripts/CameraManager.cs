@@ -25,9 +25,9 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0)
+        if (Time.timeScale == 0 || GameManager.Shared.inTutorial)
             return;
-
+    
         if ((_enemySpawnerDots.wonLevel || _playerController.IsPlayerDead) && timeInZoom > 0)
         {
             if (_playerController.GetPlayerState() != PlayerController.PlayerState.Falling &&

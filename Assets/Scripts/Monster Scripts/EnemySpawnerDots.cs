@@ -107,6 +107,9 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Shared.inTutorial)
+            gameObject.SetActive(false);
+        
         if (wonScreen && !wonScreenOpen)
         {
             _wonScreenTimer -= Time.deltaTime;

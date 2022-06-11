@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HourGlass : MonoBehaviour
@@ -18,19 +19,19 @@ public class HourGlass : MonoBehaviour
         Left
     }
 
+    [SerializeField] private GameObject movementInstruction;
+    [SerializeField] private GameObject instructions;
     [SerializeField] private GameObject boxTutorial;
     [SerializeField] private PolygonCollider2D[] iceColliders;
     [SerializeField] private BoxCollider2D hourGlassCollider;
     [SerializeField] private float fallDelay = 2f;
     [SerializeField] private float iceMass = 1000000f;
     [SerializeField] private float hourGlassMass = 10;
-
     [SerializeField] private float shakeTime = 0.1f;
     [SerializeField] private float pushTime = 0.3f;
     [SerializeField] private float attackingTime = 0.5f;
     private float attackingTimer;
     private FireParticleEffect _fireParticleEffect;
-    private PlayerController _playerController;
     private Rigidbody2D _rb;
     private Animator _animator;
 
@@ -43,7 +44,7 @@ public class HourGlass : MonoBehaviour
     private bool inColliderTrigger;
     private ShakeSide _shakeSide = ShakeSide.Left;
     private GlassState _state = GlassState.IdleOne;
-
+    private PlayerController _playerController;
     private float _shakeTimer;
     private float _pushTimer;
 
@@ -179,15 +180,20 @@ public class HourGlass : MonoBehaviour
         {
             case GameManager.WorldState.Fire:
                 GameManager.Shared.CurrentState = GameManager.WorldState.Ice;
+                instructions.GetComponentInChildren<TextMeshProUGUI>().text = "Press<sprite=0>  To Push" ;
                 break;
 
             case GameManager.WorldState.Ice:
                 GameManager.Shared.CurrentState = GameManager.WorldState.Fire;
+                instructions.SetActive(false);
+                movementInstruction.SetActive(false);
                 break;
         }
 
         SwitchToHourGlass();
     }
+
+    
 
     private void SwitchToHourGlass()
     {
@@ -219,6 +225,8 @@ public class HourGlass : MonoBehaviour
         GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HourGlassBreak);
     }
 
+    
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Top"))
