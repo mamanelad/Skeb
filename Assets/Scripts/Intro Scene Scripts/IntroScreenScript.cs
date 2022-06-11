@@ -91,31 +91,39 @@ public class IntroScreenScript : MonoBehaviour
                 Play();
                 break;
             case 2:
-                FreeForAll();
+                Story();
                 break;
             case 3:
+                FreeForAll();
+                break;
+            case 4:
                 Quit();
                 break;
         }
         
     }
 
-    private void Play()
+    private static void Play()
     {
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 
-    private void Tutorial()
+    private static void Tutorial()
     {
         SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
+
+    private static void Story()
+    {
+        SceneManager.LoadScene("Movie", LoadSceneMode.Single);
+    }
     
-    private void FreeForAll()
+    private static void FreeForAll()
     {
         SceneManager.LoadScene("FreeForAll", LoadSceneMode.Single);
     }
     
-    private void Quit()
+    private static void Quit()
     {
         Application.Quit();
     }
