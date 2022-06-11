@@ -22,7 +22,7 @@ public class VideoSkeb : MonoBehaviour
     {
         _gameControls = new GameControls();
         _videoPlayer = GetComponent<VideoPlayer>();
-        
+
         skipButton.SetActive(false);
         InitializeControls();
     }
@@ -43,14 +43,18 @@ public class VideoSkeb : MonoBehaviour
         {
             videoStarted = true;
             skipButton.SetActive(false);
-
         }
-            
+
 
         if (videoStarted)
         {
             if (!_videoPlayer.isPlaying)
                 SceneManager.LoadScene("Intro", LoadSceneMode.Single);
+        }
+
+        if (!skipButton)
+        {
+            skipButton.SetActive(false);
         }
 
         if (skipButtonIsOn)
@@ -67,7 +71,6 @@ public class VideoSkeb : MonoBehaviour
     {
         _gameControls.MovieControl.Skip.performed += AnyKeyInput;
         _gameControls.MovieControl.skipFinal.performed += SkipInput;
-
     }
 
     private void AnyKeyInput(InputAction.CallbackContext context)
@@ -78,7 +81,7 @@ public class VideoSkeb : MonoBehaviour
             skipButton.SetActive(true);
         }
     }
-    
+
     private void SkipInput(InputAction.CallbackContext context)
     {
         if (canSkip)
@@ -86,7 +89,7 @@ public class VideoSkeb : MonoBehaviour
             SceneManager.LoadScene("Intro", LoadSceneMode.Single);
         }
     }
-    
+
 
     private void OnEnable()
     {
