@@ -40,9 +40,20 @@ public class StoreEntrance : MonoBehaviour
     {
         _storeManager.CloseStore();
     }
+    
+    public void PlayLandSound()
+    {
+        PlaySound(StoreSounds.SoundKindsStore.EntranceLand);
+    }
+    
+    public void PlaySlideSound()
+    {
+        PlaySound(StoreSounds.SoundKindsStore.EntranceSlide);
+    }
+    
+    private void PlaySound(StoreSounds.SoundKindsStore sound)
+    {
+        GameManager.Shared.StoreAudioManager.PlaySound(sound, transform.position);
+    }
 
-    // public void RemoveStoreEntrance()
-    // {
-    //     _animator.SetTrigger("RemoveStore");
-    // }
 }

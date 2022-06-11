@@ -16,7 +16,9 @@ public class StoreSounds
         Afifit2,
         Afifit3,
         ForgotToUpgrade,
-        LockedUpgrade
+        LockedUpgrade,
+        EntranceLand,
+        EntranceSlide
     }
    
    

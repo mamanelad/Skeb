@@ -3937,7 +3937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &773011037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7445,6 +7445,18 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     soundKindStore: 10
     soundDelay: 0
+  - loop: 0
+    audioClip: {fileID: 8300000, guid: 16b5f3a9659d6674c824f31eecbb2bbf, type: 3}
+    volume: 0.747
+    audioSource: {fileID: 0}
+    soundKindStore: 11
+    soundDelay: 0
+  - loop: 0
+    audioClip: {fileID: 8300000, guid: 18eb6636f4b628d4585a2881f059381a, type: 3}
+    volume: 0.747
+    audioSource: {fileID: 0}
+    soundKindStore: 12
+    soundDelay: 0
 --- !u!1 &1516211010
 GameObject:
   m_ObjectHideFlags: 0
@@ -8972,7 +8984,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.04779e-40, y: 2.0478e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.0489e-40, y: 2.04891e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
