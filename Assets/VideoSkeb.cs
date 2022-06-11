@@ -22,12 +22,18 @@ public class VideoSkeb : MonoBehaviour
     {
         _gameControls = new GameControls();
         _videoPlayer = GetComponent<VideoPlayer>();
+        
+        skipButton.SetActive(false);
         InitializeControls();
     }
 
 
     private void Start()
     {
+        _skipButtonDelayTimer = skipButtonDelayTime;
+        skipButtonIsOn = false;
+        videoStarted = false;
+        canSkip = false;
         skipButton.SetActive(false);
     }
 
