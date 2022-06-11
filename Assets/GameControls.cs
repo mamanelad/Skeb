@@ -770,6 +770,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""skipFinal"",
+                    ""type"": ""Button"",
+                    ""id"": ""2889a2ae-64e2-45a0-8890-ccac0ad46abe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -827,6 +836,39 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""Skip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84249112-e096-4a08-a8dc-5982de9413a0"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d83a0ad9-4dfe-4180-a806-97ceb2db8815"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""skipFinal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69b15278-03e1-4bcc-b69c-59c5bd4c4148"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""skipFinal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -877,6 +919,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         // MovieControl
         m_MovieControl = asset.FindActionMap("MovieControl", throwIfNotFound: true);
         m_MovieControl_Skip = m_MovieControl.FindAction("Skip", throwIfNotFound: true);
+        m_MovieControl_skipFinal = m_MovieControl.FindAction("skipFinal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1173,11 +1216,13 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MovieControl;
     private IMovieControlActions m_MovieControlActionsCallbackInterface;
     private readonly InputAction m_MovieControl_Skip;
+    private readonly InputAction m_MovieControl_skipFinal;
     public struct MovieControlActions
     {
         private @GameControls m_Wrapper;
         public MovieControlActions(@GameControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Skip => m_Wrapper.m_MovieControl_Skip;
+        public InputAction @skipFinal => m_Wrapper.m_MovieControl_skipFinal;
         public InputActionMap Get() { return m_Wrapper.m_MovieControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1190,6 +1235,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Skip.started -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
                 @Skip.performed -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
                 @Skip.canceled -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkip;
+                @skipFinal.started -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkipFinal;
+                @skipFinal.performed -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkipFinal;
+                @skipFinal.canceled -= m_Wrapper.m_MovieControlActionsCallbackInterface.OnSkipFinal;
             }
             m_Wrapper.m_MovieControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -1197,6 +1245,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Skip.started += instance.OnSkip;
                 @Skip.performed += instance.OnSkip;
                 @Skip.canceled += instance.OnSkip;
+                @skipFinal.started += instance.OnSkipFinal;
+                @skipFinal.performed += instance.OnSkipFinal;
+                @skipFinal.canceled += instance.OnSkipFinal;
             }
         }
     }
@@ -1260,5 +1311,6 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     public interface IMovieControlActions
     {
         void OnSkip(InputAction.CallbackContext context);
+        void OnSkipFinal(InputAction.CallbackContext context);
     }
 }
