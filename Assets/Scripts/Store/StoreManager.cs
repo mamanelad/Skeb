@@ -21,14 +21,12 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private GameObject buttonsPanel;
     private bool _isYesSelected;
     private bool _closeStore;
-    [SerializeField] private float closeStoreTimeDelay;
-    private float _closeStoreTimer;
+    [SerializeField] private StoreEntrance storeEntrance;
 
     private void Awake()
     {
         _storeControls = new GameControls();
         InitializeControls();
-        _closeStoreTimer = closeStoreTimeDelay;
     }
 
     #region Input Action
@@ -64,7 +62,7 @@ public class StoreManager : MonoBehaviour
     void Update()
     {
         if (_closeStore)
-            CloseStore();
+            StartCloseStoreSequence();
         SelectChest();
         GetSelectedUpgrade();
         DisplayText();
@@ -219,7 +217,7 @@ public class StoreManager : MonoBehaviour
         }
     }
 
-    private void CloseStore()
+    /*public void CloseStore()
     {
         if (CheckIfPaused() || infiniteUpgrades) return;
 
@@ -232,13 +230,23 @@ public class StoreManager : MonoBehaviour
             PlaySound(StoreSounds.SoundKindsStore.ChestClose);
             GameManager.Shared.CloseStore();
         }
+    }*/
+
+    public void CloseStore()
+    {
+        if (CheckIfPaused() || infiniteUpgrades) return;
+
+        _closeStore = false;
+        StopSound(StoreSounds.SoundKindsStore.Background);
+        PlaySound(StoreSounds.SoundKindsStore.ChestClose);
+        GameManager.Shared.CloseStore();
     }
 
-    private void CloseStore(InputAction.CallbackContext context)
+    public void CloseStore(InputAction.CallbackContext context)
     {
         //if (CheckIfPaused()) return;
         if (!infiniteUpgrades) return;
-        
+
         StopSound(StoreSounds.SoundKindsStore.Background);
         PlaySound(StoreSounds.SoundKindsStore.ChestClose);
         GameManager.Shared.CloseStore();
@@ -303,5 +311,10 @@ public class StoreManager : MonoBehaviour
     public void GetUnlimitedUpgrades()
     {
         infiniteUpgrades = !infiniteUpgrades;
+    }
+
+    private void StartCloseStoreSequence()
+    {
+        storeEntrance.SetEntranceState(StoreEntrance.StoreEntranceStatus.Close);
     }
 }

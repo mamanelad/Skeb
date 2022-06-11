@@ -49,6 +49,8 @@ public class EnemySpawnerDots : MonoBehaviour
 
     #region Inspector Control
 
+    [SerializeField] private StoreEntrance storeEntrance;
+
     [Header("New Round Setting")] [SerializeField]
     private GameObject roundNumberObject;
 
@@ -104,7 +106,7 @@ public class EnemySpawnerDots : MonoBehaviour
         else if (smallPercentage >= bigPercentage && smallPercentage >= middlePercentage)
             mostWantedEnemy = monstersSmall;
     }
-
+    
     private void Update()
     {
         if (wonScreen && !wonScreenOpen)
@@ -127,7 +129,7 @@ public class EnemySpawnerDots : MonoBehaviour
                 openShopTimer -= Time.deltaTime;
             if (openShopTimer <= 0)
             {
-                GameManager.Shared.OpenStore();
+                StartOpenStoreSequence();
                 openShop = false;
             }
         }
@@ -322,5 +324,10 @@ public class EnemySpawnerDots : MonoBehaviour
         _roundNumIsOn = true;
         _roundNumTimer = roundNumTime;
         roundNumberObject.SetActive(true);
+    }
+    
+    private void StartOpenStoreSequence()
+    {
+        storeEntrance.SetEntranceState(StoreEntrance.StoreEntranceStatus.Open);
     }
 }
