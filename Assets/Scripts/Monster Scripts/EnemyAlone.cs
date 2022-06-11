@@ -5,6 +5,8 @@ public class EnemyAlone : MonoBehaviour
 {
     #region Private Fields
 
+    private bool delayAfterHit;
+    private float attackDelayAfterHitTimer;
     private FireParticleEffect _fireParticleEffect;
     private EnemyAI _enemyAI;
     private GameObject _energyBallFather;
@@ -33,6 +35,8 @@ public class EnemyAlone : MonoBehaviour
     [Header("Attack Settings")] [SerializeField]
     private GameObject energyBall;
 
+    [SerializeField] private float attackDelayAfterHitTime = .3f;
+    [SerializeField] private float speedEnemyToDamageOtherEnemies = 2.5f;
     [SerializeField] private float attackRangeCheck = 0.5f;
     [SerializeField] private float attackRangeHit = 1f;
     [SerializeField] private float attackDamage = 50f;
@@ -68,6 +72,15 @@ public class EnemyAlone : MonoBehaviour
     {
         speed = (transform.position - oldPosition).magnitude / Time.deltaTime;
         oldPosition = transform.position;
+
+        if (delayAfterHit)
+        {
+            attackDelayAfterHitTimer -= Time.deltaTime;
+            if (attackDelayAfterHitTimer <= 0)
+            {
+                delayAfterHit = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -120,7 +133,7 @@ public class EnemyAlone : MonoBehaviour
                 if (otherEnemyAlone != null)
                 {
                     var speedEnemy = otherEnemyAlone.speed;
-                    if (speedEnemy >= 1.5f)
+                    if (speedEnemy >= speedEnemyToDamageOtherEnemies)
                     {
                         _enemyTogetherFather.GoBack(Enemy.pushKind.Enemy, other.transform.position);
                         _animator.SetTrigger(Damage);
@@ -137,7 +150,7 @@ public class EnemyAlone : MonoBehaviour
      */
     private void DetectPlayer()
     {
-        if (_isAttacking || !_player) return;
+        if (_isAttacking || !_player && delayAfterHit) return;
 
         var dist = Vector3.Distance(_player.transform.position, transform.position);
         if (dist <= attackRangeCheck)
@@ -177,13 +190,20 @@ public class EnemyAlone : MonoBehaviour
         _isAttacking = false;
     }
 
+    public void DamagePlayerHand()
+    {
+        var hand = GetComponentInChildren<HandBigFire>();
+        if (hand != null)
+            hand.ShowAndAttack( attackRangeHit,attackDamage,screenShakeIntensity,screenShakeTime);
+        _enemyAI.MonsterAttackSound();
+        _isAttacking = false;
+    }
     /**
      * For the mage.
      * Creating the energy ball.
      */
     public void DamagePlayerEnergyBall()
     {
-        //TODO :: ENERGYBALL MUSIC
         var ball = Instantiate(energyBall, transform.position, Quaternion.identity);
         ball.GetComponent<EnergyBall>()._attackDamage = attackDamage;
         if (_energyBallFather)

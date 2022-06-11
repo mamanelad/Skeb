@@ -53,7 +53,7 @@ public class PlayerRangedAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             var monsterController = other.gameObject.GetComponent<Enemy>();
-            if (monsterController)
+            if (monsterController != null)
                 monsterController.DamageEnemy(damage);
         }
     }

@@ -9,13 +9,14 @@ public class GameWonScreen : MonoBehaviour
     private enum Option
     {
         Restart,
-        MainMenu 
+        MainMenu
     }
-    
+
     private Option _currMenuOption;
     [SerializeField] private GameObject indicator;
     [SerializeField] private GameObject menuRestart;
     [SerializeField] private GameObject menuMainMenu;
+    [SerializeField] private float soundGameWonDelay = .5f;
     private GameControls _pauseControls;
 
     private void Awake()
@@ -24,18 +25,18 @@ public class GameWonScreen : MonoBehaviour
         _pauseControls = new GameControls();
         InitializeControls();
     }
-    
+
     #region Input Actions
 
     private void InitializeControls()
     {
-        _pauseControls.PauseControl.ArrowUp.performed +=  ClickUp;
-        _pauseControls.PauseControl.ArrowDown.performed +=  ClickDown;
-        _pauseControls.PauseControl.Click.performed +=  OnClick;
+        _pauseControls.PauseControl.ArrowUp.performed += ClickUp;
+        _pauseControls.PauseControl.ArrowDown.performed += ClickDown;
+        _pauseControls.PauseControl.Click.performed += OnClick;
         _pauseControls.PauseControl.Escape.performed += ClosePauseMenu;
     }
-    
-    
+
+
     private void OnEnable()
     {
         _pauseControls.PauseControl.Enable();
@@ -47,9 +48,16 @@ public class GameWonScreen : MonoBehaviour
     }
 
     #endregion
-    
+
     private void Update()
     {
+        if (soundGameWonDelay > 0)
+        {
+            soundGameWonDelay -= Time.deltaTime;
+            if (soundGameWonDelay <= 0)
+                GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.GameWon);
+        }
+
         switch (_currMenuOption)
         {
             case Option.Restart:
@@ -61,7 +69,6 @@ public class GameWonScreen : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-
     }
 
     private void SetIndicatorPos(float yPosition)
@@ -94,9 +101,8 @@ public class GameWonScreen : MonoBehaviour
     private void MainMenu()
     {
         SceneManager.LoadScene($"Intro", LoadSceneMode.Single);
-
     }
-    
+
     private void Restart()
     {
         Time.timeScale = 1;
@@ -126,11 +132,9 @@ public class GameWonScreen : MonoBehaviour
         GameManager.Shared.ResumeState();
         gameObject.SetActive(false);
     }
-    
+
     private void PlaySound(GeneralSound.SoundKindsGeneral sound)
     {
         GameManager.Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
     }
-    
 }
-

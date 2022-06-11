@@ -19,7 +19,23 @@ public class GeneralSound
         Click,
         Bell,
         PauseScreenTheme,
-        Select
+        Select, 
+        
+        StartRound,
+        EndRound,
+        GameWon, 
+        FinalRound,
+        
+        RoundOne,
+        RoundTwo,
+        RoundThree,
+        RoundFour,
+        RoundFive,
+        RoundSix,
+        RoundSeven,
+        RoundEight,
+        RoundNine,
+        RoundTen
     }
 
     [SerializeField] public bool loop;
