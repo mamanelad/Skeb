@@ -91,6 +91,9 @@ public class IntroScreenScript : MonoBehaviour
                 Tutorial();
                 break;
             case 2:
+                FreeForAll();
+                break;
+            case 3:
                 Quit();
                 break;
         }
@@ -105,6 +108,11 @@ public class IntroScreenScript : MonoBehaviour
     private void Tutorial()
     {
         SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+    }
+    
+    private void FreeForAll()
+    {
+        SceneManager.LoadScene("FreeForAll", LoadSceneMode.Single);
     }
     
     private void Quit()
