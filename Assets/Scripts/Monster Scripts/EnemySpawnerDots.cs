@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 
 public class EnemySpawnerDots : MonoBehaviour
@@ -40,22 +39,9 @@ public class EnemySpawnerDots : MonoBehaviour
     private bool wonScreen;
     private bool wonScreenOpen;
 
-    private TextMeshProUGUI _roundNumberText;
-    private bool _roundNumIsOn;
-    private float _roundNumTimer;
-    private float _roundSoundTimer;
-    private bool _playRoundStart;
     #endregion
 
     #region Inspector Control
-
-    [Header("New Round Setting")] [SerializeField]
-    private GameObject roundNumberObject;
-
-    [SerializeField] private float roundSoundDelay = .3f;
-    [SerializeField] private float roundNumTime = 1f;
-
-    
 
     [SerializeField] private float gameWonScreenDelay = 0.5f;
     [SerializeField] private UpgradeShop upgradeShop;
@@ -87,7 +73,6 @@ public class EnemySpawnerDots : MonoBehaviour
 
     private void Start()
     {
-        _roundNumberText = roundNumberObject.GetComponent<TextMeshProUGUI>();
         _playerController = FindObjectOfType<PlayerController>();
         _timer = maxTimeToSpawn;
         SetNewWave();
@@ -116,15 +101,14 @@ public class EnemySpawnerDots : MonoBehaviour
                 wonScreen = false;
                 wonScreenOpen = true;
             }
+                
         }
-
         if (_playerController.IsPlayerDead) return;
 
-
+        
         if (openShop)
         {
-            if (_playerController._playerState != PlayerController.PlayerState.Falling) 
-                openShopTimer -= Time.deltaTime;
+            openShopTimer -= Time.deltaTime;
             if (openShopTimer <= 0)
             {
                 GameManager.Shared.OpenStore();
@@ -146,27 +130,6 @@ public class EnemySpawnerDots : MonoBehaviour
         {
             spawnIsOn = false;
             SetNewWave();
-        }
-
-        if (_roundNumIsOn)
-        {
-            _roundNumTimer -= Time.deltaTime;
-            if (_roundNumTimer <= 0)
-            {
-                roundNumberObject.SetActive(false);
-                _roundNumIsOn = false;
-            }
-        }
-
-        if (_playRoundStart)
-        {
-            _roundSoundTimer -= Time.deltaTime;
-            if (_roundSoundTimer <= 0)
-            {
-                ShowRoundNumber();
-                _playRoundStart = false;
-                GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.StartRound);
-            }
         }
     }
 
@@ -245,6 +208,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     public void SetNewWave()
     {
+        
         currentWaveMonsterCounter = 0;
         waveIndex += 1;
         //print("initiating wave number: " + waveIndex);
@@ -254,7 +218,7 @@ public class EnemySpawnerDots : MonoBehaviour
             _wonScreenTimer = gameWonScreenDelay;
             return;
         }
-
+            
 
         var curWave = _waves[waveIndex];
 
@@ -265,6 +229,7 @@ public class EnemySpawnerDots : MonoBehaviour
         smallPercentage = curWave.smallPercentage;
         maxTimeToSpawn = curWave.timeToSpawnStep;
 
+        
 
         _bigMonsterMaxAmount = (int) Math.Floor(bigPercentage * maxTotalMonsterAmount);
         _midMonsterMaxAmount = (int) Math.Floor(middlePercentage * maxTotalMonsterAmount);
@@ -291,36 +256,17 @@ public class EnemySpawnerDots : MonoBehaviour
         GameManager.Shared.roundMonsterTotalAmount = maxTotalMonsterAmount;
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
-        StartRoundNumRoutine();
     }
 
     public void ZoomRoundWon()
     {
         GameManager.Shared.playerCanMove = false;
-        if (!_playerController.IsPlayerDead)
-        {
-            wonLevel = true;
-            GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.EndRound);
-        }
+        wonLevel = true;
     }
 
     private void GameWon()
     {
         spawnIsOn = false;
         GameManager.Shared.WonGame();
-    }
-
-
-    private void StartRoundNumRoutine()
-    {
-        _playRoundStart = true;
-        _roundSoundTimer = roundSoundDelay;
-        _roundNumberText.text = "Round " + GameManager.Shared.roundNumber;
-    }
-    private void ShowRoundNumber()
-    {
-        _roundNumIsOn = true;
-        _roundNumTimer = roundNumTime;
-        roundNumberObject.SetActive(true);
     }
 }
