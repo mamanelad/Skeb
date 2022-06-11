@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -24,6 +25,11 @@ public class VideoSkeb : MonoBehaviour
         InitializeControls();
     }
 
+
+    private void Start()
+    {
+        skipButton.SetActive(false);
+    }
 
     void Update()
     {
