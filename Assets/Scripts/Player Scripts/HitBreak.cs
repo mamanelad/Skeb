@@ -62,9 +62,9 @@ public class HitBreak : MonoBehaviour
         for (var i = 0; i < switchTurns; i++)
         {
             yield return new WaitUntil(() => Time.timeScale != 0);
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSecondsRealtime(0.02f);
             material.shader = _curShader;
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSecondsRealtime(0.02f);
             material.shader = hitShader;
         }
         material.shader = _curShader;

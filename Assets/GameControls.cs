@@ -658,7 +658,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""313f4c5a-e15d-424e-9ceb-a6f7e7695c6d"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

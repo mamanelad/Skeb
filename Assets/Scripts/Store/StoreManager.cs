@@ -17,14 +17,18 @@ public class StoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI displayText;
     [SerializeField] private GameObject shopKeeper;
     private GameObject _selectedUpgrade;
-    private bool waitToConfirm;
-    [SerializeField] private GameObject _buttonsPanel;
-    private bool isYesSelected;
+    private bool _waitToConfirm;
+    [SerializeField] private GameObject buttonsPanel;
+    private bool _isYesSelected;
+    private bool _closeStore;
+    [SerializeField] private float closeStoreTimeDelay;
+    private float _closeStoreTimer;
 
     private void Awake()
     {
         _storeControls = new GameControls();
         InitializeControls();
+        _closeStoreTimer = closeStoreTimeDelay;
     }
 
     #region Input Action
@@ -54,12 +58,13 @@ public class StoreManager : MonoBehaviour
     private void Start()
     {
         PlaySound(StoreSounds.SoundKindsStore.ChestOpen);
-        _buttonsPanel.SetActive(false);
+        buttonsPanel.SetActive(false);
     }
 
     void Update()
     {
-        //print(waitToConfirm);
+        if (_closeStore)
+            CloseStore();
         SelectChest();
         GetSelectedUpgrade();
         DisplayText();
@@ -96,7 +101,7 @@ public class StoreManager : MonoBehaviour
             "Please select a chest to upgrade. You will get the lowest level upgrade of that chest that you have yet to unlock.";
         if (_selectedUpgrade != null)
             text = _selectedUpgrade.GetComponent<UpgradeScript>().GetUpgradeDescription();
-        if (waitToConfirm)
+        if (_waitToConfirm)
             text = "";
         displayText.text = text;
     }
@@ -114,16 +119,16 @@ public class StoreManager : MonoBehaviour
             return false;
         }
 
-        waitToConfirm = true;
-        _buttonsPanel.SetActive(true);
+        _waitToConfirm = true;
+        buttonsPanel.SetActive(true);
         _selectedUpgrade.GetComponent<UpgradeScript>().selectApply = true;
         return true;
     }
 
     private void ArrowUp(InputAction.CallbackContext context)
     {
-        if(waitToConfirm) return;
-        
+        if (_waitToConfirm) return;
+
         if (CheckIfPaused() || upgradeSelected == 3) return;
         upgradeSelected += 1;
         PlaySound(StoreSounds.SoundKindsStore.Click);
@@ -133,9 +138,9 @@ public class StoreManager : MonoBehaviour
 
     private void ArrowDown(InputAction.CallbackContext context)
     {
-        if (waitToConfirm) return; 
+        if (_waitToConfirm) return;
 
-            PlaySound(StoreSounds.SoundKindsStore.Click);
+        PlaySound(StoreSounds.SoundKindsStore.Click);
         if (CheckIfPaused() || upgradeSelected == 1) return;
         upgradeSelected -= 1;
         PlaySound(StoreSounds.SoundKindsStore.Click);
@@ -145,9 +150,9 @@ public class StoreManager : MonoBehaviour
 
     private void ArrowRight(InputAction.CallbackContext context)
     {
-        if (waitToConfirm)
+        if (_waitToConfirm)
         {
-            isYesSelected = _buttonsPanel.GetComponent<StoreButtonsPanel>().SelectNo();
+            _isYesSelected = buttonsPanel.GetComponent<StoreButtonsPanel>().SelectNo();
             return;
         }
 
@@ -164,12 +169,12 @@ public class StoreManager : MonoBehaviour
 
     private void ArrowLeft(InputAction.CallbackContext context)
     {
-        if (waitToConfirm)
+        if (_waitToConfirm)
         {
-            isYesSelected = _buttonsPanel.GetComponent<StoreButtonsPanel>().SelectYes();
+            _isYesSelected = buttonsPanel.GetComponent<StoreButtonsPanel>().SelectYes();
             return;
         }
-        
+
         PlaySound(StoreSounds.SoundKindsStore.Click);
         if (CheckIfPaused()) return;
         if (chestSelected > 1)
@@ -187,23 +192,24 @@ public class StoreManager : MonoBehaviour
         if (!canUpgrade && !infiniteUpgrades)
             return;
 
-        if (waitToConfirm)
+        if (_waitToConfirm)
         {
-            if (isYesSelected)
+            if (_isYesSelected)
             {
                 UpgradeSelectedChest();
                 PlaySound(StoreSounds.SoundKindsStore.GetUpgrade);
                 FindObjectOfType<PlayerStats>().ActivateUpgrade(chestSelected);
                 canUpgrade = false;
+                _closeStore = true;
             }
             else
             {
                 PlaySound(StoreSounds.SoundKindsStore.Click);
             }
 
-            waitToConfirm = false;
-            _buttonsPanel.SetActive(false);
-            isYesSelected = _buttonsPanel.GetComponent<StoreButtonsPanel>().SelectNo();
+            _waitToConfirm = false;
+            buttonsPanel.SetActive(false);
+            _isYesSelected = buttonsPanel.GetComponent<StoreButtonsPanel>().SelectNo();
             _selectedUpgrade.GetComponent<UpgradeScript>().selectApply = false;
         }
         else
@@ -213,18 +219,26 @@ public class StoreManager : MonoBehaviour
         }
     }
 
+    private void CloseStore()
+    {
+        if (CheckIfPaused() || infiniteUpgrades) return;
+
+        _closeStoreTimer -= Time.deltaTime;
+        if (_closeStoreTimer <= 0)
+        {
+            _closeStore = false;
+            _closeStoreTimer = closeStoreTimeDelay;
+            StopSound(StoreSounds.SoundKindsStore.Background);
+            PlaySound(StoreSounds.SoundKindsStore.ChestClose);
+            GameManager.Shared.CloseStore();
+        }
+    }
+
     private void CloseStore(InputAction.CallbackContext context)
     {
-        if (CheckIfPaused()) return;
-        if (canUpgrade)
-        {
-            shopKeeper.GetComponent<Animator>().SetTrigger("KeeperTalk");
-            PauseShopKeeperAudio();
-            PlaySound(StoreSounds.SoundKindsStore.ForgotToUpgrade);
-            _lastPlayedAudioShopKeeper = StoreSounds.SoundKindsStore.ForgotToUpgrade;
-            return;
-        }
-
+        //if (CheckIfPaused()) return;
+        if (!infiniteUpgrades) return;
+        
         StopSound(StoreSounds.SoundKindsStore.Background);
         PlaySound(StoreSounds.SoundKindsStore.ChestClose);
         GameManager.Shared.CloseStore();
