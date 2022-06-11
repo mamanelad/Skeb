@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
         Move,
         Combat,
         Falling,
-        Dead
+        Dead,
+        Dashing
     }
 
     private enum AttackStatus
@@ -311,6 +312,11 @@ public class PlayerController : MonoBehaviour
             _playerState == PlayerState.Dead)
             return;
         _attackStatus = AttackStatus.First;
+        if (_dashStatus)
+        {
+            _playerState = PlayerState.Dashing;
+            return;
+        }
         if (_moveDirection.sqrMagnitude > 0.01f)
             _playerState = PlayerState.Move;
         else

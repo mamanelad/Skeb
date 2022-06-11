@@ -2075,7 +2075,7 @@ SpriteRenderer:
   m_SortingLayer: 8
   m_SortingOrder: 3
   m_Sprite: {fileID: 6479313122528423828, guid: df2b0b14f00b43a45b91b9fa4f1588b3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5518868, g: 1, b: 0.9721745, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3267,7 +3267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8863,7 +8863,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 1.58408e-40, y: 1.5841e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 1.67972e-40, y: 1.67974e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
