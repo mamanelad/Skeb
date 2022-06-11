@@ -52,9 +52,10 @@ public class VideoSkeb : MonoBehaviour
                 SceneManager.LoadScene("Intro", LoadSceneMode.Single);
         }
 
-        if (!skipButton)
+        if (!videoStarted)
         {
             skipButton.SetActive(false);
+
         }
 
         if (skipButtonIsOn)
