@@ -122,6 +122,9 @@ public class Enemy : MonoBehaviour
         // _enemyAI.lockMovement = true;
         
         //Demage enemy setting for the option that the function is not called from the burning effect.
+        if (_playerStats == null)
+            return;
+        
         if (_playerStats.burnDamage && GameManager.Shared.CurrentState == GameManager.WorldState.Fire)
         {
             var fireAffect = GetComponentInChildren<FireParticleEffect>();
