@@ -30,6 +30,11 @@ public class EchoObjectScript : MonoBehaviour
         newColor.a -= opacitySteps;
         _spriteRenderer.color = newColor;
     }
+    
+    public void FlipVerticalSpriteDirection()
+    {
+        _spriteRenderer.flipX = true;
+    }
 
     public float GetSpawnTimeSteps()
     {

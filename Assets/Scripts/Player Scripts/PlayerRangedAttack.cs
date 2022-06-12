@@ -6,6 +6,7 @@ public class PlayerRangedAttack : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float movementSpeed;
     [SerializeField] private Animator _animator;
+    [SerializeField] private RangedAttackEchoSpawn _rangedAttackEchoSpawn;
     private Rigidbody2D _rb;
     private Vector2 _direction;
 
@@ -17,10 +18,13 @@ public class PlayerRangedAttack : MonoBehaviour
 
     public void SetDirection(Vector2 direction)
     {
-        _direction = direction != Vector2.zero ? direction: Vector2.down ;
+        _direction = direction != Vector2.zero ? direction: Vector2.down;
         _animator.SetFloat("DirectionHorizonatl", _direction.x);
         _animator.SetFloat("DirectionVertical", _direction.y);
         _animator.SetTrigger("PlayAnim");
+        
+        if (direction.x < -0.5f)
+            _rangedAttackEchoSpawn.FlipEchoVertical();
     }
     
     private void Update()
@@ -30,8 +34,6 @@ public class PlayerRangedAttack : MonoBehaviour
         
         if (GetComponent<SpriteRenderer>().color.a <= 0.1f)
             Destroy(gameObject);
-        
-
     }
 
     private void FixedUpdate()

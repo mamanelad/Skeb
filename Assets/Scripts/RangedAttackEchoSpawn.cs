@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedAttackEchoSpawn : MonoBehaviour
@@ -9,7 +7,8 @@ public class RangedAttackEchoSpawn : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private float _timeBeforeEcho = 0.01f;
     private bool _echoStarted;
-    
+    private bool flipEchoX;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -25,8 +24,8 @@ public class RangedAttackEchoSpawn : MonoBehaviour
             _echoStarted = true;
             StartCoroutine(EchoEffect());
         }
-
     }
+    
 
     private IEnumerator EchoEffect()
     {
@@ -36,7 +35,14 @@ public class RangedAttackEchoSpawn : MonoBehaviour
             var echoEffectManager = newEcho.GetComponent<EchoObjectScript>();
             echoEffectManager.SetSprite(_spriteRenderer.sprite);
             StartCoroutine(echoEffectManager.DecreaseOpacityRoutine());
+            if (flipEchoX)
+                echoEffectManager.FlipVerticalSpriteDirection();
             yield return new WaitForSeconds(echoEffectManager.GetSpawnTimeSteps());
         }
+    }
+
+    public void FlipEchoVertical()
+    {
+        flipEchoX = true;
     }
 }
