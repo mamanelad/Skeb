@@ -306,8 +306,8 @@ public class EnemySpawnerDots : MonoBehaviour
         {
             if (_playerHealth == null)
                 _playerHealth = FindObjectOfType<PlayerHealth>();
-            if (_playerHealth != null)
-                _playerHealth.UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
+            //if (_playerHealth != null)
+                //_playerHealth.UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
         }
     }
 

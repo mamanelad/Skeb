@@ -71,6 +71,13 @@ public class PlayerHealth : MonoBehaviour
 
         health = Mathf.Min(health + mod, maxHealth);
         health = Mathf.Max(health, 0);
+        
+        if (health <= 0 && _playerStats.secondWind && !_usedSecondWindThisRound)
+        {
+            _usedSecondWindThisRound = true;
+            health = Mathf.Min(health + secondWindHealthBuff, maxHealth);
+            SecondWindEffect();
+        }
 
         UpdateHealthBar();
 
@@ -107,16 +114,6 @@ public class PlayerHealth : MonoBehaviour
     public void ApplyFallDamage()
     {
         UpdateHealth(-fallDamage, Vector3.zero);
-
-        if (health <= 0 && _playerStats.secondWind && !_usedSecondWindThisRound)
-        {
-            _usedSecondWindThisRound = true;
-            UpdateHealth(secondWindHealthBuff, Vector3.zero);
-            SecondWindEffect();
-        }
-
-        if (health <= 0)
-            _playerController.KillPlayer();
     }
 
     private void SecondWindEffect()
@@ -124,6 +121,5 @@ public class PlayerHealth : MonoBehaviour
         var angelSpawned = Instantiate(angle, Vector3.zero, Quaternion.identity);
         GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.SecondWind);
         Destroy(angelSpawned, 1f);
-        // play second wind sound
     }
 }
