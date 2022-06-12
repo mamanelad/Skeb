@@ -6,6 +6,7 @@ public class EnemySpawnerDots : MonoBehaviour
 {
     #region Private Fields
 
+    private Enemy.EnemyKind _lastMonster = Enemy.EnemyKind.Small;
     private bool gameStarted;
 
     private bool spawnIsOn;
@@ -51,6 +52,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
     #region Inspector Control
 
+    [SerializeField] private bool choseEqualAmountMonsters;
     [SerializeField] private float lifeEndOfLevelBonus = 10f;
     [NonSerialized] public bool wonLevel;
     [SerializeField] private StoreEntrance storeEntrance;
@@ -198,8 +200,43 @@ public class EnemySpawnerDots : MonoBehaviour
     }
 
 
+    public void CreatMonsterEqual()
+    {
+        Enemy monsterToSpawn = monstersBig;
+
+        switch (_lastMonster)
+        {
+            case Enemy.EnemyKind.Small:
+                monsterToSpawn = monstersBig;
+                _lastMonster = Enemy.EnemyKind.Big;
+                break;
+            case Enemy.EnemyKind.Big:
+                monsterToSpawn = monstersMiddle;
+                _lastMonster = Enemy.EnemyKind.Middle;
+                break;
+            case Enemy.EnemyKind.Middle:
+                monsterToSpawn = monstersSmall;
+                _lastMonster = Enemy.EnemyKind.Small;
+                break;
+        }
+
+        var monster = Instantiate(monsterToSpawn.gameObject, spawnerDots[_dotIndexMonster].position,
+            Quaternion.identity);
+        monster.transform.SetParent(gameObject.transform);
+        _monsterIndex = (_monsterIndex + 1) % monsterKindsAmount;
+        _dotIndexMonster = (_dotIndexMonster + 1) % spawnerDots.Length;
+
+        currentWaveMonsterCounter += 1;
+        _monsterCounter += 1;
+    }
+
     public void CreatMonster()
     {
+        if (choseEqualAmountMonsters)
+        {
+            CreatMonsterEqual();
+            return;
+        }
         var monsterToSpawn = mostWantedEnemy;
 
         if (_monsterIndex == 0)
@@ -307,7 +344,7 @@ public class EnemySpawnerDots : MonoBehaviour
             if (_playerHealth == null)
                 _playerHealth = FindObjectOfType<PlayerHealth>();
             //if (_playerHealth != null)
-                //_playerHealth.UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
+            //_playerHealth.UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
         }
     }
 
