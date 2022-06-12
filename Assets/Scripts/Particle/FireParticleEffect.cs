@@ -22,14 +22,17 @@ public class FireParticleEffect : MonoBehaviour
 
     private void Start()
     {
+        transform.SetParent(GameManager.Shared.particleFather.transform);
         timerBurning = timeToBurn;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (!isOn) return;
-
+        
+        
         timerBurning -= Time.deltaTime;
         if (timerBurning <= 0)
             CloseAndOpenBurningAffect(false);

@@ -83,6 +83,8 @@ public class AudioManagerMonster : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
 
     }
     
@@ -102,6 +104,8 @@ public class AudioManagerMonster : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
 
     }
 

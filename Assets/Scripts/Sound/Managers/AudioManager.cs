@@ -83,6 +83,9 @@ public class AudioManager : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
     }
 
     public void PlaySound(PlayerSound.SoundKindsPlayer soundKindPlayer, Vector3 position)
@@ -101,6 +104,9 @@ public class AudioManager : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
+        
     }
 
     private bool CanPlaySound(PlayerSound.SoundKindsPlayer soundToPlayKindPlayer, PlayerSound soundToPlay)

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 namespace FireParticle
 {
@@ -13,7 +15,6 @@ namespace FireParticle
         [SerializeField] private Sprite[] fireSprites;
         
         public bool DestroysSelf = true;
-
         public AlphaFalloff AlphaFalloff;
 
         float actualLifeSpan;
@@ -34,7 +35,13 @@ namespace FireParticle
 
         }
 
-    	void OnEnable () {
+        private void Start()
+        {
+            transform.SetParent(GameManager.Shared.particleFather.transform);
+
+        }
+
+        void OnEnable () {
             velocity = new Vector2( Random.Range(MinVelocity.x, MaxVelocity.x), Random.Range( MinVelocity.y, MaxVelocity.y) );
 
             actualLifeSpan = LifeSpan * Random.Range(0.9f, 1.1f);
@@ -48,7 +55,8 @@ namespace FireParticle
 
     	// Update is called once per frame
     	void Update () {
-    	    
+
+            
             timeAlive += Time.deltaTime;
 
             if(DestroysSelf && timeAlive >= actualLifeSpan)

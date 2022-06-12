@@ -110,6 +110,8 @@ public class AudioManagerGeneral : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
     }
 
     public void PlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral, Vector3 position)
@@ -128,6 +130,8 @@ public class AudioManagerGeneral : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
+        if (!s.loop)
+            Destroy(soundGameObject, 10);
     }
 
     private bool CanPlaySound(GeneralSound.SoundKindsGeneral soundKindsGeneral, GeneralSound soundToPlay)
