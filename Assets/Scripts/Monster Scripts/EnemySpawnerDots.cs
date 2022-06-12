@@ -122,6 +122,7 @@ public class EnemySpawnerDots : MonoBehaviour
                 GameWon();
                 wonScreen = false;
                 wonScreenOpen = true;
+                GameManager.Shared.gameWon = true;
             }
         }
 

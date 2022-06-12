@@ -263,6 +263,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
         if (transform.position.y < -50)
         {
             _rb.gravityScale = 0f;
