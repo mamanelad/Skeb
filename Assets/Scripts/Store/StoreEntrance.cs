@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoreEntrance : MonoBehaviour
@@ -12,9 +9,9 @@ public class StoreEntrance : MonoBehaviour
         Close
     }
     
-    [SerializeField] private StoreManager _storeManager;
+    [SerializeField] private StoreManager storeManager;
     private Animator _animator;
-    private StoreEntranceStatus currState = StoreEntranceStatus.None;
+    private StoreEntranceStatus _currState = StoreEntranceStatus.None;
 
     private void Start()
     {
@@ -23,12 +20,12 @@ public class StoreEntrance : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetInteger("StoreEntarnceState", (int) currState);
+        _animator.SetInteger("StoreEntarnceState", (int) _currState);
     }
 
     public void SetEntranceState(StoreEntranceStatus newState)
     {
-        currState = newState;
+        _currState = newState;
     }
     
     public void OpenStoreEntrance()
@@ -38,7 +35,7 @@ public class StoreEntrance : MonoBehaviour
 
     public void CloseStoreEntrance()
     {
-        _storeManager.CloseStore();
+        storeManager.CloseStore();
     }
     
     public void PlayLandSound()
