@@ -137,8 +137,8 @@ MonoBehaviour:
   minNextWaypointDistance: 7
   maxUpdateRate: 10
   minUpdateRate: 7
-  maxSpeed: 700
-  minSpeed: 500
+  maxSpeed: 800
+  minSpeed: 600
   minMass: 2
   maxMass: 2
   minLinearDrag: 1
@@ -191,6 +191,10 @@ PrefabInstance:
     - target: {fileID: 1112363746833088939, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
       propertyPath: attackDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112363746833088939, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
+      propertyPath: attackRangeHit
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1112363746833088939, guid: 6467e70838cdfa84a9ac4494fc977561, type: 3}
       propertyPath: attackRangeCheck
@@ -277,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2344180383526235078, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
       propertyPath: attackRangeCheck
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4006027641648737929, guid: 6dea370c6a58a9240ac509e611cda729, type: 3}
       propertyPath: m_RootOrder
