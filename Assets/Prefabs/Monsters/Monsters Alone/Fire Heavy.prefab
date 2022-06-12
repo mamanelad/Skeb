@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
+  _handBigFire: {fileID: 8414708677845420537}
   attackDelayAfterHitTime: 0.3
   speedEnemyToDamageOtherEnemies: 2.5
   attackRangeCheck: 202
@@ -477,6 +478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 7718130800998366639, guid: 2460624889a63604c99b297b3ad44d70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2460624889a63604c99b297b3ad44d70, type: 3}
 --- !u!1 &6287514466874927963 stripped
@@ -489,6 +494,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6279838086508030702, guid: 2460624889a63604c99b297b3ad44d70, type: 3}
   m_PrefabInstance: {fileID: 4349898941982545652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8414708677845420537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5231774292121231117, guid: 2460624889a63604c99b297b3ad44d70, type: 3}
+  m_PrefabInstance: {fileID: 4349898941982545652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6287514466874927963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dbc996653dddd4c998434254fdb731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6877716904780263758
 MonoBehaviour:
   m_ObjectHideFlags: 0

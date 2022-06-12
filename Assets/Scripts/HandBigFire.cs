@@ -11,7 +11,6 @@ public class HandBigFire : MonoBehaviour
     private bool inside;
     private SpriteRenderer _sp;
     private PlayerController _player;
-    [SerializeField] private Transform hitPoint;
     [SerializeField] private float canSeeHandTime = .1f;
 
     private void Awake()
@@ -57,6 +56,8 @@ public class HandBigFire : MonoBehaviour
                 CinemaMachineShake.Instance.ShakeCamera(screenShakeIntensity, screenShakeTime);
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
+        
+        gameObject.SetActive(false);
     }
 
     private void HideHand()
