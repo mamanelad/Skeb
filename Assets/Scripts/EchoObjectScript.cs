@@ -13,6 +13,11 @@ public class EchoObjectScript : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    private void Start()
+    {
+        Destroy(gameObject,2f);
+    }
     
     public IEnumerator DecreaseOpacityRoutine()
     {
