@@ -8984,7 +8984,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.05405e-40, y: 2.05407e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.15368e-40, y: 2.1537e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9432,7 +9432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnDamage: 0
   attackRange: 1
-  swordRangedAttack: 0
+  swordRangedAttack: 1
   maxHealthScaler: 1
   monsterKillRegeneration: 0
   staticRegeneration: 0

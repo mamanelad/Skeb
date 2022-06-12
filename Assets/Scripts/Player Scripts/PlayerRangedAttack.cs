@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class PlayerRangedAttack : MonoBehaviour
     [SerializeField] private Animator _animator;
     private Rigidbody2D _rb;
     private Vector2 _direction;
-    
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -18,9 +17,9 @@ public class PlayerRangedAttack : MonoBehaviour
 
     public void SetDirection(Vector2 direction)
     {
-        _direction = direction;
-        _animator.SetFloat("DirectionHorizonatl", direction.x);
-        _animator.SetFloat("DirectionVertical", direction.y);
+        _direction = direction != Vector2.zero ? direction: Vector2.down ;
+        _animator.SetFloat("DirectionHorizonatl", _direction.x);
+        _animator.SetFloat("DirectionVertical", _direction.y);
         _animator.SetTrigger("PlayAnim");
     }
     
@@ -49,9 +48,7 @@ public class PlayerRangedAttack : MonoBehaviour
                 monsterController.DamageEnemy(damage);
         }
     }
-
     
-
     private IEnumerator FadeOut()
     {
         var color = GetComponent<SpriteRenderer>().color;
@@ -62,4 +59,5 @@ public class PlayerRangedAttack : MonoBehaviour
             GetComponent<SpriteRenderer>().color = color;
         }
     }
+    
 }
