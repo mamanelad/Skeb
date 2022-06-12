@@ -1929,6 +1929,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &275254871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275254872}
+  m_Layer: 0
+  m_Name: ParticleFather
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275254872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275254871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.011968527, y: 4.0129585, z: -1.8132504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323050284
 GameObject:
   m_ObjectHideFlags: 0
@@ -7038,6 +7068,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1421270718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4526990746881188064, guid: ecb5d72854c281c4e8a06801e5292f01, type: 3}
+  m_PrefabInstance: {fileID: 1590282959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1424300006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7984,17 +8025,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4526990746881188066, guid: ecb5d72854c281c4e8a06801e5292f01, type: 3}
   m_PrefabInstance: {fileID: 1590282959}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1590282961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4526990746881188064, guid: ecb5d72854c281c4e8a06801e5292f01, type: 3}
-  m_PrefabInstance: {fileID: 1590282959}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1598283633
 GameObject:
   m_ObjectHideFlags: 3
@@ -9056,7 +9086,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.1798e-40, y: 2.17982e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.17894e-40, y: 2.17895e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9627,7 +9657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edd35940058d747bf2f453f39aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeEffect: {fileID: 1590282961}
+  lifeEffect: {fileID: 1421270718}
   inTutorial: 0
   health: 100
   maxHealth: 100
@@ -10048,6 +10078,7 @@ MonoBehaviour:
   StoreAudioManager: {fileID: 1515519544}
   monsterAudioManager: {fileID: 1671097073}
   AudioManagerGeneral: {fileID: 924287472}
+  particleFather: {fileID: 275254871}
   pauseMenu: {fileID: 106847964}
   gameWonScreenMenu: {fileID: 1079225080}
   gameOverScreenMenu: {fileID: 827507930}
