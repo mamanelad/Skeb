@@ -18,7 +18,13 @@ public class EchoObjectScript : MonoBehaviour
     {
         Destroy(gameObject,2f);
     }
-    
+
+    private void Update()
+    {
+        if (GameManager.Shared.CurrentState == GameManager.WorldState.Ice)
+            Destroy(gameObject);
+    }
+
     public IEnumerator DecreaseOpacityRoutine()
     {
         while (_spriteRenderer.color.a > 0)
@@ -26,9 +32,8 @@ public class EchoObjectScript : MonoBehaviour
             DecreaseOpacity();
             yield return new WaitForSeconds(timeSteps);
         }
-        
     }
-    
+
     private void DecreaseOpacity()
     {
         var newColor = _spriteRenderer.color;
