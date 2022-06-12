@@ -103,7 +103,7 @@ MonoBehaviour:
   - {fileID: 1511424321483734004, guid: ec5673ffe9b17af4a9618b57821799eb, type: 3}
   - {fileID: -5312599112025367328, guid: ec5673ffe9b17af4a9618b57821799eb, type: 3}
   - {fileID: 7518094009169289770, guid: ec5673ffe9b17af4a9618b57821799eb, type: 3}
-  spikeDamage: 2
+  spikeDamage: 5
   destroyOnCollision: 1
   timeToDestroy: 3
 --- !u!114 &5426484186192415223
@@ -161,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnimation: {fileID: 0}
   timeToBurn: 2
   ParticlePrefab: {fileID: 5769386592992582346, guid: 8af61b65d9f1aa04da2dc800a41dea5f, type: 3}
   Rate: 5

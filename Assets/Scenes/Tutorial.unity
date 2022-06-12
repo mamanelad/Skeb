@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TuturialUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2636031519153534280, guid: 49f5455c95561d447b6c66f76f5b4f65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2636031519153534283, guid: 49f5455c95561d447b6c66f76f5b4f65, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -903,7 +907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59099048}
-  m_LocalRotation: {x: 2.14826e-40, y: 2.14827e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.14846e-40, y: 2.14847e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.03, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
