@@ -225,10 +225,10 @@ MonoBehaviour:
   _handBigFire: {fileID: 0}
   attackDelayAfterHitTime: 0.3
   speedEnemyToDamageOtherEnemies: 2.5
-  attackRangeCheck: 2
-  attackRangeHit: 2
+  attackRangeCheck: 2.2
+  attackRangeHit: 2.3
   attackDamage: 30
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 1.3
   screenShakeIntensity: 3
   screenShakeTime: 0.3
 --- !u!58 &-669121559460897940

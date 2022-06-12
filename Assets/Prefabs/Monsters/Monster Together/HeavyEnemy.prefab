@@ -107,8 +107,8 @@ MonoBehaviour:
   minNextWaypointDistance: 2
   maxUpdateRate: 5
   minUpdateRate: 2
-  maxSpeed: 500
-  minSpeed: 400
+  maxSpeed: 600
+  minSpeed: 500
   minMass: 3
   maxMass: 3
   minLinearDrag: 2
@@ -190,7 +190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: attackDamage
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: attackRangeHit
@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: attackRangeCheck
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: timeBetweenAttacks
@@ -305,11 +305,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214493059504434052, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
       propertyPath: attackDamage
-      value: 25
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214493059504434052, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
+      propertyPath: attackRangeHit
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3214493059504434052, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
       propertyPath: attackRangeCheck
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 3214493059504434052, guid: 677d9d18425edb149afb11bbb84c656a, type: 3}
       propertyPath: timeBetweenAttacks

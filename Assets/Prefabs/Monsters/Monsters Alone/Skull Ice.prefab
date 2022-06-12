@@ -136,9 +136,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
-  attackRangeCheck: 1
-  attackRangeHit: 1
-  attackDamage: 5
+  _handBigFire: {fileID: 0}
+  attackDelayAfterHitTime: 0.3
+  speedEnemyToDamageOtherEnemies: 2.5
+  attackRangeCheck: 1.5
+  attackRangeHit: 1.2
+  attackDamage: 7
   timeBetweenAttacks: 1
   screenShakeIntensity: 1
   screenShakeTime: 0.1
