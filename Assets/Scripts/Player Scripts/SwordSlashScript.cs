@@ -18,11 +18,12 @@ public class SwordSlashScript : MonoBehaviour
         if (!_playerStats.swordRangedAttack)
             return;
 
-        var attack = Instantiate(RangedSwordAttack, transform.position, quaternion.identity);
+        var spawnDirection = _playerController.GetPlayerIdleDirection();
+        var attack = Instantiate(RangedSwordAttack, transform.position + new Vector3(spawnDirection.x,
+            spawnDirection.y, 0f), quaternion.identity);
         var attackController = attack.GetComponent<PlayerRangedAttack>();
         if (attackController)
-            attackController.SetDirection(_playerController.GetPlayerIdleDirection());
-
+            attackController.SetDirection(spawnDirection);
     }
     
 }
