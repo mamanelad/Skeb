@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c986d1cf259306479278d373f1423db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyBall: {fileID: 0}
+  energyBall: {fileID: 7392572333538659150, guid: 9238ab3c5f531a84fb0b1dfc8d0b5b5f, type: 3}
   _handBigFire: {fileID: 0}
   attackDelayAfterHitTime: 0.3
-  speedEnemyToDamageOtherEnemies: 2.5
+  speedEnemyToDamageOtherEnemies: 3.2
   attackRangeCheck: 3
   attackRangeHit: 1.7
   attackDamage: 5

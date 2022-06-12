@@ -224,7 +224,7 @@ MonoBehaviour:
   energyBall: {fileID: 0}
   _handBigFire: {fileID: 0}
   attackDelayAfterHitTime: 0.3
-  speedEnemyToDamageOtherEnemies: 2.5
+  speedEnemyToDamageOtherEnemies: 3.2
   attackRangeCheck: 2.2
   attackRangeHit: 2.3
   attackDamage: 30

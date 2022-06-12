@@ -99,8 +99,8 @@ public class AudioManagerStore : MonoBehaviour
         audioSource.volume = s.volume;
         audioSource.Play();
         s.audioSource = audioSource;
-        if (!s.loop)
-            Destroy(soundGameObject, 10);
+        // if (!s.loop)
+        //     Destroy(soundGameObject, 10);
     }
 
     private bool CanPlaySound(StoreSounds.SoundKindsStore soundToPlayKindStore, StoreSounds soundToPlay)
