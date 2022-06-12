@@ -18,6 +18,7 @@ public class GameWonScreen : MonoBehaviour
     [SerializeField] private GameObject menuMainMenu;
     [SerializeField] private float soundGameWonDelay = .5f;
     private GameControls _pauseControls;
+    private bool gameWonSoundHasPlayed;
 
     private void Awake()
     {
@@ -54,8 +55,12 @@ public class GameWonScreen : MonoBehaviour
         if (soundGameWonDelay > 0)
         {
             soundGameWonDelay -= Time.deltaTime;
-            if (soundGameWonDelay <= 0)
+            if (soundGameWonDelay < 0 && GameManager.Shared.gameWon && !gameWonSoundHasPlayed)
+            {
                 GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.GameWon);
+                gameWonSoundHasPlayed = true;
+            }
+                
         }
 
         switch (_currMenuOption)

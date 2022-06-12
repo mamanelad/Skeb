@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float toIceDashDelayTime = .3f;
     [NonSerialized] public bool canDash;
     private float dashDelayTimer;
-
+    public bool gameWon;
     public bool playerCanMove;
     public WorldState CurrentState;
 
