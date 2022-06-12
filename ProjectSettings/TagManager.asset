@@ -22,6 +22,7 @@ TagManager:
   - DashCollider
   - Name
   - lifeCollider
+  - Life Bar
   layers:
   - Default
   - TransparentFX

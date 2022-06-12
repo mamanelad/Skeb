@@ -133,12 +133,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.016193392}
+  m_Offset: {x: 0, y: 0.036381867}
   serializedVersion: 2
-  m_Radius: 0.62068754
+  m_Radius: 0.51301706
 --- !u!1 &9039279077680099074
 GameObject:
   m_ObjectHideFlags: 0

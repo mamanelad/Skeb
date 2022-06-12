@@ -6,10 +6,10 @@ using UnityEngine;
 public class CoinPickUp : MonoBehaviour
 {
     [SerializeField] private int coinValue = 1;
-
-    [SerializeField] private float minDistance = 1f;
+    [SerializeField] private float minDistance = 5f;
     [SerializeField] private float step = 0.1f;
-     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject target;
+    private int _frameCounter = 30;
 
     private enum CoinKind
     {
@@ -29,24 +29,13 @@ public class CoinPickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, 3);
         GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HeartExist);
         target = GameObject.FindGameObjectWithTag("lifeBar");
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        SwitchState();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_state != GameManager.Shared.CurrentState)
-        {
-            SwitchState();
-            
-        }
-
-    }
-
+    
     public void setValue(int newValue)
     {
         coinValue = newValue;
@@ -54,45 +43,24 @@ public class CoinPickUp : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var dist = Vector3.Distance(target.transform.position, transform.position);
-        if (dist <= minDistance)
+        _frameCounter -= 1;
+
+        if (_frameCounter <= 0)
         {
-            AddCoins();
-            
+            _frameCounter = 30;
+            var dist = Vector3.Distance(target.transform.position, transform.position);
+            if (dist <= minDistance)
+                AddCoins();
         }
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 
     }
-
-    private void SwitchState()
-    {
-        if (coinKind == CoinKind.Heart) return;
-        _state = GameManager.Shared.CurrentState;
-
-        switch (_state)
-        {
-            case GameManager.WorldState.Fire:
-                _spriteRenderer.sprite = fireSprite;
-                _animator.SetBool("Fire", true);
-                _animator.SetBool("Ice", false);
-                break;
-            
-            case GameManager.WorldState.Ice:
-                _spriteRenderer.sprite = iceSprite;
-                _animator.SetBool("Fire", false);
-                _animator.SetBool("Ice", true);
-                break;
-        }
-    }
-    
     
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-           AddCoins();
-        }
+        if (other.gameObject.CompareTag("Life Bar"))
+            AddCoins();
     }
 
     private void AddCoins()
@@ -102,7 +70,6 @@ public class CoinPickUp : MonoBehaviour
             GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.HeartAdd);
             FindObjectOfType<PlayerHealth>().UpdateHealth(coinValue, Vector3.zero);
         }
-
         Destroy(gameObject);
     }
 }
