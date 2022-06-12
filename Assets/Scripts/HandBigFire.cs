@@ -24,9 +24,10 @@ public class HandBigFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AimHand();
+        
         if (canSeeHand)
         {
+            AimHand();
             canSeeHandTimer -= Time.deltaTime;
             if (canSeeHandTimer <= 0)
                 HideHand();
