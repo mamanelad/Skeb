@@ -12,6 +12,8 @@ public class GameWonScreen : MonoBehaviour
         MainMenu
     }
 
+    private bool lockClick = true;
+    [SerializeField] private float firstClickDelay = 0.7f;
     private Option _currMenuOption;
     [SerializeField] private GameObject indicator;
     [SerializeField] private GameObject menuRestart;
@@ -52,6 +54,10 @@ public class GameWonScreen : MonoBehaviour
 
     private void Update()
     {
+        firstClickDelay -= Time.deltaTime;
+        if (firstClickDelay < 0)
+            lockClick = false;
+
         if (soundGameWonDelay > 0)
         {
             soundGameWonDelay -= Time.deltaTime;
@@ -60,7 +66,6 @@ public class GameWonScreen : MonoBehaviour
                 GameManager.Shared.AudioManagerGeneral.PlaySound(GeneralSound.SoundKindsGeneral.GameWon);
                 gameWonSoundHasPlayed = true;
             }
-                
         }
 
         switch (_currMenuOption)
@@ -90,6 +95,7 @@ public class GameWonScreen : MonoBehaviour
 
     private void OnClick(InputAction.CallbackContext context)
     {
+        if (lockClick) return;
         switch (_currMenuOption)
         {
             case Option.Restart:
@@ -118,6 +124,7 @@ public class GameWonScreen : MonoBehaviour
 
     private void ClickUp(InputAction.CallbackContext context)
     {
+        if (lockClick) return;
         PlaySound(GeneralSound.SoundKindsGeneral.Click);
         if (_currMenuOption == Option.MainMenu)
             _currMenuOption = Option.Restart;
@@ -125,6 +132,7 @@ public class GameWonScreen : MonoBehaviour
 
     private void ClickDown(InputAction.CallbackContext context)
     {
+        if (lockClick) return;
         PlaySound(GeneralSound.SoundKindsGeneral.Click);
         if (_currMenuOption == Option.Restart)
             _currMenuOption = Option.MainMenu;
@@ -132,6 +140,7 @@ public class GameWonScreen : MonoBehaviour
 
     private void ClosePauseMenu(InputAction.CallbackContext context)
     {
+        if (lockClick) return;
         PlaySound(GeneralSound.SoundKindsGeneral.Click);
         Time.timeScale = 1;
         GameManager.Shared.ResumeState();
