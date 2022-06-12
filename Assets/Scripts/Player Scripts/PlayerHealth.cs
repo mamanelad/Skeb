@@ -69,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         if (mod < 0)
             GetComponent<ScreenShakeListener>().Shake();
 
+        mod -= (GameManager.Shared.roundNumber % 2);
         health = Mathf.Min(health + mod, maxHealth);
         health = Mathf.Max(health, 0);
         
