@@ -34,12 +34,7 @@ namespace FireParticle
             originalColor = spriteRenderer.color;
 
         }
-
-        private void Start()
-        {
-            transform.SetParent(GameManager.Shared.particleFather.transform);
-
-        }
+        
 
         void OnEnable () {
             velocity = new Vector2( Random.Range(MinVelocity.x, MaxVelocity.x), Random.Range( MinVelocity.y, MaxVelocity.y) );

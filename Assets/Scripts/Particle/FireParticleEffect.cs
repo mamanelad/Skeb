@@ -22,7 +22,6 @@ public class FireParticleEffect : MonoBehaviour
 
     private void Start()
     {
-        transform.SetParent(GameManager.Shared.particleFather.transform);
         timerBurning = timeToBurn;
     }
 
