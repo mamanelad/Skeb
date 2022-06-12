@@ -130,8 +130,8 @@ MonoBehaviour:
   fireMonster: {fileID: 965396304015339984}
   iceMonster: {fileID: 868980015463703817}
   _enemyKind: 0
-  currHealth: 100
-  startHealth: 100
+  currHealth: 70
+  startHealth: 70
   _bloodEffect: {fileID: 3130804771916970411, guid: 0f78026728b5e1e4399d38cefa67eb9a, type: 3}
   bloodPosition: {fileID: 2577158528383172808}
   heartValue: 3
