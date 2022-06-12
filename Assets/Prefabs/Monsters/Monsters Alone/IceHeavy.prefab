@@ -236,11 +236,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
+  attackDelayAfterHitTime: 0.3
+  speedEnemyToDamageOtherEnemies: 2.5
   attackRangeCheck: 2
   attackRangeHit: 2
   attackDamage: 30
   timeBetweenAttacks: 1
-  screenShakeIntensity: 5
+  screenShakeIntensity: 3
   screenShakeTime: 0.3
 --- !u!58 &-669121559460897940
 CircleCollider2D:

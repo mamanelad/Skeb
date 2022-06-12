@@ -225,7 +225,7 @@ MonoBehaviour:
   ParticlePrefab: {fileID: 2273662187065366443, guid: 3db1d567ae6a25f4ebe2db1083319534, type: 3}
   Rate: 500
   isOn: 0
-  fireDamage: 5
+  fireDamage: 3
   damageEnemyStep: 0.2
   damageEnemy: 0
 --- !u!1 &4418849257063470217
@@ -366,6 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 0}
+  attackDelayAfterHitTime: 0.3
   speedEnemyToDamageOtherEnemies: 2.5
   attackRangeCheck: 202
   attackRangeHit: 1
@@ -501,6 +502,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: {fileID: 0}
-  twistAroundPoint: {fileID: 0}
   canSeeHandTime: 0.1
-  fatherLLayerManager: {fileID: 0}
