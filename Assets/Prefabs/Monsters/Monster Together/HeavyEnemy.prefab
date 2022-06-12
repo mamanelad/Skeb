@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: attackRangeHit
-      value: 0.4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 345385754473781453, guid: 5766ea6e2ff38034ba920c21b2c620f8, type: 3}
       propertyPath: attackRangeCheck

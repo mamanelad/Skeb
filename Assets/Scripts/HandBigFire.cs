@@ -49,7 +49,7 @@ public class HandBigFire : MonoBehaviour
         _sp.color = newCol;
         canSeeHand = true;
         canSeeHandTimer = canSeeHandTime;
-
+        AimHand();
         if (inside)
         {
             if (FindObjectOfType<CinemaMachineShake>())
@@ -57,7 +57,7 @@ public class HandBigFire : MonoBehaviour
             _player.GetComponent<PlayerHealth>().UpdateHealth(-attackDamage, transform.position);
         }
         
-        gameObject.SetActive(false);
+        
     }
 
     private void HideHand()
@@ -77,5 +77,6 @@ public class HandBigFire : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-            inside = false;    }
+            inside = false;    
+    }
 }
