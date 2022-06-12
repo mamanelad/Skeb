@@ -35,6 +35,7 @@ public class EnemyAlone : MonoBehaviour
     [Header("Attack Settings")] [SerializeField]
     private GameObject energyBall;
 
+    [SerializeField] private HandBigFire _handBigFire;
     [SerializeField] private float attackDelayAfterHitTime = .3f;
     [SerializeField] private float speedEnemyToDamageOtherEnemies = 2.5f;
     [SerializeField] private float attackRangeCheck = 0.5f;
@@ -192,9 +193,9 @@ public class EnemyAlone : MonoBehaviour
 
     public void DamagePlayerHand()
     {
-        var hand = GetComponentInChildren<HandBigFire>();
-        if (hand != null)
-            hand.ShowAndAttack( attackRangeHit,attackDamage,screenShakeIntensity,screenShakeTime);
+        _handBigFire.gameObject.SetActive(true);
+        if (_handBigFire != null)
+            _handBigFire.ShowAndAttack( attackRangeHit,attackDamage,screenShakeIntensity,screenShakeTime);
         _enemyAI.MonsterAttackSound();
         _isAttacking = false;
     }
