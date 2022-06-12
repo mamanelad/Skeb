@@ -118,7 +118,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void SecondWindEffect()
     {
-        var angelSpawned = Instantiate(angle, Vector3.zero, Quaternion.identity);
+        var angelSpawned = Instantiate(angle, transform.position, Quaternion.identity);
         GameManager.Shared.PlayerAudioManager.PlaySound(PlayerSound.SoundKindsPlayer.SecondWind);
         Destroy(angelSpawned, 1f);
     }
