@@ -10,10 +10,10 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private CinemachineTargetGroup _cinemachineTargetGroup;
     private GameObject _target;
     [SerializeField] private float gameOverDelay = 0.3f;
-    [SerializeField] private float lifeEndOfLevelBonus = 20f;
     [SerializeField] private GameObject roundWonText;
     [SerializeField] private float timeInZoom;
     private float originTimeInZoom;
+    private bool bonusLife;
 
     void Start()
     {
@@ -33,12 +33,7 @@ public class CameraManager : MonoBehaviour
             if (_playerController.GetPlayerState() != PlayerController.PlayerState.Falling &&
                 !_playerController.IsPlayerDead)
             {
-                if (_enemySpawnerDots.wonLevel && timeInZoom <= (originTimeInZoom / 3) &&
-                    !_playerController.IsPlayerDead)
-                {
-                    FindObjectOfType<PlayerHealth>().UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
-                }
-
+                
                 if (_enemySpawnerDots.wonLevel && timeInZoom <= (originTimeInZoom / 2) &&
                     !_playerController.IsPlayerDead)
                 {
