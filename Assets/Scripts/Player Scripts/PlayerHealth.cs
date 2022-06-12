@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private FireParticleEffect lifeEffect;
     [SerializeField] private bool inTutorial;
-    [SerializeField] private float health = 0f;
+    [SerializeField] public float health = 0f;
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float fallDamage = 20;
     private float _healthScaler = 1f;
@@ -58,7 +58,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth(float mod, Vector3 pos)
     {
-        print(mod);
         if (inTutorial || PlayerController._PlayerController.IsPlayerDead) return;
         
         if (_playerController.isStunned && mod <= 0)

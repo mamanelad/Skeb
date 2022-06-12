@@ -12,11 +12,13 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float gameOverDelay = 0.3f;
     [SerializeField] private GameObject roundWonText;
     [SerializeField] private float timeInZoom;
+    private PlayerHealth _playerHealth;
     private float originTimeInZoom;
     private bool bonusLife;
 
     void Start()
     {
+        _playerHealth = FindObjectOfType<PlayerHealth>();
         _enemySpawnerDots = FindObjectOfType<EnemySpawnerDots>();
         _playerController = FindObjectOfType<PlayerController>();
         timeInZoom /= 5f;
@@ -61,14 +63,15 @@ public class CameraManager : MonoBehaviour
                         roundWonText.SetActive(false);
                     }
 
-                    if (_playerController.IsPlayerDead)
+                    if (_playerController.IsPlayerDead && _playerHealth.health <= 0)
                         GameOver();
                 }
 
                 return;
             }
 
-            Invoke(nameof(GameOver), gameOverDelay);
+            if (_playerController.IsPlayerDead && _playerHealth.health <= 0)
+                Invoke(nameof(GameOver), gameOverDelay);
         }
 
 

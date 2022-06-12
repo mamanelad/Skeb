@@ -4849,6 +4849,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1612050085581248297, guid: e1ce988f80ecd0b42a60efbb55a903eb, type: 3}
+      propertyPath: firstClickDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1612050086200872477, guid: e1ce988f80ecd0b42a60efbb55a903eb, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -5847,6 +5851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1084801384489613462, guid: 79114cfe1c3cd654284ccb466f690ea5, type: 3}
+      propertyPath: firstClickDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1084801384489613463, guid: 79114cfe1c3cd654284ccb466f690ea5, type: 3}
       propertyPath: m_Name
       value: GameWon Screen
@@ -9045,7 +9053,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.15867e-40, y: 2.15869e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.16475e-40, y: 2.16477e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10044,6 +10052,7 @@ MonoBehaviour:
   timeInStage: 8
   inTutorial: 0
   toIceDashDelayTime: 0.3
+  gameWon: 0
   playerCanMove: 0
   CurrentState: 0
 --- !u!4 &1864771057

@@ -119,7 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c3323d10161ae44b52c6eeb9e849b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeBallTimer: 2
+  StayInFireWorld: 0
+  lifeBallTimer: 1
   timeToDieAfterHit: 0
   step: 0.085
   _attackDamage: 20
@@ -207,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668e4ac8e2612c34481b3094dc657e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToBurn: 5
+  timeToBurn: 3.5
   ParticlePrefab: {fileID: 7360893644074700997, guid: e631022338f17d546a9c8c765adf1634, type: 3}
   Rate: 20
   isOn: 1

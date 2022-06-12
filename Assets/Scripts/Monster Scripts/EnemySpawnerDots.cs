@@ -9,7 +9,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private bool gameStarted;
 
     private bool spawnIsOn;
-    
+
     private PlayerController _playerController;
 
     private int _dotIndexBolt; //Position for the bolt
@@ -40,11 +40,13 @@ public class EnemySpawnerDots : MonoBehaviour
     private bool wonScreen;
     private bool wonScreenOpen;
 
+    private PlayerHealth _playerHealth;
     private TextMeshProUGUI _roundNumberText;
     private bool _roundNumIsOn;
     private float _roundNumTimer;
     private float _roundSoundTimer;
     private bool _playRoundStart;
+
     #endregion
 
     #region Inspector Control
@@ -59,7 +61,6 @@ public class EnemySpawnerDots : MonoBehaviour
     [SerializeField] private float roundSoundDelay = .3f;
     [SerializeField] private float roundNumTime = 1f;
 
-    
 
     [SerializeField] private float gameWonScreenDelay = 0.5f;
     [SerializeField] private UpgradeShop upgradeShop;
@@ -94,6 +95,7 @@ public class EnemySpawnerDots : MonoBehaviour
         _roundNumberText = roundNumberObject.GetComponent<TextMeshProUGUI>();
         _playerController = FindObjectOfType<PlayerController>();
         _timer = maxTimeToSpawn;
+        _playerHealth = FindObjectOfType<PlayerHealth>();
         SetNewWave();
     }
 
@@ -108,12 +110,12 @@ public class EnemySpawnerDots : MonoBehaviour
         else if (smallPercentage >= bigPercentage && smallPercentage >= middlePercentage)
             mostWantedEnemy = monstersSmall;
     }
-    
+
     private void Update()
     {
         if (GameManager.Shared.inTutorial)
             gameObject.SetActive(false);
-        
+
         if (wonScreen && !wonScreenOpen)
         {
             _wonScreenTimer -= Time.deltaTime;
@@ -131,7 +133,7 @@ public class EnemySpawnerDots : MonoBehaviour
 
         if (openShop)
         {
-            if (_playerController._playerState != PlayerController.PlayerState.Falling) 
+            if (_playerController._playerState != PlayerController.PlayerState.Falling)
                 openShopTimer -= Time.deltaTime;
             if (openShopTimer <= 0)
             {
@@ -301,8 +303,12 @@ public class EnemySpawnerDots : MonoBehaviour
         GameManager.Shared.roundMonsterKillCounter = 0;
         StartRoundNumRoutine();
         if (gameStarted)
-            FindObjectOfType<PlayerHealth>().UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
-
+        {
+            if (_playerHealth == null)
+                _playerHealth = FindObjectOfType<PlayerHealth>();
+            if (_playerHealth != null)
+                _playerHealth.UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
+        }
     }
 
     public void ZoomRoundWon()
@@ -328,13 +334,14 @@ public class EnemySpawnerDots : MonoBehaviour
         _roundSoundTimer = roundSoundDelay;
         _roundNumberText.text = "Round " + GameManager.Shared.roundNumber;
     }
+
     private void ShowRoundNumber()
     {
         _roundNumIsOn = true;
         _roundNumTimer = roundNumTime;
         roundNumberObject.SetActive(true);
     }
-    
+
     private void StartOpenStoreSequence()
     {
         storeEntrance.SetEntranceState(StoreEntrance.StoreEntranceStatus.Open);

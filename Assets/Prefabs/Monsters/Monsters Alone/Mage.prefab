@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToBurn: 1.5
   ParticlePrefab: {fileID: 5520446349924354269, guid: b62c6400639195b4bb5547d9f8abc859, type: 3}
-  Rate: 500
+  Rate: 250
   isOn: 0
   fireDamage: 5
   damageEnemyStep: 0.2
@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyBall: {fileID: 7392572333538659150, guid: 9238ab3c5f531a84fb0b1dfc8d0b5b5f, type: 3}
+  attackDelayAfterHitTime: 0.3
+  speedEnemyToDamageOtherEnemies: 2.5
   attackRangeCheck: 2
   attackRangeHit: 1
   attackDamage: 15
