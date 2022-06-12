@@ -1929,36 +1929,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &275254871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 275254872}
-  m_Layer: 0
-  m_Name: ParticleFather
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &275254872
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275254871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011968527, y: 4.0129585, z: -1.8132504}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323050284
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,7 +6629,7 @@ MonoBehaviour:
     soundDelay: 0.05
   - loop: 0
     audioClip: {fileID: 8300000, guid: 30e6bf7fee948b24fb1b7a6a985d356f, type: 3}
-    volume: 0.5
+    volume: 1
     audioSource: {fileID: 0}
     soundKindPlayer: 13
     soundDelay: 1
@@ -9086,7 +9056,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.17894e-40, y: 2.17895e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.18195e-40, y: 2.18196e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10078,7 +10048,7 @@ MonoBehaviour:
   StoreAudioManager: {fileID: 1515519544}
   monsterAudioManager: {fileID: 1671097073}
   AudioManagerGeneral: {fileID: 924287472}
-  particleFather: {fileID: 275254871}
+  particleFather: {fileID: 0}
   pauseMenu: {fileID: 106847964}
   gameWonScreenMenu: {fileID: 1079225080}
   gameOverScreenMenu: {fileID: 827507930}
@@ -11552,7 +11522,6 @@ MonoBehaviour:
   upgradeBorder: {fileID: 1364625961}
   selectUpgrade: 0
   upgradeDescription: Second Wind - Will grant you a one time revival upon dying
-    from fall damage
 --- !u!212 &2094378009
 SpriteRenderer:
   m_ObjectHideFlags: 0
