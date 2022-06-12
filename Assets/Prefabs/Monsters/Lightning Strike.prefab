@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5938621191921316684}
   - component: {fileID: 5938621191921316683}
   - component: {fileID: 5938621191921316682}
+  - component: {fileID: 4759175439751690611}
   m_Layer: 0
   m_Name: Target Bolt
   m_TagString: Untagged
@@ -101,8 +102,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 663187529
-  m_SortingLayer: 6
+  m_SortingLayerID: -1162428035
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f6e15b41b8e336d4ea448ca221180adb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,7 +148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSprite: {fileID: 21300000, guid: c3eb9b34cb8459f4a96d775b224ee9e0, type: 3}
-  IceSprite: {fileID: 21300000, guid: f6e15b41b8e336d4ea448ca221180adb, type: 3}
+  iceSprite: {fileID: 0}
+--- !u!114 &4759175439751690611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938621191921316680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5938621192337544461
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +172,7 @@ GameObject:
   - component: {fileID: 5938621192337544497}
   - component: {fileID: 5938621192337544496}
   - component: {fileID: 5938621192337544462}
+  - component: {fileID: 7533698802559704463}
   m_Layer: 0
   m_Name: Lightning Strike
   m_TagString: Untagged
@@ -218,8 +232,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 663187529
-  m_SortingLayer: 6
+  m_SortingLayerID: -1162428035
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -3110504063417061150, guid: 9a7f5f7ca4deb434599083b4acd19bd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -244,8 +258,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918ee593818c8cc4e807735836ffaca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockMovement: 1
+  father: {fileID: 552002586523414496}
   speed: 0.09
   fade: 1
   show: 0
-  father: {fileID: 552002586523414496}
-  Lock: 1
+--- !u!114 &7533698802559704463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938621192337544461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

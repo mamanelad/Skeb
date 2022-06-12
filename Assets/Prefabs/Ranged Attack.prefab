@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 6696878119335622025}
   - component: {fileID: 3382305931242979508}
   - component: {fileID: 2889494099130206185}
+  - component: {fileID: 5064788898248253502}
   m_Layer: 0
   m_Name: Bird Attack
   m_TagString: Untagged
@@ -255,3 +256,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   echoObject: {fileID: 109115086488268291, guid: 37057c9a366b9ff43a3db383d5b46e52, type: 3}
+--- !u!114 &5064788898248253502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039279077680099074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ab5a4fcb6b6b45b0a04f1fa5053bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
