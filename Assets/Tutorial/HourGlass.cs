@@ -48,6 +48,7 @@ public class HourGlass : MonoBehaviour
     private float _shakeTimer;
     private float _pushTimer;
 
+    
 
     private bool boxShow;
     [SerializeField] private float boxTimeShow = 0.5f;
@@ -180,6 +181,7 @@ public class HourGlass : MonoBehaviour
         {
             case GameManager.WorldState.Fire:
                 GameManager.Shared.CurrentState = GameManager.WorldState.Ice;
+                instructions.GetComponent<Animator>().SetTrigger("Change");
                 instructions.GetComponentInChildren<TextMeshProUGUI>().text = "Press<sprite=0>  To Push" ;
                 break;
 

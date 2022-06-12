@@ -9,7 +9,7 @@ public class EnemySpawnerDots : MonoBehaviour
     private bool gameStarted;
 
     private bool spawnIsOn;
-    [NonSerialized] public bool wonLevel;
+    
     private PlayerController _playerController;
 
     private int _dotIndexBolt; //Position for the bolt
@@ -49,6 +49,8 @@ public class EnemySpawnerDots : MonoBehaviour
 
     #region Inspector Control
 
+    [SerializeField] private float lifeEndOfLevelBonus = 10f;
+    [NonSerialized] public bool wonLevel;
     [SerializeField] private StoreEntrance storeEntrance;
 
     [Header("New Round Setting")] [SerializeField]
@@ -297,6 +299,9 @@ public class EnemySpawnerDots : MonoBehaviour
         GameManager.Shared.roundNumber += 1;
         GameManager.Shared.roundMonsterKillCounter = 0;
         StartRoundNumRoutine();
+        if (gameStarted)
+            FindObjectOfType<PlayerHealth>().UpdateHealth(lifeEndOfLevelBonus, Vector3.zero);
+
     }
 
     public void ZoomRoundWon()

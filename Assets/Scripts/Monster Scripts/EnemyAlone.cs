@@ -116,11 +116,11 @@ public class EnemyAlone : MonoBehaviour
             if (other.gameObject.CompareTag("Player") && _playerController.GetPlayerSpeed() >= 0.5f &&
                 _playerController._dashStatus)
             {
-                var dashColEffect = other.gameObject.GetComponentInChildren<FireParticleEffect>();
-                if (dashColEffect != null)
-                {
-                    dashColEffect.isOn = true;    
-                }
+                // var dashColEffect = other.gameObject.GetComponentInChildren<FireParticleEffect>();
+                // if (dashColEffect != null)
+                // {
+                //     dashColEffect.isOn = true;    
+                // }
                 _enemyTogetherFather.GoBack(Enemy.pushKind.Player, _player.transform.position);
                 _animator.SetTrigger(Damage);
                 _fireParticleEffect.isOn = true;
