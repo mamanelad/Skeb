@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
     private float dashDelayTimer;
     public bool gameWon;
     public bool playerCanMove;
+    [Range(1f,10f)] public float diffLevel;
     public WorldState CurrentState;
 
 
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
         _prevGameState = GameState.Arena;
         InitializeControls();
         Time.timeScale = 1f;
+        diffLevel = 11 - diffLevel;
     }
 
     #region Input Actions

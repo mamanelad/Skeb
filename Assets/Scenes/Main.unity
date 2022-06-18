@@ -9321,7 +9321,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740443606}
-  m_LocalRotation: {x: 2.26129e-40, y: 2.2613e-40, z: 0, w: 1}
+  m_LocalRotation: {x: 2.26177e-40, y: 2.26178e-40, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10325,6 +10325,7 @@ MonoBehaviour:
   toIceDashDelayTime: 0.3
   gameWon: 0
   playerCanMove: 0
+  diffLevel: 5
   CurrentState: 0
 --- !u!4 &1864771057
 Transform:
