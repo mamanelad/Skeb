@@ -56,12 +56,22 @@ public class PlayerHealth : MonoBehaviour
             _playerController.KillPlayer();
     }
 
+    private static float UpdatePlayerDamageByRound(float mod)
+    {
+        if (mod >= 0) return mod;
+        var damageFactor = (-1) * GameManager.Shared.roundNumber / GameManager.Shared.diffLevel * 2f;
+        mod += damageFactor;
+        return mod;
+    }
+
     public void UpdateHealth(float mod, Vector3 pos)
     {
         if (inTutorial || PlayerController._PlayerController.IsPlayerDead) return;
         
         if (_playerController.isStunned && mod <= 0)
             return;
+
+        mod = UpdatePlayerDamageByRound(mod);
 
         if (mod > 0 && health < 100)
             lifeEffect.isOn = true;

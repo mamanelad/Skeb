@@ -227,7 +227,7 @@ MonoBehaviour:
   speedEnemyToDamageOtherEnemies: 3.2
   attackRangeCheck: 2.2
   attackRangeHit: 2.3
-  attackDamage: 22
+  attackDamage: 16
   timeBetweenAttacks: 1.3
   screenShakeIntensity: 3
   screenShakeTime: 0.3

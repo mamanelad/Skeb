@@ -190,7 +190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6286709005262964227, guid: 4fc783639518e0c49b5356875d1c33d7, type: 3}
       propertyPath: attackDamage
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6286709005262964227, guid: 4fc783639518e0c49b5356875d1c33d7, type: 3}
       propertyPath: attackRangeHit
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782258937803268336, guid: 94b7d4931973ac7419fad4270c6031f7, type: 3}
       propertyPath: attackDamage
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7782258937803268336, guid: 94b7d4931973ac7419fad4270c6031f7, type: 3}
       propertyPath: attackRangeHit

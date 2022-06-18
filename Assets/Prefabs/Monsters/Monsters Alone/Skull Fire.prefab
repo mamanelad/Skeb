@@ -204,7 +204,7 @@ MonoBehaviour:
   speedEnemyToDamageOtherEnemies: 2.5
   attackRangeCheck: 1
   attackRangeHit: 1
-  attackDamage: 5
+  attackDamage: 3
   timeBetweenAttacks: 1
   screenShakeIntensity: 1
   screenShakeTime: 0.1
