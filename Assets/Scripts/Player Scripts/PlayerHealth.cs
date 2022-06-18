@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
     private static float UpdatePlayerDamageByRound(float mod)
     {
         if (mod >= 0) return mod;
-        var damageFactor = (-1) * GameManager.Shared.roundNumber / GameManager.Shared.diffLevel * 2f;
+        var damageFactor = (-1) * GameManager.Shared.roundNumber / GameManager.Shared.diffLevel * 2.25f;
         mod += damageFactor;
         return mod;
     }
