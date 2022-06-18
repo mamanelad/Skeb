@@ -301,11 +301,11 @@ public class GameManager : MonoBehaviour
     {
         attackInstructions.GetComponentInChildren<TextMeshProUGUI>().text = "Press<sprite=0>  " +
                                                                             "To push the monsters outside the arena";
-        attackInstructions.GetComponent<Animator>().SetTrigger("Change");
+        attackInstructions.GetComponentInChildren<Animator>().SetTrigger("Change");
     }
 
     private void HideAttackInstruction()
     {
-        attackInstructions.GetComponent<Animator>().SetTrigger("Hide");
+        attackInstructions.GetComponentInChildren<Animator>().SetTrigger("Hide");
     }
 }
