@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,11 @@ public class GameManager : MonoBehaviour
     }
 
     public static GameManager Shared;
+
+    [SerializeField] private GameObject attackInstructions;
+    private bool attackInst;
+    private bool _instructions;
+
 
     [SerializeField] public AudioManager PlayerAudioManager;
     [SerializeField] public AudioManagerStore StoreAudioManager;
@@ -50,13 +56,14 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public GameState CurrentGameState;
     private GameState _prevGameState = GameState.Arena;
     private float _stageTimer;
-    
+
     [SerializeField] private float toIceDashDelayTime = .3f;
     [NonSerialized] public bool canDash;
     private float dashDelayTimer;
     public bool gameWon;
     public bool playerCanMove;
     public WorldState CurrentState;
+
 
     private void Awake()
     {
@@ -113,7 +120,7 @@ public class GameManager : MonoBehaviour
     {
         if (!canDash)
             DashDelay();
-        
+
         if (!dontChangeStateByTime)
             UpdateStageTimer();
 
@@ -128,7 +135,8 @@ public class GameManager : MonoBehaviour
         dashDelayTimer -= Time.deltaTime;
         if (dashDelayTimer <= 0)
             canDash = true;
-    } 
+    }
+
     private void UpdateRoundText()
     {
         UIManager.Shared.SetUIText(roundNumber, roundMonsterKillCounter, roundMonsterTotalAmount);
@@ -138,7 +146,7 @@ public class GameManager : MonoBehaviour
     {
         if (CurrentGameState != GameState.Arena)
             return;
-        
+
         if (CurrentState == WorldState.Fire)
         {
             _stageTimer += Time.deltaTime;
@@ -170,12 +178,24 @@ public class GameManager : MonoBehaviour
 
     private void SwitchState()
     {
+        switch (_instructions)
+        {
+            case false when !attackInst:
+                ChangeAttackInstruction();
+                attackInst = true;
+                break;
+            case false when attackInst:
+                _instructions = true;
+                HideAttackInstruction();
+                break;
+        }
+
         if (CurrentState == WorldState.Fire)
         {
             canDash = false;
             dashDelayTimer = toIceDashDelayTime;
         }
-            
+
         PlaySound(GeneralSound.SoundKindsGeneral.Bell);
         var fireAffects = FindObjectsOfType<FireParticleEffect>();
         if (fireAffects == null)
@@ -184,12 +204,11 @@ public class GameManager : MonoBehaviour
             fireAffect.CloseAndOpenBurningAffect(false);
         if (_arenaParticles != null)
             _arenaParticles.StartParticles();
-        
     }
 
     private void PauseGame(InputAction.CallbackContext context)
     {
-        if (CurrentGameState == GameState.Pause || CurrentGameState == GameState.Won 
+        if (CurrentGameState == GameState.Pause || CurrentGameState == GameState.Won
                                                 || CurrentGameState == GameState.Lose)
             return;
 
@@ -203,7 +222,7 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameState.Pause;
         pauseMenu.SetActive(true);
     }
-    
+
     public void WonGame()
     {
         if (CurrentGameState == GameState.Won)
@@ -215,12 +234,12 @@ public class GameManager : MonoBehaviour
         CurrentGameState = GameState.Won;
         gameWonScreenMenu.SetActive(true);
     }
-    
+
     public void GameOver()
     {
         if (CurrentGameState == GameState.Lose)
             return;
-        
+
         AudioManagerGeneral.StopSound(GeneralSound.SoundKindsGeneral.MainSong);
         _prevGameState = CurrentGameState;
         CurrentGameState = GameState.Lose;
@@ -230,9 +249,9 @@ public class GameManager : MonoBehaviour
     public void ResumeState()
     {
         CurrentGameState = _prevGameState;
-        
+
         StopSound(GeneralSound.SoundKindsGeneral.PauseScreenTheme);
-        
+
         if (CurrentGameState == GameState.Arena)
             UnPauseSound(GeneralSound.SoundKindsGeneral.MainSong);
         if (CurrentGameState == GameState.Store)
@@ -254,24 +273,37 @@ public class GameManager : MonoBehaviour
         store.SetActive(false);
         FindObjectOfType<EnemySpawnerDots>().StartBlockSpawn(true);
     }
-    
+
     private void PlaySound(GeneralSound.SoundKindsGeneral sound)
     {
         Shared.AudioManagerGeneral.PlaySound(sound, transform.position);
     }
-    
+
     private void StopSound(GeneralSound.SoundKindsGeneral sound)
     {
         Shared.AudioManagerGeneral.StopSound(sound);
     }
-    
+
     private void PauseSound(GeneralSound.SoundKindsGeneral sound)
     {
         Shared.AudioManagerGeneral.PauseSound(sound);
     }
-    
+
     private void UnPauseSound(GeneralSound.SoundKindsGeneral sound)
     {
         Shared.AudioManagerGeneral.UnPauseSound(sound);
+    }
+
+
+    private void ChangeAttackInstruction()
+    {
+        attackInstructions.GetComponentInChildren<TextMeshProUGUI>().text = "Press<sprite=0>  " +
+                                                                            "To push the monsters outside the arena";
+        attackInstructions.GetComponent<Animator>().SetTrigger("Change");
+    }
+
+    private void HideAttackInstruction()
+    {
+        attackInstructions.GetComponent<Animator>().SetTrigger("Hide");
     }
 }
