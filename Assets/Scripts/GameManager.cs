@@ -299,9 +299,9 @@ public class GameManager : MonoBehaviour
 
     private void ChangeAttackInstruction()
     {
+        attackInstructions.GetComponentInChildren<Animator>().SetTrigger("Change");
         attackInstructions.GetComponentInChildren<TextMeshProUGUI>().text = "Press<sprite=0>  " +
                                                                             "To push the monsters outside the arena";
-        attackInstructions.GetComponentInChildren<Animator>().SetTrigger("Change");
     }
 
     private void HideAttackInstruction()
