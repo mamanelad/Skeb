@@ -40,6 +40,15 @@ Your best friend will help and offer you one upgrade to choose from after each r
 <p align="center">
  <img src="Images/Screenshot 2022-08-23 195902.png" width="400"/>
 </p>
+  
+  <h3>Tuturial:</h3>
+<p align="center">
+ <img src="Images/Screenshot 2022-08-23 200110.png" width="400"/>
+ <img src="Images/Screenshot 2022-08-23 200141.png" width="400"/>
+ <img src="Images/Screenshot 2022-08-23 200226.png" width="400"/>
+</p>  
+  
+  
 
   <h3>Gameplay:</h3>
 <p align="center">
