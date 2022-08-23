@@ -36,7 +36,7 @@ Your best friend will help and offer you one upgrade to choose from after each r
 
 ## Screenshots
   
-    <h3>Start Menu:</h3>
+  <h3>Start Menu:</h3>
 <p align="center">
  <img src="Images/Screenshot 2022-08-23 195902.png" width="400"/>
 </p>
