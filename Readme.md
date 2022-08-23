@@ -1,15 +1,7 @@
 
 <h1 align="center">
   <img src="Images/Screenshot 2022-08-23 194651.png"/>
-  
- ![_alt text_](https://img.shields.io/badge/Platforms-windows_|_macos-blue??style=for-the-badge)
-
-  </h1>
-<h3 align="center">  
-  
-  A remake of Nintendo`s masterpice origin Metroid using Unity & C#
-  </h3>
-  
+   
 ## Table Of Content
 
 - [General](#general)
@@ -20,26 +12,22 @@
 
 ## General
 
-The game was created as part of "Game Development Foundations course" by [NotSlot](https://github.com/notslot) within my Computer Science B.Sc.  
-The original assignment was to recreate an 1980s video game.  
-I personally choose Metroid as i truly belive that this game had a major influence on video games devolopment.  
-  
-**I strongly suggest to check the light mod that I created following this project - [MetroidLightMod](https://github.com/ArnonGuttel/MetroidLightMod)** 
+You are an abomination, smouldering ice, wet fire.  You are still beyond God's creation. 
 
-## Installation
+Prove yourself to me, his word upon the land, and I shall allow you the chance to temper yourself. Perhaps you can resolve your abhorrent form.
 
-- Windows:      
-  - &emsp; Download the [WindowsBuild](https://github.com/ArnonGuttel/MetroidRemake/tree/main/WindowsBuild) folder 
-  - &emsp; Run the Metroid Game.exe executable file.
- 
- - Mac
-   - &emsp; Download the [MacBuild](https://github.com/ArnonGuttel/MetroidRemake/tree/main/MacBuild.app/Contents) folder 
-   - &emsp; Run the  Mac Build.app_ package
+>>>>>   >>>>>   >>>>>
+
+GAMEPLAY:
+
+SKEB must survive the lands of ice & fire!
+
+Your best friend will help and offer you one upgrade to choose from after each round of combat; Choose wisely!
 
 ## How&nbsp;To&nbsp;Play
 - Arrow key's to move
 - Down arrow key to start/stop roll (once roll powerup taken)
-- 's' key to fire
+- 'x' key to attack\push
 - 'esc' key to pause 
 
 ## Screenshots
@@ -62,7 +50,3 @@ I personally choose Metroid as i truly belive that this game had a major influen
   <img src="Images/GameOverMenu.jpeg" width="400"/>
  </p>
 
-## Credits 
-- Banner Logo - [DivineArt](https://www.deviantart.com/imleerobson/art/Metroid-Title-Screen-Vector-Logo-1987-703268172)
-- Sprites - [Spriters-Resource](https://www.spriters-resource.com/nes/metroid/)
-- Sound Effects - [Sounds-Resource](https://www.sounds-resource.com/nes/metroid/sound/4866/)
