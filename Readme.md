@@ -24,6 +24,10 @@ SKEB must survive the lands of ice & fire!
 
 Your best friend will help and offer you one upgrade to choose from after each round of combat; Choose wisely!
 
+  ## Installation
+
+-You are welcome to download the game from the his Itch page: https://ofekmor.itch.io/skeb 
+  
 ## How&nbsp;To&nbsp;Play
 - Arrow key's to move
 - Down arrow key to start/stop roll (once roll powerup taken)
