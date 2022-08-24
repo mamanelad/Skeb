@@ -58,7 +58,7 @@ Your best friend will help and offer you one upgrade to choose from after each r
 
   <h3>Upgrade Shop:</h3>
  <p align="center">
-  <img src="Screenshot 2022-08-23 200424.png" width="400"/>
+  <img src="Images/Screenshot 2022-08-23 200424.png" width="400"/>
  </p>
  
   <h3>Game over:</h3>
