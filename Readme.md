@@ -52,19 +52,17 @@ Your best friend will help and offer you one upgrade to choose from after each r
 
   <h3>Gameplay:</h3>
 <p align="center">
- <img src="Images/Gameplay1.jpeg" width="400"/>
- <img src="Images/Gameplay3.jpeg" width="400"/>
- <img src="Images/Gameplay4.jpeg" width="400"/>
- <img src="Images/Gameplay5.jpeg" width="400"/>
+ <img src="Images/Screenshot 2022-08-23 200252.png" width="400"/>
+ <img src="Images/Screenshot 2022-08-23 200411.png" width="400"/>
 </p>
 
-  <h3>Pause Menu:</h3>
+  <h3>Upgrade Shop:</h3>
  <p align="center">
-  <img src="Images/PauseMenu.jpeg" width="400"/>
+  <img src="Screenshot 2022-08-23 200424.png" width="400"/>
  </p>
  
   <h3>Game over:</h3>
  <p align="center"> 
-  <img src="Images/GameOverMenu.jpeg" width="400"/>
+  <img src="Images/Screenshot 2022-08-23 200521.png" width="400"/>
  </p>
 
